@@ -1,0 +1,33 @@
+function simPractice
+global xInit uExternal
+alphaVar = [1 pi/6, 1.2, 1.2, 12];
+% options = simset('Solver', 'ode23t', 'OutputVariables', 'xy');
+paramNameValStruct.Solver         = 'ode23t';
+% paramNameValStruct.OutputVariables = 'xy';
+params.SaveFinalState = 'on';
+params.FinalStateName = 'xFinal';
+params.StartTime = '10';
+params.StopTime = '16';
+params.OutputTimes = 'linspace(10,16, 30*12)';
+params.LoadExternalInput = 'on';
+uExternal = ['[' num2str(alphaVar) ']'];
+params.ExternalInput = 'uExternal';
+    
+simOut = sim('salpChain', params);
+
+x = simOut.find('xout');
+xInit = x(size(x,1), :);
+params.LoadInitialState = 'on';
+params.InitialState = 'xInit';
+% simget(options)
+% input('simulate sext second');
+simOut = sim('salpChain', params);
+
+end
+% 
+% function [frequency, delay, amp] = UT(t)
+%     frequency = 1;
+%     delay = pi/6;
+%     amp = [2 0.1 0.1];
+% end
+% 
