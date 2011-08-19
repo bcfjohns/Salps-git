@@ -1,4 +1,4 @@
-%Benjamin Johnson started 4-4-11
+%Benjamin Johnson editing to play with parameters to get a tighter spiral
 
 %All the parameters for the salp simulation
 %all units are assumed to be degrees and mks
@@ -9,7 +9,7 @@ global uAmplitudeEven xFinal valueHist alphaHist
 
 %=============================================================
 %general parameters
-sLength = 0.08; %the length of a salp
+sLength = 0.16; %the length of a salp
 sRadius = 0.02; %the radius of the salp.
 
 
