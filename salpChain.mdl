@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.374"
+    ComputedModelVersion    "1.376"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,9 +30,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ben"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Aug 19 18:21:58 2011"
-  RTWModifiedTimeStamp	  235672712
-  ModelVersionFormat	  "1.%<AutoIncrement:374>"
+  LastModifiedDate	  "Fri Oct 21 15:30:43 2011"
+  RTWModifiedTimeStamp	  241103107
+  ModelVersionFormat	  "1.%<AutoIncrement:376>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -594,8 +594,8 @@ Model {
 	      WarnOnRedundantConstraints on
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
-	      VisOnUpdateDiagram      on
-	      VisDuringSimulation     on
+	      VisOnUpdateDiagram      off
+	      VisDuringSimulation     off
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -609,15 +609,15 @@ Model {
 	      CompressAVI	      on
 	      AutoFitVis	      "off"
 	      EnableSelection	      on
-	      LastVizWinPosition      "[397 403 901 684]"
-	      CamPosition	      "[6.49704;6.62526;6.60738;]"
-	      CamTarget		      "[-0.105931;0.0222866;0.00440327;]"
-	      CamUpVector	      "[0;1;0;]"
-	      CamHeight		      "0.363162"
+	      LastVizWinPosition      "[-1 -1 -1 -1]"
+	      CamPosition	      "[0 0 0]"
+	      CamTarget		      "[0 0 -1]"
+	      CamUpVector	      "[0 1 0]"
+	      CamHeight		      "-1"
 	      CamViewAngle	      "0"
-	      VisBackgroundColor      "[0.9;0.9;0.95;]"
-	      DefaultBodyColor	      "[1;0;0;]"
-	      MDLBodyVisualizationType "Equivalent ellipsoid from mass properties"
+	      VisBackgroundColor      "[0.9 0.9 0.95]"
+	      DefaultBodyColor	      "[1 0 0]"
+	      MDLBodyVisualizationType "Convex hull from body CS locations"
 	      OVRRIDBodyVisualizationType "NONE"
 	    }
 	    PropName		    "Components"
@@ -636,8 +636,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 223, 124, 1151, 829 ] 
+      CurrentDlgPage	      "Simscape/SimMechanics"
+      ConfigPrmDlgPosition     [ -1290, 257, -388, 979 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -862,7 +862,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [155, 279, 1597, 924]
+    Location		    [120, 199, 1562, 844]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -938,8 +938,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -6315,7 +6315,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[911, 50, 1924, 857]
+	Location		[543, 221, 1556, 1028]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6724,8 +6724,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [665, 401, 695, 434]
 	  Floating		  off
-	  Location		  [9, 71, 3601, 632]
-	  Open			  on
+	  Location		  [-1606, 276, 1986, 837]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -6747,16 +6747,16 @@ Model {
 	  Ports			  [2]
 	  Position		  [710, 256, 740, 289]
 	  Floating		  off
-	  Location		  [7, 71, 3601, 699]
-	  Open			  on
+	  Location		  [-1669, 211, 1925, 839]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	    axes2		    "%<SignalLabel>"
 	  }
-	  YMin			  "-35~-0.15"
-	  YMax			  "35~0.175"
+	  YMin			  "-225~-0.175"
+	  YMax			  "100~0.175"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
