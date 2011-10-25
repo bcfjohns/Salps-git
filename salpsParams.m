@@ -74,22 +74,11 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.
-%temporariliy only leaving in one coeff, because want to test things.
-%cDrag([1:2 3:5]) = zeros(1,5);
-%cDrag(6) = 0;
+
 
 %===========
-% uFrequency = 1; %frequency for the base drive signal
-% uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
 uAmplitudeEven = [-0.2 0.2 2];
 uBias = 1; %bias is added before the amplitude scaling.
-
-
-%allows the simulation to see the initial state variable
-
-
-% stochGradSalp
-
 
 
