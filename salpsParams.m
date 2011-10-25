@@ -42,7 +42,7 @@ backConnect = [0 sRadius*1.1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 0 -sLength*0.5];
+propulsionPosition = [0 sRadius*1.1 -sLength*0.5];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
