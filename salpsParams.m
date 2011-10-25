@@ -8,6 +8,11 @@ global uAmplitudeEven xFinal valueHist alphaHist
 
 
 %=============================================================
+%sim parameters to avoid sim parameters gui
+simTime = 800;
+
+
+%=============================================================
 %general parameters
 sLength = 0.16; %the length of a salp
 sRadius = 0.02; %the radius of the salp.
@@ -42,7 +47,10 @@ backConnect = [0 sRadius*1.1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 sRadius*1.1 -sLength*0.5];
+propulsionPositionOdd = [0 sRadius*1.1 -sLength*0.5];
+%need a flip for even, so things on the same "side"
+propulsionPositionEven = propulsionPositionOdd*[1 0 0; 0 -1 0; 0 0 1];
+
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
