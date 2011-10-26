@@ -9,7 +9,7 @@ global uAmplitudeEven xFinal valueHist alphaHist
 
 %=============================================================
 %sim parameters to avoid sim parameters gui
-simTime = 800;
+simTime = 1500;
 
 
 %=============================================================
