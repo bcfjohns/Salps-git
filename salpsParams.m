@@ -1,7 +1,7 @@
 %Benjamin Johnson editing to play with parameters to get a tighter spiral
 
 %All the parameters for the salp simulation
-%all units are assumed to be degrees and mks
+%all units are assumed to be DEGREES and METERS KILOGRAMS SECONDS
 clear all;
 close all;
 global uAmplitudeEven xFinal valueHist alphaHist
@@ -55,11 +55,16 @@ propulsionPositionEven = propulsionPositionOdd*[1 0 0; 0 -1 0; 0 0 1];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 170]; 
+connectR = [0 0 160]; 
 %The pi is necessary to "flip" each salp so the connections flip sides from
 %salp to salp.
 
-relRotInit = [0 0]; %the initial angles of the universal joint between salps
+relRotInit = [40 0]; %the initial angles of the universal joint between salps in degrees.
+%the rest position for the springs between salps.
+
+%K for the springs on the universal joints between salps,
+
+kJoint = 2;
 
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.

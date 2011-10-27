@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.406"
+    ComputedModelVersion    "1.420"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -21,8 +21,8 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "2056464780"
-  PhysicalModelingParameterChecksum "3160088616"
+  PhysicalModelingChecksum "3794654349"
+  PhysicalModelingParameterChecksum "830420040"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
@@ -30,9 +30,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ben"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Oct 25 22:08:48 2011"
-  RTWModifiedTimeStamp	  241479385
-  ModelVersionFormat	  "1.%<AutoIncrement:406>"
+  LastModifiedDate	  "Thu Oct 27 17:06:05 2011"
+  RTWModifiedTimeStamp	  241632475
+  ModelVersionFormat	  "1.%<AutoIncrement:420>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -834,7 +834,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [86, 464, 1528, 1109]
+    Location		    [107, 339, 1549, 984]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -848,7 +848,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1429"
+    SIDHighWatermark	    "1542"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -894,8 +894,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -985,7 +985,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[163, 260, 1075, 928]
+	Location		[163, 348, 1075, 1016]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1189,7 +1189,8 @@ Model {
 	  Name			  "Joint Initial Condition"
 	  SID			  "380"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [370, 430, 410, 470]
+	  Position		  [320, 495, 360, 535]
+	  BlockRotation		  270
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
@@ -1253,6 +1254,31 @@ Model {
 	  "*m#P3$true$kDrag(3)$bDrag(3)$0$m$m/s$N$deg$deg/s$N*m#R1$true$kDrag(4)$bDrag(4)$0$m$m/s$N$deg$deg/s$N*m#R2$true$kDra"
 	  "g(5)$bDrag(5)$0$m$m/s$N$deg$deg/s$N*m#R3$true$kDrag(6)$bDrag(6)$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$d"
 	  "eg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1431"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [355, 395, 415, 445]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$-relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$-relRotInit(2)$m$m/s$N$deg$deg"
+	  "/s$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
 	}
 	Block {
 	  BlockType		  Reference
@@ -1522,8 +1548,8 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Universal"
 	  SID			  "396"
-	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [310, 322, 360, 373]
+	  Ports			  [0, 0, 0, 0, 0, 3, 2]
+	  Position		  [310, 324, 360, 376]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -1531,10 +1557,10 @@ Model {
 	  SubClassName		  "Unknown"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
-	  LConnTagsString	  "__newl0|SA1"
+	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "2"
+	  NumSAPorts		  "3"
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
@@ -1935,6 +1961,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn1
+	  Points		  [0, -5]
 	  DstBlock		  "Back"
 	  DstPort		  RConn1
 	}
@@ -1950,7 +1977,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn2
-	  Points		  [-5, 0; 0, 90]
+	  Points		  [-5, 0; 0, 130]
 	  DstBlock		  "Joint Initial Condition"
 	  DstPort		  RConn1
 	}
@@ -1979,7 +2006,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn2
-	  Points		  [70, 0; 0, 50; 75, 0]
+	  Points		  [70, 0; 0, 45; 75, 0]
 	  DstBlock		  "Mechanical\nBranching\nBar1"
 	  DstPort		  LConn1
 	}
@@ -2019,6 +2046,14 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcPort		  LConn1
+	  Points		  [-50, 0; 0, -55]
+	  DstBlock		  "Universal"
+	  DstPort		  LConn3
+	}
       }
     }
     Block {
@@ -2036,7 +2071,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even2"
-	Location		[434, 222, 1609, 1029]
+	Location		[434, 266, 1609, 1073]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2283,6 +2318,31 @@ Model {
 	  "*m#P3$true$kDrag(3)$bDrag(3)$0$m$m/s$N$deg$deg/s$N*m#R1$true$kDrag(4)$bDrag(4)$0$m$m/s$N$deg$deg/s$N*m#R2$true$kDra"
 	  "g(5)$bDrag(5)$0$m$m/s$N$deg$deg/s$N*m#R3$true$kDrag(6)$bDrag(6)$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$d"
 	  "eg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1433"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [545, 345, 605, 395]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$-relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$-relRotInit(2)$m$m/s$N$deg$deg"
+	  "/s$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
 	}
 	Block {
 	  BlockType		  Reference
@@ -2876,12 +2936,20 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  RConn2
+	  Points		  [75, 0; 0, 10]
+	  DstBlock		  "Joint Spring & Damper1"
+	  DstPort		  LConn1
+	}
       }
     }
     Block {
       BlockType		      SubSystem
       Name		      "Salp Even3"
-      SID		      "1326"
+      SID		      "1435"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [675, 273, 845, 327]
       MinAlgLoopOccurrences   off
@@ -2893,7 +2961,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even3"
-	Location		[434, 222, 1609, 1029]
+	Location		[434, 244, 1609, 1051]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2909,7 +2977,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "1327"
+	  SID			  "1436"
 	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [130, 385, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -2991,7 +3059,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "1328"
+	  SID			  "1437"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [255, 52, 305, 103]
 	  BlockMirror		  on
@@ -3023,7 +3091,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "1329"
+	  SID			  "1438"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  NamePlacement		  "alternate"
@@ -3064,7 +3132,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "1330"
+	  SID			  "1439"
 	  Position		  [135, 576, 215, 594]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -3074,7 +3142,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "1331"
+	  SID			  "1440"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [390, 400, 430, 440]
 	  BlockMirror		  on
@@ -3117,7 +3185,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "1332"
+	  SID			  "1441"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 65, 135, 115]
 	  BlockMirror		  on
@@ -3143,8 +3211,33 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1442"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [545, 345, 605, 395]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "1333"
+	  SID			  "1443"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 189, 480, 251]
 	  BackgroundColor	  "black"
@@ -3165,7 +3258,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "1334"
+	  SID			  "1444"
 	  Ports			  [2, 1]
 	  Position		  [535, 56, 540, 94]
 	  BlockMirror		  on
@@ -3176,7 +3269,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "1335"
+	  SID			  "1445"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [240, 565, 280, 605]
 	  LibraryVersion	  "1.1"
@@ -3216,7 +3309,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem"
-	  SID			  "1336"
+	  SID			  "1446"
 	  Ports			  [2, 2]
 	  Position		  [565, 34, 740, 101]
 	  BlockMirror		  on
@@ -3245,14 +3338,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "translational Velocities"
-	      SID		      "1337"
+	      SID		      "1447"
 	      Position		      [65, 68, 95, 82]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Angular Velocities"
-	      SID		      "1338"
+	      SID		      "1448"
 	      Position		      [65, 138, 95, 152]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3260,7 +3353,7 @@ Model {
 	    Block {
 	      BlockType		      Abs
 	      Name		      "Abs"
-	      SID		      "1339"
+	      SID		      "1449"
 	      Position		      [210, 125, 240, 155]
 	      ZeroCross		      off
 	      SaturateOnIntegerOverflow	off
@@ -3268,7 +3361,7 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "1340"
+	      SID		      "1450"
 	      Ports		      [1, 2]
 	      Position		      [510, 96, 515, 134]
 	      ShowName		      off
@@ -3278,7 +3371,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Drag Coefficients"
-	      SID		      "1341"
+	      SID		      "1451"
 	      Position		      [415, 92, 465, 138]
 	      Gain		      "-cDrag"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -3288,7 +3381,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1342"
+	      SID		      "1452"
 	      Ports		      [2, 1]
 	      Position		      [145, 84, 155, 146]
 	      ShowName		      off
@@ -3298,7 +3391,7 @@ Model {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Product"
-	      SID		      "1343"
+	      SID		      "1453"
 	      Ports		      [2, 1]
 	      Position		      [315, 97, 345, 128]
 	      InputSameDT	      off
@@ -3308,14 +3401,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Rotational drag"
-	      SID		      "1344"
+	      SID		      "1454"
 	      Position		      [555, 118, 585, 132]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Translational drag"
-	      SID		      "1345"
+	      SID		      "1455"
 	      Position		      [570, 78, 600, 92]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -3387,7 +3480,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "1346"
+	  SID			  "1456"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [310, 322, 360, 373]
 	  LibraryVersion	  "1.1"
@@ -3413,7 +3506,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "1347"
+	  SID			  "1457"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [815, 110, 855, 150]
 	  BlockRotation		  270
@@ -3461,7 +3554,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "1348"
+	  SID			  "1458"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -3542,7 +3635,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "1349"
+	  SID			  "1459"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [815, 30, 855, 70]
 	  BlockMirror		  on
@@ -3589,7 +3682,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "1350"
+	  SID			  "1460"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -3597,7 +3690,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "1351"
+	  SID			  "1461"
 	  Position		  [395, 326, 425, 344]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -3733,14 +3826,22 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  RConn2
+	  Points		  [75, 0; 0, 10]
+	  DstBlock		  "Joint Spring & Damper1"
+	  DstPort		  LConn1
+	}
       }
     }
     Block {
       BlockType		      SubSystem
       Name		      "Salp Even4"
-      SID		      "1378"
-      Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1075, 273, 1245, 327]
+      SID		      "1489"
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [1085, 278, 1255, 332]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3766,7 +3867,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "1379"
+	  SID			  "1490"
 	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [130, 385, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -3848,7 +3949,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "1380"
+	  SID			  "1491"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [255, 52, 305, 103]
 	  BlockMirror		  on
@@ -3880,7 +3981,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "1381"
+	  SID			  "1492"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  NamePlacement		  "alternate"
@@ -3921,7 +4022,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "1382"
+	  SID			  "1493"
 	  Position		  [135, 576, 215, 594]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -3930,8 +4031,51 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Initial Condition"
+	  SID			  "1494"
+	  Ports			  [0, 0, 0, 0, 0, 0, 1]
+	  Position		  [390, 400, 430, 440]
+	  BlockMirror		  on
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
+	  SourceType		  "Joint Initial Condition"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  PhysicalDomain	  "mechanical"
+	  ClassName		  "InitialCondition"
+	  DialogClass		  "InitialConditionBlock"
+	  InitialConditions	  "P1$false$0$m$deg$0$m/s$deg/s#P2$false$0$m$deg$0$m/s$deg/s#P3$false$0$m$deg$0$m/s$deg/s#R1$true"
+	  "$-relRotInit(1)$m$deg$0$m/s$deg/s#R2$true$-relRotInit(2)$m$deg$0$m/s$deg/s#R3$false$0$m$deg$0$m/s$deg/s#S$false$0$m"
+	  "$deg$0$m/s$deg/s"
+	  P1PIC			  "0"
+	  P1VIC			  "0"
+	  P2PIC			  "0"
+	  P2VIC			  "0"
+	  P3PIC			  "0"
+	  P3VIC			  "0"
+	  R1PIC			  "-relRotInit(1)"
+	  R1VIC			  "0"
+	  R2PIC			  "-relRotInit(2)"
+	  R2VIC			  "0"
+	  R3PIC			  "0"
+	  R3VIC			  "0"
+	  SPIC			  "0"
+	  SVIC			  "0"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "1384"
+	  SID			  "1495"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 65, 135, 115]
 	  BlockMirror		  on
@@ -3957,8 +4101,33 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1496"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [545, 345, 605, 395]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "1385"
+	  SID			  "1497"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 189, 480, 251]
 	  BackgroundColor	  "black"
@@ -3979,7 +4148,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "1386"
+	  SID			  "1498"
 	  Ports			  [2, 1]
 	  Position		  [535, 56, 540, 94]
 	  BlockMirror		  on
@@ -3990,7 +4159,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "1387"
+	  SID			  "1499"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [240, 565, 280, 605]
 	  LibraryVersion	  "1.1"
@@ -4030,7 +4199,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem"
-	  SID			  "1388"
+	  SID			  "1500"
 	  Ports			  [2, 2]
 	  Position		  [565, 34, 740, 101]
 	  BlockMirror		  on
@@ -4059,14 +4228,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "translational Velocities"
-	      SID		      "1389"
+	      SID		      "1501"
 	      Position		      [65, 68, 95, 82]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Angular Velocities"
-	      SID		      "1390"
+	      SID		      "1502"
 	      Position		      [65, 138, 95, 152]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4074,7 +4243,7 @@ Model {
 	    Block {
 	      BlockType		      Abs
 	      Name		      "Abs"
-	      SID		      "1391"
+	      SID		      "1503"
 	      Position		      [210, 125, 240, 155]
 	      ZeroCross		      off
 	      SaturateOnIntegerOverflow	off
@@ -4082,7 +4251,7 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "1392"
+	      SID		      "1504"
 	      Ports		      [1, 2]
 	      Position		      [510, 96, 515, 134]
 	      ShowName		      off
@@ -4092,7 +4261,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Drag Coefficients"
-	      SID		      "1393"
+	      SID		      "1505"
 	      Position		      [415, 92, 465, 138]
 	      Gain		      "-cDrag"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -4102,7 +4271,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1394"
+	      SID		      "1506"
 	      Ports		      [2, 1]
 	      Position		      [145, 84, 155, 146]
 	      ShowName		      off
@@ -4112,7 +4281,7 @@ Model {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Product"
-	      SID		      "1395"
+	      SID		      "1507"
 	      Ports		      [2, 1]
 	      Position		      [315, 97, 345, 128]
 	      InputSameDT	      off
@@ -4122,14 +4291,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Rotational drag"
-	      SID		      "1396"
+	      SID		      "1508"
 	      Position		      [555, 118, 585, 132]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Translational drag"
-	      SID		      "1397"
+	      SID		      "1509"
 	      Position		      [570, 78, 600, 92]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4200,8 +4369,34 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Universal"
+	  SID			  "1510"
+	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Position		  [310, 322, 360, 373]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Joints/Universal"
+	  SourceType		  "Universal"
+	  PhysicalDomain	  "mechanical"
+	  SubClassName		  "Unknown"
+	  LeftPortType		  "blob"
+	  RightPortType		  "blob"
+	  LConnTagsString	  "__newl0|SA1"
+	  RConnTagsString	  "__newr0|SA1"
+	  UpdateFromCAD		  "off"
+	  NumSAPorts		  "2"
+	  CutJoint		  "off"
+	  MarkAsCut		  "off"
+	  Primitives		  "prismatic"
+	  PrimitiveProps	  "R1$Base$[1 0 0]$revolute#R2$Base$[0 1 0]$revolute"
+	  ClassName		  "Joint"
+	  DialogClass		  "JointBlock"
+	  R1Axis		  "[1 0 0]"
+	  R2Axis		  "[0 1 0]"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "1399"
+	  SID			  "1511"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [815, 110, 855, 150]
 	  BlockRotation		  270
@@ -4249,7 +4444,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "1400"
+	  SID			  "1512"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -4330,7 +4525,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "1401"
+	  SID			  "1513"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [815, 30, 855, 70]
 	  BlockMirror		  on
@@ -4377,10 +4572,19 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "1402"
+	  SID			  "1514"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
+	}
+	Block {
+	  BlockType		  PMIOPort
+	  Name			  "Back"
+	  SID			  "1515"
+	  Position		  [395, 326, 425, 344]
+	  BlockMirror		  on
+	  Port			  "2"
+	  Side			  "Right"
 	}
 	Line {
 	  LineType		  "Connection"
@@ -4464,6 +4668,29 @@ Model {
 	}
 	Line {
 	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  RConn1
+	  DstBlock		  "Back"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  LConn1
+	  Points		  [-10, 0; 0, 105]
+	  DstBlock		  "Body"
+	  DstPort		  RConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  LConn2
+	  Points		  [-5, 0; 0, 60]
+	  DstBlock		  "Joint Initial Condition"
+	  DstPort		  RConn1
+	}
+	Line {
+	  LineType		  "Connection"
 	  SrcBlock		  "Propulsion"
 	  SrcPort		  RConn1
 	  Points		  [0, -125]
@@ -4489,6 +4716,14 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  RConn2
+	  Points		  [75, 0; 0, 10]
+	  DstBlock		  "Joint Spring & Damper1"
+	  DstPort		  LConn1
+	}
       }
     }
     Block {
@@ -4506,7 +4741,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[413, 305, 1339, 1053]
+	Location		[413, 349, 1339, 1097]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4746,8 +4981,8 @@ Model {
 	  Name			  "Joint Initial Condition"
 	  SID			  "201"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [370, 430, 410, 470]
-	  NamePlacement		  "alternate"
+	  Position		  [330, 470, 370, 510]
+	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
@@ -4813,6 +5048,31 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1430"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [380, 395, 440, 445]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(2)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
 	  SID			  "203"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
@@ -4872,15 +5132,15 @@ Model {
 	  Position		  [665, 401, 695, 434]
 	  Floating		  off
 	  Location		  [28, 712, 851, 1127]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	    axes2		    "%<SignalLabel>"
 	  }
-	  YMin			  "-200~-200"
-	  YMax			  "200~200"
+	  YMin			  "32.5~-12.5"
+	  YMax			  "57.5~12.5"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
@@ -4895,7 +5155,7 @@ Model {
 	  Position		  [710, 256, 740, 289]
 	  Floating		  off
 	  Location		  [6, 235, 1694, 835]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -5125,8 +5385,8 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Universal"
 	  SID			  "221"
-	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [310, 322, 360, 373]
+	  Ports			  [0, 0, 0, 0, 0, 3, 2]
+	  Position		  [385, 324, 435, 376]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -5134,10 +5394,10 @@ Model {
 	  SubClassName		  "Unknown"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
-	  LConnTagsString	  "__newl0|SA1"
+	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "2"
+	  NumSAPorts		  "3"
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
@@ -5460,7 +5720,7 @@ Model {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
 	  SID			  "229"
-	  Position		  [440, 326, 470, 344]
+	  Position		  [510, 331, 540, 349]
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -5520,7 +5780,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [25, 0; 0, 125; 10, 0; 0, 155; 25, 0; 0, 45]
+	  Points		  [10, 0; 0, 125; 10, 0; 0, 200]
 	  DstBlock		  "Body"
 	  DstPort		  RConn2
 	}
@@ -5558,7 +5818,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn1
-	  Points		  [-10, 0; 0, 105]
+	  Points		  [-85, 0; 0, 105]
 	  DstBlock		  "Body"
 	  DstPort		  RConn3
 	}
@@ -5566,7 +5826,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn2
-	  Points		  [-5, 0; 0, 90]
+	  Points		  [-70, 0; 0, 140]
 	  DstBlock		  "Joint Initial Condition"
 	  DstPort		  RConn1
 	}
@@ -5582,7 +5842,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn2
-	  Points		  [45, 0; 0, 50; 75, 0]
+	  Points		  [20, 0; 0, 45; 25, 0]
 	  DstBlock		  "Mechanical\nBranching\nBar1"
 	  DstPort		  LConn1
 	}
@@ -5665,6 +5925,14 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcPort		  LConn1
+	  Points		  [-10, 0; 0, -55]
+	  DstBlock		  "Universal"
+	  DstPort		  LConn3
+	}
       }
     }
     Block {
@@ -5682,7 +5950,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd2"
-	Location		[595, 245, 1608, 1052]
+	Location		[595, 289, 1608, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5864,8 +6132,8 @@ Model {
 	  Name			  "Joint Initial Condition"
 	  SID			  "1305"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [370, 430, 410, 470]
-	  NamePlacement		  "alternate"
+	  Position		  [415, 435, 455, 475]
+	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
@@ -5928,6 +6196,31 @@ Model {
 	  "*m#P3$true$kDrag(3)$bDrag(3)$0$m$m/s$N$deg$deg/s$N*m#R1$true$kDrag(4)$bDrag(4)$0$m$m/s$N$deg$deg/s$N*m#R2$true$kDra"
 	  "g(5)$bDrag(5)$0$m$m/s$N$deg$deg/s$N*m#R3$true$kDrag(6)$bDrag(6)$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$d"
 	  "eg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1432"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [505, 370, 565, 420]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(2)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6177,7 +6470,7 @@ Model {
 	  Name			  "Universal"
 	  SID			  "1320"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [310, 322, 360, 373]
+	  Position		  [345, 322, 395, 373]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -6445,7 +6738,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [25, 0; 0, 125; 10, 0; 0, 155; 25, 0; 0, 45]
+	  Points		  [25, 0; 0, 125; -20, 0; 0, 200]
 	  DstBlock		  "Body"
 	  DstPort		  RConn2
 	}
@@ -6483,7 +6776,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn1
-	  Points		  [-10, 0; 0, 105]
+	  Points		  [-45, 0; 0, 105]
 	  DstBlock		  "Body"
 	  DstPort		  RConn3
 	}
@@ -6491,7 +6784,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn2
-	  Points		  [-5, 0; 0, 90]
+	  Points		  [0, 110; 70, 0]
 	  DstBlock		  "Joint Initial Condition"
 	  DstPort		  RConn1
 	}
@@ -6522,12 +6815,20 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcPort		  LConn1
+	  Points		  [-40, 0; 0, -35]
+	  DstBlock		  "Universal"
+	  DstPort		  RConn2
+	}
       }
     }
     Block {
       BlockType		      SubSystem
       Name		      "Salp Odd3"
-      SID		      "1352"
+      SID		      "1462"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [490, 276, 640, 324]
       MinAlgLoopOccurrences   off
@@ -6539,7 +6840,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd3"
-	Location		[595, 245, 1608, 1052]
+	Location		[595, 267, 1608, 1074]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6555,7 +6856,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "1353"
+	  SID			  "1463"
 	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [130, 385, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -6637,7 +6938,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "1354"
+	  SID			  "1464"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -6668,7 +6969,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "1355"
+	  SID			  "1465"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -6709,7 +7010,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "1356"
+	  SID			  "1466"
 	  Position		  [80, 531, 175, 549]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -6719,10 +7020,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "1357"
+	  SID			  "1467"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [370, 430, 410, 470]
-	  NamePlacement		  "alternate"
+	  Position		  [415, 435, 455, 475]
+	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
@@ -6762,7 +7063,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "1358"
+	  SID			  "1468"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -6788,8 +7089,33 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1469"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [505, 370, 565, 420]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "1359"
+	  SID			  "1470"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 189, 480, 251]
 	  BackgroundColor	  "black"
@@ -6810,7 +7136,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "1360"
+	  SID			  "1471"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -6821,7 +7147,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "1361"
+	  SID			  "1472"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [220, 520, 260, 560]
 	  LibraryVersion	  "1.1"
@@ -6861,7 +7187,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem"
-	  SID			  "1362"
+	  SID			  "1473"
 	  Ports			  [2, 2]
 	  Position		  [550, 49, 725, 116]
 	  BlockMirror		  on
@@ -6890,14 +7216,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "translational Velocities"
-	      SID		      "1363"
+	      SID		      "1474"
 	      Position		      [65, 68, 95, 82]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Angular Velocities"
-	      SID		      "1364"
+	      SID		      "1475"
 	      Position		      [65, 138, 95, 152]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -6905,7 +7231,7 @@ Model {
 	    Block {
 	      BlockType		      Abs
 	      Name		      "Abs"
-	      SID		      "1365"
+	      SID		      "1476"
 	      Position		      [210, 125, 240, 155]
 	      ZeroCross		      off
 	      SaturateOnIntegerOverflow	off
@@ -6913,7 +7239,7 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "1366"
+	      SID		      "1477"
 	      Ports		      [1, 2]
 	      Position		      [510, 96, 515, 134]
 	      ShowName		      off
@@ -6923,7 +7249,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Drag Coefficients"
-	      SID		      "1367"
+	      SID		      "1478"
 	      Position		      [415, 92, 465, 138]
 	      Gain		      "-cDrag"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -6933,7 +7259,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1368"
+	      SID		      "1479"
 	      Ports		      [2, 1]
 	      Position		      [145, 84, 155, 146]
 	      ShowName		      off
@@ -6943,7 +7269,7 @@ Model {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Product"
-	      SID		      "1369"
+	      SID		      "1480"
 	      Ports		      [2, 1]
 	      Position		      [315, 97, 345, 128]
 	      InputSameDT	      off
@@ -6953,14 +7279,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Rotational drag"
-	      SID		      "1370"
+	      SID		      "1481"
 	      Position		      [555, 118, 585, 132]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Translational drag"
-	      SID		      "1371"
+	      SID		      "1482"
 	      Position		      [570, 78, 600, 92]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7032,9 +7358,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "1372"
+	  SID			  "1483"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [310, 322, 360, 373]
+	  Position		  [345, 322, 395, 373]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -7058,7 +7384,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "1373"
+	  SID			  "1484"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -7105,7 +7431,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "1374"
+	  SID			  "1485"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -7186,7 +7512,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "1375"
+	  SID			  "1486"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -7233,7 +7559,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "1376"
+	  SID			  "1487"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -7241,7 +7567,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "1377"
+	  SID			  "1488"
 	  Position		  [440, 326, 470, 344]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -7302,7 +7628,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [25, 0; 0, 125; 10, 0; 0, 155; 25, 0; 0, 45]
+	  Points		  [25, 0; 0, 125; -20, 0; 0, 200]
 	  DstBlock		  "Body"
 	  DstPort		  RConn2
 	}
@@ -7340,7 +7666,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn1
-	  Points		  [-10, 0; 0, 105]
+	  Points		  [-45, 0; 0, 105]
 	  DstBlock		  "Body"
 	  DstPort		  RConn3
 	}
@@ -7348,7 +7674,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn2
-	  Points		  [-5, 0; 0, 90]
+	  Points		  [0, 110; 70, 0]
 	  DstBlock		  "Joint Initial Condition"
 	  DstPort		  RConn1
 	}
@@ -7379,14 +7705,22 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcPort		  LConn1
+	  Points		  [-40, 0; 0, -35]
+	  DstBlock		  "Universal"
+	  DstPort		  RConn2
+	}
       }
     }
     Block {
       BlockType		      SubSystem
       Name		      "Salp Odd4"
-      SID		      "1404"
+      SID		      "1516"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [890, 276, 1040, 324]
+      Position		      [900, 281, 1050, 329]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -7396,7 +7730,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd4"
-	Location		[595, 245, 1608, 1052]
+	Location		[595, 267, 1608, 1074]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7412,7 +7746,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "1405"
+	  SID			  "1517"
 	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [130, 385, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -7494,7 +7828,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "1406"
+	  SID			  "1518"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -7525,7 +7859,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "1407"
+	  SID			  "1519"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -7566,7 +7900,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "1408"
+	  SID			  "1520"
 	  Position		  [80, 531, 175, 549]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -7576,10 +7910,10 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "1409"
+	  SID			  "1521"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [370, 430, 410, 470]
-	  NamePlacement		  "alternate"
+	  Position		  [415, 435, 455, 475]
+	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
@@ -7619,7 +7953,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "1410"
+	  SID			  "1522"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -7645,8 +7979,33 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Joint Spring & Damper1"
+	  SID			  "1523"
+	  Ports			  [0, 0, 0, 0, 0, 1]
+	  Position		  [505, 370, 565, 420]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
+	  SourceType		  "Joint Spring & Damper"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  UpdateFromCAD		  "off"
+	  ClassName		  "JointSpringDamper"
+	  DialogClass		  "JointSpringDamper"
+	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
+	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s"
+	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "1411"
+	  SID			  "1524"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 189, 480, 251]
 	  BackgroundColor	  "black"
@@ -7667,7 +8026,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "1412"
+	  SID			  "1525"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -7678,7 +8037,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "1413"
+	  SID			  "1526"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [220, 520, 260, 560]
 	  LibraryVersion	  "1.1"
@@ -7718,7 +8077,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem"
-	  SID			  "1414"
+	  SID			  "1527"
 	  Ports			  [2, 2]
 	  Position		  [550, 49, 725, 116]
 	  BlockMirror		  on
@@ -7747,14 +8106,14 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "translational Velocities"
-	      SID		      "1415"
+	      SID		      "1528"
 	      Position		      [65, 68, 95, 82]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Angular Velocities"
-	      SID		      "1416"
+	      SID		      "1529"
 	      Position		      [65, 138, 95, 152]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7762,7 +8121,7 @@ Model {
 	    Block {
 	      BlockType		      Abs
 	      Name		      "Abs"
-	      SID		      "1417"
+	      SID		      "1530"
 	      Position		      [210, 125, 240, 155]
 	      ZeroCross		      off
 	      SaturateOnIntegerOverflow	off
@@ -7770,7 +8129,7 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      "Demux"
-	      SID		      "1418"
+	      SID		      "1531"
 	      Ports		      [1, 2]
 	      Position		      [510, 96, 515, 134]
 	      ShowName		      off
@@ -7780,7 +8139,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "Drag Coefficients"
-	      SID		      "1419"
+	      SID		      "1532"
 	      Position		      [415, 92, 465, 138]
 	      Gain		      "-cDrag"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -7790,7 +8149,7 @@ Model {
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
-	      SID		      "1420"
+	      SID		      "1533"
 	      Ports		      [2, 1]
 	      Position		      [145, 84, 155, 146]
 	      ShowName		      off
@@ -7800,7 +8159,7 @@ Model {
 	    Block {
 	      BlockType		      Product
 	      Name		      "Product"
-	      SID		      "1421"
+	      SID		      "1534"
 	      Ports		      [2, 1]
 	      Position		      [315, 97, 345, 128]
 	      InputSameDT	      off
@@ -7810,14 +8169,14 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Rotational drag"
-	      SID		      "1422"
+	      SID		      "1535"
 	      Position		      [555, 118, 585, 132]
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Translational drag"
-	      SID		      "1423"
+	      SID		      "1536"
 	      Position		      [570, 78, 600, 92]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -7889,9 +8248,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "1424"
+	  SID			  "1537"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
-	  Position		  [310, 322, 360, 373]
+	  Position		  [345, 322, 395, 373]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -7915,7 +8274,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "1425"
+	  SID			  "1538"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -7962,7 +8321,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "1426"
+	  SID			  "1539"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -8043,7 +8402,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "1427"
+	  SID			  "1540"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -8090,7 +8449,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "1428"
+	  SID			  "1541"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -8098,7 +8457,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "1429"
+	  SID			  "1542"
 	  Position		  [440, 326, 470, 344]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -8159,7 +8518,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [25, 0; 0, 125; 10, 0; 0, 155; 25, 0; 0, 45]
+	  Points		  [25, 0; 0, 125; -20, 0; 0, 200]
 	  DstBlock		  "Body"
 	  DstPort		  RConn2
 	}
@@ -8197,7 +8556,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn1
-	  Points		  [-10, 0; 0, 105]
+	  Points		  [-45, 0; 0, 105]
 	  DstBlock		  "Body"
 	  DstPort		  RConn3
 	}
@@ -8205,7 +8564,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn2
-	  Points		  [-5, 0; 0, 90]
+	  Points		  [0, 110; 70, 0]
 	  DstBlock		  "Joint Initial Condition"
 	  DstPort		  RConn1
 	}
@@ -8235,6 +8594,14 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcPort		  LConn1
+	  Points		  [-40, 0; 0, -35]
+	  DstBlock		  "Universal"
+	  DstPort		  RConn2
 	}
       }
     }
@@ -8356,16 +8723,17 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Even3"
       SrcPort		      RConn1
+      Points		      [20, 0; 0, 5]
       DstBlock		      "Salp Odd4"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Salp Even2"
-      SrcPort		      RConn1
-      Points		      [5, 0; 0, 60; -795, 0; 0, 35]
-      DstBlock		      "Salp Odd3"
-      DstPort		      LConn1
+      SrcBlock		      "Salp Odd3"
+      SrcPort		      LConn1
+      Points		      [-5, 0; 0, -40; 795, 0; 0, -55]
+      DstBlock		      "Salp Even2"
+      DstPort		      RConn1
     }
   }
 }
