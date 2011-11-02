@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.420"
+    ComputedModelVersion    "1.436"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -21,8 +21,8 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "3794654349"
-  PhysicalModelingParameterChecksum "830420040"
+  PhysicalModelingChecksum "46638020"
+  PhysicalModelingParameterChecksum "1196507222"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
@@ -30,9 +30,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ben"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Oct 27 17:06:05 2011"
-  RTWModifiedTimeStamp	  241632475
-  ModelVersionFormat	  "1.%<AutoIncrement:420>"
+  LastModifiedDate	  "Tue Nov  1 22:00:17 2011"
+  RTWModifiedTimeStamp	  242072817
+  ModelVersionFormat	  "1.%<AutoIncrement:436>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -831,10 +831,41 @@ Model {
       Variant		      off
       GeneratePreprocessorConditionals off
     }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      AllowDiffInputSizes     off
+    }
   }
   System {
     Name		    "salpChain"
-    Location		    [107, 339, 1549, 984]
+    Location		    [737, 400, 2179, 1045]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -848,7 +879,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1542"
+    SIDHighWatermark	    "1599"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -894,8 +925,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -4741,8 +4772,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[413, 349, 1339, 1097]
-	Open			off
+	Location		[581, 365, 1507, 1113]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4977,6 +5008,953 @@ Model {
 	  TagVisibility		  "global"
 	}
 	Block {
+	  BlockType		  SubSystem
+	  Name			  "Hard limits"
+	  SID			  "1546"
+	  Ports			  [0, 0, 0, 0, 0, 1, 1]
+	  Position		  [375, 412, 510, 448]
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Hard limits"
+	    Location		    [1732, 72, 2630, 715]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Joint Actuator"
+	      SID		      "1549"
+	      Ports		      [1, 0, 0, 0, 0, 0, 1]
+	      Position		      [520, 60, 560, 100]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+	      SourceType	      "Joint Actuator"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      ActuationStyle	      "Force"
+	      AngleUnits	      "deg"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPositionUnits      "m"
+	      VelocityUnits	      "m/s"
+	      AccelerationUnits	      "m/s^2"
+	      ForceUnits	      "N"
+	      TorqueUnits	      "N*m"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointActuator"
+	      DialogClass	      "MechanicalActuatorBlock"
+	      Primitive		      "R1"
+	      ReferenceFrame	      "Absolute (World)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Joint Actuator1"
+	      SID		      "1577"
+	      Ports		      [1, 0, 0, 0, 0, 0, 1]
+	      Position		      [520, 200, 560, 240]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Actuator"
+	      SourceType	      "Joint Actuator"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      ActuationStyle	      "Force"
+	      AngleUnits	      "deg"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPositionUnits      "m"
+	      VelocityUnits	      "m/s"
+	      AccelerationUnits	      "m/s^2"
+	      ForceUnits	      "N"
+	      TorqueUnits	      "N*m"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointActuator"
+	      DialogClass	      "MechanicalActuatorBlock"
+	      Primitive		      "R1"
+	      ReferenceFrame	      "Absolute (World)"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Mechanical\nBranching\nBar1"
+	      SID		      "1556"
+	      Ports		      [0, 0, 0, 0, 0, 1, 4]
+	      Position		      [150, 86, 155, 149]
+	      BackgroundColor	      "black"
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	      SourceType	      "Mechanical Branching Bar"
+	      PhysicalDomain	      "mechanical"
+	      SubClassName	      "Unknown"
+	      LeftPortType	      "blob"
+	      RightPortType	      "blob"
+	      LConnTagsString	      "_newl0"
+	      RConnTagsString	      "__newr0|SA2|SA3|SA4"
+	      UpdateFromCAD	      "off"
+	      ClassName		      "BranchingBar"
+	      DialogClass	      "MechanicalBranchingBarBlock"
+	      NumSAPorts	      "4"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Mechanical\nBranching\nBar2"
+	      SID		      "1564"
+	      Ports		      [0, 0, 0, 0, 0, 1, 2]
+	      Position		      [720, 108, 725, 172]
+	      BlockMirror	      on
+	      BackgroundColor	      "black"
+	      NamePlacement	      "alternate"
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Utilities/Mechanical\nBranching\nBar"
+	      SourceType	      "Mechanical Branching Bar"
+	      PhysicalDomain	      "mechanical"
+	      SubClassName	      "Unknown"
+	      LeftPortType	      "blob"
+	      RightPortType	      "blob"
+	      LConnTagsString	      "_newl0"
+	      RConnTagsString	      "__newr0|SA2"
+	      UpdateFromCAD	      "off"
+	      ClassName		      "BranchingBar"
+	      DialogClass	      "MechanicalBranchingBarBlock"
+	      NumSAPorts	      "2"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "angle 2"
+	      SID		      "1557"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [260, 170, 300, 210]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+	      SourceType	      "Joint Sensor"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      Muxed		      "on"
+	      Pose		      "off"
+	      Angle		      "on"
+	      AngleUnits	      "deg"
+	      ArcVelocity	      "off"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAcceleration	      "off"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPosition	      "on"
+	      CoordPositionUnits      "m"
+	      Velocity		      "off"
+	      VelocityUnits	      "m/s"
+	      Acceleration	      "off"
+	      AccelerationUnits	      "m/s^2"
+	      Quaternion	      "on"
+	      QuaternionDT	      "off"
+	      QuaternionDDT	      "off"
+	      QuaternionUnits	      "off"
+	      OutputVector	      "[1]"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointSensor"
+	      DialogClass	      "MechanicalSensorBlock"
+	      Primitive		      "R2"
+	      Force		      "off"
+	      ForceUnits	      "N"
+	      Torque		      "off"
+	      TorqueUnits	      "N*m"
+	      ReferenceFrame	      "Absolute (World)"
+	      ReactionSensedSide      "Base"
+	      ReactionReferenceFrame  "Absolute (World)"
+	      ReactionForce	      "off"
+	      ReactionForceUnits      "N"
+	      ReactionMoment	      "off"
+	      ReactionMomentUnits     "N*m"
+	      Port {
+		PortNumber		1
+		Name			"angle2"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "angle1"
+	      SID		      "1558"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [260, 35, 300, 75]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+	      SourceType	      "Joint Sensor"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      Muxed		      "on"
+	      Pose		      "off"
+	      Angle		      "on"
+	      AngleUnits	      "deg"
+	      ArcVelocity	      "off"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAcceleration	      "off"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPosition	      "on"
+	      CoordPositionUnits      "m"
+	      Velocity		      "off"
+	      VelocityUnits	      "m/s"
+	      Acceleration	      "off"
+	      AccelerationUnits	      "m/s^2"
+	      Quaternion	      "on"
+	      QuaternionDT	      "off"
+	      QuaternionDDT	      "off"
+	      QuaternionUnits	      "off"
+	      OutputVector	      "[1]"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointSensor"
+	      DialogClass	      "MechanicalSensorBlock"
+	      Primitive		      "R1"
+	      Force		      "off"
+	      ForceUnits	      "N"
+	      Torque		      "off"
+	      TorqueUnits	      "N*m"
+	      ReferenceFrame	      "Absolute (World)"
+	      ReactionSensedSide      "Base"
+	      ReactionReferenceFrame  "Absolute (World)"
+	      ReactionForce	      "off"
+	      ReactionForceUnits      "N"
+	      ReactionMoment	      "off"
+	      ReactionMomentUnits     "N*m"
+	      Port {
+		PortNumber		1
+		Name			"angle1"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "angle1/dt"
+	      SID		      "1562"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [260, 90, 300, 130]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+	      SourceType	      "Joint Sensor"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      Muxed		      "on"
+	      Pose		      "off"
+	      Angle		      "off"
+	      AngleUnits	      "deg"
+	      ArcVelocity	      "on"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAcceleration	      "off"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPosition	      "on"
+	      CoordPositionUnits      "m"
+	      Velocity		      "off"
+	      VelocityUnits	      "m/s"
+	      Acceleration	      "off"
+	      AccelerationUnits	      "m/s^2"
+	      Quaternion	      "on"
+	      QuaternionDT	      "off"
+	      QuaternionDDT	      "off"
+	      QuaternionUnits	      "off"
+	      OutputVector	      "[1]"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointSensor"
+	      DialogClass	      "MechanicalSensorBlock"
+	      Primitive		      "R1"
+	      Force		      "off"
+	      ForceUnits	      "N"
+	      Torque		      "off"
+	      TorqueUnits	      "N*m"
+	      ReferenceFrame	      "Absolute (World)"
+	      ReactionSensedSide      "Base"
+	      ReactionReferenceFrame  "Absolute (World)"
+	      ReactionForce	      "off"
+	      ReactionForceUnits      "N"
+	      ReactionMoment	      "off"
+	      ReactionMomentUnits     "N*m"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "angle1/dt1"
+	      SID		      "1576"
+	      Ports		      [0, 1, 0, 0, 0, 1]
+	      Position		      [260, 225, 300, 265]
+	      LibraryVersion	      "1.1"
+	      SourceBlock	      "mblibv1/Sensors & \nActuators/Joint Sensor"
+	      SourceType	      "Joint Sensor"
+	      ShowPortLabels	      "FromPortIcon"
+	      SystemSampleTime	      "-1"
+	      FunctionWithSeparateData off
+	      RTWMemSecFuncInitTerm   "Inherit from model"
+	      RTWMemSecFuncExecute    "Inherit from model"
+	      RTWMemSecDataConstants  "Inherit from model"
+	      RTWMemSecDataInternal   "Inherit from model"
+	      RTWMemSecDataParameters "Inherit from model"
+	      GeneratePreprocessorConditionals off
+	      UpdateFromCAD	      "off"
+	      PhysicalDomain	      "Mechanical"
+	      PortType		      "blob"
+	      Muxed		      "on"
+	      Pose		      "off"
+	      Angle		      "off"
+	      AngleUnits	      "deg"
+	      ArcVelocity	      "on"
+	      ArcVelocityUnits	      "deg/s"
+	      ArcAcceleration	      "off"
+	      ArcAccelerationUnits    "deg/s^2"
+	      CoordPosition	      "on"
+	      CoordPositionUnits      "m"
+	      Velocity		      "off"
+	      VelocityUnits	      "m/s"
+	      Acceleration	      "off"
+	      AccelerationUnits	      "m/s^2"
+	      Quaternion	      "on"
+	      QuaternionDT	      "off"
+	      QuaternionDDT	      "off"
+	      QuaternionUnits	      "off"
+	      OutputVector	      "[1]"
+	      ActiveIO		      "off"
+	      Width		      "1"
+	      ClassName		      "JointSensor"
+	      DialogClass	      "MechanicalSensorBlock"
+	      Primitive		      "R1"
+	      Force		      "off"
+	      ForceUnits	      "N"
+	      Torque		      "off"
+	      TorqueUnits	      "N*m"
+	      ReferenceFrame	      "Absolute (World)"
+	      ReactionSensedSide      "Base"
+	      ReactionReferenceFrame  "Absolute (World)"
+	      ReactionForce	      "off"
+	      ReactionForceUnits      "N"
+	      ReactionMoment	      "off"
+	      ReactionMomentUnits     "N*m"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "springdamper after threshold"
+	      SID		      "1565"
+	      Ports		      [2, 1]
+	      Position		      [395, 26, 475, 139]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"springdamper after threshold"
+		Location		[612, 227, 1341, 947]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle"
+		  SID			  "1566"
+		  Position		  [100, 168, 130, 182]
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "angle1"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "omega"
+		  SID			  "1568"
+		  Position		  [100, 218, 130, 232]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "1569"
+		  Position		  [420, 184, 450, 216]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Lower bound"
+		  SID			  "1570"
+		  Position		  [510, 220, 540, 250]
+		  Threshold		  "-angleLimit"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "1571"
+		  Ports			  [2, 1]
+		  Position		  [575, 164, 605, 206]
+		  ShowName		  off
+		  Inputs		  "|-+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "1572"
+		  Ports			  [2, 1]
+		  Position		  [315, 145, 335, 165]
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|++"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Upper bound"
+		  SID			  "1573"
+		  Position		  [510, 150, 540, 180]
+		  Threshold		  "angleLimit"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "damping constant"
+		  SID			  "1574"
+		  Position		  [185, 209, 285, 241]
+		  Gain			  "bAngleLimit"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "spring constant"
+		  SID			  "1575"
+		  Position		  [190, 140, 295, 170]
+		  Gain			  "kAngleLimit"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Force"
+		  SID			  "1567"
+		  Position		  [635, 178, 665, 192]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Force"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Upper bound"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Lower bound"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "angle1"
+		  Labels		  [0, 0]
+		  SrcBlock		  "angle"
+		  SrcPort		  1
+		  Points		  [40, 0]
+		  Branch {
+		    Points		    [0, 25; 220, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Upper bound"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Lower bound"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "spring constant"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Upper bound"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Lower bound"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "spring constant"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    DstBlock		    "Upper bound"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "Lower bound"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "damping constant"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "omega"
+		  SrcPort		  1
+		  DstBlock		  "damping constant"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "springdamper after threshold1"
+	      SID		      "1589"
+	      Ports		      [2, 1]
+	      Position		      [395, 164, 475, 271]
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"springdamper after threshold1"
+		Location		[612, 227, 1341, 947]
+		Open			off
+		ModelBrowserVisibility	off
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "angle"
+		  SID			  "1590"
+		  Position		  [100, 168, 130, 182]
+		  IconDisplay		  "Port number"
+		  Port {
+		    PortNumber		    1
+		    Name		    "angle1"
+		    RTWStorageClass	    "Auto"
+		    DataLoggingNameMode	    "SignalName"
+		  }
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "omega"
+		  SID			  "1591"
+		  Position		  [100, 218, 130, 232]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Constant
+		  Name			  "Constant1"
+		  SID			  "1592"
+		  Position		  [420, 184, 450, 216]
+		  Value			  "0"
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Lower bound"
+		  SID			  "1593"
+		  Position		  [510, 220, 540, 250]
+		  Threshold		  "-angleLimit"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum"
+		  SID			  "1594"
+		  Ports			  [2, 1]
+		  Position		  [575, 164, 605, 206]
+		  ShowName		  off
+		  Inputs		  "|-+"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "1595"
+		  Ports			  [2, 1]
+		  Position		  [315, 145, 335, 165]
+		  ShowName		  off
+		  IconShape		  "round"
+		  Inputs		  "|++"
+		  InputSameDT		  off
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Switch
+		  Name			  "Upper bound"
+		  SID			  "1596"
+		  Position		  [510, 150, 540, 180]
+		  Threshold		  "angleLimit"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "damping constant"
+		  SID			  "1597"
+		  Position		  [185, 209, 285, 241]
+		  Gain			  "bAngleLimit"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "spring constant"
+		  SID			  "1598"
+		  Position		  [190, 140, 295, 170]
+		  Gain			  "kAngleLimit"
+		  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+		  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Force"
+		  SID			  "1599"
+		  Position		  [635, 178, 665, 192]
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Sum"
+		  SrcPort		  1
+		  DstBlock		  "Force"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Upper bound"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Lower bound"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  DstBlock		  "Sum"
+		  DstPort		  2
+		}
+		Line {
+		  Name			  "angle1"
+		  Labels		  [0, 0]
+		  SrcBlock		  "angle"
+		  SrcPort		  1
+		  Points		  [40, 25; 0, 0]
+		  Branch {
+		    Points		    [0, 25; 220, 0]
+		    Branch {
+		    Points		    [0, -35]
+		    DstBlock		    "Upper bound"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 35]
+		    DstBlock		    "Lower bound"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    DstBlock		    "spring constant"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "Constant1"
+		  SrcPort		  1
+		  Points		  [10, 0]
+		  Branch {
+		    Points		    [0, -25]
+		    DstBlock		    "Upper bound"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 25]
+		    DstBlock		    "Lower bound"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  SrcBlock		  "spring constant"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  Points		  [15, 0]
+		  Branch {
+		    DstBlock		    "Upper bound"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 90]
+		    DstBlock		    "Lower bound"
+		    DstPort		    3
+		  }
+		}
+		Line {
+		  SrcBlock		  "damping constant"
+		  SrcPort		  1
+		  Points		  [35, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "omega"
+		  SrcPort		  1
+		  DstBlock		  "damping constant"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Joint angles"
+	      SID		      "1554"
+	      Position		      [60, 108, 90, 122]
+	      Port		      "1"
+	      Side		      "Left"
+	    }
+	    Block {
+	      BlockType		      PMIOPort
+	      Name		      "Restriction Force"
+	      SID		      "1555"
+	      Position		      [755, 133, 785, 147]
+	      BlockMirror	      on
+	      Port		      "2"
+	      Side		      "Right"
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Mechanical\nBranching\nBar1"
+	      SrcPort		      RConn1
+	      Points		      [75, 0]
+	      DstBlock		      "angle1"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Joint angles"
+	      SrcPort		      RConn1
+	      Points		      [30, 0]
+	      DstBlock		      "Mechanical\nBranching\nBar1"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "angle 2"
+	      SrcPort		      LConn1
+	      Points		      [-10, 0; 0, -65]
+	      DstBlock		      "Mechanical\nBranching\nBar1"
+	      DstPort		      RConn3
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Mechanical\nBranching\nBar1"
+	      SrcPort		      RConn2
+	      DstBlock		      "angle1/dt"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Restriction Force"
+	      SrcPort		      RConn1
+	      DstBlock		      "Mechanical\nBranching\nBar2"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Mechanical\nBranching\nBar2"
+	      SrcPort		      RConn1
+	      Points		      [-110, 0; 0, -45]
+	      DstBlock		      "Joint Actuator"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Mechanical\nBranching\nBar1"
+	      SrcPort		      RConn4
+	      Points		      [25, 0; 0, 105]
+	      DstBlock		      "angle1/dt1"
+	      DstPort		      LConn1
+	    }
+	    Line {
+	      SrcBlock		      "springdamper after threshold"
+	      SrcPort		      1
+	      DstBlock		      "Joint Actuator"
+	      DstPort		      1
+	    }
+	    Line {
+	      LineType		      "Connection"
+	      SrcBlock		      "Mechanical\nBranching\nBar2"
+	      SrcPort		      RConn2
+	      Points		      [-110, 0; 0, 65]
+	      DstBlock		      "Joint Actuator1"
+	      DstPort		      RConn1
+	    }
+	    Line {
+	      SrcBlock		      "springdamper after threshold1"
+	      SrcPort		      1
+	      DstBlock		      "Joint Actuator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "angle1"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "angle1"
+	      SrcPort		      1
+	      DstBlock		      "springdamper after threshold"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "angle1/dt"
+	      SrcPort		      1
+	      DstBlock		      "springdamper after threshold"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "angle2"
+	      Labels		      [0, 0; 0, 0]
+	      SrcBlock		      "angle 2"
+	      SrcPort		      1
+	      DstBlock		      "springdamper after threshold1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "angle1/dt1"
+	      SrcPort		      1
+	      DstBlock		      "springdamper after threshold1"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
 	  SID			  "201"
@@ -5048,31 +6026,6 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Joint Spring & Damper1"
-	  SID			  "1430"
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [380, 395, 440, 445]
-	  LibraryVersion	  "1.1"
-	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
-	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
-	  UpdateFromCAD		  "off"
-	  ClassName		  "JointSpringDamper"
-	  DialogClass		  "JointSpringDamper"
-	  JFEParameters		  "P1$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P2$false$0$0$0$m$m/s$N$deg$deg/s$N*m#P3$false$0$0$0$m$m/s$N$"
-	  "deg$deg/s$N*m#R1$true$kJoint$0$relRotInit(1)$m$m/s$N$deg$deg/s$N*m#R2$true$kJoint$0$relRotInit(2)$m$m/s$N$deg$deg/s"
-	  "$N*m#R3$false$0$0$0$m$m/s$N$deg$deg/s$N*m#S$false$0$0$0$m$m/s$N$deg$deg/s$N*m"
-	}
-	Block {
-	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
 	  SID			  "203"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
@@ -5097,7 +6050,7 @@ Model {
 	  Name			  "Mechanical\nBranching\nBar1"
 	  SID			  "204"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [510, 389, 515, 451]
+	  Position		  [630, 354, 635, 416]
 	  BackgroundColor	  "black"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
@@ -5129,7 +6082,7 @@ Model {
 	  Name			  "Odd Angles"
 	  SID			  "206"
 	  Ports			  [2]
-	  Position		  [665, 401, 695, 434]
+	  Position		  [785, 366, 815, 399]
 	  Floating		  off
 	  Location		  [28, 712, 851, 1127]
 	  Open			  off
@@ -5215,7 +6168,7 @@ Model {
 	  Name			  "Subsystem"
 	  SID			  "210"
 	  Ports			  [2, 2]
-	  Position		  [550, 49, 725, 116]
+	  Position		  [545, 49, 720, 116]
 	  BlockMirror		  on
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -5226,7 +6179,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [433, 425, 1302, 814]
+	    Location		    [433, 447, 1302, 836]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5385,7 +6338,7 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Universal"
 	  SID			  "221"
-	  Ports			  [0, 0, 0, 0, 0, 3, 2]
+	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [385, 324, 435, 376]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
@@ -5395,9 +6348,9 @@ Model {
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
-	  RConnTagsString	  "__newr0|SA1"
+	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "3"
+	  NumSAPorts		  "4"
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic"
@@ -5412,7 +6365,7 @@ Model {
 	  Name			  "angle 2"
 	  SID			  "222"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [565, 440, 605, 480]
+	  Position		  [685, 405, 725, 445]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
@@ -5475,7 +6428,7 @@ Model {
 	  Name			  "angle1"
 	  SID			  "223"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [565, 380, 605, 420]
+	  Position		  [685, 345, 725, 385]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
@@ -5811,6 +6764,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn1
+	  Points		  [0, 5]
 	  DstBlock		  "Back"
 	  DstPort		  RConn1
 	}
@@ -5842,7 +6796,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn2
-	  Points		  [20, 0; 0, 45; 25, 0]
+	  Points		  [140, 0; 0, 25; 25, 0]
 	  DstBlock		  "Mechanical\nBranching\nBar1"
 	  DstPort		  LConn1
 	}
@@ -5927,11 +6881,19 @@ Model {
 	}
 	Line {
 	  LineType		  "Connection"
-	  SrcBlock		  "Joint Spring & Damper1"
+	  SrcBlock		  "Hard limits"
 	  SrcPort		  LConn1
-	  Points		  [-10, 0; 0, -55]
+	  Points		  [-5, 0; 0, -65]
 	  DstBlock		  "Universal"
 	  DstPort		  LConn3
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Universal"
+	  SrcPort		  RConn3
+	  Points		  [80, 0; 0, 65]
+	  DstBlock		  "Hard limits"
+	  DstPort		  RConn1
 	}
       }
     }

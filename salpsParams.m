@@ -62,9 +62,11 @@ connectR = [0 0 160];
 relRotInit = [40 0]; %the initial angles of the universal joint between salps in degrees.
 %the rest position for the springs between salps.
 
-%K for the springs on the universal joints between salps,
-
-kJoint = 2;
+%K for the springs on the universal joints between salps used to limit them
+%to the angle limit
+kAngleLimit = -0;
+bAngleLimit = -100;
+angleLimit = 90;
 
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.
