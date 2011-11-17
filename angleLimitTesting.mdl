@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.57"
+    ComputedModelVersion    "1.60"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -22,7 +22,7 @@ Model {
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
   PhysicalModelingChecksum "993302411"
-  PhysicalModelingParameterChecksum "76317083"
+  PhysicalModelingParameterChecksum "855039030"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Tue Nov  1 19:52:39 2011"
   Creator		  "ben"
@@ -30,9 +30,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ben"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov  2 00:25:12 2011"
-  RTWModifiedTimeStamp	  242085687
-  ModelVersionFormat	  "1.%<AutoIncrement:57>"
+  LastModifiedDate	  "Wed Nov  2 16:01:50 2011"
+  RTWModifiedTimeStamp	  242149285
+  ModelVersionFormat	  "1.%<AutoIncrement:60>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -69,6 +69,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "angleLimitTesting"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -867,7 +868,7 @@ Model {
   }
   System {
     Name		    "angleLimitTesting"
-    Location		    [1740, 590, 2665, 1026]
+    Location		    [1740, 612, 2665, 1048]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -881,7 +882,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "70"
+    SIDHighWatermark	    "91"
     Block {
       BlockType		      Constant
       Name		      "Constant"
@@ -920,8 +921,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "3"
-      MachineId		      "[4 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -939,7 +940,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Hard limits"
-	Location		[1758, 50, 2629, 430]
+	Location		[1759, 73, 2630, 453]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -959,7 +960,7 @@ Model {
 	  Ports			  [2]
 	  Position		  [590, 141, 620, 174]
 	  Floating		  off
-	  Location		  [525, 73, 1443, 535]
+	  Location		  [120, 206, 1038, 668]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -1034,7 +1035,7 @@ Model {
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
-	  ActuationStyle	  "Force"
+	  ActuationStyle	  "Motion"
 	  AngleUnits		  "deg"
 	  ArcVelocityUnits	  "deg/s"
 	  ArcAccelerationUnits	  "deg/s^2"
@@ -1044,7 +1045,7 @@ Model {
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
 	  ActiveIO		  "on"
-	  Width			  "1"
+	  Width			  "3"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
 	  Primitive		  "R2"
@@ -1349,8 +1350,8 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "springdamper after threshold1"
-	    Location		    [171, 598, 976, 923]
-	    Open		    off
+	    Location		    [171, 620, 976, 945]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1402,7 +1403,16 @@ Model {
 	      BlockType		      Switch
 	      Name		      "Lower bound"
 	      SID		      "14"
-	      Position		      [610, 130, 640, 160]
+	      Position		      [625, 150, 655, 180]
+	      Threshold		      "-angleLimit"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Switch
+	      Name		      "Lower bound1"
+	      SID		      "72"
+	      Position		      [620, 255, 650, 285]
 	      Threshold		      "-angleLimit"
 	      InputSameDT	      off
 	      SaturateOnIntegerOverflow	off
@@ -1533,7 +1543,6 @@ Model {
 	    Line {
 	      SrcBlock		      "Lower bound"
 	      SrcPort		      1
-	      Points		      [15, 0]
 	      DstBlock		      "Sum"
 	      DstPort		      2
 	    }
@@ -1547,7 +1556,7 @@ Model {
 		DstPort			3
 	      }
 	      Branch {
-		Points			[0, 25]
+		Points			[0, 45]
 		DstBlock		"Lower bound"
 		DstPort			1
 	      }
@@ -1603,7 +1612,7 @@ Model {
 		    DstPort		    2
 		  }
 		  Branch {
-		    Points		    [0, 35]
+		    Points		    [0, 55]
 		    DstBlock		    "Lower bound"
 		    DstPort		    2
 		  }
@@ -1629,7 +1638,7 @@ Model {
 	    Line {
 	      SrcBlock		      "Sum2"
 	      SrcPort		      1
-	      Points		      [40, 0; 0, -90]
+	      Points		      [40, 0; 0, -70]
 	      DstBlock		      "Lower bound"
 	      DstPort		      3
 	    }
@@ -1659,7 +1668,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "springdamper after threshold2"
-	  SID			  "53"
+	  SID			  "73"
 	  Ports			  [2, 1]
 	  Position		  [395, 164, 475, 271]
 	  MinAlgLoopOccurrences	  off
@@ -1671,7 +1680,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "springdamper after threshold2"
-	    Location		    [731, 257, 1546, 589]
+	    Location		    [418, 260, 1446, 618]
 	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1687,7 +1696,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "angle"
-	      SID		      "54"
+	      SID		      "74"
 	      Position		      [175, 103, 205, 117]
 	      IconDisplay	      "Port number"
 	      Port {
@@ -1701,7 +1710,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "omega"
-	      SID		      "55"
+	      SID		      "75"
 	      Position		      [175, 148, 205, 162]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -1709,47 +1718,49 @@ Model {
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
-	      SID		      "56"
+	      SID		      "76"
 	      Position		      [40, 137, 105, 173]
 	      Value		      "angleLimit"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant1"
-	      SID		      "57"
-	      Position		      [520, 94, 550, 126]
+	      SID		      "91"
+	      Position		      [700, 138, 730, 162]
 	      Value		      "0"
 	    }
 	    Block {
 	      BlockType		      Switch
 	      Name		      "Lower bound"
-	      SID		      "58"
-	      Position		      [610, 130, 640, 160]
+	      SID		      "78"
+	      Position		      [625, 150, 655, 180]
 	      Threshold		      "-angleLimit"
 	      InputSameDT	      off
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
-	      BlockType		      Scope
-	      Name		      "Scope"
-	      SID		      "70"
-	      Ports		      [1]
-	      Position		      [570, 209, 600, 241]
-	      Floating		      off
-	      Location		      [188, 390, 512, 629]
-	      Open		      off
-	      NumInputPorts	      "1"
-	      List {
-		ListType		AxesTitles
-		axes1			"%<SignalLabel>"
-	      }
-	      DataFormat	      "StructureWithTime"
-	      SampleTime	      "0"
+	      BlockType		      Switch
+	      Name		      "Lower bound1"
+	      SID		      "79"
+	      Position		      [620, 255, 650, 285]
+	      Threshold		      "-angleLimit"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "90"
+	      Ports		      [3, 1]
+	      Position		      [765, 86, 770, 124]
+	      ShowName		      off
+	      Inputs		      "3"
+	      DisplayOption	      "bar"
 	    }
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
-	      SID		      "59"
+	      SID		      "80"
 	      Ports		      [2, 1]
 	      Position		      [675, 74, 705, 116]
 	      ShowName		      off
@@ -1761,7 +1772,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum1"
-	      SID		      "60"
+	      SID		      "81"
 	      Ports		      [2, 1]
 	      Position		      [415, 55, 435, 75]
 	      ShowName		      off
@@ -1774,7 +1785,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum2"
-	      SID		      "61"
+	      SID		      "82"
 	      Ports		      [2, 1]
 	      Position		      [415, 235, 435, 255]
 	      ShowName		      off
@@ -1787,7 +1798,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum3"
-	      SID		      "62"
+	      SID		      "83"
 	      Ports		      [2, 1]
 	      Position		      [245, 235, 265, 255]
 	      ShowName		      off
@@ -1800,7 +1811,7 @@ Model {
 	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum4"
-	      SID		      "63"
+	      SID		      "84"
 	      Ports		      [2, 1]
 	      Position		      [240, 55, 260, 75]
 	      ShowName		      off
@@ -1813,7 +1824,7 @@ Model {
 	    Block {
 	      BlockType		      Switch
 	      Name		      "Upper bound"
-	      SID		      "64"
+	      SID		      "85"
 	      Position		      [610, 60, 640, 90]
 	      Threshold		      "angleLimit"
 	      InputSameDT	      off
@@ -1822,7 +1833,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "damping constant"
-	      SID		      "65"
+	      SID		      "86"
 	      Position		      [260, 139, 360, 171]
 	      Gain		      "bAngleLimit"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1832,7 +1843,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "spring constant"
-	      SID		      "66"
+	      SID		      "87"
 	      Position		      [290, 50, 395, 80]
 	      Gain		      "kAngleLimit"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1842,7 +1853,7 @@ Model {
 	    Block {
 	      BlockType		      Gain
 	      Name		      "spring constant1"
-	      SID		      "67"
+	      SID		      "88"
 	      Position		      [290, 230, 395, 260]
 	      Gain		      "kAngleLimit"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1852,15 +1863,9 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Force"
-	      SID		      "68"
-	      Position		      [735, 88, 765, 102]
+	      SID		      "89"
+	      Position		      [840, 98, 870, 112]
 	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Sum"
-	      SrcPort		      1
-	      DstBlock		      "Force"
-	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Upper bound"
@@ -1872,24 +1877,8 @@ Model {
 	    Line {
 	      SrcBlock		      "Lower bound"
 	      SrcPort		      1
-	      Points		      [15, 0]
 	      DstBlock		      "Sum"
 	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Constant1"
-	      SrcPort		      1
-	      Points		      [10, 0]
-	      Branch {
-		Points			[0, -25]
-		DstBlock		"Upper bound"
-		DstPort			3
-	      }
-	      Branch {
-		Points			[0, 25]
-		DstBlock		"Lower bound"
-		DstPort			1
-	      }
 	    }
 	    Line {
 	      SrcBlock		      "spring constant"
@@ -1942,7 +1931,7 @@ Model {
 		    DstPort		    2
 		  }
 		  Branch {
-		    Points		    [0, 35]
+		    Points		    [0, 55]
 		    DstBlock		    "Lower bound"
 		    DstPort		    2
 		  }
@@ -1968,7 +1957,7 @@ Model {
 	    Line {
 	      SrcBlock		      "Sum2"
 	      SrcPort		      1
-	      Points		      [40, 0; 0, -90]
+	      Points		      [40, 0; 0, -70]
 	      DstBlock		      "Lower bound"
 	      DstPort		      3
 	    }
@@ -1991,6 +1980,32 @@ Model {
 	      SrcBlock		      "Sum4"
 	      SrcPort		      1
 	      DstBlock		      "spring constant"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Sum"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [5, 0; 0, -35]
+	      Branch {
+		Points			[0, -10]
+		DstBlock		"Mux"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Force"
 	      DstPort		      1
 	    }
 	  }
@@ -2081,28 +2096,6 @@ Model {
 	  }
 	}
 	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Mechanical\nBranching\nBar2"
-	  SrcPort		  RConn2
-	  Points		  [-5, 0; 0, 65]
-	  DstBlock		  "Joint Actuator1"
-	  DstPort		  RConn1
-	}
-	Line {
-	  SrcBlock		  "springdamper after threshold2"
-	  SrcPort		  1
-	  Points		  [55, 0]
-	  Branch {
-	    DstBlock		    "Joint Actuator1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, -55]
-	    DstBlock		    "Forces"
-	    DstPort		    2
-	  }
-	}
-	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0; 0, 0]
 	  SrcBlock		  "angle1"
@@ -2129,6 +2122,28 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "springdamper after threshold2"
 	  DstPort		  2
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Joint Actuator1"
+	  SrcPort		  RConn1
+	  Points		  [40, 0; 0, -65]
+	  DstBlock		  "Mechanical\nBranching\nBar2"
+	  DstPort		  RConn2
+	}
+	Line {
+	  SrcBlock		  "springdamper after threshold2"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "Joint Actuator1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "Forces"
+	    DstPort		    2
+	  }
 	}
       }
     }
