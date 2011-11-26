@@ -53,6 +53,9 @@ connectR = [0 0 150];
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 
+%Center of pressure position
+COPPosition = [0 0 -sLength*0.4];
+
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.
 kDrag = [360 360 360 100 100 100]*100*sMass;
@@ -82,7 +85,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-0.2 0.2 2];
+uAmplitudeEven = [-.51 0 1];
 uBias = 1; %bias is added before the amplitude scaling.
 
 
