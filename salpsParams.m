@@ -51,6 +51,8 @@ propulsionPositionOdd = [0 sRadius*1.1 -sLength*0.5];
 %need a flip for even, so things on the same "side"
 propulsionPositionEven = propulsionPositionOdd*[1 0 0; 0 -1 0; 0 0 1];
 
+%Center of pressure CG ->COP
+centerOfPressure = [0 0 -sLength*0.4];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
