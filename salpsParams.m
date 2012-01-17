@@ -46,9 +46,9 @@ propulsionPosition = [0 sRadius*0.5 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 30]; 
-%The pi is necessary to "flip" each salp so the connections flip sides from
-%salp to salp.
+connectR = [14.8581-.028-5.46e-05-1e-4 -59.8797-3.4805-0.1162-0.0037 0]; 
+%can use this to set the initial orientation fo the salp, when there's only
+%one.
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 

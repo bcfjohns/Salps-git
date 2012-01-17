@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.439"
+    ComputedModelVersion    "1.443"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jan 14 01:13:18 2012"
-  RTWModifiedTimeStamp	  248382958
-  ModelVersionFormat	  "1.%<AutoIncrement:439>"
+  LastModifiedDate	  "Mon Jan 16 15:55:28 2012"
+  RTWModifiedTimeStamp	  248630125
+  ModelVersionFormat	  "1.%<AutoIncrement:443>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "1300"
+	  StopTime		  "300"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 1300, 1300*5)"
+	  OutputTimes		  "linspace(0, 300, 300*5)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -599,7 +599,7 @@ Model {
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     on
+	      VisDuringSimulation     off
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -640,8 +640,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 261, 75, 1160, 697 ] 
+      CurrentDlgPage	      "Simscape/SimMechanics"
+      ConfigPrmDlgPosition     [ 505, 22, 1404, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -848,7 +848,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [71, 70, 1362, 736]
+    Location		    [327, 95, 1618, 761]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -862,7 +862,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3943"
+    SIDHighWatermark	    "3944"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -899,8 +899,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -981,7 +981,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[252, 137, 1292, 810]
+	Location		[210, 108, 1250, 781]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -993,7 +993,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
@@ -1342,10 +1342,10 @@ Model {
 	  Name			  "Odd 1 position and velocity inertial"
 	  SID			  "3934"
 	  Ports			  [2]
-	  Position		  [850, 497, 890, 533]
+	  Position		  [980, 487, 1020, 523]
 	  Floating		  off
-	  Location		  [1, 71, 1441, 699]
-	  Open			  off
+	  Location		  [1, 266, 1441, 894]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1355,7 +1355,7 @@ Model {
 	  }
 	  List {
 	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
+	    FigureColor		    "[0.501960784313725 0.501960784313725 0.501960784313725]"
 	    AxesColor		    "[0 0 0]"
 	    AxesTickColor	    "[1 1 1]"
 	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
@@ -1363,8 +1363,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-6~-0.12"
-	  YMax			  "7~0.11"
+	  YMin			  "-1~-0.07"
+	  YMax			  "14~0.14"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV7"
 	  DataFormat		  "StructureWithTime"
@@ -1430,8 +1430,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-1~-0.04"
-	  YMax			  "17~0.12"
+	  YMin			  "12.5~-0.02"
+	  YMax			  "45~0.12"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -1648,6 +1648,18 @@ Model {
 	  Position		  [720, 560, 780, 590]
 	  ZOrder		  -7
 	  VariableName		  "RotM1"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace1"
+	  SID			  "3944"
+	  Ports			  [1]
+	  Position		  [870, 595, 930, 625]
+	  ZOrder		  -7
+	  VariableName		  "Pos1"
 	  MaxDataPoints		  "inf"
 	  SampleTime		  "-1"
 	  SaveFormat		  "Array"
@@ -2166,14 +2178,24 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Body Sensor1"
 	  SrcPort		  1
-	  DstBlock		  "Odd 1 position and velocity inertial"
-	  DstPort		  1
+	  Points		  [195, 0]
+	  Branch {
+	    Points		    [120, 0]
+	    DstBlock		    "Odd 1 position and velocity inertial"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 105]
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "Velocity"
 	  Labels		  [1, 0]
 	  SrcBlock		  "Body Sensor1"
 	  SrcPort		  2
+	  Points		  [315, 0]
 	  DstBlock		  "Odd 1 position and velocity inertial"
 	  DstPort		  2
 	}
