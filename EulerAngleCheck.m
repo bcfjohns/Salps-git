@@ -37,7 +37,7 @@ thetay = atan(fitx(1)/fitz(1))*180/pi
 EA1 = [];
 EA2 = [];
 for i = 1:length(RotM1)
-    EA1p = SpinCalc('DCMtoEA132', reshape(RotM1(i, :), 3,3), 0.1, 0);
+    EA1p = SpinCalc('DCMtoEA123', reshape(RotM1(i, :), 3,3), 0.1, 0);
     
     EA1 = [angleN(EA1p); EA1];
 %     
