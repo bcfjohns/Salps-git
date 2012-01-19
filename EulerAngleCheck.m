@@ -40,7 +40,14 @@ for i = 1:length(RotM1)
     rmat = reshape(RotM1(i, :), 3,3); %this takes a vector from body and converts to world
     EA1p = rmToEAzyx(rmat);
 %      EA1p = SpinCalc('DCMtoEA123', reshape(RotM1(i, :), 3,3), 0.1, 0);
-    
+    %convert things as needed, so life is happy
+    %so at this point EA1p = [theta_x theta_y theta_z] with Euler convetion
+    %xyz, cause rmat that I get is wrong.
+    EA1b = SpinCalc('EA123toEA321', EA1p, 0.1, 0);
+    %rearrange so still in theta_x, theta_y, theta_z order
+    EA1p(1) = EA1b(3);
+    EA1p(2) = EA1b(2);
+    EA1p(3) = EA1b(1);
     EA1 = [EA1; EA1p];%[angleN(EA1p); EA1];
 %     
 %     EA2p = SpinCalc('DCMtoEA132', reshape(RotM2(i, :), 3,3), 0.1, 0);
@@ -48,31 +55,34 @@ for i = 1:length(RotM1)
 %     
 end
 
+
+
 %pull out time vector from other data, so thing line up right
 time = Salp1_PandV.time;
 
 
 xmax = 770
-subplot(3,1,1)
+xmin = 60;
+subplot(3,1,3)
 plot(time, EA1(:,1), 'r');
-title('angle 1');
-xlim([0 xmax])
+title('theta_x');
+xlim([xmin xmax])
 xlabel('time (sec.)');
-ylabel('angle (degrees)');
+ylabel('angle 1 (degrees)');
 
 subplot(3,1,2)
 plot(time, EA1(:,2), 'r');
-xlim([0 xmax])
-title('angle 2');
+xlim([xmin xmax])
+title('theta_y');
 xlabel('time (sec.)');
-ylabel('angle (degrees)');
+ylabel('angle 2 (degrees)');
 
-subplot(3,1,3)
+subplot(3,1,1)
 plot(time, EA1(:,3), 'r');
-title('angle 3');
-xlim([0 xmax])
+title('theta_z');
+xlim([xmin xmax])
 xlabel('time (sec.)');
-ylabel('angle (degrees)');
+ylabel('angle 3 (degrees)');
 %%
 % % t = pi/4;
 % % Rx = [1 0   0;
@@ -161,9 +171,12 @@ EAxyz = rmToEAxyz(Rz*Ry*Rx)
 %       0         0    1];
 % 
 % 
-% EAx = SpinCalc('DCMtoEA123', Rx, 0.1, 0)
+% EAx = SpinCalc('DCMtoEA132', Rx, 0.1, 0)
 % EAy = SpinCalc('DCMtoEA123', Ry, 0.1, 1)
 % EAz = SpinCalc('DCMtoEA123', Rz, 0.1, 1)
+% EAz = SpinCalc('DCMtoEA123', Rz*Ry*Rx, 0.1, 1)
+
+
 % kt = 10;
 % kbot = 0.01;
 % EAx = [90 90 90];
