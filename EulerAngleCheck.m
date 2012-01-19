@@ -50,19 +50,43 @@ end
 %%
 subplot(3,1,1)
 plot(EA1(:,1), 'r');
+title('angle 1');
+% xlim([50 1250])
 % hold on;
 % plot(EA2(:,1), 'g');
 % hold off;
 
 subplot(3,1,2)
 plot(EA1(:,2), 'r');
+xlim([50 1250])
+title('angle 2');
 % hold on;
 % plot(EA2(:,2), 'g');
 % hold off;
 
 subplot(3,1,3)
 plot(EA1(:,3), 'r');
+title('angle 3');
+xlim([50 1250])
 % hold on;
 % plot(EA2(:,3), 'g');
 % hold off;
 
+
+%%
+%Checking Angle conventions and ordering.
+t = pi/6;
+Rz = [cos(t) -sin(t) 0;
+      sin(t)  cos(t) 0;
+      0         0    0]
+Rx = [0 0   0;
+      0 cos(t) -sin(t);
+      0 sin(t)  cos(t)]
+Ry = [cos(t) 0 sin(t);
+     0      0 0;
+     -sin(t) 0  cos(t)]
+
+
+EAz = SpinCalc('DCMtoEA123', Rz, 0.1, 0)
+EAy = SpinCalc('DCMtoEA123', Ry, 0.1, 0)
+EAx = SpinCalc('DCMtoEA123', Rx, 0.1, 0)
