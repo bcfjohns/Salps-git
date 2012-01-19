@@ -37,10 +37,11 @@
 EA1 = [];
 EA2 = [];
 for i = 1:length(RotM1)
-    EA1p = rmToEAxyz(reshape(RotM1(i, :), 3,3));
+    rmat = reshape(RotM1(i, :), 3,3);
+    EA1p = rmToEAxyz(rmat');
 %      EA1p = SpinCalc('DCMtoEA123', reshape(RotM1(i, :), 3,3), 0.1, 0);
     
-    EA1 = [EA1p; EA1];%[angleN(EA1p); EA1];
+    EA1 = [EA1; EA1p];%[angleN(EA1p); EA1];
 %     
 %     EA2p = SpinCalc('DCMtoEA132', reshape(RotM2(i, :), 3,3), 0.1, 0);
 %     EA2 = [angleN(EA2p); EA2];
@@ -51,7 +52,7 @@ end
 time = Salp1_PandV.time;
 
 
-xmax = 750
+xmax = 710
 subplot(3,1,1)
 plot(time, EA1(:,1), 'r');
 title('angle 1');
@@ -127,8 +128,7 @@ Rz = [cos(t) -sin(t) 0;
 
 EAxyz = SpinCalc('DCMtoEA123', Rz*Ry*Rx, 0.1, 0)
 
-%was testing my own code, but it wasn't quite working, but SpinCalc seems
-%to be confirmed working now.
+
 %%
 clc
 t = pi/4;
@@ -172,23 +172,46 @@ Rz = [cos(t) -sin(t) 0;
 EAx = rmToEAxyz(Rx)
 EAy = rmToEAxyz(Ry)
 EAz = rmToEAxyz(Rz)
-EAxyz = rmToEAxyz(Rx*Ry*Rz)
-% % % 
-% % % %triple check
-% % % t = EAxyz(1);
-% % % Rx = [1 0   0;
-% % %       0 cos(t) -sin(t);
-% % %       0 sin(t)  cos(t)];
-% % %   
-% % % t = EAxyz(2);
-% % % Ry = [cos(t) 0 sin(t);
-% % %      0       1 0;
-% % %      -sin(t) 0  cos(t)];
-% % % 
-% % % t = EAxyz(3);
-% % % Rz = [cos(t) -sin(t) 0;
-% % %       sin(t)  cos(t) 0;
-% % %       0         0    1];
-% % % EAxyz = rmToEAxyz(Rz*Ry*Rx)
+EAxyz = rmToEAxyz(Rz*Ry*Rx)
+
+%%
+EAxyz = connectR;
+t = EAxyz(1)*pi/180;
+Rx = [1 0   0;
+      0 cos(t) -sin(t);
+      0 sin(t)  cos(t)];
+
+t = EAxyz(2)*pi/180;
+Ry = [cos(t) 0 sin(t);
+     0       1 0;
+     -sin(t) 0  cos(t)];
+ 
+t = EAxyz(3)*pi/180;
+Rz = [cos(t) -sin(t) 0;
+      sin(t)  cos(t) 0;
+      0         0    1];
+  
+EAx = rmToEAxyz(Rx)
+EAy = rmToEAxyz(Ry)
+EAz = rmToEAxyz(Rz);
+EAxyz = rmToEAxyz(Rz*Ry*Rx)
+
+%%
+% %triple check
+% t = EAxyz(1);
+% Rx = [1 0   0;
+%       0 cos(t) -sin(t);
+%       0 sin(t)  cos(t)];
+%   
+% t = EAxyz(2);
+% Ry = [cos(t) 0 sin(t);
+%      0       1 0;
+%      -sin(t) 0  cos(t)];
+% 
+% t = EAxyz(3);
+% Rz = [cos(t) -sin(t) 0;
+%       sin(t)  cos(t) 0;
+%       0         0    1];
+% EAxyz = rmToEAxyz(Rz*Ry*Rx)
 
  
