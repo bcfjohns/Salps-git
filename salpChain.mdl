@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.453"
+    ComputedModelVersion    "1.454"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Jan 19 15:55:07 2012"
+  LastModifiedDate	  "Thu Jan 19 17:03:00 2012"
   RTWModifiedTimeStamp	  248874215
-  ModelVersionFormat	  "1.%<AutoIncrement:453>"
+  ModelVersionFormat	  "1.%<AutoIncrement:454>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "700"
+	  StopTime		  "710"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 700, 700)"
+	  OutputTimes		  "linspace(0, 710, 710)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Simscape/SimMechanics"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition     [ 505, 22, 1404, 644 ] 
     }
     PropName		    "ConfigurationSets"
@@ -1345,7 +1345,7 @@ Model {
 	  Position		  [980, 487, 1020, 523]
 	  Floating		  off
 	  Location		  [1, 211, 1441, 839]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
