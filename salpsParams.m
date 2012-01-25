@@ -4,7 +4,7 @@
 %all units are assumed to be degrees and mks
 clear all;
 close all;
-global uAmplitudeEven xFinal valueHist alphaHist
+global uAmplitudeEven xFinal valueHist alphaHist oddTorque evenTorque
 
 %=============================================================
 %general parameters
@@ -41,7 +41,7 @@ backConnect = [0 sRadius*1.1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 sRadius*0.5 -sLength*0.5];
+propulsionPosition = [0 0 -sLength*0.5]; %[0 sRadius*0.5 -sLength*0.5];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
@@ -84,7 +84,9 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-.1 0 1];
+uAmplitudeEven = [0 0 .1];%[-.1 0 1];
+oddTorque = [0 0 .1];
+evenTorque = oddTorque; %[0 0 .1];
 %uBias = 1; %bias is added before the amplitude scaling.
 
 
