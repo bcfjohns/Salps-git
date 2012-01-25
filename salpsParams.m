@@ -8,7 +8,7 @@ global uAmplitudeEven xFinal valueHist alphaHist oddTorque evenTorque
 
 %=============================================================
 %general parameters
-sLength = 0.16; %the length of a salp
+sLength = 0.14; %the length of a salp
 sRadius = 0.02; %the radius of the salp.
 
 
@@ -23,21 +23,21 @@ sRadius = 0.02; %the radius of the salp.
 %direction where salps are to the left and right of each other.
 %%=================================================================
 % CURRENTLY ARBITRARY!
-sMass = 100; %Mass of the salp
+sMass = 0.04; %about 40 grams %Mass of the salp
 
 % CURRENTLY ARBITRARY!
-sInertia = [.1 0 0; 0 .1 0; 0 0 .03]; %moment of inertia tensor of the salp.
+sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the salp.
 
 
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*1.1 -sLength]; 
+frontConnect = [0 -sRadius*1 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*1.1 -sLength];
+backConnect = [0 sRadius*1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
@@ -46,7 +46,7 @@ propulsionPosition = [0 0 -sLength*0.5]; %[0 sRadius*0.5 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [14.8581-.028-5.46e-05-1e-4 -59.8797-3.4805-0.1162-0.0037 0]; 
+connectR = [-8.716+0.6448+0.0460-0.0266 -20-0.4869+0.005-0.0124 0]; 
 %can use this to set the initial orientation fo the salp, when there's only
 %one.
 
@@ -72,24 +72,17 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
      2*sRadius*sLength^2*(pi*sLength/360) 2*sRadius*sLength^2*(pi*sLength/360) ...
      2*sLength*sRadius^2*2*pi*sRadius/360];
  %shrink angular drag by some factor
- cDrag(4:6) = cDrag(4:6)/380;
+ cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.
-%temporariliy only leaving in one coeff, because want to test things.
-%cDrag([1:2 3:5]) = zeros(1,5);
-%cDrag(6) = 0;
+
 
 %===========
-% uFrequency = 1; %frequency for the base drive signal
-% uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [0 0 .1];%[-.1 0 1];
-oddTorque = [0 0 .1];
+uAmplitudeEven = [0 0.2 .2];%[-.1 0 1];
+oddTorque = [0 0 .0051];
 evenTorque = oddTorque; %[0 0 .1];
-%uBias = 1; %bias is added before the amplitude scaling.
-
-
 %allows the simulation to see the initial state variable
 
 
