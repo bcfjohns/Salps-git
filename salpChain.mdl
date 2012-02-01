@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.495"
+    ComputedModelVersion    "1.497"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 01 13:21:41 2012"
+  LastModifiedDate	  "Wed Feb 01 13:35:34 2012"
   RTWModifiedTimeStamp	  250003146
-  ModelVersionFormat	  "1.%<AutoIncrement:495>"
+  ModelVersionFormat	  "1.%<AutoIncrement:497>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "700"
+	  StopTime		  "7000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 700, 5*700)"
+	  OutputTimes		  "linspace(0, 7000, 10*7000)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -599,7 +599,7 @@ Model {
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     on
+	      VisDuringSimulation     off
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -1401,7 +1401,7 @@ Model {
 	  Ports			  [2]
 	  Position		  [980, 487, 1020, 523]
 	  Floating		  off
-	  Location		  [4, 176, 1444, 804]
+	  Location		  [2, 169, 1442, 797]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
