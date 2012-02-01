@@ -8,8 +8,8 @@ global uAmplitudeEven xFinal valueHist alphaHist oddTorque evenTorque
 
 %=============================================================
 %general parameters
-sLength = 0.14; %the length of a salp
-sRadius = 0.02; %the radius of the salp.
+sLength = 1; %the length of a salp
+sRadius = 0.5; %the radius of the salp.
 
 
 
@@ -23,10 +23,10 @@ sRadius = 0.02; %the radius of the salp.
 %direction where salps are to the left and right of each other.
 %%=================================================================
 % CURRENTLY ARBITRARY!
-sMass = 0.04; %about 40 grams %Mass of the salp
+sMass = 1; %about 40 grams %Mass of the salp
 
 % CURRENTLY ARBITRARY!
-sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the salp.
+sInertia = eye(3); %moment of inertia tensor of the salp.
 
 
 %CS1->CG
@@ -41,12 +41,12 @@ backConnect = [0 sRadius*1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 0 -sLength*0.5]; %[0 sRadius*0.5 -sLength*0.5];
+propulsionPosition = [0 0 -sLength]; %[0 sRadius*0.5 -sLength*0.5];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [-8.716+0.6448+0.0460-0.0266 -20-0.4869+0.005-0.0124 0]; 
+connectR = [0 0 0]; 
 %can use this to set the initial orientation fo the salp, when there's only
 %one.
 
@@ -68,11 +68,13 @@ bDrag = 2*sqrt(kDrag*1.01*sMass);
 rho_water = 1e3;
 
 %10times should only be temporary
-cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
-     2*sRadius*sLength^2*(pi*sLength/360) 2*sRadius*sLength^2*(pi*sLength/360) ...
-     2*sLength*sRadius^2*2*pi*sRadius/360];
- %shrink angular drag by some factor
- cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
+% cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
+%      2*sRadius*sLength^2*(pi*sLength/360) 2*sRadius*sLength^2*(pi*sLength/360) ...
+%      2*sLength*sRadius^2*2*pi*sRadius/360];
+%  %shrink angular drag by some factor
+%  cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
+cDrag = ones(1,6);
+
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.
@@ -80,8 +82,8 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [0 0.2 .2];%[-.1 0 1];
-oddTorque = [0 0 .0051];
+uAmplitudeEven = [1 1 1];%[-.1 0 1];
+oddTorque = [0 0 1];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable
 

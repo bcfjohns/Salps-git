@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.494"
+    ComputedModelVersion    "1.495"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jan 25 11:35:25 2012"
-  RTWModifiedTimeStamp	  249342725
-  ModelVersionFormat	  "1.%<AutoIncrement:494>"
+  LastModifiedDate	  "Wed Feb 01 13:21:41 2012"
+  RTWModifiedTimeStamp	  250003146
+  ModelVersionFormat	  "1.%<AutoIncrement:495>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "100"
+	  StopTime		  "700"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 100, 5*100)"
+	  OutputTimes		  "linspace(0, 700, 5*700)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -599,7 +599,7 @@ Model {
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -848,7 +848,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [303, 50, 1598, 808]
+    Location		    [314, 50, 1609, 808]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -997,7 +997,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[128, 50, 1312, 879]
+	Location		[104, 100, 1288, 928]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1401,8 +1401,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [980, 487, 1020, 523]
 	  Floating		  off
-	  Location		  [1, 71, 1441, 699]
-	  Open			  off
+	  Location		  [4, 176, 1444, 804]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1420,8 +1420,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-2~-0.005"
-	  YMax			  "1~0.0025"
+	  YMin			  "-225~-1"
+	  YMax			  "275~1.75"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -1468,8 +1468,8 @@ Model {
 	  Ports			  [3]
 	  Position		  [760, 237, 795, 313]
 	  Floating		  off
-	  Location		  [17, 112, 1457, 740]
-	  Open			  off
+	  Location		  [1, 112, 1441, 740]
+	  Open			  on
 	  NumInputPorts		  "3"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1488,8 +1488,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-0.5~-0.005~-5"
-	  YMax			  "5.5~0.075~65"
+	  YMin			  "-200~0.98~-1.25"
+	  YMax			  "275~1.0175~1.25"
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
