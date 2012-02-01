@@ -1,3 +1,9 @@
+%This loop iterates through constantly moving the Salp more so that the
+%helix moves along the z axis.
+for ii = 1:10
+    
+sim('salpChain');
+
 %find the general vector the spiral was along, so the angles can be found
 %and 'removed' So it's traveling along one of the axis.
 x = Pos1(200:end,1);
@@ -31,6 +37,9 @@ thetax = atan(fity(1)/fitz(1))*180/pi %=>thetax = 30.6671 with sim starting [0 0
 %=> 2.4748e-04 with sim starting [30.6671 0 0]
 %and thetay = 59.8797
 thetay = atan(fitx(1)/fitz(1))*180/pi
+
+connectR = connectR+[thetax -thetay 0];
+end
 %%
 %take the list of rotation matrices convert to Euler angles for two salps
 %and plot the euler angles to compare them.
