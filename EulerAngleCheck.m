@@ -64,13 +64,13 @@ for i = 1:length(RotM1)
 %     
 end
 
-
+%%
 
 %pull out time vector from other data, so thing line up right
 time = Salp1_PandV.time;
 
 
-xmax = 110
+xmax = 7000
 xmin = 60;
 subplot(3,1,3)
 plot(time, EA1(:,1), 'r');

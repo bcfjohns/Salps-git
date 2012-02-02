@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.497"
+    ComputedModelVersion    "1.498"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 01 13:35:34 2012"
+  LastModifiedDate	  "Wed Feb 01 20:20:57 2012"
   RTWModifiedTimeStamp	  250003146
-  ModelVersionFormat	  "1.%<AutoIncrement:497>"
+  ModelVersionFormat	  "1.%<AutoIncrement:498>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1401,8 +1401,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [980, 487, 1020, 523]
 	  Floating		  off
-	  Location		  [2, 169, 1442, 797]
-	  Open			  on
+	  Location		  [6, 148, 1446, 776]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1469,9 +1469,9 @@ Model {
 	  Position		  [760, 237, 795, 313]
 	  Floating		  off
 	  Location		  [1, 112, 1441, 740]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "3"
-	  ZoomMode		  "yonly"
+	  ZoomMode		  "xonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
