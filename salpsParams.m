@@ -52,6 +52,12 @@ connectR = [-35.273179319375458 -44.991438141137614 0];
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 
+
+%Params for limiting the motion of the universal joint
+angleLimit = 90; %needs to be in same units as angle sensor (degrees)
+angleConstraintK = 400; %spring constant,
+angleConstraintB = 25; %damping constant. a little over damped
+
 %Center of pressure position
 COPPosition = [0 0 -sLength];
 
