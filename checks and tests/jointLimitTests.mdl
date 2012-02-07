@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.17"
+    ComputedModelVersion    "1.19"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 06 21:02:38 2012"
-  RTWModifiedTimeStamp	  250461421
-  ModelVersionFormat	  "1.%<AutoIncrement:17>"
+  LastModifiedDate	  "Tue Feb 07 13:14:15 2012"
+  RTWModifiedTimeStamp	  250521064
+  ModelVersionFormat	  "1.%<AutoIncrement:19>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -71,8 +71,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "jointLimitTests"
-    signals_		    []
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -797,7 +796,7 @@ Model {
   }
   System {
     Name		    "jointLimitTests"
-    Location		    [314, 50, 1378, 753]
+    Location		    [314, 72, 1378, 775]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -958,8 +957,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "2"
+      MachineId		      "[3 0]"
       ShowEnvPort	      off
     }
     Block {
@@ -1054,7 +1053,7 @@ Model {
       SID		      "21"
       Position		      [205, 265, 235, 295]
       ZOrder		      -8
-      Gain		      "-10000"
+      Gain		      "-400"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1065,7 +1064,7 @@ Model {
       SID		      "22"
       Position		      [205, 330, 235, 360]
       ZOrder		      -8
-      Gain		      "-100"
+      Gain		      "-40"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1098,7 +1097,7 @@ Model {
       Ports		      [1]
       Position		      [765, 408, 795, 442]
       Floating		      off
-      Location		      [105, 294, 1083, 838]
+      Location		      [333, 114, 1311, 658]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -1180,7 +1179,7 @@ Model {
       Ports		      [1]
       Position		      [310, 313, 340, 347]
       Floating		      off
-      Location		      [454, 94, 1076, 528]
+      Location		      [13, 110, 635, 544]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
