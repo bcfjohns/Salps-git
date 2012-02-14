@@ -2,8 +2,8 @@
 
 %All the parameters for the salp simulation
 %all units are assumed to be degrees and mks
-clear all;
-close all;
+%clear all;
+%close all;
 global uAmplitudeEven xFinal valueHist alphaHist oddTorque evenTorque
 
 %=============================================================
@@ -46,7 +46,7 @@ propulsionPosition = [0 0 -sLength]; %[0 sRadius*0.5 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [-35.273179319375458 -44.991438141137614 0];
+connectR = [0 0 0];% [-35.273179319375458 -44.991438141137614 0];
 %can use this to set the initial orientation fo the salp, when there's only
 %one.
 
@@ -88,8 +88,8 @@ cDrag = ones(1,6);
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [1 1 1];%[-.1 0 1];
-oddTorque = [0 0 1];
+uAmplitudeEven = [0 0 0];%[-.1 0 1];
+oddTorque = [0 1 0];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable
 
