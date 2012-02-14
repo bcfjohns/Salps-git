@@ -88,8 +88,8 @@ cDrag = ones(1,6);
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [0 0 0];%[-.1 0 1];
-oddTorque = [0 1 0];
+uAmplitudeEven = [1 0 0];%[-.1 0 1];
+oddTorque = [0 0 0];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable
 
