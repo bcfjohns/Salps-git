@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.522"
+    ComputedModelVersion    "1.524"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 13 23:57:25 2012"
-  RTWModifiedTimeStamp	  251077472
-  ModelVersionFormat	  "1.%<AutoIncrement:522>"
+  LastModifiedDate	  "Tue Feb 14 18:47:59 2012"
+  RTWModifiedTimeStamp	  251145762
+  ModelVersionFormat	  "1.%<AutoIncrement:524>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "1000"
+	  StopTime		  "10"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 1000, 10*1000)"
+	  OutputTimes		  "linspace(0, 10, 10*10)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Simscape/SimMechanics"
+      CurrentDlgPage	      "Data Import//Export"
       ConfigPrmDlgPosition     [ 439, 24, 1338, 646 ] 
     }
     PropName		    "ConfigurationSets"
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [48, 66, 1343, 824]
+    Location		    [66, 50, 1361, 808]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1026,7 +1026,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[31, 140, 1215, 968]
+	Location		[32, 185, 1216, 1013]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1443,7 +1443,7 @@ Model {
 	  Mass			  "sMass"
 	  MassUnits		  "kg"
 	  InertiaUnits		  "kg*m^2"
-	  Inertia		  "sInertia*3"
+	  Inertia		  "sInertia"
 	  Shape			  "Cylinder"
 	  ShapeDims		  "[1 1]"
 	  ShapeUnits		  "m"
@@ -1942,7 +1942,7 @@ Model {
 	  Name			  "Odd position and velocity 1 relative"
 	  SID			  "207"
 	  Ports			  [3]
-	  Position		  [965, 217, 1000, 293]
+	  Position		  [970, 202, 1005, 278]
 	  Floating		  off
 	  Location		  [1, 112, 1441, 740]
 	  Open			  off
@@ -2687,16 +2687,15 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Body Sensor"
 	  SrcPort		  1
-	  Points		  [165, 0]
+	  Points		  [170, 0]
 	  DstBlock		  "Odd position and velocity 1 relative"
 	  DstPort		  1
 	}
 	Line {
 	  Name			  "Velocity"
-	  Labels		  [3, 0]
+	  Labels		  [1, 0]
 	  SrcBlock		  "Body Sensor"
 	  SrcPort		  2
-	  Points		  [35, 0; 0, 15]
 	  DstBlock		  "Odd position and velocity 1 relative"
 	  DstPort		  2
 	}
@@ -2759,7 +2758,7 @@ Model {
 	  SrcPort		  3
 	  Points		  [25, 0; 0, 20]
 	  Branch {
-	    Points		    [0, 5]
+	    Points		    [0, -10]
 	    DstBlock		    "Odd position and velocity 1 relative"
 	    DstPort		    3
 	  }

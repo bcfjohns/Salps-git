@@ -2,7 +2,7 @@ close all;
 clear all;
 salpsParams
 
-[TOUT,YOUT] = ode15s(@salpDE, [0 1000], [frontConnect'; zeros(9,1)]);
+[TOUT,YOUT] = ode15s(@salpDE, [0 10], [frontConnect'; zeros(9,1)]);
 
 figure(1)
 subplot(2,2,1)

@@ -79,7 +79,7 @@ rho_water = 1e3;
 %      2*sLength*sRadius^2*2*pi*sRadius/360];
 %  %shrink angular drag by some factor
 %  cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
-cDrag = ones(1,6);
+cDrag = zeros(1,6);%ones(1,6);
 
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.

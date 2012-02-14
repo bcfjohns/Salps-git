@@ -9,20 +9,20 @@ stateD = zeros(12,1);
 stateD(1:3) = state(4:6);
 
 %prepare for x double dot
-t = state(7);
+angle = state(7);
 Rx = [1 0   0;
-      0 cos(t) -sin(t);
-      0 sin(t)  cos(t)];
+      0 cos(angle)  sin(angle);
+      0 -sin(angle) cos(angle)];
 
-t = state(8);  
-Ry = [cos(t) 0 sin(t);
+angle = state(8);  
+Ry = [cos(angle) 0 -sin(angle);
      0       1 0;
-     -sin(t) 0  cos(t)];
+     sin(angle) 0  cos(angle)];
  
 
-t = state(9);
-Rz = [cos(t) -sin(t) 0;
-      sin(t)  cos(t) 0;
+angle = state(9);
+Rz = [cos(angle)  sin(angle) 0;
+      -sin(angle) cos(angle) 0;
       0         0    1];
 R = Rx*Ry*Rz;
 
@@ -34,9 +34,10 @@ stateD(4:6) = R'/sMass*(uAmplitudeEven'+Fdrag);
 theta = state(8);
 psi = state(7);
 
-T = [1 0 -sin(theta);
-    0 cos(psi) cos(theta)*sin(psi);
-    0 -sin(psi) cos(theta)*cos(psi)];
+T = [cos(theta)*cos(psi)  -sin(psi) 0;
+    cos(theta)*sin(psi) cos(psi) 0;
+    -sin(theta) 0 1];
+    
 %set time derivaties of the Euler angles
 stateD(7:9) = inv(T)*state(10:12);
 
