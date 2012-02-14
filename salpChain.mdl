@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.515"
+    ComputedModelVersion    "1.517"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 07 23:08:46 2012"
+  LastModifiedDate	  "Wed Feb 08 18:36:56 2012"
   RTWModifiedTimeStamp	  250550169
-  ModelVersionFormat	  "1.%<AutoIncrement:515>"
+  ModelVersionFormat	  "1.%<AutoIncrement:517>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition     [ 439, 24, 1338, 646 ] 
     }
     PropName		    "ConfigurationSets"
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [84, 50, 1379, 808]
+    Location		    [419, 50, 1714, 808]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1026,8 +1026,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[0, 50, 1440, 874]
-	Open			on
+	Location		[158, 50, 1598, 874]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1571,8 +1571,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [990, 337, 1030, 373]
 	  Floating		  off
-	  Location		  [1, 211, 1441, 839]
-	  Open			  off
+	  Location		  [51, 234, 1491, 862]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1590,8 +1590,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-5~-0.09"
-	  YMax			  "70~0.11"
+	  YMin			  "-0.6~-0.025"
+	  YMax			  "0.35~0.055"
 	  SaveName		  "Salp1_PandV7"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
@@ -1604,8 +1604,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [785, 516, 815, 549]
 	  Floating		  off
-	  Location		  [1, 276, 1441, 837]
-	  Open			  off
+	  Location		  [18, 148, 1458, 709]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -2672,7 +2672,7 @@ Model {
       System {
 	Name			"Salp Even2"
 	Location		[251, 116, 1401, 795]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4278,7 +4278,7 @@ Model {
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
 	  Location		  [-5, 106, 1435, 734]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -4312,7 +4312,7 @@ Model {
 	  Position		  [775, 421, 805, 454]
 	  Floating		  off
 	  Location		  [4, 199, 1444, 760]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -5976,7 +5976,7 @@ Model {
 	  Position		  [840, 491, 870, 524]
 	  Floating		  off
 	  Location		  [1, 276, 1441, 837]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
