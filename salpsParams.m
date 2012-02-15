@@ -41,7 +41,7 @@ backConnect = [0 sRadius*1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 0 -sLength]; %[0 sRadius*0.5 -sLength*0.5];
+propulsionPosition = [0 0 0];% -sLength]; %[0 sRadius*0.5 -sLength*0.5];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
@@ -63,7 +63,7 @@ COPPosition = [0 0 -sLength];
 
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.
-kDrag = [360 360 360 100 100 100]*100*sMass;
+kDrag = [360 360 360 100 100 100]*sMass;%*100
 
 %damping coefficients for same springs to get critically damped system
 bDrag = 2*sqrt(kDrag*1.01*sMass);
@@ -79,7 +79,7 @@ rho_water = 1e3;
 %      2*sLength*sRadius^2*2*pi*sRadius/360];
 %  %shrink angular drag by some factor
 %  cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
-cDrag = zeros(1,6);%ones(1,6);
+cDrag = ones(1,6);
 
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
@@ -88,7 +88,7 @@ cDrag = zeros(1,6);%ones(1,6);
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [1 0 0];%[-.1 0 1];
+uAmplitudeEven = [0 10 0];%[-.1 0 1];
 oddTorque = [0 0 0];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable

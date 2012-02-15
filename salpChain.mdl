@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.524"
+    ComputedModelVersion    "1.531"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -22,8 +22,8 @@ Model {
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "3278968571"
-  PhysicalModelingParameterChecksum "1908911058"
+  PhysicalModelingChecksum "2585943109"
+  PhysicalModelingParameterChecksum "3018065934"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 14 18:47:59 2012"
+  LastModifiedDate	  "Wed Feb 15 00:23:20 2012"
   RTWModifiedTimeStamp	  251145762
-  ModelVersionFormat	  "1.%<AutoIncrement:524>"
+  ModelVersionFormat	  "1.%<AutoIncrement:531>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "10"
+	  StopTime		  "50"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 10, 10*10)"
+	  OutputTimes		  "linspace(0, 50, 50*10)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -641,7 +641,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 439, 24, 1338, 646 ] 
+      ConfigPrmDlgPosition     [ 404, 22, 1303, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1026,7 +1026,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[32, 185, 1216, 1013]
+	Location		[115, 105, 1299, 933]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1522,7 +1522,7 @@ Model {
 	  Angle			  "on"
 	  AngleUnits		  "deg"
 	  ArcVelocity		  "on"
-	  ArcVelocityUnits	  "deg/s"
+	  ArcVelocityUnits	  "rad/s"
 	  ArcAcceleration	  "off"
 	  ArcAccelerationUnits	  "deg/s^2"
 	  CoordPosition		  "on"
@@ -1558,15 +1558,15 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Bushing"
 	  SID			  "197"
-	  Ports			  [0, 0, 0, 0, 0, 2, 2]
+	  Ports			  [0, 0, 0, 0, 0, 2, 1]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
 	  LConnTagsString	  "__newl0|SA1"
-	  RConnTagsString	  "__newr0|SA1"
+	  RConnTagsString	  "__newr0"
 	  UpdateFromCAD		  "off"
-	  NumSAPorts		  "2"
+	  NumSAPorts		  "1"
 	  CutJoint		  "off"
 	  MarkAsCut		  "off"
 	  Primitives		  "prismatic_prismatic_prismatic"
@@ -1878,7 +1878,7 @@ Model {
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
 	  Location		  [1, 158, 1441, 786]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1987,7 +1987,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [433, 447, 1302, 836]
+	    Location		    [433, 469, 1302, 858]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2345,7 +2345,7 @@ Model {
 	  Angle			  "on"
 	  AngleUnits		  "deg"
 	  ArcVelocity		  "on"
-	  ArcVelocityUnits	  "deg/s"
+	  ArcVelocityUnits	  "rad/s"
 	  ArcAcceleration	  "off"
 	  ArcAccelerationUnits	  "deg/s^2"
 	  CoordPosition		  "off"
@@ -2544,9 +2544,9 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [10, 0; 0, 310]
+	  Points		  [10, 0; 0, 295; -35, 0]
 	  DstBlock		  "Body"
-	  DstPort		  RConn3
+	  DstPort		  RConn2
 	}
 	Line {
 	  LineType		  "Connection"
@@ -2559,8 +2559,8 @@ Model {
 	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
-	  SrcPort		  RConn2
-	  Points		  [0, 35; -5, 0; 0, 20; -190, 0]
+	  SrcPort		  LConn2
+	  Points		  [0, 35; 5, 0; 0, 20; -120, 0]
 	  DstBlock		  "Joint Spring & Damper"
 	  DstPort		  LConn1
 	}

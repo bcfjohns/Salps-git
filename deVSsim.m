@@ -1,8 +1,9 @@
 close all;
 clear all;
 salpsParams
-
-[TOUT,YOUT] = ode15s(@salpDE, [0 10], [frontConnect'; zeros(9,1)]);
+tic
+[TOUT,YOUT] = ode15s(@salpDE, [0 50], [frontConnect'; zeros(9,1)]);
+toc
 
 figure(1)
 subplot(2,2,1)
@@ -24,11 +25,10 @@ plot(TOUT, YOUT(:,10:12));
 legend('x', 'y', 'z');
 title('DE sim angular velocity');
 
-
-
-
+tic
 sim('salpChain');
-%%
+toc
+%
 figure(1);
 pos = Salp1_PandV.signals(1,1).values;
 vel = Salp1_PandV.signals(1,2).values;
