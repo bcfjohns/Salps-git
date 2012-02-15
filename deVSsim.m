@@ -2,7 +2,8 @@ close all;
 clear all;
 salpsParams
 tic
-[TOUT,YOUT] = ode15s(@salpDE, [0 50], [frontConnect'; zeros(9,1)]);
+tSim = 3000;
+[TOUT,YOUT] = ode15s(@salpDE, linspace(0, tSim, tSim*10), [frontConnect'; zeros(9,1)]);
 toc
 
 figure(1)
@@ -51,6 +52,14 @@ plot(TOUT, AVs1);
 legend('x', 'y', 'z');
 title('simMechanics angular velocity');
 
+figure(3);
+%plot residuals
+subplot(1,2,1);
+plot(TOUT, YOUT(:,1:3)-pos)
+title('residuals in position');
+subplot(1,2,2)
+plot(TOUT, YOUT(:, 4:6)-vel);
+title('residuals in velocity');
 
 
 

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.531"
+    ComputedModelVersion    "1.532"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 15 00:23:20 2012"
+  LastModifiedDate	  "Wed Feb 15 15:38:03 2012"
   RTWModifiedTimeStamp	  251145762
-  ModelVersionFormat	  "1.%<AutoIncrement:531>"
+  ModelVersionFormat	  "1.%<AutoIncrement:532>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,10 +117,10 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "50"
+	  StopTime		  "3000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
-	  InitialStep		  "0.0002"
+	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
@@ -128,10 +128,10 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "0.1"
+	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "10"
-	  RelTol		  "1e-3"
+	  RelTol		  "auto"
 	  SolverMode		  "Auto"
 	  ConcurrentTasks	  off
 	  Solver		  "ode15s"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 50, 50*10)"
+	  OutputTimes		  "linspace(0, 3000, 3000*10)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -1027,7 +1027,7 @@ Model {
       System {
 	Name			"Salp Odd1"
 	Location		[115, 105, 1299, 933]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
