@@ -52,7 +52,6 @@ connectR = [0 0 30];
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 
-
 %Params for limiting the motion of the universal joint
 angleLimit = 90; %needs to be in same units as angle sensor (degrees)
 angleConstraintK = 400; %spring constant,
@@ -87,7 +86,7 @@ cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-.02 0 .1];
+uAmplitudeEven = [-.1 0 .1];
 oddTorque = [0 0 .001];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable

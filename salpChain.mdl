@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.532"
+    ComputedModelVersion    "1.541"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -22,8 +22,8 @@ Model {
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "3741704713"
-  PhysicalModelingParameterChecksum "2117404881"
+  PhysicalModelingChecksum "1004867987"
+  PhysicalModelingParameterChecksum "2789282148"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Feb 16 21:13:49 2012"
-  RTWModifiedTimeStamp	  251320534
-  ModelVersionFormat	  "1.%<AutoIncrement:532>"
+  LastModifiedDate	  "Fri Feb 17 19:49:47 2012"
+  RTWModifiedTimeStamp	  251406465
+  ModelVersionFormat	  "1.%<AutoIncrement:541>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "1000"
+	  StopTime		  "700"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 1000, 10*1000)"
+	  OutputTimes		  "linspace(0, 700, 10*700)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -640,8 +640,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 439, 24, 1338, 646 ] 
+      CurrentDlgPage	      "Data Import//Export"
+      ConfigPrmDlgPosition     [ 425, 22, 1324, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [10, 75, 1410, 731]
+    Location		    [6, 85, 1406, 741]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -891,7 +891,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "7504"
+    SIDHighWatermark	    "7505"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -5645,7 +5645,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even4"
-	Location		[282, 57, 1379, 853]
+	Location		[282, 79, 1379, 875]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6320,18 +6320,18 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
 	  SID			  "6550"
-	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
 	  LConnTagsString	  "_newl0"
-	  RConnTagsString	  "__newr0|SA2"
+	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
 	  ClassName		  "BranchingBar"
 	  DialogClass		  "MechanicalBranchingBarBlock"
-	  NumSAPorts		  "2"
+	  NumSAPorts		  "3"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6360,6 +6360,38 @@ Model {
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Pos and Vel inert even4"
+	  SID			  "6608"
+	  Ports			  [2]
+	  Position		  [705, 265, 735, 305]
+	  Floating		  off
+	  Location		  [2, 230, 1442, 658]
+	  Open			  off
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-3~-0.01"
+	  YMax			  "14~0.055"
+	  SaveName		  "Salp1_angles2"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Reference
@@ -6878,6 +6910,44 @@ Model {
 	  ReferenceFrame	  "Local (Body CS)"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "translation body frame1"
+	  SID			  "7505"
+	  Ports			  [0, 2, 0, 0, 0, 1]
+	  Position		  [565, 265, 605, 305]
+	  NamePlacement		  "alternate"
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
+	  SourceType		  "Body Sensor"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[1]"
+	  ActiveIO		  "on"
+	  Width			  "6"
+	  ClassName		  "BodySensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  ReferenceFrame	  "Local (Body CS)"
+	}
+	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
 	  SID			  "6571"
@@ -6933,7 +7003,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [410, 0; 0, -95]
+	  Points		  [410, 0; 0, -90]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -6941,7 +7011,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [10, 0; 0, 180]
+	  Points		  [10, 0; 0, 165]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -7111,6 +7181,26 @@ Model {
 	  Points		  [-30, 0; 0, 55]
 	  DstBlock		  "Joint Actuator2"
 	  DstPort		  1
+	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn3
+	  Points		  [25, 0; 0, 40]
+	  DstBlock		  "translation body frame1"
+	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "translation body frame1"
+	  SrcPort		  1
+	  DstBlock		  "Pos and Vel inert even4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "translation body frame1"
+	  SrcPort		  2
+	  DstBlock		  "Pos and Vel inert even4"
+	  DstPort		  2
 	}
 	Annotation {
 	  Position		  [100, 621]
@@ -13080,8 +13170,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even9"
-	Location		[317, 50, 1414, 846]
-	Open			on
+	Location		[318, 73, 1415, 869]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -13853,7 +13943,7 @@ Model {
 	  Position		  [875, 501, 905, 534]
 	  Floating		  off
 	  Location		  [1, 199, 1441, 760]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -13885,8 +13975,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [995, 327, 1035, 363]
 	  Floating		  off
-	  Location		  [1, 462, 1441, 895]
-	  Open			  on
+	  Location		  [1, 468, 1441, 894]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -13904,8 +13994,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-10~-0.04"
-	  YMax			  "25~0.055"
+	  YMin			  "-5~-0.025"
+	  YMax			  "11~0.06"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV1"
 	  DataFormat		  "StructureWithTime"
@@ -14724,7 +14814,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[32, 95, 884, 805]
+	Location		[74, 137, 926, 847]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -15576,7 +15666,7 @@ Model {
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
 	  Location		  [6, 71, 1399, 415]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -15594,8 +15684,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-10~-0.04"
-	  YMax			  "25~0.055"
+	  YMin			  "-2.5~-0.015"
+	  YMax			  "17.5~0.055"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -15609,8 +15699,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [775, 421, 805, 454]
 	  Floating		  off
-	  Location		  [56, 162, 1496, 723]
-	  Open			  on
+	  Location		  [1, 162, 1441, 723]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -19584,7 +19674,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd4"
-	Location		[2, 94, 854, 905]
+	Location		[47, 50, 1075, 866]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -20332,38 +20422,6 @@ Model {
 	  DisplayOption		  "bar"
 	}
 	Block {
-	  BlockType		  Scope
-	  Name			  "Odd Angles"
-	  SID			  "6608"
-	  Ports			  [2]
-	  Position		  [840, 491, 870, 524]
-	  Floating		  off
-	  Location		  [1, 276, 1441, 837]
-	  Open			  off
-	  NumInputPorts		  "2"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	    axes2		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  YMin			  "-50~-20"
-	  YMax			  "30~35"
-	  SaveName		  "Salp1_angles"
-	  DataFormat		  "StructureWithTime"
-	  LimitDataPoints	  off
-	  SampleTime		  "0"
-	}
-	Block {
 	  BlockType		  SubSystem
 	  Name			  "Subsystem"
 	  SID			  "6609"
@@ -21009,33 +21067,18 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle 2"
 	  SrcPort		  1
-	  Points		  [15, 0]
-	  Branch {
-	    Points		    [105, 0]
-	    DstBlock		    "Odd Angles"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 115]
-	    DstBlock		    "2DOFJointConstrainer"
-	    DstPort		    2
-	  }
+	  Points		  [15, 0; 0, 115]
+	  DstBlock		  "2DOFJointConstrainer"
+	  DstPort		  2
 	}
 	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle1"
 	  SrcPort		  1
-	  Points		  [20, 0]
-	  Branch {
-	    DstBlock		    "Odd Angles"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [35, 0; 0, 155]
-	    DstBlock		    "2DOFJointConstrainer"
-	    DstPort		    1
-	  }
+	  Points		  [55, 0; 0, 155]
+	  DstBlock		  "2DOFJointConstrainer"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
@@ -27244,7 +27287,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd9"
-	Location		[21, 50, 1109, 860]
+	Location		[215, 50, 1303, 860]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -27993,12 +28036,12 @@ Model {
 	}
 	Block {
 	  BlockType		  Scope
-	  Name			  "Odd Angles"
+	  Name			  "Odd9 Angles"
 	  SID			  "7153"
 	  Ports			  [2]
 	  Position		  [840, 491, 870, 524]
 	  Floating		  off
-	  Location		  [17, 71, 1457, 632]
+	  Location		  [18, 233, 1368, 802]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
@@ -28016,8 +28059,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-2.7~-1.7"
-	  YMax			  "-0.5~0.6"
+	  YMin			  "-11~-11"
+	  YMax			  "8~9"
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
@@ -28672,7 +28715,7 @@ Model {
 	  Points		  [15, 0]
 	  Branch {
 	    Points		    [105, 0]
-	    DstBlock		    "Odd Angles"
+	    DstBlock		    "Odd9 Angles"
 	    DstPort		    2
 	  }
 	  Branch {
@@ -28688,7 +28731,7 @@ Model {
 	  SrcPort		  1
 	  Points		  [20, 0]
 	  Branch {
-	    DstBlock		    "Odd Angles"
+	    DstBlock		    "Odd9 Angles"
 	    DstPort		    1
 	  }
 	  Branch {
