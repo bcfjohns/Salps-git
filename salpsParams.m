@@ -46,7 +46,7 @@ propulsionPosition = [0 0 0];% -sLength]; %[0 sRadius*0.5 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 0];% [-35.273179319375458 -44.991438141137614 0];
+connectR = [11.345777458065459  62.270721202508646 0];% [-35.273179319375458 -44.991438141137614 0];
 %can use this to set the initial orientation fo the salp, when there's only
 %one.
 

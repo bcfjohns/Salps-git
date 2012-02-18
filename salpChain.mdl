@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.532"
+    ComputedModelVersion    "1.535"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 15 15:38:03 2012"
-  RTWModifiedTimeStamp	  251145762
-  ModelVersionFormat	  "1.%<AutoIncrement:532>"
+  LastModifiedDate	  "Fri Feb 17 14:02:43 2012"
+  RTWModifiedTimeStamp	  251330494
+  ModelVersionFormat	  "1.%<AutoIncrement:535>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "3000"
+	  StopTime		  "200"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -139,7 +139,7 @@ Model {
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
-	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  ZeroCrossAlgorithm	  "Adaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 3000, 3000*10)"
+	  OutputTimes		  "linspace(0, 200, 200*10)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [66, 50, 1361, 808]
+    Location		    [79, 50, 1374, 808]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -891,7 +891,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6380"
+    SIDHighWatermark	    "6381"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -944,8 +944,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "1"
+      MachineId		      "[2 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1026,8 +1026,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[115, 105, 1299, 933]
-	Open			off
+	Location		[115, 127, 1299, 955]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1878,7 +1878,7 @@ Model {
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
 	  Location		  [1, 158, 1441, 786]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1896,8 +1896,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-125~-7"
-	  YMax			  "350~5"
+	  YMin			  "-25~-1.75"
+	  YMax			  "325~2"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -2162,6 +2162,18 @@ Model {
 	  Position		  [970, 395, 1030, 425]
 	  ZOrder		  -7
 	  VariableName		  "Pos1"
+	  MaxDataPoints		  "inf"
+	  SampleTime		  "-1"
+	  SaveFormat		  "Array"
+	}
+	Block {
+	  BlockType		  ToWorkspace
+	  Name			  "To Workspace2"
+	  SID			  "6381"
+	  Ports			  [1]
+	  Position		  [860, 470, 920, 500]
+	  ZOrder		  -7
+	  VariableName		  "RotM1"
 	  MaxDataPoints		  "inf"
 	  SampleTime		  "-1"
 	  SaveFormat		  "Array"
@@ -2804,6 +2816,13 @@ Model {
 	  Points		  [215, 0; 0, -140]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  LConn1
+	}
+	Line {
+	  SrcBlock		  "Inertial Sensor"
+	  SrcPort		  3
+	  Points		  [45, 0; 0, 70; 50, 0]
+	  DstBlock		  "To Workspace2"
+	  DstPort		  1
 	}
       }
     }
