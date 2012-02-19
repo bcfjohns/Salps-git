@@ -3,17 +3,17 @@
 thetax = 1;
 thetay = 1;
 ii = 1;
-while (abs(thetax)+abs(thetay)>1e-4)
-    ii = ii+1;
-    % for ii = 1:5
+% while (abs(thetax)+abs(thetay)>1e-4)
+%     ii = ii+1;
+for ii = 1:1
     
 sim('salpChain');
 
 %find the general vector the spiral was along, so the angles can be found
 %and 'removed' So it's traveling along one of the axis.
-x = Pos1(50:end,1);
-y = Pos1(50:end,2);
-z = Pos1(50:end,3);
+x = Pos1(500:end,1);
+y = Pos1(500:end,2);
+z = Pos1(500:end,3);
 
 % %remove means, so just looking at direction of motion;
 % x = x-mean(x);
@@ -23,27 +23,35 @@ z = Pos1(50:end,3);
 %Least squares line
 t = 1:length(x);
 A = [t' ones(length(x),1)];
-fitx = inv(A'*A)*A'*x;
-fity = inv(A'*A)*A'*y;
-fitz = inv(A'*A)*A'*z;
+fitx = (A'*A)\(A'*x);
+fity = (A'*A)\(A'*y);
+fitz = (A'*A)\(A'*z);
+figure(1)
 plot(t, x)
 hold on;
 plot(t, t*fitx(1)+fitx(2), 'k');
-
+hold
+title('x')
+figure(2)
 plot(y, 'r')
+hold on;
 plot(t, t*fity(1)+fity(2), 'm');
-
+title('y');
+hold;
+figure(3)
 plot(z, 'g')
+hold on;
 plot(t, t*fitz(1)+fitz(2), 'c');
+title('Z');
 hold off;
 
 %rotate about x, such that y slope is 0;
-thetax = atan(fity(1)/fitz(1))*180/pi %=>thetax = 30.6671 with sim starting [0 0 0] x-y-z
+thetax = atan2(fity(1), fitz(1))*180/pi %=>thetax = 30.6671 with sim starting [0 0 0] x-y-z
 %=> 2.4748e-04 with sim starting [30.6671 0 0]
 %and thetay = 59.8797
-thetay = atan(fitx(1)/fitz(1))*180/pi
+thetay = atan2(fitx(1),sqrt(fitz(1)^2+fity(1)^2))*180/pi
 format long;
-connectR = connectR+[thetax -thetay 0]
+connectR = connectR+[thetax 0 0]% -thetay 0]%thetax
 % if (abs(thetay)<1e-4)
 %     connectR = connectR+[thetax 0 0]
 % else
@@ -82,7 +90,7 @@ end
 %pull out time vector from other data, so thing line up right
 time = Salp1_PandV.time;
 
-
+figure();
 xmax = 300
 xmin = 0;
 subplot(3,1,3)

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.535"
+    ComputedModelVersion    "1.537"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 17 14:02:43 2012"
-  RTWModifiedTimeStamp	  251330494
-  ModelVersionFormat	  "1.%<AutoIncrement:535>"
+  LastModifiedDate	  "Sun Feb 19 16:14:08 2012"
+  RTWModifiedTimeStamp	  251566764
+  ModelVersionFormat	  "1.%<AutoIncrement:537>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -117,7 +117,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "8000"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -175,7 +175,7 @@ Model {
 	  SignalLoggingName	  "logsout"
 	  DSMLoggingName	  "dsmout"
 	  OutputOption		  "SpecifiedOutputTimes"
-	  OutputTimes		  "linspace(0, 200, 200*10)"
+	  OutputTimes		  "linspace(0, 8000, 8000*10)"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition     [ 404, 22, 1303, 644 ] 
     }
     PropName		    "ConfigurationSets"
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [79, 50, 1374, 808]
+    Location		    [79, 72, 1374, 830]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -944,8 +944,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1026,7 +1026,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[115, 127, 1299, 955]
+	Location		[116, 172, 1300, 1000]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1877,10 +1877,10 @@ Model {
 	  Ports			  [2]
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
-	  Location		  [1, 158, 1441, 786]
+	  Location		  [743, 71, 1267, 699]
 	  Open			  on
 	  NumInputPorts		  "2"
-	  ZoomMode		  "xonly"
+	  ZoomMode		  "yonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
@@ -1896,8 +1896,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-25~-1.75"
-	  YMax			  "325~2"
+	  YMin			  "-10~-1.75"
+	  YMax			  "220~2"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -1944,8 +1944,8 @@ Model {
 	  Ports			  [3]
 	  Position		  [970, 202, 1005, 278]
 	  Floating		  off
-	  Location		  [1, 112, 1441, 740]
-	  Open			  off
+	  Location		  [7, 196, 1447, 824]
+	  Open			  on
 	  NumInputPorts		  "3"
 	  ZoomMode		  "xonly"
 	  List {
@@ -1964,8 +1964,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-200~0.98~-1.25"
-	  YMax			  "275~1.0175~1.25"
+	  YMin			  "-250~0~-0.8"
+	  YMax			  "250~2.25~0.8"
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
