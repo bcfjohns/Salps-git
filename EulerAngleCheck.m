@@ -4,17 +4,24 @@ thetax = 1;
 thetay = 1;
 ii = 1;
 % while (abs(thetax)+abs(thetay)>1e-4)
-%     ii = ii+1;
-for ii = 1:1
+    ii = ii+1;
+% for ii = 1:30
     
 sim('salpChain');
 
 %find the general vector the spiral was along, so the angles can be found
 %and 'removed' So it's traveling along one of the axis.
-x = Pos1(500:end,1);
-y = Pos1(500:end,2);
-z = Pos1(500:end,3);
+x = Pos1(70:end,1);
+y = Pos1(70:end,2);
+z = Pos1(70:end,3);
 
+%extra stuff for fitting later
+time = Salp1_PandV.time;
+timeFit = time(70:end);
+xcent = x-mean(x);
+ycent = y-mean(y);
+zcent = z-mean(z);
+%%
 % %remove means, so just looking at direction of motion;
 % x = x-mean(x);
 % y = y-mean(y);
@@ -51,7 +58,7 @@ thetax = atan2(fity(1), fitz(1))*180/pi %=>thetax = 30.6671 with sim starting [0
 %and thetay = 59.8797
 thetay = atan2(fitx(1),sqrt(fitz(1)^2+fity(1)^2))*180/pi
 format long;
-connectR = connectR+[thetax 0 0]% -thetay 0]%thetax
+connectR = connectR+[thetax*0.01 -thetay*0.01 0]%thetax
 % if (abs(thetay)<1e-4)
 %     connectR = connectR+[thetax 0 0]
 % else
@@ -60,7 +67,7 @@ connectR = connectR+[thetax 0 0]% -thetay 0]%thetax
 % if (abs(thetax)+abs(thetay)>1e-4)
 %     ii=ii-1
 % end
-end
+% end
 %%
 %take the list of rotation matrices convert to Euler angles for two salps
 %and plot the euler angles to compare them.
