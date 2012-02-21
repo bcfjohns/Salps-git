@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.541"
+    ComputedModelVersion    "1.551"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -23,7 +23,7 @@ Model {
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
   PhysicalModelingChecksum "1004867987"
-  PhysicalModelingParameterChecksum "2789282148"
+  PhysicalModelingParameterChecksum "266616425"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 17 19:49:47 2012"
-  RTWModifiedTimeStamp	  251406465
-  ModelVersionFormat	  "1.%<AutoIncrement:541>"
+  LastModifiedDate	  "Mon Feb 20 22:46:18 2012"
+  RTWModifiedTimeStamp	  251657301
+  ModelVersionFormat	  "1.%<AutoIncrement:551>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
+      CurrentDlgPage	      "Simscape/SimMechanics"
       ConfigPrmDlgPosition     [ 425, 22, 1324, 644 ] 
     }
     PropName		    "ConfigurationSets"
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [6, 85, 1406, 741]
+    Location		    [14, 55, 1432, 706]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -891,7 +891,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "7505"
+    SIDHighWatermark	    "7506"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -2671,7 +2671,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even2"
-	Location		[282, 79, 1379, 875]
+	Location		[230, 72, 1327, 868]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3386,6 +3386,39 @@ Model {
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Odd Angles"
+	  SID			  "7506"
+	  Ports			  [2]
+	  Position		  [875, 491, 905, 524]
+	  Floating		  off
+	  Location		  [7, 240, 1447, 801]
+	  Open			  off
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-4.175~-86.98"
+	  YMax			  "-4.095~-86.89"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_angles3"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Reference
@@ -4112,18 +4145,34 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle 2"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 115]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  2
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -40]
+	    DstBlock		    "Odd Angles"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle1"
 	  SrcPort		  1
-	  Points		  [55, 0; 0, 155]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  1
+	  Points		  [55, 0; 0, 10]
+	  Branch {
+	    Points		    [0, 145]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -5]
+	    DstBlock		    "Odd Angles"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "2DOFJointConstrainer"
@@ -6368,7 +6417,7 @@ Model {
 	  Ports			  [2]
 	  Position		  [705, 265, 735, 305]
 	  Floating		  off
-	  Location		  [2, 230, 1442, 658]
+	  Location		  [417, 86, 1440, 820]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
@@ -6386,8 +6435,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-3~-0.01"
-	  YMax			  "14~0.055"
+	  YMin			  "-2.5~-0.025"
+	  YMax			  "7.5~0.06"
 	  SaveName		  "Salp1_angles2"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
@@ -6945,7 +6994,7 @@ Model {
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
-	  ReferenceFrame	  "Local (Body CS)"
+	  ReferenceFrame	  "Absolute (World)"
 	}
 	Block {
 	  BlockType		  PMIOPort
@@ -13975,8 +14024,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [995, 327, 1035, 363]
 	  Floating		  off
-	  Location		  [1, 468, 1441, 894]
-	  Open			  off
+	  Location		  [6, 467, 1446, 893]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -14814,7 +14863,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[74, 137, 926, 847]
+	Location		[85, 148, 937, 858]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -15665,8 +15714,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
-	  Location		  [6, 71, 1399, 415]
-	  Open			  off
+	  Location		  [10, 71, 1450, 501]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -15684,8 +15733,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-2.5~-0.015"
-	  YMax			  "17.5~0.055"
+	  YMin			  "-8~-0.075"
+	  YMax			  "9~0.075"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -15699,7 +15748,7 @@ Model {
 	  Ports			  [2]
 	  Position		  [775, 421, 805, 454]
 	  Floating		  off
-	  Location		  [1, 162, 1441, 723]
+	  Location		  [7, 240, 1447, 801]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
@@ -15717,8 +15766,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-14~-5"
-	  YMax			  "4~11"
+	  YMin			  "-4.175~-86.98"
+	  YMax			  "-4.095~-86.89"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
@@ -16610,7 +16659,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd2"
-	Location		[2, 94, 854, 905]
+	Location		[45, 64, 1217, 881]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -17365,7 +17414,7 @@ Model {
 	  Position		  [840, 491, 870, 524]
 	  Floating		  off
 	  Location		  [1, 276, 1441, 837]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
@@ -17382,8 +17431,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-50~-20"
-	  YMax			  "30~35"
+	  YMin			  "43.51~-35.65"
+	  YMax			  "43.66~-35.325"
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
