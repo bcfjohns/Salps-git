@@ -24,7 +24,7 @@ Model {
       Name		      "Translational drag"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.8"
+    ComputedModelVersion    "1.11"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 21 16:32:34 2012"
+  LastModifiedDate	  "Tue Feb 21 17:43:19 2012"
   RTWModifiedTimeStamp	  251742749
-  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  ModelVersionFormat	  "1.%<AutoIncrement:11>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -72,7 +72,7 @@ Model {
   StatusBar		  on
   BrowserShowLibraryLinks off
   BrowserLookUnderMasks	  off
-  SimulationMode	  "normal"
+  SimulationMode	  "accelerator"
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -151,8 +151,8 @@ Model {
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -245,7 +245,7 @@ Model {
 	  MaxStackSize		  "Inherit from target"
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "On"
-	  AccelVerboseBuild	  off
+	  AccelVerboseBuild	  on
 	  AccelParallelForEachSubsystem	on
 	}
 	Simulink.DebuggingCC {
@@ -422,7 +422,7 @@ Model {
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  TemplateMakefile	  "grt_default_tmf"
-	  GenerateReport	  off
+	  GenerateReport	  on
 	  SaveLog		  off
 	  RTWVerbose		  on
 	  RetainRTWFile		  off
@@ -436,7 +436,7 @@ Model {
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
-	  LaunchReport		  off
+	  LaunchReport		  on
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  off
@@ -448,8 +448,14 @@ Model {
 	  GenerateCodeInfo	  off
 	  GenerateSLWebview	  off
 	  GenerateCodeMetricsReport off
-	  RTWCompilerOptimization "Off"
-	  CheckMdlBeforeBuild	  "Off"
+	  RTWCompilerOptimization "On"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    "Execution efficiency"
+	    PropName		    "ObjectivePriorities"
+	  }
+	  CheckMdlBeforeBuild	  "Warning"
 	  CustomRebuildMode	  "OnUpdate"
 	  Array {
 	    Type		    "Handle"
@@ -565,9 +571,9 @@ Model {
 	      ERTCustomFileBanners    off
 	      SupportAbsoluteTime     on
 	      LogVarNameModifier      "rt_"
-	      MatFileLogging	      on
+	      MatFileLogging	      off
 	      MultiInstanceERTCode    off
-	      SupportNonFinite	      on
+	      SupportNonFinite	      off
 	      SupportComplex	      on
 	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
@@ -599,8 +605,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Optimization/Signals and Parameters"
-      ConfigPrmDlgPosition     [ 261, 119, 1160, 741 ] 
+      CurrentDlgPage	      "Code Generation"
+      ConfigPrmDlgPosition     [ 292, 22, 1191, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -733,7 +739,7 @@ Model {
   }
   System {
     Name		    "v2Drag"
-    Location		    [240, 244, 1276, 732]
+    Location		    [192, 141, 1228, 629]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
