@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.578"
+    ComputedModelVersion    "1.593"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 22 14:30:40 2012"
+  LastModifiedDate	  "Wed Feb 22 15:25:58 2012"
   RTWModifiedTimeStamp	  251821511
-  ModelVersionFormat	  "1.%<AutoIncrement:578>"
+  ModelVersionFormat	  "1.%<AutoIncrement:593>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -196,14 +196,14 @@ Model {
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
 	  StopTime		  "700"
-	  AbsTol		  "auto"
+	  AbsTol		  "1e-4"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
 	  ZcThreshold		  "auto"
 	  ConsecutiveZCsStepRelTol "10*128*eps"
-	  MaxConsecutiveZCs	  "1000"
+	  MaxConsecutiveZCs	  "10"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
 	  MaxStep		  "0.1"
@@ -214,10 +214,10 @@ Model {
 	  ConcurrentTasks	  off
 	  Solver		  "ode15s"
 	  SolverName		  "ode15s"
-	  SolverJacobianMethodControl "auto"
-	  ShapePreserveControl	  "DisableAll"
-	  ZeroCrossControl	  "UseLocalSettings"
-	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  SolverJacobianMethodControl "SparseAnalytical"
+	  ShapePreserveControl	  "EnableAll"
+	  ZeroCrossControl	  "DisableAll"
+	  ZeroCrossAlgorithm	  "Adaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
@@ -724,8 +724,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 30, 22, 929, 644 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 67, 77, 966, 699 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -950,7 +950,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [13, 58, 1431, 709]
+    Location		    [121, 75, 1072, 634]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1099,7 +1099,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[170, 50, 1460, 868]
+	Location		[170, 72, 1460, 890]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2447,7 +2447,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even2"
-	Location		[230, 94, 1327, 890]
+	Location		[230, 116, 1327, 912]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3794,7 +3794,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even3"
-	Location		[282, 79, 1379, 875]
+	Location		[282, 101, 1379, 897]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5141,7 +5141,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even4"
-	Location		[230, 94, 1327, 890]
+	Location		[230, 116, 1327, 912]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6488,7 +6488,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even5"
-	Location		[282, 79, 1379, 875]
+	Location		[282, 101, 1379, 897]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7835,7 +7835,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even6"
-	Location		[282, 79, 1379, 875]
+	Location		[282, 101, 1379, 897]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9182,7 +9182,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even7"
-	Location		[230, 94, 1327, 890]
+	Location		[230, 116, 1327, 912]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -10529,7 +10529,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even8"
-	Location		[282, 79, 1379, 875]
+	Location		[282, 101, 1379, 897]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11876,7 +11876,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even9"
-	Location		[249, 57, 1346, 853]
+	Location		[249, 79, 1346, 875]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12490,8 +12490,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[431, 50, 1575, 780]
-	Open			on
+	Location		[144, 77, 1288, 807]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -13323,7 +13323,7 @@ Model {
 	  Position		  [1080, 296, 1110, 329]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [18, 156, 1377, 838]
+	  Location		  [8, 173, 1367, 855]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
@@ -13865,39 +13865,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "Mechanical\nBranching\nBar"
-	  SrcPort		  RConn4
-	  Points		  [115, 0; 0, 80]
-	  DstBlock		  "Inertial Sensor"
-	  DstPort		  LConn1
-	}
-	Line {
-	  Name			  "Postition"
-	  Labels		  [0, 0]
-	  SrcBlock		  "Inertial Sensor"
-	  SrcPort		  1
-	  Points		  [0, -5; 195, 0]
-	  Branch {
-	    Points		    [0, 105]
-	    DstBlock		    "To Workspace1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Scope"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  Name			  "Velocity"
-	  Labels		  [1, 0]
-	  SrcBlock		  "Inertial Sensor"
-	  SrcPort		  2
-	  Points		  [315, 0]
-	  DstBlock		  "Scope"
-	  DstPort		  2
-	}
-	Line {
 	  SrcBlock		  "From2"
 	  SrcPort		  1
 	  DstBlock		  "Torque Propulsion"
@@ -13940,6 +13907,39 @@ Model {
 	  DstBlock		  "Universal"
 	  DstPort		  LConn3
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn4
+	  Points		  [115, 0; 0, 80]
+	  DstBlock		  "Inertial Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  Name			  "Postition"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Inertial Sensor"
+	  SrcPort		  1
+	  Points		  [0, -5; 195, 0]
+	  Branch {
+	    Points		    [0, 105]
+	    DstBlock		    "To Workspace1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Scope"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Inertial Sensor"
+	  SrcPort		  2
+	  Points		  [315, 0]
+	  DstBlock		  "Scope"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -13957,7 +13957,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd2"
-	Location		[45, 86, 1217, 903]
+	Location		[45, 108, 1217, 925]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -15301,7 +15301,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd3"
-	Location		[37, 72, 1130, 893]
+	Location		[37, 94, 1130, 915]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -16645,7 +16645,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd4"
-	Location		[45, 86, 1217, 903]
+	Location		[45, 108, 1217, 925]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -17989,7 +17989,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd5"
-	Location		[37, 72, 1130, 893]
+	Location		[37, 94, 1130, 915]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -19333,7 +19333,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd6"
-	Location		[37, 72, 1130, 893]
+	Location		[37, 94, 1130, 915]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -20677,7 +20677,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd7"
-	Location		[45, 86, 1217, 903]
+	Location		[45, 108, 1217, 925]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -22021,7 +22021,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd8"
-	Location		[37, 72, 1130, 893]
+	Location		[37, 94, 1130, 915]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -23365,7 +23365,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd9"
-	Location		[37, 72, 1130, 893]
+	Location		[37, 94, 1130, 915]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
