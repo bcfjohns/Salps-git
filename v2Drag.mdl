@@ -24,7 +24,7 @@ Model {
       Name		      "Translational drag"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.11"
+    ComputedModelVersion    "1.13"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 21 17:43:19 2012"
-  RTWModifiedTimeStamp	  251742749
-  ModelVersionFormat	  "1.%<AutoIncrement:11>"
+  LastModifiedDate	  "Wed Feb 22 16:00:22 2012"
+  RTWModifiedTimeStamp	  251827136
+  ModelVersionFormat	  "1.%<AutoIncrement:13>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -115,9 +115,6 @@ Model {
   ExtModeSkipDownloadWhenConnect off
   ExtModeLogAll		  on
   ExtModeAutoUpdateStatusClock on
-  TunableVars		  "cDrag"
-  TunableVarsStorageClass "ImportedExtern"
-  TunableVarsTypeQualifier "const"
   BufferReuse		  on
   ShowModelReferenceBlockVersion off
   ShowModelReferenceBlockIO off
@@ -145,7 +142,7 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "auto"
+	  MaxStep		  "0.1"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
@@ -605,7 +602,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Code Generation"
+      CurrentDlgPage	      "Optimization/Signals and Parameters"
       ConfigPrmDlgPosition     [ 292, 22, 1191, 644 ] 
     }
     PropName		    "ConfigurationSets"
@@ -739,7 +736,7 @@ Model {
   }
   System {
     Name		    "v2Drag"
-    Location		    [192, 141, 1228, 629]
+    Location		    [192, 163, 1228, 651]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200

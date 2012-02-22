@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.593"
+    ComputedModelVersion    "1.600"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 22 15:25:58 2012"
+  LastModifiedDate	  "Wed Feb 22 16:00:26 2012"
   RTWModifiedTimeStamp	  251821511
-  ModelVersionFormat	  "1.%<AutoIncrement:593>"
+  ModelVersionFormat	  "1.%<AutoIncrement:600>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -195,8 +195,8 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "700"
-	  AbsTol		  "1e-4"
+	  StopTime		  "500"
+	  AbsTol		  "1e-3"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
 	  MaxNumMinSteps	  "-1"
@@ -214,8 +214,8 @@ Model {
 	  ConcurrentTasks	  off
 	  Solver		  "ode15s"
 	  SolverName		  "ode15s"
-	  SolverJacobianMethodControl "SparseAnalytical"
-	  ShapePreserveControl	  "EnableAll"
+	  SolverJacobianMethodControl "SparsePerturbation"
+	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "DisableAll"
 	  ZeroCrossAlgorithm	  "Adaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
@@ -725,7 +725,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 67, 77, 966, 699 ] 
+      ConfigPrmDlgPosition     [ 415, 22, 1314, 644 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -950,7 +950,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [121, 75, 1072, 634]
+    Location		    [126, 81, 1077, 640]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -964,7 +964,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "8898"
+    SIDHighWatermark	    "8900"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -1815,7 +1815,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -3163,7 +3163,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -4510,7 +4510,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -5857,7 +5857,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -7204,7 +7204,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -8551,7 +8551,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -9898,7 +9898,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -11245,7 +11245,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12093,7 +12093,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12490,8 +12490,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[144, 77, 1288, 807]
-	Open			off
+	Location		[94, 149, 1238, 879]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -13285,7 +13285,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -13317,6 +13317,40 @@ Model {
 	}
 	Block {
 	  BlockType		  Scope
+	  Name			  "Odd1 Angles"
+	  SID			  "8899"
+	  Ports			  [2]
+	  Position		  [750, 431, 780, 464]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [8, 410, 1440, 855]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-2~-3"
+	  YMax			  "15~4"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_angles"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
 	  Name			  "Scope"
 	  SID			  "8528"
 	  Ports			  [2]
@@ -13341,9 +13375,12 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-6~-0.055"
-	  YMax			  "7~0.06"
+	  YMin			  "-2.5~-0.1"
+	  YMax			  "32.5~0.225"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
 	Block {
@@ -13832,18 +13869,34 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle 2"
 	  SrcPort		  1
-	  Points		  [45, 0; 0, 95]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  2
+	  Points		  [40, 0]
+	  Branch {
+	    Points		    [5, 0; 0, 95]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Odd1 Angles"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle1"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 135]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  1
+	  Points		  [15, 0; 0, 5]
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "Odd1 Angles"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Model"
@@ -14704,7 +14757,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -16048,7 +16101,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -17392,7 +17445,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -18736,7 +18789,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -20080,7 +20133,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -21424,7 +21477,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -22768,7 +22821,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -23365,8 +23418,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd9"
-	Location		[37, 94, 1130, 915]
-	Open			off
+	Location		[902, 50, 1995, 871]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -24112,7 +24165,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.11"
+	  ModelReferenceVersion	  "1.13"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -24141,6 +24194,39 @@ Model {
 	  ShowName		  off
 	  Inputs		  "2"
 	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Odd9 Angles"
+	  SID			  "8900"
+	  Ports			  [2]
+	  Position		  [800, 511, 830, 544]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [77, 71, 1388, 336]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "13.025~-11.525"
+	  YMax			  "13.25~-11.325"
+	  SaveName		  "Salp1_PandV1"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Reference
@@ -24617,18 +24703,33 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle 2"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 115]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  2
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -25]
+	    DstBlock		    "Odd9 Angles"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle1"
 	  SrcPort		  1
-	  Points		  [55, 0; 0, 155]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  1
+	  Points		  [55, 0; 0, 20]
+	  Branch {
+	    Points		    [0, 135]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Odd9 Angles"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Model"

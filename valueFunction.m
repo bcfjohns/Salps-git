@@ -4,24 +4,20 @@ global Salp1_PandV Salp1_angles
 
 %find steady state indices based on angles
 T = 50*5; %at least one period to define the range we'll use.
-margin = 0.1; %what margin to use, so don't cut data off if just a little different
 time = Salp1_angles.time;
 angle2 = Salp1_angles.signals(2).values;
 angle1 = Salp1_angles.signals(1).values;
 L = length(angle1);
 
 
-min1 = min(angle1(L-T:L));
-min1 = min1-margin*range(min1);
-
-max1 = max(angle1(L-T:L));
-max1 = max1+margin*range(max1);
-
-min2 = min(angle2(L-T:L));
-min2 = min2-margin*range(min2);
-
-max2 = max(angle2(L-T:L));
-max2 = max2+margin*range(max2);
+[min1, max1] = minAndMaxMarg(angle1(L-T:L));
+[min2, max2] = minAndMaxMarg(angle2(L-T:L));
+% 
+% min2 = min(angle2(L-T:L));
+% min2 = min2-margin*range(min2);
+% 
+% max2 = max(angle2(L-T:L));
+% max2 = max2+margin*range(max2);
 
 smallestIndex = L-T;
 
@@ -67,3 +63,20 @@ dpos = diff(positions)/(L-smallestIndex+1);
 cost = -norm(dpos);
 end
 
+function [mini, maxi] = minAndMaxMarg(nums)
+margin = 0.1; %what margin to use, so don't cut data off if just a little different
+
+mini = min(nums);
+if (margin*range(mini) <0.1)
+    mini = mini-0.1;
+else
+    mini = mini-margin*range(mini);
+end
+
+maxi = max(nums);
+if (margin*rang(maxi)<0.1)
+    maxi = maxi+0.1;
+else
+maxi = maxi+margin*range(maxi);
+end
+end
