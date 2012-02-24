@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.600"
+    ComputedModelVersion    "1.604"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 22 16:00:26 2012"
-  RTWModifiedTimeStamp	  251821511
-  ModelVersionFormat	  "1.%<AutoIncrement:600>"
+  LastModifiedDate	  "Thu Feb 23 18:00:50 2012"
+  RTWModifiedTimeStamp	  251920840
+  ModelVersionFormat	  "1.%<AutoIncrement:604>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,7 +125,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    overrideMode_	    [2.0]
+    overrideMode_	    [2U]
     Array {
       Type		      "Cell"
       Dimension		      2
@@ -137,7 +137,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      []
-      Cell		      "salpChain:7508"
+      Cell		      "salpChain:8526"
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -938,19 +938,10 @@ Model {
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
     }
-    Block {
-      BlockType		      ToWorkspace
-      VariableName	      "simulink_output"
-      MaxDataPoints	      "1000"
-      Decimation	      "1"
-      SampleTime	      "0"
-      FixptAsFi		      off
-      NumInputs		      "1"
-    }
   }
   System {
     Name		    "salpChain"
-    Location		    [126, 81, 1077, 640]
+    Location		    [126, 125, 1077, 684]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1017,8 +1008,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1831,8 +1822,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -3179,8 +3180,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -4526,8 +4537,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -5873,8 +5894,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -7220,8 +7251,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -8567,8 +8608,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -9914,8 +9965,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -11261,8 +11322,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12109,8 +12180,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12490,8 +12571,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[94, 149, 1238, 879]
-	Open			on
+	Location		[38, 72, 1182, 802]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -13301,8 +13382,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -13323,7 +13414,7 @@ Model {
 	  Position		  [750, 431, 780, 464]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [8, 410, 1440, 855]
+	  Location		  [5, 410, 1437, 855]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
@@ -13341,8 +13432,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-2~-3"
-	  YMax			  "15~4"
+	  YMin			  "-90.01~89.9985"
+	  YMax			  "-89.955~90.004"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
@@ -13357,7 +13448,7 @@ Model {
 	  Position		  [1080, 296, 1110, 329]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [8, 173, 1367, 855]
+	  Location		  [9, 177, 1368, 859]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
@@ -13375,25 +13466,13 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-2.5~-0.1"
-	  YMax			  "32.5~0.225"
+	  YMin			  "-1.1~-0.11"
+	  YMax			  "0.2~-1.38778e-17"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  ToWorkspace
-	  Name			  "To Workspace1"
-	  SID			  "8529"
-	  Ports			  [1]
-	  Position		  [970, 395, 1030, 425]
-	  ZOrder		  -7
-	  VariableName		  "Pos1"
-	  MaxDataPoints		  "inf"
-	  SampleTime		  "-1"
-	  SaveFormat		  "Array"
 	}
 	Block {
 	  BlockType		  Reference
@@ -13973,16 +14052,9 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Inertial Sensor"
 	  SrcPort		  1
-	  Points		  [0, -5; 195, 0]
-	  Branch {
-	    Points		    [0, 105]
-	    DstBlock		    "To Workspace1"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "Scope"
-	    DstPort		    1
-	  }
+	  Points		  [0, -5]
+	  DstBlock		  "Scope"
+	  DstPort		  1
 	}
 	Line {
 	  Name			  "Velocity"
@@ -14773,8 +14845,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -16117,8 +16199,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -17461,8 +17553,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -18805,8 +18907,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -20149,8 +20261,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -21493,8 +21615,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -22837,8 +22969,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -23418,8 +23560,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd9"
-	Location		[902, 50, 1995, 871]
-	Open			on
+	Location		[902, 72, 1995, 893]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -24181,8 +24323,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -24204,7 +24356,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [77, 71, 1388, 336]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles

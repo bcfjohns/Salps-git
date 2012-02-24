@@ -59,7 +59,7 @@ axis([0 time(L) min2-0.1 max2+0.1]);
 % avgVeloc = mean(velocity);
 % cost = -avgVeloc;
 positions = Salp1_PandV.signals(2).values([smallestIndex L],:);
-dpos = diff(positions)/(L-smallestIndex+1);
+dpos = diff(positions)/(time(L)-time(smallestIndex));
 cost = -norm(dpos);
 end
 
@@ -74,7 +74,7 @@ else
 end
 
 maxi = max(nums);
-if (margin*rang(maxi)<0.1)
+if (margin*range(maxi)<0.1)
     maxi = maxi+0.1;
 else
 maxi = maxi+margin*range(maxi);
