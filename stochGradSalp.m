@@ -48,14 +48,14 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
         %restrict the search for the propulsion, so it's in one corner
         if (alpha(1)<0)
             alpha(1) = 0;
-        else if (alpha(1)>pi/2)
-            alpha(1) = pi/2;
+        else if (alpha(1)>pi/2.5)
+            alpha(1) = pi/2.5;
             end
         end
         if (alpha(2)<0)
             alpha(2) = 0;
-        else if (alpha(2)>pi/2)
-            alpha(2) = pi/2;
+        else if (alpha(2)>pi/2.5)
+            alpha(2) = pi/2.5;
             end
         end
             figure(3);

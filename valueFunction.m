@@ -59,7 +59,7 @@ axis([0 time(L) min2-0.1 max2+0.1]);
 % avgVeloc = mean(velocity);
 % cost = -avgVeloc;
 %fit x,y and z positions to linear plus sine to determine velocity
-positions = Salp1_PandV.signals(2).values(smallestIndex:L,:)
+positions = Salp1_PandV.signals(1).values(smallestIndex:L,:);
 [xfit, xRsq] = linSinFit(time(smallestIndex:L), positions(:,1));
 [yfit, yRsq] = linSinFit(time(smallestIndex:L), positions(:,2));
 [zfit, zRsq] = linSinFit(time(smallestIndex:L), positions(:,3));
