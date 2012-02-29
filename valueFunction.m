@@ -68,19 +68,19 @@ cost = -norm([xfit(2) yfit(2) zfit(2)]); %the cost is the negative of the
 end
 
 function [mini, maxi] = minAndMaxMarg(nums)
-margin = 0.08; %what margin to use, so don't cut data off if just a little different
+    margin = 0.1*range(nums); %what margin to use, so don't cut data off if just a little different
+    minMargin = 0.05;
 
-mini = min(nums);
-if (margin*range(mini) <0.1)
-    mini = mini-0.1;
-else
-    mini = mini-margin*range(mini);
-end
+    maxi = max(nums);
+    mini = min(nums);
 
-maxi = max(nums);
-if (margin*range(maxi)<0.1)
-    maxi = maxi+0.1;
-else
-maxi = maxi+margin*range(maxi);
-end
+    %if the actual value of the margin, such as 10% is too small 
+    if (margin <minMargin)
+        %add/subtract a minimum amount for the margin
+        mini = mini-minMargin;
+        maxi = maxi+minMargin;
+    else
+        mini = mini-margin;
+        maxi = maxi+margin;
+    end
 end
