@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.607"
+    ComputedModelVersion    "1.608"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 24 17:55:53 2012"
-  RTWModifiedTimeStamp	  251987206
-  ModelVersionFormat	  "1.%<AutoIncrement:607>"
+  LastModifiedDate	  "Tue Feb 28 20:47:54 2012"
+  RTWModifiedTimeStamp	  252362853
+  ModelVersionFormat	  "1.%<AutoIncrement:608>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,7 +125,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -942,7 +941,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [126, 147, 1445, 819]
+    Location		    [126, 169, 1445, 841]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1009,8 +1008,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "4"
-      MachineId		      "[4 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -5900,7 +5899,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even5"
-	Location		[282, 123, 1379, 919]
+	Location		[282, 145, 1379, 941]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -11910,7 +11909,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[38, 116, 1182, 846]
+	Location		[38, 138, 1182, 868]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -18062,8 +18061,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd6"
-	Location		[45, 152, 1217, 969]
-	Open			off
+	Location		[45, 174, 1217, 991]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -20450,7 +20449,7 @@ Model {
       Name		      "Salp Odd8"
       SID		      "9321"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [390, 485, 540, 535]
+      Position		      [385, 415, 535, 465]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -23005,7 +23004,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Even3"
       SrcPort		      RConn1
-      Points		      [-1035, 0; 0, 75]
+      Points		      [0, 35; -1035, 0; 0, 40]
       DstBlock		      "Salp Odd4"
       DstPort		      LConn1
     }
@@ -23041,7 +23040,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Even8"
       SrcPort		      LConn1
-      Points		      [30, 0]
       DstBlock		      "Salp Odd8"
       DstPort		      RConn1
     }
@@ -23063,7 +23061,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Odd8"
       SrcPort		      LConn1
-      Points		      [-10, 0; 0, -70; -10, 0; 0, -60; 1390, 0]
+      Points		      [-15, 0; 0, -60; 1390, 0]
       DstBlock		      "Salp Even7"
       DstPort		      RConn1
     }
