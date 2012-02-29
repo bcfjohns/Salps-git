@@ -13,9 +13,9 @@ meanIters = zeros(1,100);
     for ii = 1:tries
     x = [1:1000]';
     ci = rand(1,5);
-    y = ci(1)+ci(2)*x+ci(3)*sin(ci(4)*x+3*pi/2*ci(5));
+    y = ci(1)+ci(2)*x+0.0001*ci(3)*sin(ci(4)*x+3*pi/2*ci(5));
     tic
-    [fitCoeffs, Rsqfit] = linSinFit(x,y)
+    [fitCoeffs, Rsqfit] = linSinFit(x,y);
     toc
 %     % plot(x,y)
 %     
