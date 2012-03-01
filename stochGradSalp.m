@@ -59,7 +59,7 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
             end
         end
             figure(3);
-            plot(valueHist(1:i));
+            plot3(alphaHist(1,1:i), alphaHist(1,1:i), valueHist(1:i));
             title('valueHist, so far');
 %             legend(num2str(alpha));
 %             ylabel(num2str(etta));

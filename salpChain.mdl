@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.617"
+    ComputedModelVersion    "1.618"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 28 23:56:51 2012"
-  RTWModifiedTimeStamp	  252363356
-  ModelVersionFormat	  "1.%<AutoIncrement:617>"
+  LastModifiedDate	  "Wed Feb 29 20:24:16 2012"
+  RTWModifiedTimeStamp	  252434783
+  ModelVersionFormat	  "1.%<AutoIncrement:618>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,7 +125,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -138,7 +137,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      []
-      Cell		      "salpChain:8526"
+      Cell		      "salpChain:10601"
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -196,7 +195,7 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "500"
+	  StopTime		  "200"
 	  AbsTol		  "1e-3"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -1009,8 +1008,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
