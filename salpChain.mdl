@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.622"
+    ComputedModelVersion    "1.623"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 01 00:14:34 2012"
-  RTWModifiedTimeStamp	  252457382
-  ModelVersionFormat	  "1.%<AutoIncrement:622>"
+  LastModifiedDate	  "Thu Mar 01 01:40:14 2012"
+  RTWModifiedTimeStamp	  252464481
+  ModelVersionFormat	  "1.%<AutoIncrement:623>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,7 +125,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -942,7 +941,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [2, 50, 788, 468]
+    Location		    [19, 50, 805, 468]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1009,8 +1008,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "1"
+      MachineId		      "[2 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1807,7 +1806,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -3155,7 +3154,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -4502,7 +4501,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -5849,7 +5848,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -7196,7 +7195,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -8543,7 +8542,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -9890,7 +9889,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -11237,7 +11236,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12085,7 +12084,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12482,7 +12481,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[38, 116, 857, 881]
+	Location		[38, 160, 857, 925]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -13277,7 +13276,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -13349,7 +13348,7 @@ Model {
 	  Position		  [815, 301, 845, 334]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [-5, 71, 1354, 513]
+	  Location		  [14, 357, 861, 884]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -13368,8 +13367,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-10~-0.125"
-	  YMax			  "60~0.225"
+	  YMin			  "-3~-0.225"
+	  YMax			  "1.5~0.175"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -14730,7 +14729,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -16074,7 +16073,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -17418,7 +17417,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -18762,7 +18761,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -20106,7 +20105,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -21450,7 +21449,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -22794,7 +22793,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -24187,7 +24186,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.13"
+	  ModelReferenceVersion	  "1.14"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"

@@ -32,12 +32,12 @@ sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the s
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*1.1 -sLength]; 
+frontConnect = [0 -sRadius*1.5 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*1.1 -sLength];
+backConnect = [0 sRadius*1.5 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
@@ -91,7 +91,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-0.2 0.2 2];
+uAmplitudeEven = [-0.2 0 2];
 %uBias = 1; %bias is added before the amplitude scaling.
 
 oddTorque = [0 0 0];
