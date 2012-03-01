@@ -24,7 +24,7 @@ Model {
       Name		      "Translational drag"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.13"
+    ComputedModelVersion    "1.14"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 22 16:00:22 2012"
-  RTWModifiedTimeStamp	  251827136
-  ModelVersionFormat	  "1.%<AutoIncrement:13>"
+  LastModifiedDate	  "Thu Mar 01 00:24:22 2012"
+  RTWModifiedTimeStamp	  252462262
+  ModelVersionFormat	  "1.%<AutoIncrement:14>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -755,7 +755,7 @@ Model {
       BlockType		      Inport
       Name		      "translational Velocities"
       SID		      "1"
-      Position		      [110, 63, 140, 77]
+      Position		      [75, 78, 105, 92]
       IconDisplay	      "Port number"
       PortDimensions	      "3"
     }
@@ -864,7 +864,7 @@ Model {
     Line {
       SrcBlock		      "translational Velocities"
       SrcPort		      1
-      Points		      [0, 25]
+      Points		      [0, 10]
       DstBlock		      "Mux"
       DstPort		      1
     }

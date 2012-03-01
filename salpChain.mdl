@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.618"
+    ComputedModelVersion    "1.622"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 29 20:24:16 2012"
-  RTWModifiedTimeStamp	  252434783
-  ModelVersionFormat	  "1.%<AutoIncrement:618>"
+  LastModifiedDate	  "Thu Mar 01 00:14:34 2012"
+  RTWModifiedTimeStamp	  252457382
+  ModelVersionFormat	  "1.%<AutoIncrement:622>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,6 +125,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
+    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -195,7 +196,7 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "200"
+	  StopTime		  "900"
 	  AbsTol		  "1e-3"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -683,7 +684,7 @@ Model {
 	      WarnOnSingularInitialAssembly on
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -724,8 +725,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
-      ConfigPrmDlgPosition     [ 415, 22, 1314, 644 ] 
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 8, 22, 857, 705 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -941,7 +942,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [76, 51, 1395, 723]
+    Location		    [2, 50, 788, 468]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -953,7 +954,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "54"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "10976"
     Block {
@@ -1064,7 +1065,7 @@ Model {
       Name		      "Propulsion Sign switch"
       SID		      "9"
       Position		      [25, 185, 85, 215]
-      Value		      "[1 1 1]"
+      Value		      "[-1 1 1]"
       VectorParams1D	      off
     }
     Block {
@@ -1080,7 +1081,7 @@ Model {
       Name		      "Salp Even1"
       SID		      "10190"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [655, 225, 805, 275]
+      Position		      [525, 225, 675, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -2428,7 +2429,7 @@ Model {
       Name		      "Salp Even2"
       SID		      "10235"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [995, 225, 1145, 275]
+      Position		      [865, 225, 1015, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3775,7 +3776,7 @@ Model {
       Name		      "Salp Even3"
       SID		      "10280"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1345, 225, 1495, 275]
+      Position		      [1215, 225, 1365, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5122,7 +5123,7 @@ Model {
       Name		      "Salp Even4"
       SID		      "10325"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [655, 305, 805, 355]
+      Position		      [525, 305, 675, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -6469,7 +6470,7 @@ Model {
       Name		      "Salp Even5"
       SID		      "10370"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [995, 305, 1145, 355]
+      Position		      [865, 305, 1015, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -7816,7 +7817,7 @@ Model {
       Name		      "Salp Even6"
       SID		      "10415"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1345, 305, 1495, 355]
+      Position		      [1215, 305, 1365, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -9163,7 +9164,7 @@ Model {
       Name		      "Salp Even7"
       SID		      "10460"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [655, 385, 805, 435]
+      Position		      [525, 385, 675, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -10510,7 +10511,7 @@ Model {
       Name		      "Salp Even8"
       SID		      "10505"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [995, 385, 1145, 435]
+      Position		      [865, 385, 1015, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -11857,7 +11858,7 @@ Model {
       Name		      "Salp Even9"
       SID		      "10550"
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1345, 385, 1495, 435]
+      Position		      [1215, 385, 1365, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -12471,7 +12472,7 @@ Model {
       Name		      "Salp Odd1"
       SID		      "10566"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [480, 225, 630, 275]
+      Position		      [350, 225, 500, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -12481,7 +12482,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[38, 116, 1182, 846]
+	Location		[38, 116, 857, 881]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -13345,12 +13346,13 @@ Model {
 	  Name			  "Scope"
 	  SID			  "10604"
 	  Ports			  [2]
-	  Position		  [1080, 296, 1110, 329]
+	  Position		  [815, 301, 845, 334]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [40, 467, 1399, 909]
-	  Open			  off
+	  Location		  [-5, 71, 1354, 513]
+	  Open			  on
 	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
@@ -13540,7 +13542,7 @@ Model {
 	  Name			  "angular velocity body frame"
 	  SID			  "10609"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [925, 95, 965, 135]
+	  Position		  [795, 100, 835, 140]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -13655,7 +13657,7 @@ Model {
 	  Name			  "translation body frame"
 	  SID			  "10611"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [925, 40, 965, 80]
+	  Position		  [770, 35, 810, 75]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -13716,7 +13718,7 @@ Model {
 	Line {
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  1
-	  Points		  [-175, 0]
+	  Points		  [-5, 0; 0, 10]
 	  DstBlock		  "Model"
 	  DstPort		  1
 	}
@@ -13729,7 +13731,7 @@ Model {
 	Line {
 	  SrcBlock		  "angular velocity body frame"
 	  SrcPort		  1
-	  Points		  [0, -25]
+	  Points		  [0, -30]
 	  DstBlock		  "Model"
 	  DstPort		  2
 	}
@@ -13744,7 +13746,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [525, 0; 0, -85]
+	  Points		  [395, 0; 0, -80]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -13752,7 +13754,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [10, 0; 0, 155]
+	  Points		  [35, 0; 0, 160]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -13952,7 +13954,6 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Inertial Sensor"
 	  SrcPort		  1
-	  Points		  [0, -5]
 	  DstBlock		  "Scope"
 	  DstPort		  1
 	}
@@ -13961,7 +13962,7 @@ Model {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Inertial Sensor"
 	  SrcPort		  2
-	  Points		  [315, 0]
+	  Points		  [50, 0]
 	  DstBlock		  "Scope"
 	  DstPort		  2
 	}
@@ -13972,7 +13973,7 @@ Model {
       Name		      "Salp Odd2"
       SID		      "10614"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [825, 225, 975, 275]
+      Position		      [695, 225, 845, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -15316,7 +15317,7 @@ Model {
       Name		      "Salp Odd3"
       SID		      "10659"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1170, 225, 1320, 275]
+      Position		      [1040, 225, 1190, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -16660,7 +16661,7 @@ Model {
       Name		      "Salp Odd4"
       SID		      "10704"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [480, 305, 630, 355]
+      Position		      [350, 305, 500, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -18004,7 +18005,7 @@ Model {
       Name		      "Salp Odd5"
       SID		      "10749"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [825, 305, 975, 355]
+      Position		      [695, 305, 845, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -19348,7 +19349,7 @@ Model {
       Name		      "Salp Odd6"
       SID		      "10794"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1170, 305, 1320, 355]
+      Position		      [1040, 305, 1190, 355]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -20692,7 +20693,7 @@ Model {
       Name		      "Salp Odd7"
       SID		      "10839"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [480, 385, 630, 435]
+      Position		      [350, 385, 500, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -22036,7 +22037,7 @@ Model {
       Name		      "Salp Odd8"
       SID		      "10884"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [825, 385, 975, 435]
+      Position		      [695, 385, 845, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -23380,7 +23381,7 @@ Model {
       Name		      "Salp Odd9"
       SID		      "10929"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1170, 385, 1320, 435]
+      Position		      [1040, 385, 1190, 435]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"

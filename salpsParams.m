@@ -46,7 +46,7 @@ propulsionPosition = [0 0 -sLength]; %[0 sRadius*0.5 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 30];
+connectR = [0 0 170];
 %can use this to set the initial orientation fo the salp, when there's only
 %one.
 
@@ -86,8 +86,8 @@ cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-.1 0 .1];
-oddTorque = [0 0 .001];
+uAmplitudeEven = [.03 0.03 .1];
+oddTorque = [0 0 0];
 evenTorque = oddTorque; %[0 0 .1];
 %allows the simulation to see the initial state variable
 
