@@ -4,7 +4,7 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
     alpha = [0.0744 0.1201]; %the angles of the output force assume normalized to 4
     
     stand_dev_beta = 0.1;
-    etta = 4600;
+    etta = 500;
     sizeBeta = size(alpha);
     maxI = 200;
     
@@ -15,7 +15,7 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
 %         tic
         i = i
         alpha = alpha
-        etta = etta*0.95
+        etta = etta*0.99
         %================================================================
         %sim with alpha then compute J_alpha
         setUAmplitudeEven(alpha)
@@ -61,6 +61,9 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
             figure(3);
             plot3(alphaHist(1,1:i), alphaHist(1,1:i), valueHist(1:i));
             title('valueHist, so far');
+            figure(4);
+            plot(valueHist(1:i));
+            title('valueHist over itererations');
 %             legend(num2str(alpha));
 %             ylabel(num2str(etta));
 %         toc
