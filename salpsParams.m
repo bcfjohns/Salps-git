@@ -32,12 +32,12 @@ sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the s
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*1.5 -sLength]; 
+frontConnect = [0 -sRadius*0 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*1.5 -sLength];
+backConnect = [0 sRadius*0 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
@@ -52,10 +52,8 @@ connectR = [0 0 170];
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 
-
 %Center of pressure position
 COPPosition = [0 0 -sLength];
-
 
 %Params for limiting the motion of the universal joint
 angleLimit = 90; %needs to be in same units as angle sensor (degrees)
@@ -100,7 +98,4 @@ evenTorque = oddTorque; %[0 0 .1];
 
 %allows the simulation to see the initial state variable
 
-
 % stochGradSalp
-
-

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.623"
+    ComputedModelVersion    "1.624"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 01 01:40:14 2012"
-  RTWModifiedTimeStamp	  252464481
-  ModelVersionFormat	  "1.%<AutoIncrement:623>"
+  LastModifiedDate	  "Thu Mar 01 04:12:35 2012"
+  RTWModifiedTimeStamp	  252475585
+  ModelVersionFormat	  "1.%<AutoIncrement:624>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -125,6 +125,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
+    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -941,7 +942,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [19, 50, 805, 468]
+    Location		    [17, 50, 803, 468]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -12481,7 +12482,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[38, 160, 857, 925]
+	Location		[13, 87, 832, 852]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -13075,7 +13076,7 @@ Model {
 	  Name			  "Inertial Sensor"
 	  SID			  "10594"
 	  Ports			  [0, 2, 0, 0, 0, 1]
-	  Position		  [705, 294, 745, 356]
+	  Position		  [650, 239, 690, 301]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
@@ -13345,7 +13346,7 @@ Model {
 	  Name			  "Scope"
 	  SID			  "10604"
 	  Ports			  [2]
-	  Position		  [815, 301, 845, 334]
+	  Position		  [750, 246, 780, 279]
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [14, 357, 861, 884]
@@ -13944,7 +13945,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn4
-	  Points		  [115, 0; 0, 80]
+	  Points		  [115, 0; 0, 25]
 	  DstBlock		  "Inertial Sensor"
 	  DstPort		  LConn1
 	}
@@ -13961,7 +13962,7 @@ Model {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Inertial Sensor"
 	  SrcPort		  2
-	  Points		  [50, 0]
+	  Points		  [40, 0]
 	  DstBlock		  "Scope"
 	  DstPort		  2
 	}
