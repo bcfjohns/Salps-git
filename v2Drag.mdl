@@ -1,6 +1,6 @@
 Model {
   Name			  "v2Drag"
-  Version		  7.8
+  Version		  7.7
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    2
@@ -24,7 +24,7 @@ Model {
       Name		      "Translational drag"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.13"
+    ComputedModelVersion    "1.14"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -37,17 +37,16 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
-  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   Created		  "Wed May 11 23:32:40 2011"
   Creator		  "ben"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "benjJohnson"
+  LastModifiedBy	  "ben"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Feb 22 16:00:22 2012"
-  RTWModifiedTimeStamp	  251827136
-  ModelVersionFormat	  "1.%<AutoIncrement:13>"
+  LastModifiedDate	  "Wed Feb 29 16:39:18 2012"
+  RTWModifiedTimeStamp	  252434357
+  ModelVersionFormat	  "1.%<AutoIncrement:14>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -55,7 +54,6 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
-  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -123,13 +121,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      1
-      Version		      "1.11.1"
+      Version		      "1.11.0"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  2
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -163,7 +161,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -195,7 +193,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  4
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    4
@@ -210,7 +208,6 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  on
 	  UseIntDivNetSlope	  off
-	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -247,7 +244,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  5
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -302,7 +299,6 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -331,11 +327,10 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
-	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  6
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -372,7 +367,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  7
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -387,7 +382,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  8
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -402,7 +397,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  9
-	  Version		  "1.11.1"
+	  Version		  "1.11.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    6
@@ -459,7 +454,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      10
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		17
@@ -520,7 +515,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      11
-	      Version		      "1.11.1"
+	      Version		      "1.11.0"
 	      Array {
 		Type			"Cell"
 		Dimension		15
@@ -547,7 +542,9 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
+	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
+	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -557,7 +554,6 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
-	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -736,7 +732,7 @@ Model {
   }
   System {
     Name		    "v2Drag"
-    Location		    [192, 163, 1228, 651]
+    Location		    [194, 187, 1230, 675]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -755,7 +751,7 @@ Model {
       BlockType		      Inport
       Name		      "translational Velocities"
       SID		      "1"
-      Position		      [110, 63, 140, 77]
+      Position		      [80, 88, 110, 102]
       IconDisplay	      "Port number"
       PortDimensions	      "3"
     }
@@ -772,7 +768,7 @@ Model {
       BlockType		      Abs
       Name		      "Abs"
       SID		      "3"
-      Position		      [255, 120, 285, 150]
+      Position		      [270, 120, 300, 150]
       ZeroCross		      off
       SaturateOnIntegerOverflow	off
     }
@@ -842,7 +838,7 @@ Model {
     Line {
       SrcBlock		      "Abs"
       SrcPort		      1
-      Points		      [50, 0; 0, -20]
+      Points		      [35, 0; 0, -20]
       DstBlock		      "Product"
       DstPort		      2
     }
@@ -864,7 +860,6 @@ Model {
     Line {
       SrcBlock		      "translational Velocities"
       SrcPort		      1
-      Points		      [0, 25]
       DstBlock		      "Mux"
       DstPort		      1
     }

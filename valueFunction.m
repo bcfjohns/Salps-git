@@ -33,25 +33,25 @@ angle2Part = angle2(smallestIndex-jump:smallestIndex);
     end
 end
 
-figure(1)
-plot(time(1:smallestIndex), angle1(1:smallestIndex), 'r');
-hold on;
-plot(time(smallestIndex: L), angle1(smallestIndex:L), 'b');
-plot(time, min1*ones(L,1), '--k');
-plot(time, max1*ones(L,1), '--k');
-hold off;
-title('angle1');
-axis([0 time(L) min1-0.1 max1+0.1]);
-
-figure(2);
-plot(time(1:smallestIndex), angle2(1:smallestIndex), 'r');
-hold on;
-plot(time(smallestIndex: L), angle2(smallestIndex:L), 'b');
-plot(time, min2*ones(L,1), '--k');
-plot(time, max2*ones(L,1), '--k');
-hold off;
-title('angle2');
-axis([0 time(L) min2-0.1 max2+0.1]);
+% figure(1)
+% plot(time(1:smallestIndex), angle1(1:smallestIndex), 'r');
+% hold on;
+% plot(time(smallestIndex: L), angle1(smallestIndex:L), 'b');
+% plot(time, min1*ones(L,1), '--k');
+% plot(time, max1*ones(L,1), '--k');
+% hold off;
+% title('angle1');
+% axis([0 time(L) min1-0.1 max1+0.1]);
+% 
+% figure(2);
+% plot(time(1:smallestIndex), angle2(1:smallestIndex), 'r');
+% hold on;
+% plot(time(smallestIndex: L), angle2(smallestIndex:L), 'b');
+% plot(time, min2*ones(L,1), '--k');
+% plot(time, max2*ones(L,1), '--k');
+% hold off;
+% title('angle2');
+% axis([0 time(L) min2-0.1 max2+0.1]);
 
 
 % velocities = Salp1_PandV.signals(2).values(smallestIndex:L, :);
