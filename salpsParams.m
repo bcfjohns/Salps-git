@@ -39,6 +39,10 @@ frontConnect = [0 -sRadius*0 -sLength];
 %point (CS2) in components of the body coordinate frames.
 backConnect = [0 sRadius*0 -sLength];
 
+%axis of revolution of the universal joint
+u1axis = [1 0 0];
+u2axis = [0 1 0];
+
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
 propulsionPosition = [0 0 -sLength*0.5];
