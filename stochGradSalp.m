@@ -1,13 +1,13 @@
 function [alphaHist valueHist] = stochGradSalp
 global valueHist alphaHist Salp1_PandV Salp1_angles
 %set initial parameters for the gradient search
-    alpha = [0 0 0 0.12 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
+    alpha = [pi/4 0 0.04 0.12 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
     %angle of propulsion, 3 components of direction to linkage (assuming
     %front and back are symmetric. 1 angle for the relative rotation between two salps.
     
     stand_dev_beta = [0.1 0.003 0.003 0.003 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = 5000;
+    etta = [5000 50 50 50 5000];
     sizeBeta = size(alpha);
     maxI = 900;
     
@@ -44,7 +44,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
         
         J_alpha_beta = valueFunction();
         
-        dalpha = -etta*(J_alpha_beta-J_alpha)*beta;
+        dalpha = -etta.*(J_alpha_beta-J_alpha).*beta;
        
         alphaHist(:,i) = alpha;
         valueHist(i) = J_alpha;

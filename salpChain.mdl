@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.635"
+    ComputedModelVersion    "1.636"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 04 20:45:52 2012"
+  LastModifiedDate	  "Sun Mar 04 20:51:06 2012"
   RTWModifiedTimeStamp	  252720538
-  ModelVersionFormat	  "1.%<AutoIncrement:635>"
+  ModelVersionFormat	  "1.%<AutoIncrement:636>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -942,7 +942,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [216, 189, 1555, 810]
+    Location		    [210, 175, 1549, 796]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -12702,7 +12702,7 @@ Model {
 	  Position		  [930, 326, 960, 359]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [677, 71, 1344, 634]
+	  Location		  [755, 71, 1422, 634]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -13325,7 +13325,7 @@ Model {
       System {
 	Name			"Salp Odd1"
 	Location		[586, 94, 1405, 859]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"

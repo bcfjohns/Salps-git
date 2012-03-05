@@ -4,7 +4,8 @@
 %all units are assumed to be degrees and mks
 clear all;
 close all;
-global uAmplitudeEven xFinal valueHist alphaHist
+global uAmplitudeEven xFinal valueHist alphaHist u1axis u2axis ...
+    frontConnect backConnect connectR
 
 
 %=============================================================
