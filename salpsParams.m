@@ -96,7 +96,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 uAmplitudeEven = [-0.2 0 2];
 %uBias = 1; %bias is added before the amplitude scaling.
 
-oddTorque = [0 0 0];
+oddTorque = [0 0 0.1];
 evenTorque = oddTorque; %[0 0 .1];
 
 

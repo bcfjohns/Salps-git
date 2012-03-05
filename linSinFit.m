@@ -16,16 +16,16 @@ function [coeffs, bestRsq] = linSinFit(x,y)
     Y = fft(y2);
     NFFT = length(y2);
     Fs = 1/mean(diff(x));
-    omega = 2*pi*Fs/2*linspace(0,1,NFFT/2+1);
+    omega = 2*pi*Fs/2*linspace(0,1,floor(NFFT/2+1));
 
-    [~, peakI] = max(abs(Y(1:NFFT/2+1)));
+    [~, peakI] = max(abs(Y(1:floor(NFFT/2+1))));
     omegaGuess = omega(peakI);
 
     
     g = fittype('a+b*x+c*sin(d*x+e)');
 
     bestRsq = 0;
-    Rsq = 0;
+    Rsq = -1;
     iter = 0;
     while(Rsq <0.9999999 && iter < maxIter)
         iter = iter + 1;
@@ -40,5 +40,9 @@ function [coeffs, bestRsq] = linSinFit(x,y)
             coeffs = coeffvalues(fit1);
         end
     end
-    
+    if (Rsq<0)
+        what = 'things dont work';
+        coeffs = [6 6 6 6 6];
+        bestRsq = 0;
+    end
 end
