@@ -1,13 +1,13 @@
 function [alphaHist valueHist] = stochGradSalp
 global valueHist alphaHist Salp1_PandV Salp1_angles
 %set initial parameters for the gradient search
-    alpha = [pi/4 0 0.04 0.12 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
-    %angle of propulsion, 3 components of direction to linkage (assuming
-    %front and back are symmetric. 1 angle for the relative rotation between two salps.
+    alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
+    %angle of propulsion, x and z components of linkage (assuming
+    %front and back are symmetric and of a set length. 1 angle for the relative rotation between two salps.
     
-    stand_dev_beta = [0.1 0.003 0.003 0.003 0.1]; %make angles about 10 times
+    stand_dev_beta = [0.1 0.003 0.003 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = [5000 50 50 50 5000];
+    etta = [5000 50 50 5000];
     sizeBeta = size(alpha);
     maxI = 900;
     
@@ -17,7 +17,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     for i = 1:maxI
         i = i
         alpha = boundAngles(alpha)
-        etta = etta*0.99
+        etta = etta*0.9
         
        
 
@@ -63,6 +63,7 @@ end
 
 function updateParams(alpha)  
 global connectR frontConnect backConnect u1axis u2axis
+    lengthConnect = 0.2;
     alpha = boundAngles(alpha);
     %update propulsion based on angle.
     setUAmplitudeEven([alpha(1) 0])
@@ -72,8 +73,12 @@ global connectR frontConnect backConnect u1axis u2axis
 
 
     %update vectors for where uJoint is connected.
-    frontConnect = [alpha(2) alpha(3) alpha(4)];
-    backConnect = [-alpha(2) -alpha(3) alpha(4)];
+    frontConnect = [alpha(2) alpha(3) 1]; %direction of the connection
+    %normalize and make frontConnect lengthConnect long, so the connection
+    %vectors are always that long.
+    frontConnect = lengthConnect*frontConnect/norm(frontConnect);
+    
+    backConnect = [-frontConnect(1) -frontConnect(2) 1];
 
     %update u joint and things, so constrained orientation axis is
     %always along the axis of connection.
@@ -100,7 +105,7 @@ global connectR frontConnect backConnect u1axis u2axis
     u1axis = [1 0 0]*R;
     u2axis = [0 1 0]*R;
     %rotate angle for fixed orientation
-    connectR = 180/pi*[0 0 alpha(5)]*R;
+    connectR = 180/pi*[0 0 alpha(4)]*R;
 end
 
 function alpha = boundAngles(alpha)
@@ -112,7 +117,7 @@ function alpha = boundAngles(alpha)
         end
     end
     
-    alpha(5) = mod(alpha(5), 2*pi);
+    alpha(4) = mod(alpha(4), 2*pi);
 end
 
     

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.636"
+    ComputedModelVersion    "1.637"
     NumModelReferences	    18
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -85,9 +85,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 04 20:51:06 2012"
+  LastModifiedDate	  "Thu Mar 08 21:11:47 2012"
   RTWModifiedTimeStamp	  252720538
-  ModelVersionFormat	  "1.%<AutoIncrement:636>"
+  ModelVersionFormat	  "1.%<AutoIncrement:637>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1092,7 +1092,7 @@ Model {
       System {
 	Name			"Salp Even1"
 	Location		[95, 218, 1385, 1036]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3786,7 +3786,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even3"
-	Location		[282, 145, 1379, 941]
+	Location		[285, 214, 1382, 1010]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12703,7 +12703,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [755, 71, 1422, 634]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -12721,8 +12721,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-10~0"
-	  YMax			  "150~0.25"
+	  YMin			  "-10~-0.05"
+	  YMax			  "140~0.25"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV1"
 	  DataFormat		  "StructureWithTime"
@@ -14181,8 +14181,8 @@ Model {
 	  Position		  [750, 246, 780, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [44, 314, 891, 841]
-	  Open			  on
+	  Location		  [2, 157, 849, 684]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -14200,8 +14200,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-10~0"
-	  YMax			  "210~0.25"
+	  YMin			  "-5~-0.025"
+	  YMax			  "70~0.25"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
