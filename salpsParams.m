@@ -28,17 +28,17 @@ sRadius = 0.02; %the radius of the salp.
 sMass = 0.04; %about 40 grams %Mass of the salp
  
 % CURRENTLY ARBITRARY!
-sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the salp.
+sInertia = [.0007 0 0; 0 .0007 0; 0 0 .0003]; %moment of inertia tensor of the salp.
 
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*0 -sLength]; 
+frontConnect = [0 -sRadius*1 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*0 -sLength];
+backConnect = [0 sRadius*1 -sLength];
 
 %axis of revolution of the universal joint
 u1axis = [1 0 0];
@@ -48,6 +48,9 @@ u2axis = [0 1 0];
 %the vector from the center of gravity to where the propulsion acts (CS3)
 propulsionPosition = [0 0 -sLength*0.5];
 
+%vector from the COM to the center of Bouyance
+centerOfBouyancy = [0 0 0.0];
+bouyancyForce = [0 0 9.8*sMass*1.0];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
@@ -94,10 +97,10 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-0.2 0 2];
+uAmplitudeEven = [-0.5 0 .5];
 %uBias = 1; %bias is added before the amplitude scaling.
 
-oddTorque = [0 0 0.1];
+oddTorque = [0 0 0.031];
 evenTorque = oddTorque; %[0 0 .1];
 
 
