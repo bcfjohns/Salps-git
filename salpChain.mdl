@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.639"
+    ComputedModelVersion    "1.642"
     NumModelReferences	    10
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -61,9 +61,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 09 14:54:36 2012"
+  LastModifiedDate	  "Fri Mar 09 18:54:21 2012"
   RTWModifiedTimeStamp	  253205579
-  ModelVersionFormat	  "1.%<AutoIncrement:639>"
+  ModelVersionFormat	  "1.%<AutoIncrement:642>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -700,7 +700,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
+      CurrentDlgPage	      "Simscape/SimMechanics"
       ConfigPrmDlgPosition     [ 63, 22, 912, 705 ] 
     }
     PropName		    "ConfigurationSets"
@@ -6657,7 +6657,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6790,7 +6790,7 @@ Model {
 	  Position		  [840, 256, 870, 289]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [2, 157, 849, 684]
+	  Location		  [756, 473, 1444, 920]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -6809,8 +6809,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-5~-0.025"
-	  YMax			  "70~0.25"
+	  YMin			  "0~-0.1"
+	  YMax			  "55~0.225"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV1"
 	  DataFormat		  "StructureWithTime"
@@ -8011,7 +8011,7 @@ Model {
 	  Position		  [750, 431, 780, 464]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [5, 410, 1437, 855]
+	  Location		  [16, 79, 750, 399]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
@@ -8019,8 +8019,18 @@ Model {
 	    axes1		    "%<SignalLabel>"
 	    axes2		    "%<SignalLabel>"
 	  }
-	  YMin			  "-5.056~3.61"
-	  YMax			  "-5.0485~3.625"
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-3~-7"
+	  YMax			  "7~2"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
@@ -8035,7 +8045,7 @@ Model {
 	  Position		  [750, 246, 780, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [2, 157, 849, 684]
+	  Location		  [759, 71, 1447, 441]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -8054,8 +8064,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-5~-0.025"
-	  YMax			  "70~0.25"
+	  YMin			  "-2.5~-0.1"
+	  YMax			  "27.5~0.225"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -13109,8 +13119,8 @@ Model {
 	  Position		  [820, 511, 850, 544]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [6, 157, 853, 684]
-	  Open			  on
+	  Location		  [19, 449, 773, 910]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -13128,8 +13138,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-5~-0.025"
-	  YMax			  "70~0.25"
+	  YMin			  "-2.5~-22.5"
+	  YMax			  "30~10"
 	  SaveToWorkspace	  on
 	  SaveName		  "Salp1_PandV2"
 	  DataFormat		  "StructureWithTime"
