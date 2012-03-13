@@ -1,7 +1,8 @@
 function [alphaHist valueHist] = stochGradSalp
 global valueHist alphaHist Salp1_PandV Salp1_angles
 %set initial parameters for the gradient search
-    alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
+    alpha = [rand(1)*pi/2.5 10*(randn(1,2)-0.5) rand(1)*2*pi];
+    %alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
     %angle of propulsion, x and z components of linkage (assuming
     %front and back are symmetric and of a set length. 1 angle for the relative rotation between two salps.
     
