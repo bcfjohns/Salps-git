@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.642"
+    ComputedModelVersion    "1.643"
     NumModelReferences	    10
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -61,9 +61,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 09 18:54:21 2012"
-  RTWModifiedTimeStamp	  253205579
-  ModelVersionFormat	  "1.%<AutoIncrement:642>"
+  LastModifiedDate	  "Tue Mar 13 15:13:37 2012"
+  RTWModifiedTimeStamp	  253552409
+  ModelVersionFormat	  "1.%<AutoIncrement:643>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -101,6 +101,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
+    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -171,7 +172,7 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.1"
 	  StartTime		  "0.0"
-	  StopTime		  "300"
+	  StopTime		  "30"
 	  AbsTol		  "1e-3"
 	  FixedStep		  "auto"
 	  InitialStep		  "0.0002"
@@ -700,7 +701,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Simscape/SimMechanics"
+      CurrentDlgPage	      "Solver"
       ConfigPrmDlgPosition     [ 63, 22, 912, 705 ] 
     }
     PropName		    "ConfigurationSets"
@@ -917,7 +918,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [108, 107, 1447, 728]
+    Location		    [108, 129, 1447, 750]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -6455,8 +6456,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even5"
-	Location		[263, 153, 1360, 949]
-	Open			on
+	Location		[264, 176, 1361, 972]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -7178,7 +7179,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[586, 94, 1405, 859]
+	Location		[586, 116, 1405, 881]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12711,7 +12712,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd5"
-	Location		[37, 116, 1130, 937]
+	Location		[37, 138, 1130, 959]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200

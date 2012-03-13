@@ -7,9 +7,10 @@ n = 100; %number of trials to do.
 costs = -6.66*ones(n,2); %keep track of various costs.
 clrs = ones(n,1); %variable for keeping track of colors, red if the
 %simulation errored out otherwise blue.
-alphaHist = zeros(n, 4);
+alphaHist = zeros(n, 4); %preallocated alphaHist matrix
 
-for ii = 1:n   
+for ii = 1:n  
+    n=n
     alpha = [rand(1)*pi/2.5 10*(randn(1,2)-0.5) rand(1)*2*pi];
     %a bad alpha [1.2057    1.7150  -17.0749    5.3352]?
     %alpha = [1.2057    1.7150  -17.0749    5.3352]
@@ -33,34 +34,37 @@ for ii = 1:n
     ylabel('linkage l1');
     zlabel('linkage l2');
     hold on;
-    plot3(alpha(1), alpha(2), alpha(3), clrs(ii));
+    plot3(alpha(1), alpha(2), alpha(3), ['.' clrs(ii)]);
     hold off;
     
     figure(2)
-    title('params errored or not plot1')
+    
+    hold on;
+    plot3(alpha(4), alpha(2), alpha(3), ['.' clrs(ii)]);
+    title('params errored or not plot2')
     xlabel('relative node angle');
     ylabel('linkage l1');
     zlabel('linkage l2');
-    hold on;
-    plot3(alpha(4), alpha(2), alpha(3), clrs(ii));
     hold off;
     
     figure(3)
     subplot(2,1,1);
     title('forward -speed as a function of angles')
     hold on;
-    plot3(alpha(1), alpha(2), costs(ii,1), clrs(ii));
+    plot3(alpha(1), alpha(2), costs(ii,1), ['.' clrs(ii)]);
     hold off;
     xlabel('propulsion angle');
     ylabel('relative node angle');
+    zlabel('cost');
     
     subplot(2,1,2);
     title('forward -speed as a function of relative linkage lengths');
     hold on;
-    plot3(alpha(3), alpha(4), costs(ii,2), clrs(ii));
+    plot3(alpha(3), alpha(4), costs(ii,2), ['.' clrs(ii)]);
     hold off;
     xlabel('L1');
     ylabel('L2');
+    zlabel('cost');
     
     
 end
