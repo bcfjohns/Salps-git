@@ -52,7 +52,7 @@ propulsionPosition = [0 0 -sLength*0.5];
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 170]; 
+connectR = [0 0 0]; 
 %The pi is necessary to "flip" each salp so the connections flip sides from
 %salp to salp.
 
@@ -95,10 +95,10 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-0.2 0 2];
+uAmplitudeEven = [2 0 2];
 %uBias = 1; %bias is added before the amplitude scaling.
 
-oddTorque = [0 0 0.1];
+oddTorque = [0 0 1];
 evenTorque = oddTorque; %[0 0 .1];
 
 
