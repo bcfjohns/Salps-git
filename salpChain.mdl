@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.663"
+    ComputedModelVersion    "1.664"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Odd1/Model|v2Drag"
@@ -34,9 +34,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 13 21:00:01 2012"
+  LastModifiedDate	  "Tue Mar 13 21:01:12 2012"
   RTWModifiedTimeStamp	  253561458
-  ModelVersionFormat	  "1.%<AutoIncrement:663>"
+  ModelVersionFormat	  "1.%<AutoIncrement:664>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1557,6 +1557,7 @@ Model {
 	  SID			  "11542"
 	  Position		  [800, 540, 830, 570]
 	  ZOrder		  -4
+	  Value			  "0"
 	}
 	Block {
 	  BlockType		  Demux
@@ -1661,7 +1662,6 @@ Model {
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
-	  Gain			  "0"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
