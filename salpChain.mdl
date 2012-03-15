@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.643"
+    ComputedModelVersion    "1.646"
     NumModelReferences	    10
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -61,9 +61,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 13 15:13:37 2012"
-  RTWModifiedTimeStamp	  253552409
-  ModelVersionFormat	  "1.%<AutoIncrement:643>"
+  LastModifiedDate	  "Thu Mar 15 00:21:29 2012"
+  RTWModifiedTimeStamp	  253670737
+  ModelVersionFormat	  "1.%<AutoIncrement:646>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -101,7 +101,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -877,6 +876,19 @@ Model {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      Sin
+      SineType		      "Time based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Bias		      "0"
+      Frequency		      "1"
+      Phase		      "0"
+      Samples		      "10"
+      Offset		      "0"
+      SampleTime	      "-1"
+      VectorParams1D	      on
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -918,7 +930,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [108, 129, 1447, 750]
+    Location		    [85, 50, 1424, 671]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -932,36 +944,36 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "83"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "11522"
+    SIDHighWatermark	    "11535"
     Block {
       BlockType		      Goto
-      Name		      "Goto1"
-      SID		      "3"
-      Position		      [175, 137, 250, 153]
+      Name		      "Goto5"
+      SID		      "11523"
+      Position		      [825, 112, 900, 128]
       GotoTag		      "EvenAmplitude"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto2"
-      SID		      "4"
-      Position		      [255, 193, 330, 217]
+      Name		      "Goto6"
+      SID		      "11524"
+      Position		      [825, 183, 900, 207]
       GotoTag		      "OddAmplitude"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto3"
-      SID		      "4026"
-      Position		      [190, 72, 265, 88]
+      Name		      "Goto7"
+      SID		      "11525"
+      Position		      [825, 72, 900, 88]
       GotoTag		      "OddTorque"
       TagVisibility	      "global"
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto4"
-      SID		      "4027"
-      Position		      [190, 22, 265, 38]
+      Name		      "Goto8"
+      SID		      "11526"
+      Position		      [825, 22, 900, 38]
       GotoTag		      "EvenTorque"
       TagVisibility	      "global"
     }
@@ -985,8 +997,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1028,27 +1040,60 @@ Model {
     }
     Block {
       BlockType		      Product
-      Name		      "Product1"
-      SID		      "8"
+      Name		      "Product"
+      SID		      "11527"
       Ports		      [2, 1]
-      Position		      [190, 176, 220, 209]
+      Position		      [700, 22, 730, 53]
+      ZOrder		      -19
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product2"
+      SID		      "11528"
+      Ports		      [2, 1]
+      Position		      [775, 176, 805, 209]
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product3"
+      SID		      "11529"
+      Ports		      [2, 1]
+      Position		      [700, 72, 730, 103]
+      ZOrder		      -19
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product4"
+      SID		      "11530"
+      Ports		      [2, 1]
+      Position		      [700, 137, 730, 168]
+      ZOrder		      -19
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Constant
-      Name		      "Propulsion Sign switch"
-      SID		      "9"
-      Position		      [25, 185, 85, 215]
+      Name		      "Propulsion Sign switch2"
+      SID		      "11531"
+      Position		      [535, 185, 595, 215]
       Value		      "[-1 1 1]"
       VectorParams1D	      off
     }
     Block {
       BlockType		      Constant
-      Name		      "Propulsion Sign switch1"
-      SID		      "10"
-      Position		      [35, 129, 150, 161]
+      Name		      "Propulsion Sign switch3"
+      SID		      "11532"
+      Position		      [545, 129, 660, 161]
       Value		      "uAmplitudeEven"
       VectorParams1D	      off
     }
@@ -1799,8 +1844,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -3147,8 +3202,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -4494,8 +4559,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -5841,8 +5916,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -6738,8 +6823,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -7179,7 +7274,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[586, 116, 1405, 881]
+	Location		[368, 50, 1461, 830]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7990,8 +8085,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -9443,8 +9548,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -10787,8 +10902,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12131,8 +12256,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12712,7 +12847,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd5"
-	Location		[37, 138, 1130, 959]
+	Location		[340, 50, 1363, 737]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -12730,7 +12865,7 @@ Model {
 	  Name			  "2DOFJointConstrainer"
 	  SID			  "11113"
 	  Ports			  [2, 2]
-	  Position		  [480, 644, 580, 686]
+	  Position		  [570, 549, 670, 591]
 	  ZOrder		  -17
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
@@ -13117,7 +13252,7 @@ Model {
 	  Name			  "Angles odd5"
 	  SID			  "11522"
 	  Ports			  [2]
-	  Position		  [820, 511, 850, 544]
+	  Position		  [830, 416, 860, 449]
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [19, 449, 773, 910]
@@ -13152,7 +13287,7 @@ Model {
 	  Name			  "Body"
 	  SID			  "11134"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
-	  Position		  [125, 355, 215, 475]
+	  Position		  [135, 260, 225, 380]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
@@ -13290,7 +13425,7 @@ Model {
 	  Name			  "Force Propulsion"
 	  SID			  "11137"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [175, 575, 215, 615]
+	  Position		  [185, 480, 225, 520]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
@@ -13320,7 +13455,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From"
 	  SID			  "11138"
-	  Position		  [20, 586, 115, 604]
+	  Position		  [30, 491, 125, 509]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "OddAmplitude"
@@ -13330,7 +13465,7 @@ Model {
 	  BlockType		  From
 	  Name			  "From2"
 	  SID			  "11139"
-	  Position		  [20, 516, 115, 534]
+	  Position		  [30, 421, 125, 439]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "OddTorque"
@@ -13341,9 +13476,8 @@ Model {
 	  Name			  "Joint Actuator1"
 	  SID			  "11140"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [385, 635, 425, 675]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
+	  Position		  [455, 480, 495, 520]
+	  BlockRotation		  270
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Actuator"
 	  SourceType		  "Joint Actuator"
@@ -13371,7 +13505,7 @@ Model {
 	  Name			  "Joint Actuator2"
 	  SID			  "11141"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [380, 710, 420, 750]
+	  Position		  [390, 615, 430, 655]
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
@@ -13401,7 +13535,7 @@ Model {
 	  Name			  "Joint Initial Condition"
 	  SID			  "11142"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
-	  Position		  [290, 540, 330, 580]
+	  Position		  [300, 445, 340, 485]
 	  BlockRotation		  270
 	  NamePlacement		  "alternate"
 	  LibraryVersion	  "1.1"
@@ -13471,7 +13605,7 @@ Model {
 	  Name			  "Mechanical\nBranching\nBar1"
 	  SID			  "11145"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
-	  Position		  [605, 489, 610, 551]
+	  Position		  [615, 394, 620, 456]
 	  BackgroundColor	  "black"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
@@ -13510,8 +13644,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -13529,7 +13673,7 @@ Model {
 	  Name			  "Torque Propulsion"
 	  SID			  "11148"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [175, 505, 215, 545]
+	  Position		  [185, 410, 225, 450]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
@@ -13560,7 +13704,7 @@ Model {
 	  Name			  "Universal"
 	  SID			  "11149"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [440, 444, 490, 496]
+	  Position		  [450, 319, 500, 371]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
@@ -13582,7 +13726,7 @@ Model {
 	  Name			  "angle 2"
 	  SID			  "11150"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [660, 540, 700, 580]
+	  Position		  [670, 445, 710, 485]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
@@ -13636,7 +13780,7 @@ Model {
 	  Name			  "angle1"
 	  SID			  "11151"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [660, 480, 700, 520]
+	  Position		  [670, 385, 710, 425]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
@@ -13842,7 +13986,7 @@ Model {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
 	  SID			  "11155"
-	  Position		  [45, 421, 75, 439]
+	  Position		  [55, 326, 85, 344]
 	  Port			  "1"
 	  Side			  "Left"
 	}
@@ -13850,7 +13994,7 @@ Model {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
 	  SID			  "11156"
-	  Position		  [520, 446, 550, 464]
+	  Position		  [560, 321, 590, 339]
 	  BlockMirror		  on
 	  Port			  "2"
 	  Side			  "Right"
@@ -13859,7 +14003,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Body"
 	  SrcPort		  RConn3
-	  Points		  [65, 0; 0, -175]
+	  Points		  [65, 0; 0, -85]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  LConn1
 	}
@@ -13910,7 +14054,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Bushing"
 	  SrcPort		  RConn1
-	  Points		  [10, 0; 0, 290]
+	  Points		  [20, 0; 0, 195]
 	  DstBlock		  "Body"
 	  DstPort		  RConn2
 	}
@@ -13949,7 +14093,6 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  LConn1
-	  Points		  [-145, 0; 0, -30]
 	  DstBlock		  "Body"
 	  DstPort		  RConn4
 	}
@@ -13974,7 +14117,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn2
-	  Points		  [10, 0; 0, 40; 75, 0]
+	  Points		  [30, 0; 0, 70; 55, 0]
 	  DstBlock		  "Mechanical\nBranching\nBar1"
 	  DstPort		  LConn1
 	}
@@ -14063,13 +14206,14 @@ Model {
 	Line {
 	  SrcBlock		  "2DOFJointConstrainer"
 	  SrcPort		  1
+	  Points		  [-90, 0]
 	  DstBlock		  "Joint Actuator1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "2DOFJointConstrainer"
 	  SrcPort		  2
-	  Points		  [-30, 0; 0, 55]
+	  Points		  [-90, 0; 0, 55]
 	  DstBlock		  "Joint Actuator2"
 	  DstPort		  1
 	}
@@ -14077,7 +14221,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Universal"
 	  SrcPort		  RConn3
-	  Points		  [5, 0; 0, 130; -145, 0; 0, 40]
+	  Points		  [5, 0; 0, 85; -45, 0]
 	  DstBlock		  "Joint Actuator1"
 	  DstPort		  RConn1
 	}
@@ -14085,11 +14229,24 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Joint Actuator2"
 	  SrcPort		  RConn1
-	  Points		  [-10, 0; 0, -245]
+	  Points		  [-15, 0; 0, -275]
 	  DstBlock		  "Universal"
 	  DstPort		  LConn3
 	}
       }
+    }
+    Block {
+      BlockType		      Sin
+      Name		      "Sine Wave\nFunction"
+      SID		      "11533"
+      Ports		      [1, 1]
+      Position		      [415, 55, 445, 85]
+      ZOrder		      -27
+      TimeSource	      "Use external signal"
+      Amplitude		      "[0.5 0.5 0.5]"
+      Bias		      "0.5"
+      Frequency		      "pulseFrequency"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
@@ -14118,17 +14275,17 @@ Model {
     }
     Block {
       BlockType		      Constant
-      Name		      "propulsion torque for even Salps"
-      SID		      "4025"
-      Position		      [35, 14, 150, 46]
+      Name		      "propulsion torque for even Salps1"
+      SID		      "11534"
+      Position		      [545, 14, 660, 46]
       Value		      "evenTorque"
       VectorParams1D	      off
     }
     Block {
       BlockType		      Constant
-      Name		      "propulsion torque odd salps"
-      SID		      "4024"
-      Position		      [35, 64, 150, 96]
+      Name		      "propulsion torque odd salps1"
+      SID		      "11535"
+      Position		      [545, 64, 660, 96]
       Value		      "oddTorque"
       VectorParams1D	      off
     }
@@ -14153,45 +14310,6 @@ Model {
       SrcPort		      RConn1
       DstBlock		      "Salp Odd1"
       DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Propulsion Sign switch"
-      SrcPort		      1
-      DstBlock		      "Product1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Product1"
-      SrcPort		      1
-      Points		      [5, 0; 0, 10]
-      DstBlock		      "Goto2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Propulsion Sign switch1"
-      SrcPort		      1
-      Points		      [5, 0]
-      Branch {
-	DstBlock		"Goto1"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 40]
-	DstBlock		"Product1"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "propulsion torque for even Salps"
-      SrcPort		      1
-      DstBlock		      "Goto4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "propulsion torque odd salps"
-      SrcPort		      1
-      DstBlock		      "Goto3"
-      DstPort		      1
     }
     Line {
       LineType		      "Connection"
@@ -14256,6 +14374,64 @@ Model {
       Points		      [5, 0; 0, 60; -1055, 0; 0, 35]
       DstBlock		      "Salp Odd4"
       DstPort		      LConn1
+    }
+    Line {
+      SrcBlock		      "Propulsion Sign switch2"
+      SrcPort		      1
+      DstBlock		      "Product2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Product2"
+      SrcPort		      1
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "propulsion torque odd salps1"
+      SrcPort		      1
+      DstBlock		      "Product3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "propulsion torque for even Salps1"
+      SrcPort		      1
+      DstBlock		      "Product"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [35, 0; 0, -10]
+      DstBlock		      "Goto8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product3"
+      SrcPort		      1
+      Points		      [35, 0; 0, -10]
+      DstBlock		      "Goto7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Propulsion Sign switch3"
+      SrcPort		      1
+      DstBlock		      "Product4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product4"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	Points			[10, 0; 0, -35]
+	DstBlock		"Goto5"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Product2"
+	DstPort			1
+      }
     }
   }
 }
