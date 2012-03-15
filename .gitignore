@@ -135,3 +135,13 @@ slprj/sim/v2Drag/tmwinternal/v2Drag18.mdl
 temp.m~
 temp2.m
 v2Drag.mdl.r2008b
+slprj/_sfprj/salpChain/_self/sfun/src/c2_salpChain.c
+slprj/_sfprj/salpChain/_self/sfun/src/c2_salpChain.h
+slprj/_sfprj/salpChain/_self/sfun/src/rtwtypes.h
+slprj/_sfprj/salpChain/_self/sfun/src/rtwtypeschksum.mat
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.c
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.h
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.mku
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.mol
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun_debug_macros.h
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun_registry.c
