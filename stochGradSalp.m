@@ -1,14 +1,11 @@
 function [alphaHist valueHist] = stochGradSalp
 global valueHist alphaHist Salp1_PandV Salp1_angles
 %set initial parameters for the gradient search
-    alpha = [rand(1)*pi/2.5 10*(randn(1,2)-0.5) rand(1)*2*pi];
-    %alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
-    %angle of propulsion, x and z components of linkage (assuming
-    %front and back are symmetric and of a set length. 1 angle for the relative rotation between two salps.
+    alpha = [rand(1)*10 0.5+rand(1)*10];
+    %alpha = delay time, period time.
     
-    stand_dev_beta = [0.1 0.003 0.003 0.1]; %make angles about 10 times
-    %the size of length, since that's in meters vs radians.
-    etta = [5000 50 50 5000];
+    stand_dev_beta = [0.01 0.01];
+    etta = [400 400];
     sizeBeta = size(alpha);
     maxI = 900;
     
@@ -17,25 +14,25 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     
     for i = 1:maxI
         i = i
-        alpha = boundAngles(alpha)
-        etta = etta*0.9
-        
+        %alpha = boundAngles(alpha)
+        etta = etta*0.95
+        alpha = alpha
        
 
         %================================================================
         %sim with alpha then compute J_alpha
-        updateParams(alpha);
+        updatePulseParams(alpha);
         tic
         sim('salpChain');
         toc
         
-        J_alpha = valueFunction();
+        J_alpha = valueFunctionPulsing();
         
         %================================================================
         %sim with alpha+beta then compute J_alpha
         beta = stand_dev_beta.*randn(sizeBeta);
         
-        updateParams(alpha+beta);
+        updatePulseParams(alpha+beta);
         
         tic
         sim('salpChain');
@@ -43,24 +40,35 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
         %sound(y, Fs)
         %input('hows it going?');
         
-        J_alpha_beta = valueFunction();
+        J_alpha_beta = valueFunctionPulsing();
         
         dalpha = -etta.*(J_alpha_beta-J_alpha).*beta;
        
         alphaHist(:,i) = alpha;
         valueHist(i) = J_alpha;
-        alpha = boundAngles(alpha+dalpha); 
+        %alpha = boundAngles(alpha+dalpha); 
         
-
-%         figure(3);
-%         plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
-%         title('valueHist, so far');
+        figure(3);
+        plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
+        title('valueHist, so far');
         figure(4);
         plot(valueHist(1:i));
         title('valueHist over itererations');
 
     end
 end
+
+function updatePulseParams(alpha)
+global uDelay uPulseWidth uPeriod
+uDelay = alpha(1);
+uPeriod = alpha(2);
+if uPeriod<=0.5
+    uPeriod = 0.5;
+end
+uPulseWidth = 0.5/uPeriod;
+
+end
+
 
 function updateParams(alpha)  
 global connectR frontConnect backConnect u1axis u2axis
