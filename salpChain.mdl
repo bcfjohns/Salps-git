@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.672"
+    ComputedModelVersion    "1.673"
     NumModelReferences	    6
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -49,9 +49,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 15 22:59:32 2012"
+  LastModifiedDate	  "Thu Mar 15 23:10:49 2012"
   RTWModifiedTimeStamp	  253741895
-  ModelVersionFormat	  "1.%<AutoIncrement:672>"
+  ModelVersionFormat	  "1.%<AutoIncrement:673>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -930,7 +930,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [473, 50, 1445, 530]
+    Location		    [139, 50, 1111, 530]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -944,7 +944,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "11769"
+    SIDHighWatermark	    "11770"
     Block {
       BlockType		      Clock
       Name		      "Clock"
@@ -6820,7 +6820,7 @@ Model {
 	  Position		  [965, 431, 995, 464]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [5, 282, 739, 602]
+	  Location		  [119, 117, 853, 437]
 	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
@@ -9408,8 +9408,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd3"
-	Location		[141, 72, 1313, 889]
-	Open			off
+	Location		[393, 50, 1565, 867]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -10578,6 +10578,38 @@ Model {
 	  }
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "angles odd3"
+	  SID			  "11770"
+	  Ports			  [2]
+	  Position		  [915, 446, 945, 479]
+	  ZOrder		  -3
+	  Floating		  off
+	  Location		  [188, 390, 512, 629]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-5~-5"
+	  YMax			  "5~5"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "10000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
 	  SID			  "11763"
@@ -10899,18 +10931,34 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle 2"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 115]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  2
+	  Points		  [15, 0; 0, 20]
+	  Branch {
+	    Points		    [0, 95]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -35]
+	    DstBlock		    "angles odd3"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  Name			  "angle1"
 	  Labels		  [0, 0]
 	  SrcBlock		  "angle1"
 	  SrcPort		  1
-	  Points		  [55, 0; 0, 155]
-	  DstBlock		  "2DOFJointConstrainer"
-	  DstPort		  1
+	  Points		  [55, 0; 0, 25]
+	  Branch {
+	    Points		    [0, 130]
+	    DstBlock		    "2DOFJointConstrainer"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 5]
+	    DstBlock		    "angles odd3"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Model"

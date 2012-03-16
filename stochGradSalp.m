@@ -5,7 +5,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     %alpha = delay time, period time.
     
     stand_dev_beta = [0.01 0.01];
-    etta = [400 400];
+    etta = [4000 4000];
     sizeBeta = size(alpha);
     maxI = 900;
     
@@ -46,6 +46,8 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
        
         alphaHist(:,i) = alpha;
         valueHist(i) = J_alpha;
+        alpha = alpha+dalpha;
+        updatePulseParams(alpha);
         %alpha = boundAngles(alpha+dalpha); 
         
         figure(3);
