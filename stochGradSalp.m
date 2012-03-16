@@ -15,7 +15,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     for i = 1:maxI
         i = i
         %alpha = boundAngles(alpha)
-        etta = etta*0.95
+        etta = etta*0.99
         alpha = alpha
        
 
