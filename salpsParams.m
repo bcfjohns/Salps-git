@@ -93,7 +93,10 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 
 %===========
 % uFrequency = 1; %frequency for the base drive signal
-uDelay = 0.1; %delay for force signal between salps
+uDelay = 3; %delay for force signal between salps
+uPeriod = 10;
+uPulseWidth= 10; %percent of the period that the propulsion is on for.
+tauFilter = 0.5; %time constant for the filter that filter the pulses.
 %uAmplitudeOdd = [0.2 0.2 2];
 uAmplitudeEven = [-0.2 0 2];
 %uBias = 1; %bias is added before the amplitude scaling.

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.656"
+    ComputedModelVersion    "1.667"
     NumModelReferences	    4
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -43,9 +43,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 15 20:34:50 2012"
+  LastModifiedDate	  "Thu Mar 15 21:23:17 2012"
   RTWModifiedTimeStamp	  253741895
-  ModelVersionFormat	  "1.%<AutoIncrement:656>"
+  ModelVersionFormat	  "1.%<AutoIncrement:667>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -642,7 +642,7 @@ Model {
 	      WarnOnSingularInitialAssembly on
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -684,7 +684,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 63, 22, 912, 705 ] 
+      ConfigPrmDlgPosition     [ 261, 119, 1160, 741 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -724,6 +724,11 @@ Model {
     FontAngle		    "normal"
   }
   BlockParameterDefaults {
+    Block {
+      BlockType		      Clock
+      DisplayTime	      off
+      Decimation	      "10"
+    }
     Block {
       BlockType		      Constant
       Value		      "1"
@@ -933,7 +938,14 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "11642"
+    SIDHighWatermark	    "11647"
+    Block {
+      BlockType		      Clock
+      Name		      "Clock"
+      SID		      "11643"
+      Position		      [280, 200, 300, 220]
+      ZOrder		      -4
+    }
     Block {
       BlockType		      Goto
       Name		      "Goto5"
@@ -986,8 +998,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1068,7 +1080,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[132, 241, 1422, 1059]
+	Location		[150, 72, 1440, 890]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1808,18 +1820,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -1879,7 +1881,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [689, 196, 1416, 603]
+	    Location		    [689, 240, 1416, 647]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1949,8 +1951,8 @@ Model {
 	      ZOrder		      -13
 	      PulseType		      "Time based"
 	      TimeSource	      "Use external signal"
-	      Period		      "10"
-	      PulseWidth	      "30"
+	      Period		      "uPeriod"
+	      PulseWidth	      "uPulseWidth"
 	      VectorParams1D	      off
 	    }
 	    Block {
@@ -2363,6 +2365,41 @@ Model {
 	  CS20Rot		  "[]"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "even1 propulsion"
+	  SID			  "11645"
+	  Ports			  [2]
+	  Position		  [495, 681, 525, 714]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [655, 475, 1343, 845]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-2.5~-0.1"
+	  YMax			  "27.5~0.225"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_PandV2"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
 	  SID			  "10232"
@@ -2662,15 +2699,31 @@ Model {
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  1
-	  DstBlock		  "Torque Propulsion"
-	  DstPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    DstBlock		    "Torque Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -5; -15, 0; 0, 180]
+	    DstBlock		    "even1 propulsion"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  Points		  [30, 0; 0, 10; 90, 0; 0, -10]
-	  DstBlock		  "Propulsion"
-	  DstPort		  1
+	  Points		  [30, 0; 0, 10; 75, 0]
+	  Branch {
+	    Points		    [15, 0; 0, -10]
+	    DstBlock		    "Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 120]
+	    DstBlock		    "even1 propulsion"
+	    DstPort		    1
+	  }
 	}
 	Annotation {
 	  Position		  [100, 621]
@@ -2692,8 +2745,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even2"
-	Location		[132, 241, 1422, 1059]
-	Open			off
+	Location		[152, 50, 1442, 868]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3228,7 +3281,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3432,18 +3485,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -3477,7 +3520,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3503,7 +3546,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [689, 196, 1416, 603]
+	    Location		    [689, 218, 1416, 625]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3573,8 +3616,8 @@ Model {
 	      ZOrder		      -13
 	      PulseType		      "Time based"
 	      TimeSource	      "Use external signal"
-	      Period		      "10"
-	      PulseWidth	      "30"
+	      Period		      "uPeriod"
+	      PulseWidth	      "uPulseWidth"
 	      VectorParams1D	      off
 	    }
 	    Block {
@@ -3731,7 +3774,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3903,7 +3946,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3987,6 +4030,41 @@ Model {
 	  CS20Rot		  "[]"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "even2 propulsion"
+	  SID			  "11647"
+	  Ports			  [2]
+	  Position		  [430, 671, 460, 704]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [726, 83, 1414, 453]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-2.5~-0.1"
+	  YMax			  "27.5~0.225"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_PandV4"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
 	  SID			  "11639"
@@ -4018,7 +4096,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4286,15 +4364,31 @@ Model {
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  1
-	  DstBlock		  "Torque Propulsion"
-	  DstPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    DstBlock		    "Torque Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 165]
+	    DstBlock		    "even2 propulsion"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  Points		  [30, 0; 0, 10; 90, 0; 0, -10]
-	  DstBlock		  "Propulsion"
-	  DstPort		  1
+	  Points		  [30, 0; 0, 10; 40, 0]
+	  Branch {
+	    Points		    [50, 0; 0, -10]
+	    DstBlock		    "Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 110]
+	    DstBlock		    "even2 propulsion"
+	    DstPort		    1
+	  }
 	}
 	Annotation {
 	  Position		  [100, 621]
@@ -4316,7 +4410,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[543, 79, 1636, 859]
+	Location		[514, 130, 1607, 910]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5135,18 +5229,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -5201,8 +5285,8 @@ Model {
 	  Position		  [750, 246, 780, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [759, 71, 1447, 441]
-	  Open			  off
+	  Location		  [690, 74, 1378, 444]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -5245,7 +5329,7 @@ Model {
 	  System {
 	    Name		    "Subsystem"
 	    Location		    [689, 196, 1416, 603]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -5314,8 +5398,8 @@ Model {
 	      ZOrder		      -13
 	      PulseType		      "Time based"
 	      TimeSource	      "Use external signal"
-	      Period		      "10"
-	      PulseWidth	      "30"
+	      Period		      "uPeriod"
+	      PulseWidth	      "uPulseWidth"
 	      VectorParams1D	      off
 	    }
 	    Block {
@@ -5728,6 +5812,41 @@ Model {
 	  CS20Rot		  "[]"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "odd1 propulsion"
+	  SID			  "11644"
+	  Ports			  [2]
+	  Position		  [450, 666, 480, 699]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [32, 485, 720, 855]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "0~0"
+	  YMax			  "0.1~2"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_PandV1"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
 	  SID			  "10611"
@@ -6053,16 +6172,31 @@ Model {
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  1
-	  Points		  [0, -35]
-	  DstBlock		  "Torque Propulsion"
-	  DstPort		  1
+	  Points		  [0, -35; 30, 0]
+	  Branch {
+	    DstBlock		    "Torque Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 190]
+	    DstBlock		    "odd1 propulsion"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  Points		  [65, 0]
-	  DstBlock		  "Force Propulsion"
-	  DstPort		  1
+	  Points		  [50, 0]
+	  Branch {
+	    Points		    [15, 0]
+	    DstBlock		    "Force Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 110]
+	    DstBlock		    "odd1 propulsion"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Time"
@@ -6865,18 +6999,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  off
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -6905,7 +7029,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Subsystem"
-	    Location		    [689, 196, 1416, 603]
+	    Location		    [689, 218, 1416, 625]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6975,8 +7099,8 @@ Model {
 	      ZOrder		      -13
 	      PulseType		      "Time based"
 	      TimeSource	      "Use external signal"
-	      Period		      "10"
-	      PulseWidth	      "30"
+	      Period		      "uPeriod"
+	      PulseWidth	      "uPulseWidth"
 	      VectorParams1D	      off
 	    }
 	    Block {
@@ -7389,6 +7513,41 @@ Model {
 	  CS20Rot		  "[]"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "odd2 propulsion"
+	  SID			  "11646"
+	  Ports			  [2]
+	  Position		  [435, 716, 465, 749]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [42, 74, 730, 444]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-2.5~-0.1"
+	  YMax			  "27.5~0.225"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_PandV3"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
 	  SID			  "10656"
@@ -7675,15 +7834,31 @@ Model {
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  2
-	  DstBlock		  "Force Propulsion"
-	  DstPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    DstBlock		    "Force Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 125]
+	    DstBlock		    "odd2 propulsion"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Subsystem"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -35]
-	  DstBlock		  "Torque Propulsion"
-	  DstPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [10, 0; 0, -35]
+	    DstBlock		    "Torque Propulsion"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -10; 5, 0; 0, 180]
+	    DstBlock		    "odd2 propulsion"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "From"
@@ -7839,6 +8014,13 @@ Model {
       SrcBlock		      "Salp Odd1"
       SrcPort		      1
       DstBlock		      "Salp Even1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [15, 0; 0, 30]
+      DstBlock		      "Salp Odd1"
       DstPort		      1
     }
   }
