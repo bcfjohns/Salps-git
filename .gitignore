@@ -130,3 +130,15 @@ slprj/accel/salpChain/__cf_salpChain.h
 slprj/accel/salpChain/buildInfo.mat
 slprj/accel/salpChain/build_exception.mat
 slprj/sl_proj.tmw
+slprj/_sfprj/salpChain/_self/sfun/src/c2_salpChain.c
+slprj/_sfprj/salpChain/_self/sfun/src/c2_salpChain.h
+slprj/_sfprj/salpChain/_self/sfun/src/rtwtypes.h
+slprj/_sfprj/salpChain/_self/sfun/src/rtwtypeschksum.mat
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.c
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.h
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.mku
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun.mol
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun_debug_macros.h
+slprj/_sfprj/salpChain/_self/sfun/src/salpChain_sfun_registry.c
+slprj/sim/v2Drag/tmwinternal/v2Drag17.mdl
+slprj/sim/v2Drag/tmwinternal/v2Drag18.mdl
