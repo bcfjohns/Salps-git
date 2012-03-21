@@ -1,5 +1,8 @@
-function [alphaHist valueHist] = stochGradSalp
+function [alphaHist valueHist exitFlag finalAlpha finalCost] = stochGradSalp
+%exit flag says why it ended. 666-unknown reasons; 1-end of iterations; 2-didn't learn in first
+%K iterations; 3-Simulation errored out
 global valueHist alphaHist Salp1_PandV Salp1_angles
+exitFlag = 666;
 %set initial parameters for the gradient search
     alpha = [rand(1)*pi/2.5 10*(randn(1,2)-0.5) rand(1)*2*pi];
     %alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
@@ -10,24 +13,54 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     %the size of length, since that's in meters vs radians.
     etta = [5000 50 50 5000];
     sizeBeta = size(alpha);
-    maxI = 900;
+    maxI = 4;
     
     alphaHist = zeros(length(alpha), maxI);
-    valueHist = zeros(1, maxI);    
+    valueHist = zeros(1, maxI);   
+    
+    %params for error checking and restarting etc.
+    maxSimErrors = 5; 
+    %number of times to try a new beta before giving up on the optimization
+    betaSimErrors = 0; %none so far
+    
+    initialLearn = 3; %if haven't learned much by now, stop.
     
     for i = 1:maxI
         i = i
-        alpha = boundAngles(alpha)
-        etta = etta*0.9
+        alpha = boundAngles(alpha);
+        etta = etta*0.9999;
         
        
-
+        %check if learning at all in the first several itteration if not
+        %stop.
+        if (i==initialLearn)
+            if range(valueHist(1:i))<0.01
+                exitFlag = 2;
+                finalAlpha = alphaHist(:,i-1);
+                finalCost =  valueHist(i-1);
+                return
+            end
+        end
         %================================================================
         %sim with alpha then compute J_alpha
         updateParams(alpha);
-        tic
-        sim('salpChain');
-        toc
+        try
+            sim('salpChain');
+        catch simError
+            disp(simError.identifier);
+            if strcmp(simError.identifier, 'Could not...')
+                rethrow(simError);
+            end
+           exitFlag = 3;
+           finalAlpha = alpha;
+           if (i ==1)
+               finalCost = 666;
+           else
+               finalCost = J_alpha; %this will be the cost from last time, 
+               %but that's the best there is.
+           end
+           return
+        end
         
         J_alpha = valueFunction();
         
@@ -36,13 +69,27 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
         beta = stand_dev_beta.*randn(sizeBeta);
         
         updateParams(alpha+beta);
-        
-        tic
-        sim('salpChain');
-        toc
-        %sound(y, Fs)
-        %input('hows it going?');
-        
+        needSim = true;
+        while needSim
+        try
+            sim('salpChain');
+            betaSimErrors = 0;
+            needSim = false;
+        catch simError
+            disp(simError.identifier);
+           if (betaSimErrors > maxSimErrors)
+               exitFlag = 3;
+               finalAlpha = alpha+beta;
+               finalCost = J_alpha;
+               return;
+           end
+           betaSimErrors = betSimErrors+1;
+           %find new beta and try again.
+           beta = stand_dev_beta.*randn(sizeBeta);
+           needSim = true;
+        end
+        end
+         
         J_alpha_beta = valueFunction();
         
         dalpha = -etta.*(J_alpha_beta-J_alpha).*beta;
@@ -60,6 +107,9 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
         title('valueHist over itererations');
 
     end
+    finalAlpha = alphaHist(:,end);
+    finalCost = valueHist(end);
+    exitFlag = 1;
 end
 
 function updateParams(alpha)  
