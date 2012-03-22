@@ -6,13 +6,10 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.650"
+    ComputedModelVersion    "1.658"
     NumModelReferences	    10
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
-    }
-    ModelReference {
-      ModelRefBlockPath	      "salpChain/Salp Even2/Model|v2Drag"
     }
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even3/Model|v2Drag"
@@ -24,10 +21,10 @@ Model {
       ModelRefBlockPath	      "salpChain/Salp Even5/Model|v2Drag"
     }
     ModelReference {
-      ModelRefBlockPath	      "salpChain/Salp Odd1/Model|v2Drag"
+      ModelRefBlockPath	      "salpChain/Salp Even6/Model|v2Drag"
     }
     ModelReference {
-      ModelRefBlockPath	      "salpChain/Salp Odd2/Model|v2Drag"
+      ModelRefBlockPath	      "salpChain/Salp Odd1/Model|v2Drag"
     }
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Odd3/Model|v2Drag"
@@ -37,6 +34,9 @@ Model {
     }
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Odd5/Model|v2Drag"
+    }
+    ModelReference {
+      ModelRefBlockPath	      "salpChain/Salp Odd6/Model|v2Drag"
     }
     NumTestPointedSignals   0
   }
@@ -61,9 +61,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 20 00:25:42 2012"
-  RTWModifiedTimeStamp	  254093637
-  ModelVersionFormat	  "1.%<AutoIncrement:650>"
+  LastModifiedDate	  "Thu Mar 22 11:45:10 2012"
+  RTWModifiedTimeStamp	  254314387
+  ModelVersionFormat	  "1.%<AutoIncrement:658>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -113,7 +113,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      []
-      Cell		      "salpChain:10601"
+      Cell		      "salpChain:12201"
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
@@ -152,9 +152,6 @@ Model {
   ExtModeSkipDownloadWhenConnect off
   ExtModeLogAll		  on
   ExtModeAutoUpdateStatusClock on
-  TunableVars		  "backConnect,connectR,evenTorque,frontConnect,oddTorque,uAmplitudeEven"
-  TunableVarsStorageClass "Auto,Auto,Auto,Auto,Auto,Auto"
-  TunableVarsTypeQualifier ",,,,,"
   BufferReuse		  on
   ShowModelReferenceBlockVersion off
   ShowModelReferenceBlockIO off
@@ -248,11 +245,11 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  on
+	  InlineParams		  off
 	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
-	  InlineInvariantSignals  on
+	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  on
@@ -700,7 +697,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
+      CurrentDlgPage	      "Diagnostics/Stateflow"
       ConfigPrmDlgPosition     [ 63, 22, 912, 705 ] 
     }
     PropName		    "ConfigurationSets"
@@ -917,7 +914,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [401, 50, 1740, 671]
+    Location		    [73, 50, 1412, 671]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -931,7 +928,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "83"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "12394"
+    SIDHighWatermark	    "12867"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -984,8 +981,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -1054,9 +1051,9 @@ Model {
     Block {
       BlockType		      SubSystem
       Name		      "Salp Even1"
-      SID		      "11968"
+      SID		      "12396"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [530, 225, 680, 275]
+      Position		      [535, 225, 685, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1066,8 +1063,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[95, 218, 1385, 1036]
-	Open			off
+	Location		[129, 308, 1322, 1039]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1082,7 +1079,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "11969"
+	  SID			  "12397"
 	  Ports			  [2, 2]
 	  Position		  [520, 644, 620, 686]
 	  ZOrder		  -17
@@ -1113,7 +1110,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "11970"
+	      SID		      "12398"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -1121,7 +1118,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "11971"
+	      SID		      "12399"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -1130,7 +1127,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "11972"
+	      SID		      "12400"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -1159,7 +1156,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "11973"
+		  SID			  "12401"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -1167,7 +1164,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "11974"
+		  SID			  "12402"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -1177,13 +1174,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "11975"
+		  SID			  "12403"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "11976"
+		  SID			  "12404"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -1194,7 +1191,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "11977"
+		  SID			  "12405"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -1205,7 +1202,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "11978"
+		  SID			  "12406"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -1219,7 +1216,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "11979"
+		  SID			  "12407"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -1278,7 +1275,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "11980"
+	      SID		      "12408"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -1307,7 +1304,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "11981"
+		  SID			  "12409"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -1315,7 +1312,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "11982"
+		  SID			  "12410"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -1325,13 +1322,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "11983"
+		  SID			  "12411"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "11984"
+		  SID			  "12412"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -1342,7 +1339,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "11985"
+		  SID			  "12413"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -1353,7 +1350,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "11986"
+		  SID			  "12414"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -1367,7 +1364,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "11987"
+		  SID			  "12415"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -1426,7 +1423,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "11988"
+	      SID		      "12416"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -1434,7 +1431,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "11989"
+	      SID		      "12417"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -1469,7 +1466,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "11990"
+	  SID			  "12418"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -1548,7 +1545,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "11991"
+	  SID			  "12419"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -1575,7 +1572,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "11992"
+	  SID			  "12420"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -1594,7 +1591,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1607,7 +1604,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "11993"
+	  SID			  "12421"
 	  Position		  [50, 601, 145, 619]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -1617,7 +1614,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "11994"
+	  SID			  "12422"
 	  Position		  [45, 546, 140, 564]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -1627,7 +1624,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "11995"
+	  SID			  "12423"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 645, 480, 685]
 	  BlockMirror		  on
@@ -1647,7 +1644,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1657,7 +1654,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "11996"
+	  SID			  "12424"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [435, 720, 475, 760]
 	  BlockMirror		  on
@@ -1677,7 +1674,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1687,7 +1684,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "11997"
+	  SID			  "12425"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [340, 480, 380, 520]
 	  BlockRotation		  270
@@ -1722,7 +1719,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "11998"
+	  SID			  "12426"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -1740,7 +1737,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "11999"
+	  SID			  "12427"
 	  Ports			  [0, 0, 0, 0, 0, 1, 4]
 	  Position		  [475, 191, 480, 254]
 	  BackgroundColor	  "black"
@@ -1757,7 +1754,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12000"
+	  SID			  "12428"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [630, 504, 635, 566]
 	  BackgroundColor	  "black"
@@ -1774,15 +1771,15 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12001"
+	  SID			  "12429"
 	  Ports			  [2, 2]
-	  Position		  [555, 52, 715, 103]
+	  Position		  [555, 52, 775, 103]
 	  ZOrder		  -17
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -1804,7 +1801,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12002"
+	  SID			  "12430"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -1815,7 +1812,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "12003"
+	  SID			  "12431"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [210, 590, 250, 630]
 	  LibraryVersion	  "1.1"
@@ -1833,7 +1830,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1846,7 +1843,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12004"
+	  SID			  "12432"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [180, 535, 220, 575]
 	  LibraryVersion	  "1.1"
@@ -1864,7 +1861,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1877,7 +1874,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12005"
+	  SID			  "12433"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [430, 439, 480, 491]
 	  LibraryVersion	  "1.1"
@@ -1899,7 +1896,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12006"
+	  SID			  "12434"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [685, 555, 725, 595]
 	  LibraryVersion	  "1.1"
@@ -1927,7 +1924,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1953,7 +1950,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12007"
+	  SID			  "12435"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [685, 495, 725, 535]
 	  LibraryVersion	  "1.1"
@@ -1981,7 +1978,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2007,9 +2004,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12008"
+	  SID			  "12436"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [810, 95, 850, 135]
+	  Position		  [860, 100, 900, 140]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -2036,7 +2033,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2045,7 +2042,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12009"
+	  SID			  "12437"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -2122,9 +2119,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12010"
+	  SID			  "12438"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [810, 40, 850, 80]
+	  Position		  [875, 45, 965, 85]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -2151,7 +2148,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2160,7 +2157,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12011"
+	  SID			  "12439"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -2168,7 +2165,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12012"
+	  SID			  "12440"
 	  Position		  [685, 436, 715, 454]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -2185,7 +2182,6 @@ Model {
 	Line {
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  1
-	  Points		  [0, 5]
 	  DstBlock		  "Model"
 	  DstPort		  1
 	}
@@ -2198,7 +2194,7 @@ Model {
 	Line {
 	  SrcBlock		  "angular velocity body frame"
 	  SrcPort		  1
-	  Points		  [0, -25]
+	  Points		  [0, -30]
 	  DstBlock		  "Model"
 	  DstPort		  2
 	}
@@ -2213,7 +2209,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [410, 0; 0, -85]
+	  Points		  [480, 0; 0, -80]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -2221,7 +2217,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [10, 0; 0, 155]
+	  Points		  [30, 0; 0, 150]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -2401,10 +2397,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Even2"
-      SID		      "12013"
+      Name		      "Salp Even3"
+      SID		      "12486"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [870, 225, 1020, 275]
+      Position		      [875, 225, 1025, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -2413,8 +2409,8 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Even2"
-	Location		[230, 138, 1327, 934]
+	Name			"Salp Even3"
+	Location		[230, 160, 1327, 956]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2430,7 +2426,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12014"
+	  SID			  "12487"
 	  Ports			  [2, 2]
 	  Position		  [545, 639, 645, 681]
 	  ZOrder		  -17
@@ -2461,7 +2457,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12015"
+	      SID		      "12488"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -2469,7 +2465,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12016"
+	      SID		      "12489"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -2478,7 +2474,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12017"
+	      SID		      "12490"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -2507,7 +2503,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12018"
+		  SID			  "12491"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -2515,7 +2511,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12019"
+		  SID			  "12492"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -2525,13 +2521,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12020"
+		  SID			  "12493"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12021"
+		  SID			  "12494"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -2542,7 +2538,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12022"
+		  SID			  "12495"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -2553,7 +2549,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12023"
+		  SID			  "12496"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -2567,7 +2563,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12024"
+		  SID			  "12497"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -2626,7 +2622,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12025"
+	      SID		      "12498"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -2655,7 +2651,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12026"
+		  SID			  "12499"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -2663,7 +2659,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12027"
+		  SID			  "12500"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -2673,13 +2669,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12028"
+		  SID			  "12501"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12029"
+		  SID			  "12502"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -2690,7 +2686,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12030"
+		  SID			  "12503"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -2701,7 +2697,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12031"
+		  SID			  "12504"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -2715,7 +2711,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12032"
+		  SID			  "12505"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -2774,7 +2770,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12033"
+	      SID		      "12506"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -2782,7 +2778,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12034"
+	      SID		      "12507"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -2817,7 +2813,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12035"
+	  SID			  "12508"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -2896,7 +2892,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12036"
+	  SID			  "12509"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -2923,7 +2919,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12037"
+	  SID			  "12510"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -2942,7 +2938,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2955,7 +2951,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12038"
+	  SID			  "12511"
 	  Position		  [50, 601, 145, 619]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -2965,7 +2961,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12039"
+	  SID			  "12512"
 	  Position		  [45, 546, 140, 564]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -2975,7 +2971,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12040"
+	  SID			  "12513"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [450, 630, 490, 670]
 	  BlockMirror		  on
@@ -2995,7 +2991,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3005,7 +3001,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12041"
+	  SID			  "12514"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [445, 705, 485, 745]
 	  BlockMirror		  on
@@ -3025,7 +3021,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3035,7 +3031,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12042"
+	  SID			  "12515"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [355, 535, 395, 575]
 	  BlockRotation		  270
@@ -3070,7 +3066,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12043"
+	  SID			  "12516"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -3088,7 +3084,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12044"
+	  SID			  "12517"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -3105,7 +3101,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12045"
+	  SID			  "12518"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [670, 484, 675, 546]
 	  BackgroundColor	  "black"
@@ -3122,7 +3118,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12046"
+	  SID			  "12519"
 	  Ports			  [2, 2]
 	  Position		  [565, 57, 725, 108]
 	  ZOrder		  -17
@@ -3130,7 +3126,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -3152,7 +3148,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12047"
+	  SID			  "12520"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -3163,7 +3159,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "12048"
+	  SID			  "12521"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [210, 590, 250, 630]
 	  LibraryVersion	  "1.1"
@@ -3181,7 +3177,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3194,7 +3190,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12049"
+	  SID			  "12522"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [180, 535, 220, 575]
 	  LibraryVersion	  "1.1"
@@ -3212,7 +3208,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3225,7 +3221,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12050"
+	  SID			  "12523"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [505, 439, 555, 491]
 	  LibraryVersion	  "1.1"
@@ -3247,7 +3243,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12051"
+	  SID			  "12524"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 535, 765, 575]
 	  LibraryVersion	  "1.1"
@@ -3275,7 +3271,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3301,7 +3297,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12052"
+	  SID			  "12525"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 475, 765, 515]
 	  LibraryVersion	  "1.1"
@@ -3329,7 +3325,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3355,7 +3351,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12053"
+	  SID			  "12526"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -3384,7 +3380,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3393,7 +3389,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12054"
+	  SID			  "12527"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -3470,7 +3466,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12055"
+	  SID			  "12528"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -3499,7 +3495,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3508,7 +3504,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12056"
+	  SID			  "12529"
 	  Position		  [45, 406, 75, 424]
 	  Port			  "1"
 	  Side			  "Left"
@@ -3516,7 +3512,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12057"
+	  SID			  "12530"
 	  Position		  [585, 441, 615, 459]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -3748,10 +3744,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Even3"
-      SID		      "12058"
+      Name		      "Salp Even4"
+      SID		      "12531"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1220, 225, 1370, 275]
+      Position		      [1225, 225, 1375, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3760,7 +3756,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Even3"
+	Name			"Salp Even4"
 	Location		[285, 214, 1382, 1010]
 	Open			off
 	ModelBrowserVisibility	off
@@ -3777,7 +3773,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12059"
+	  SID			  "12532"
 	  Ports			  [2, 2]
 	  Position		  [545, 639, 645, 681]
 	  ZOrder		  -17
@@ -3808,7 +3804,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12060"
+	      SID		      "12533"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -3816,7 +3812,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12061"
+	      SID		      "12534"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -3825,7 +3821,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12062"
+	      SID		      "12535"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -3854,7 +3850,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12063"
+		  SID			  "12536"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -3862,7 +3858,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12064"
+		  SID			  "12537"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -3872,13 +3868,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12065"
+		  SID			  "12538"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12066"
+		  SID			  "12539"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -3889,7 +3885,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12067"
+		  SID			  "12540"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -3900,7 +3896,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12068"
+		  SID			  "12541"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -3914,7 +3910,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12069"
+		  SID			  "12542"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -3973,7 +3969,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12070"
+	      SID		      "12543"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -4002,7 +3998,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12071"
+		  SID			  "12544"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -4010,7 +4006,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12072"
+		  SID			  "12545"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -4020,13 +4016,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12073"
+		  SID			  "12546"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12074"
+		  SID			  "12547"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -4037,7 +4033,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12075"
+		  SID			  "12548"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -4048,7 +4044,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12076"
+		  SID			  "12549"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -4062,7 +4058,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12077"
+		  SID			  "12550"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -4121,7 +4117,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12078"
+	      SID		      "12551"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -4129,7 +4125,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12079"
+	      SID		      "12552"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -4164,7 +4160,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12080"
+	  SID			  "12553"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -4243,7 +4239,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12081"
+	  SID			  "12554"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -4270,7 +4266,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12082"
+	  SID			  "12555"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -4289,7 +4285,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4302,7 +4298,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12083"
+	  SID			  "12556"
 	  Position		  [50, 601, 145, 619]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -4312,7 +4308,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12084"
+	  SID			  "12557"
 	  Position		  [45, 546, 140, 564]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -4322,7 +4318,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12085"
+	  SID			  "12558"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [450, 630, 490, 670]
 	  BlockMirror		  on
@@ -4342,7 +4338,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4352,7 +4348,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12086"
+	  SID			  "12559"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [445, 705, 485, 745]
 	  BlockMirror		  on
@@ -4372,7 +4368,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4382,7 +4378,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12087"
+	  SID			  "12560"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [355, 535, 395, 575]
 	  BlockRotation		  270
@@ -4417,7 +4413,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12088"
+	  SID			  "12561"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -4435,7 +4431,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12089"
+	  SID			  "12562"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -4452,7 +4448,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12090"
+	  SID			  "12563"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [670, 484, 675, 546]
 	  BackgroundColor	  "black"
@@ -4469,7 +4465,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12091"
+	  SID			  "12564"
 	  Ports			  [2, 2]
 	  Position		  [585, 57, 745, 108]
 	  ZOrder		  -17
@@ -4477,7 +4473,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -4499,7 +4495,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12092"
+	  SID			  "12565"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -4510,7 +4506,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "12093"
+	  SID			  "12566"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [210, 590, 250, 630]
 	  LibraryVersion	  "1.1"
@@ -4528,7 +4524,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4541,7 +4537,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12094"
+	  SID			  "12567"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [180, 535, 220, 575]
 	  LibraryVersion	  "1.1"
@@ -4559,7 +4555,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4572,7 +4568,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12095"
+	  SID			  "12568"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [505, 439, 555, 491]
 	  LibraryVersion	  "1.1"
@@ -4594,7 +4590,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12096"
+	  SID			  "12569"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 535, 765, 575]
 	  LibraryVersion	  "1.1"
@@ -4622,7 +4618,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4648,7 +4644,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12097"
+	  SID			  "12570"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 475, 765, 515]
 	  LibraryVersion	  "1.1"
@@ -4676,7 +4672,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4702,7 +4698,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12098"
+	  SID			  "12571"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -4731,7 +4727,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4740,7 +4736,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12099"
+	  SID			  "12572"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -4817,7 +4813,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12100"
+	  SID			  "12573"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -4846,7 +4842,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4855,7 +4851,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12101"
+	  SID			  "12574"
 	  Position		  [45, 406, 75, 424]
 	  Port			  "1"
 	  Side			  "Left"
@@ -4863,7 +4859,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12102"
+	  SID			  "12575"
 	  Position		  [585, 441, 615, 459]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -5095,10 +5091,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Even4"
-      SID		      "12103"
+      Name		      "Salp Even5"
+      SID		      "12576"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [525, 320, 675, 370]
+      Position		      [535, 320, 685, 370]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -5107,7 +5103,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Even4"
+	Name			"Salp Even5"
 	Location		[230, 138, 1327, 934]
 	Open			off
 	ModelBrowserVisibility	off
@@ -5124,7 +5120,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12104"
+	  SID			  "12577"
 	  Ports			  [2, 2]
 	  Position		  [545, 639, 645, 681]
 	  ZOrder		  -17
@@ -5155,7 +5151,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12105"
+	      SID		      "12578"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -5163,7 +5159,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12106"
+	      SID		      "12579"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -5172,7 +5168,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12107"
+	      SID		      "12580"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -5201,7 +5197,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12108"
+		  SID			  "12581"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -5209,7 +5205,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12109"
+		  SID			  "12582"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -5219,13 +5215,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12110"
+		  SID			  "12583"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12111"
+		  SID			  "12584"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -5236,7 +5232,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12112"
+		  SID			  "12585"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -5247,7 +5243,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12113"
+		  SID			  "12586"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -5261,7 +5257,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12114"
+		  SID			  "12587"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -5320,7 +5316,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12115"
+	      SID		      "12588"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -5349,7 +5345,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12116"
+		  SID			  "12589"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -5357,7 +5353,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12117"
+		  SID			  "12590"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -5367,13 +5363,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12118"
+		  SID			  "12591"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12119"
+		  SID			  "12592"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -5384,7 +5380,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12120"
+		  SID			  "12593"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -5395,7 +5391,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12121"
+		  SID			  "12594"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -5409,7 +5405,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12122"
+		  SID			  "12595"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -5468,7 +5464,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12123"
+	      SID		      "12596"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -5476,7 +5472,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12124"
+	      SID		      "12597"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -5511,7 +5507,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12125"
+	  SID			  "12598"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -5590,7 +5586,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12126"
+	  SID			  "12599"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -5617,7 +5613,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12127"
+	  SID			  "12600"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -5636,7 +5632,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5649,7 +5645,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12128"
+	  SID			  "12601"
 	  Position		  [50, 601, 145, 619]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -5659,7 +5655,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12129"
+	  SID			  "12602"
 	  Position		  [45, 546, 140, 564]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -5669,7 +5665,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12130"
+	  SID			  "12603"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [450, 630, 490, 670]
 	  BlockMirror		  on
@@ -5689,7 +5685,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5699,7 +5695,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12131"
+	  SID			  "12604"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [445, 705, 485, 745]
 	  BlockMirror		  on
@@ -5719,7 +5715,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5729,7 +5725,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12132"
+	  SID			  "12605"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [355, 535, 395, 575]
 	  BlockRotation		  270
@@ -5764,7 +5760,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12133"
+	  SID			  "12606"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -5782,7 +5778,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12134"
+	  SID			  "12607"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -5799,7 +5795,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12135"
+	  SID			  "12608"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [670, 484, 675, 546]
 	  BackgroundColor	  "black"
@@ -5816,7 +5812,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12136"
+	  SID			  "12609"
 	  Ports			  [2, 2]
 	  Position		  [565, 57, 725, 108]
 	  ZOrder		  -17
@@ -5824,7 +5820,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -5846,7 +5842,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12137"
+	  SID			  "12610"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -5857,7 +5853,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "12138"
+	  SID			  "12611"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [210, 590, 250, 630]
 	  LibraryVersion	  "1.1"
@@ -5875,7 +5871,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5888,7 +5884,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12139"
+	  SID			  "12612"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [180, 535, 220, 575]
 	  LibraryVersion	  "1.1"
@@ -5906,7 +5902,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5919,7 +5915,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12140"
+	  SID			  "12613"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [505, 439, 555, 491]
 	  LibraryVersion	  "1.1"
@@ -5941,7 +5937,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12141"
+	  SID			  "12614"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 535, 765, 575]
 	  LibraryVersion	  "1.1"
@@ -5969,7 +5965,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -5995,7 +5991,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12142"
+	  SID			  "12615"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [725, 475, 765, 515]
 	  LibraryVersion	  "1.1"
@@ -6023,7 +6019,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6049,7 +6045,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12143"
+	  SID			  "12616"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -6078,7 +6074,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6087,7 +6083,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12144"
+	  SID			  "12617"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -6164,7 +6160,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12145"
+	  SID			  "12618"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -6193,7 +6189,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6202,7 +6198,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12146"
+	  SID			  "12619"
 	  Position		  [45, 406, 75, 424]
 	  Port			  "1"
 	  Side			  "Left"
@@ -6210,7 +6206,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12147"
+	  SID			  "12620"
 	  Position		  [585, 441, 615, 459]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -6442,8 +6438,8 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Even5"
-      SID		      "12148"
+      Name		      "Salp Even6"
+      SID		      "12621"
       Ports		      [0, 0, 0, 0, 0, 1]
       Position		      [875, 320, 1025, 370]
       MinAlgLoopOccurrences   off
@@ -6454,8 +6450,8 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Even5"
-	Location		[264, 176, 1361, 972]
+	Name			"Salp Even6"
+	Location		[264, 220, 1361, 1016]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -6471,7 +6467,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12149"
+	  SID			  "12622"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -6550,7 +6546,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12150"
+	  SID			  "12623"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -6577,7 +6573,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12151"
+	  SID			  "12624"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -6596,7 +6592,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -6609,7 +6605,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12152"
+	  SID			  "12625"
 	  Position		  [50, 601, 145, 619]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -6619,7 +6615,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12153"
+	  SID			  "12626"
 	  Position		  [45, 546, 140, 564]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -6629,7 +6625,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Inertial Sensor"
-	  SID			  "12154"
+	  SID			  "12627"
 	  Ports			  [0, 2, 0, 0, 0, 1]
 	  Position		  [740, 249, 780, 311]
 	  LibraryVersion	  "1.1"
@@ -6657,7 +6653,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6678,7 +6674,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12155"
+	  SID			  "12628"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -6696,7 +6692,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12156"
+	  SID			  "12629"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -6713,7 +6709,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12157"
+	  SID			  "12630"
 	  Ports			  [2, 2]
 	  Position		  [585, 57, 745, 108]
 	  ZOrder		  -17
@@ -6721,7 +6717,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -6743,7 +6739,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12158"
+	  SID			  "12631"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -6754,7 +6750,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
-	  SID			  "12159"
+	  SID			  "12632"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [210, 590, 250, 630]
 	  LibraryVersion	  "1.1"
@@ -6772,7 +6768,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -6785,7 +6781,7 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "Scope"
-	  SID			  "12160"
+	  SID			  "12633"
 	  Ports			  [2]
 	  Position		  [840, 256, 870, 289]
 	  ZOrder		  -16
@@ -6820,7 +6816,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12161"
+	  SID			  "12634"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [180, 535, 220, 575]
 	  LibraryVersion	  "1.1"
@@ -6838,7 +6834,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -6851,7 +6847,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12162"
+	  SID			  "12635"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -6880,7 +6876,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6889,7 +6885,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12163"
+	  SID			  "12636"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -6966,7 +6962,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12164"
+	  SID			  "12637"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -6995,7 +6991,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -7004,7 +7000,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12165"
+	  SID			  "12638"
 	  Position		  [45, 406, 75, 424]
 	  Port			  "1"
 	  Side			  "Left"
@@ -7178,8 +7174,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[586, 138, 1405, 903]
-	Open			off
+	Location		[428, 118, 1445, 891]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -7706,7 +7702,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7737,7 +7733,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7798,7 +7794,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -7839,7 +7835,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7869,7 +7865,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7973,7 +7969,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -8005,48 +8001,14 @@ Model {
 	}
 	Block {
 	  BlockType		  Scope
-	  Name			  "Odd1 Angles"
-	  SID			  "12203"
-	  Ports			  [2]
-	  Position		  [750, 431, 780, 464]
-	  ZOrder		  -16
-	  Floating		  off
-	  Location		  [16, 79, 750, 399]
-	  Open			  off
-	  NumInputPorts		  "2"
-	  List {
-	    ListType		    AxesTitles
-	    axes1		    "%<SignalLabel>"
-	    axes2		    "%<SignalLabel>"
-	  }
-	  List {
-	    ListType		    ScopeGraphics
-	    FigureColor		    "[0.5 0.5 0.5]"
-	    AxesColor		    "[0 0 0]"
-	    AxesTickColor	    "[1 1 1]"
-	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	    LineStyles		    "-|-|-|-|-|-"
-	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
-	    MarkerStyles	    "none|none|none|none|none|none"
-	  }
-	  YMin			  "-3~-7"
-	  YMax			  "7~2"
-	  SaveToWorkspace	  on
-	  SaveName		  "Salp1_angles"
-	  DataFormat		  "StructureWithTime"
-	  MaxDataPoints		  "9000"
-	  SampleTime		  "0"
-	}
-	Block {
-	  BlockType		  Scope
 	  Name			  "Scope"
 	  SID			  "12204"
 	  Ports			  [2]
 	  Position		  [750, 246, 780, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [759, 71, 1447, 441]
-	  Open			  off
+	  Location		  [747, 71, 1435, 441]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -8093,7 +8055,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -8156,7 +8118,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8210,7 +8172,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8238,7 +8200,7 @@ Model {
 	  Name			  "angular velocity body frame"
 	  SID			  "12209"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [795, 100, 835, 140]
+	  Position		  [795, 104, 855, 186]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -8265,7 +8227,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8349,6 +8311,41 @@ Model {
 	  CS20Rot		  "[]"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "odd1Angles"
+	  SID			  "12395"
+	  Ports			  [2]
+	  Position		  [750, 426, 780, 459]
+	  ZOrder		  -16
+	  Floating		  off
+	  Location		  [14, 71, 702, 441]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  ZoomMode		  "yonly"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-40~0"
+	  YMax			  "5~60"
+	  SaveToWorkspace	  on
+	  SaveName		  "Salp1_angles"
+	  DataFormat		  "StructureWithTime"
+	  MaxDataPoints		  "9000"
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
 	  SID			  "12211"
@@ -8380,7 +8377,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8427,7 +8424,7 @@ Model {
 	Line {
 	  SrcBlock		  "angular velocity body frame"
 	  SrcPort		  1
-	  Points		  [0, -30]
+	  Points		  [0, -55]
 	  DstBlock		  "Model"
 	  DstPort		  2
 	}
@@ -8442,7 +8439,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [395, 0; 0, -80]
+	  Points		  [395, 0; 0, -55]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -8450,7 +8447,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [35, 0; 0, 160]
+	  Points		  [130, 0; 0, 160]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -8553,8 +8550,8 @@ Model {
 	    DstPort		    2
 	  }
 	  Branch {
-	    Points		    [0, -15]
-	    DstBlock		    "Odd1 Angles"
+	    Points		    [0, -20]
+	    DstBlock		    "odd1Angles"
 	    DstPort		    2
 	  }
 	}
@@ -8565,13 +8562,13 @@ Model {
 	  SrcPort		  1
 	  Points		  [15, 0; 0, 5]
 	  Branch {
-	    Points		    [0, 25]
-	    DstBlock		    "Odd1 Angles"
+	    Points		    [0, 130]
+	    DstBlock		    "2DOFJointConstrainer"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 130]
-	    DstBlock		    "2DOFJointConstrainer"
+	    Points		    [0, 20]
+	    DstBlock		    "odd1Angles"
 	    DstPort		    1
 	  }
 	}
@@ -8666,8 +8663,8 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Odd2"
-      SID		      "12214"
+      Name		      "Salp Odd3"
+      SID		      "12687"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [700, 225, 850, 275]
       MinAlgLoopOccurrences   off
@@ -8678,7 +8675,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Odd2"
+	Name			"Salp Odd3"
 	Location		[45, 152, 1217, 969]
 	Open			off
 	ModelBrowserVisibility	off
@@ -8695,7 +8692,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12215"
+	  SID			  "12688"
 	  Ports			  [2, 2]
 	  Position		  [480, 644, 580, 686]
 	  ZOrder		  -17
@@ -8726,7 +8723,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12216"
+	      SID		      "12689"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -8734,7 +8731,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12217"
+	      SID		      "12690"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -8743,7 +8740,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12218"
+	      SID		      "12691"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -8772,7 +8769,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12219"
+		  SID			  "12692"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -8780,7 +8777,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12220"
+		  SID			  "12693"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -8790,13 +8787,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12221"
+		  SID			  "12694"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12222"
+		  SID			  "12695"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -8807,7 +8804,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12223"
+		  SID			  "12696"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -8818,7 +8815,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12224"
+		  SID			  "12697"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -8832,7 +8829,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12225"
+		  SID			  "12698"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -8891,7 +8888,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12226"
+	      SID		      "12699"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -8920,7 +8917,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12227"
+		  SID			  "12700"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -8928,7 +8925,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12228"
+		  SID			  "12701"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -8938,13 +8935,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12229"
+		  SID			  "12702"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12230"
+		  SID			  "12703"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -8955,7 +8952,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12231"
+		  SID			  "12704"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -8966,7 +8963,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12232"
+		  SID			  "12705"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -8980,7 +8977,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12233"
+		  SID			  "12706"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -9039,7 +9036,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12234"
+	      SID		      "12707"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -9047,7 +9044,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12235"
+	      SID		      "12708"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -9082,7 +9079,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12236"
+	  SID			  "12709"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -9161,7 +9158,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12237"
+	  SID			  "12710"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -9188,7 +9185,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12238"
+	  SID			  "12711"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -9207,7 +9204,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9220,7 +9217,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Force Propulsion"
-	  SID			  "12239"
+	  SID			  "12712"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 575, 215, 615]
 	  LibraryVersion	  "1.1"
@@ -9238,7 +9235,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9251,7 +9248,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12240"
+	  SID			  "12713"
 	  Position		  [20, 586, 115, 604]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -9261,7 +9258,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12241"
+	  SID			  "12714"
 	  Position		  [20, 516, 115, 534]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -9271,7 +9268,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12242"
+	  SID			  "12715"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [385, 635, 425, 675]
 	  BlockMirror		  on
@@ -9291,7 +9288,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9301,7 +9298,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12243"
+	  SID			  "12716"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [380, 710, 420, 750]
 	  BlockMirror		  on
@@ -9321,7 +9318,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9331,7 +9328,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12244"
+	  SID			  "12717"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [290, 540, 330, 580]
 	  BlockRotation		  270
@@ -9366,7 +9363,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12245"
+	  SID			  "12718"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -9384,7 +9381,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12246"
+	  SID			  "12719"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -9401,7 +9398,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12247"
+	  SID			  "12720"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [605, 489, 610, 551]
 	  BackgroundColor	  "black"
@@ -9418,7 +9415,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12248"
+	  SID			  "12721"
 	  Ports			  [2, 2]
 	  Position		  [570, 52, 730, 103]
 	  ZOrder		  -17
@@ -9426,7 +9423,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -9448,7 +9445,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12249"
+	  SID			  "12722"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -9459,7 +9456,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12250"
+	  SID			  "12723"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 505, 215, 545]
 	  LibraryVersion	  "1.1"
@@ -9477,7 +9474,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9490,7 +9487,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12251"
+	  SID			  "12724"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [440, 444, 490, 496]
 	  LibraryVersion	  "1.1"
@@ -9512,7 +9509,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12252"
+	  SID			  "12725"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 540, 700, 580]
 	  LibraryVersion	  "1.1"
@@ -9540,7 +9537,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9566,7 +9563,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12253"
+	  SID			  "12726"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 480, 700, 520]
 	  LibraryVersion	  "1.1"
@@ -9594,7 +9591,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9620,7 +9617,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12254"
+	  SID			  "12727"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -9649,7 +9646,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9658,7 +9655,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12255"
+	  SID			  "12728"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -9735,7 +9732,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12256"
+	  SID			  "12729"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -9764,7 +9761,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9773,7 +9770,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12257"
+	  SID			  "12730"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -9781,7 +9778,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12258"
+	  SID			  "12731"
 	  Position		  [520, 446, 550, 464]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -10010,10 +10007,10 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Odd3"
-      SID		      "12259"
+      Name		      "Salp Odd4"
+      SID		      "12732"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1045, 225, 1195, 275]
+      Position		      [1050, 225, 1200, 275]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -10022,7 +10019,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Odd3"
+	Name			"Salp Odd4"
 	Location		[37, 116, 1130, 937]
 	Open			off
 	ModelBrowserVisibility	off
@@ -10039,7 +10036,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12260"
+	  SID			  "12733"
 	  Ports			  [2, 2]
 	  Position		  [480, 644, 580, 686]
 	  ZOrder		  -17
@@ -10070,7 +10067,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12261"
+	      SID		      "12734"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -10078,7 +10075,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12262"
+	      SID		      "12735"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -10087,7 +10084,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12263"
+	      SID		      "12736"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -10116,7 +10113,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12264"
+		  SID			  "12737"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -10124,7 +10121,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12265"
+		  SID			  "12738"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -10134,13 +10131,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12266"
+		  SID			  "12739"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12267"
+		  SID			  "12740"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -10151,7 +10148,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12268"
+		  SID			  "12741"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -10162,7 +10159,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12269"
+		  SID			  "12742"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -10176,7 +10173,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12270"
+		  SID			  "12743"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -10235,7 +10232,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12271"
+	      SID		      "12744"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -10264,7 +10261,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12272"
+		  SID			  "12745"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -10272,7 +10269,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12273"
+		  SID			  "12746"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -10282,13 +10279,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12274"
+		  SID			  "12747"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12275"
+		  SID			  "12748"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -10299,7 +10296,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12276"
+		  SID			  "12749"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -10310,7 +10307,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12277"
+		  SID			  "12750"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -10324,7 +10321,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12278"
+		  SID			  "12751"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -10383,7 +10380,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12279"
+	      SID		      "12752"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -10391,7 +10388,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12280"
+	      SID		      "12753"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -10426,7 +10423,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12281"
+	  SID			  "12754"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -10505,7 +10502,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12282"
+	  SID			  "12755"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -10532,7 +10529,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12283"
+	  SID			  "12756"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -10551,7 +10548,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -10564,7 +10561,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Force Propulsion"
-	  SID			  "12284"
+	  SID			  "12757"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 575, 215, 615]
 	  LibraryVersion	  "1.1"
@@ -10582,7 +10579,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -10595,7 +10592,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12285"
+	  SID			  "12758"
 	  Position		  [20, 586, 115, 604]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -10605,7 +10602,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12286"
+	  SID			  "12759"
 	  Position		  [20, 516, 115, 534]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -10615,7 +10612,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12287"
+	  SID			  "12760"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [385, 635, 425, 675]
 	  BlockMirror		  on
@@ -10635,7 +10632,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -10645,7 +10642,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12288"
+	  SID			  "12761"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [380, 710, 420, 750]
 	  BlockMirror		  on
@@ -10665,7 +10662,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -10675,7 +10672,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12289"
+	  SID			  "12762"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [290, 540, 330, 580]
 	  BlockRotation		  270
@@ -10710,7 +10707,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12290"
+	  SID			  "12763"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -10728,7 +10725,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12291"
+	  SID			  "12764"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -10745,7 +10742,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12292"
+	  SID			  "12765"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [605, 489, 610, 551]
 	  BackgroundColor	  "black"
@@ -10762,7 +10759,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12293"
+	  SID			  "12766"
 	  Ports			  [2, 2]
 	  Position		  [565, 52, 725, 103]
 	  ZOrder		  -17
@@ -10770,7 +10767,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -10792,7 +10789,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12294"
+	  SID			  "12767"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -10803,7 +10800,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12295"
+	  SID			  "12768"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 505, 215, 545]
 	  LibraryVersion	  "1.1"
@@ -10821,7 +10818,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -10834,7 +10831,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12296"
+	  SID			  "12769"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [440, 444, 490, 496]
 	  LibraryVersion	  "1.1"
@@ -10856,7 +10853,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12297"
+	  SID			  "12770"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 540, 700, 580]
 	  LibraryVersion	  "1.1"
@@ -10884,7 +10881,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -10910,7 +10907,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12298"
+	  SID			  "12771"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 480, 700, 520]
 	  LibraryVersion	  "1.1"
@@ -10938,7 +10935,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -10964,7 +10961,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12299"
+	  SID			  "12772"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -10993,7 +10990,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -11002,7 +10999,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12300"
+	  SID			  "12773"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -11079,7 +11076,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12301"
+	  SID			  "12774"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -11108,7 +11105,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -11117,7 +11114,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12302"
+	  SID			  "12775"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -11125,7 +11122,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12303"
+	  SID			  "12776"
 	  Position		  [520, 446, 550, 464]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -11354,8 +11351,8 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Odd4"
-      SID		      "12304"
+      Name		      "Salp Odd5"
+      SID		      "12777"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [355, 320, 505, 370]
       MinAlgLoopOccurrences   off
@@ -11366,7 +11363,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Odd4"
+	Name			"Salp Odd5"
 	Location		[45, 130, 1217, 947]
 	Open			off
 	ModelBrowserVisibility	off
@@ -11383,7 +11380,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12305"
+	  SID			  "12778"
 	  Ports			  [2, 2]
 	  Position		  [480, 644, 580, 686]
 	  ZOrder		  -17
@@ -11414,7 +11411,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12306"
+	      SID		      "12779"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -11422,7 +11419,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12307"
+	      SID		      "12780"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -11431,7 +11428,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12308"
+	      SID		      "12781"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -11460,7 +11457,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12309"
+		  SID			  "12782"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -11468,7 +11465,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12310"
+		  SID			  "12783"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -11478,13 +11475,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12311"
+		  SID			  "12784"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12312"
+		  SID			  "12785"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -11495,7 +11492,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12313"
+		  SID			  "12786"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -11506,7 +11503,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12314"
+		  SID			  "12787"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -11520,7 +11517,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12315"
+		  SID			  "12788"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -11579,7 +11576,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12316"
+	      SID		      "12789"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -11608,7 +11605,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12317"
+		  SID			  "12790"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -11616,7 +11613,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12318"
+		  SID			  "12791"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -11626,13 +11623,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12319"
+		  SID			  "12792"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12320"
+		  SID			  "12793"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -11643,7 +11640,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12321"
+		  SID			  "12794"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -11654,7 +11651,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12322"
+		  SID			  "12795"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -11668,7 +11665,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12323"
+		  SID			  "12796"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -11727,7 +11724,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12324"
+	      SID		      "12797"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -11735,7 +11732,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12325"
+	      SID		      "12798"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -11770,7 +11767,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12326"
+	  SID			  "12799"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -11849,7 +11846,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12327"
+	  SID			  "12800"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -11876,7 +11873,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12328"
+	  SID			  "12801"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -11895,7 +11892,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11908,7 +11905,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Force Propulsion"
-	  SID			  "12329"
+	  SID			  "12802"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 575, 215, 615]
 	  LibraryVersion	  "1.1"
@@ -11926,7 +11923,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11939,7 +11936,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12330"
+	  SID			  "12803"
 	  Position		  [20, 586, 115, 604]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -11949,7 +11946,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12331"
+	  SID			  "12804"
 	  Position		  [20, 516, 115, 534]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -11959,7 +11956,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12332"
+	  SID			  "12805"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [385, 635, 425, 675]
 	  BlockMirror		  on
@@ -11979,7 +11976,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11989,7 +11986,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12333"
+	  SID			  "12806"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [380, 710, 420, 750]
 	  BlockMirror		  on
@@ -12009,7 +12006,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -12019,7 +12016,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12334"
+	  SID			  "12807"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [290, 540, 330, 580]
 	  BlockRotation		  270
@@ -12054,7 +12051,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12335"
+	  SID			  "12808"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -12072,7 +12069,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12336"
+	  SID			  "12809"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -12089,7 +12086,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12337"
+	  SID			  "12810"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [605, 489, 610, 551]
 	  BackgroundColor	  "black"
@@ -12106,7 +12103,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12338"
+	  SID			  "12811"
 	  Ports			  [2, 2]
 	  Position		  [570, 52, 730, 103]
 	  ZOrder		  -17
@@ -12114,7 +12111,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12136,7 +12133,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12339"
+	  SID			  "12812"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -12147,7 +12144,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12340"
+	  SID			  "12813"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 505, 215, 545]
 	  LibraryVersion	  "1.1"
@@ -12165,7 +12162,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -12178,7 +12175,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12341"
+	  SID			  "12814"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [440, 444, 490, 496]
 	  LibraryVersion	  "1.1"
@@ -12200,7 +12197,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12342"
+	  SID			  "12815"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 540, 700, 580]
 	  LibraryVersion	  "1.1"
@@ -12228,7 +12225,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12254,7 +12251,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12343"
+	  SID			  "12816"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 480, 700, 520]
 	  LibraryVersion	  "1.1"
@@ -12282,7 +12279,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12308,7 +12305,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12344"
+	  SID			  "12817"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -12337,7 +12334,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12346,7 +12343,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12345"
+	  SID			  "12818"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -12423,7 +12420,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12346"
+	  SID			  "12819"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -12452,7 +12449,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12461,7 +12458,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12347"
+	  SID			  "12820"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -12469,7 +12466,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12348"
+	  SID			  "12821"
 	  Position		  [520, 446, 550, 464]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -12698,8 +12695,8 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Salp Odd5"
-      SID		      "12349"
+      Name		      "Salp Odd6"
+      SID		      "12822"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [700, 320, 850, 370]
       MinAlgLoopOccurrences   off
@@ -12710,7 +12707,7 @@ Model {
       RequestExecContextInheritance off
       MaskHideContents	      off
       System {
-	Name			"Salp Odd5"
+	Name			"Salp Odd6"
 	Location		[37, 182, 1130, 1003]
 	Open			off
 	ModelBrowserVisibility	off
@@ -12727,7 +12724,7 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "2DOFJointConstrainer"
-	  SID			  "12350"
+	  SID			  "12823"
 	  Ports			  [2, 2]
 	  Position		  [480, 644, 580, 686]
 	  ZOrder		  -17
@@ -12758,7 +12755,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In1"
-	      SID		      "12351"
+	      SID		      "12824"
 	      Position		      [260, 118, 290, 132]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
@@ -12766,7 +12763,7 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "In2"
-	      SID		      "12352"
+	      SID		      "12825"
 	      Position		      [260, 198, 290, 212]
 	      ZOrder		      -1
 	      Port		      "2"
@@ -12775,7 +12772,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer1"
-	      SID		      "12353"
+	      SID		      "12826"
 	      Ports		      [1, 1]
 	      Position		      [310, 104, 410, 146]
 	      ZOrder		      -17
@@ -12804,7 +12801,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12354"
+		  SID			  "12827"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -12812,7 +12809,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12355"
+		  SID			  "12828"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -12822,13 +12819,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12356"
+		  SID			  "12829"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12357"
+		  SID			  "12830"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -12839,7 +12836,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12358"
+		  SID			  "12831"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -12850,7 +12847,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12359"
+		  SID			  "12832"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -12864,7 +12861,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12360"
+		  SID			  "12833"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -12923,7 +12920,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "AnglleConstrainer2"
-	      SID		      "12361"
+	      SID		      "12834"
 	      Ports		      [1, 1]
 	      Position		      [310, 184, 410, 226]
 	      ZOrder		      -17
@@ -12952,7 +12949,7 @@ Model {
 		Block {
 		  BlockType		  Inport
 		  Name			  "In1"
-		  SID			  "12362"
+		  SID			  "12835"
 		  Position		  [110, 103, 140, 117]
 		  ZOrder		  -1
 		  IconDisplay		  "Port number"
@@ -12960,7 +12957,7 @@ Model {
 		Block {
 		  BlockType		  DeadZone
 		  Name			  "Dead Zone"
-		  SID			  "12363"
+		  SID			  "12836"
 		  Position		  [165, 95, 195, 125]
 		  ZOrder		  -3
 		  LowerValue		  "-angleLimit"
@@ -12970,13 +12967,13 @@ Model {
 		Block {
 		  BlockType		  Derivative
 		  Name			  "Derivative"
-		  SID			  "12364"
+		  SID			  "12837"
 		  Position		  [265, 170, 295, 200]
 		}
 		Block {
 		  BlockType		  Gain
 		  Name			  "P"
-		  SID			  "12365"
+		  SID			  "12838"
 		  Position		  [270, 70, 380, 130]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintK"
@@ -12987,7 +12984,7 @@ Model {
 		Block {
 		  BlockType		  Gain
 		  Name			  "P1"
-		  SID			  "12366"
+		  SID			  "12839"
 		  Position		  [315, 159, 435, 211]
 		  ZOrder		  -8
 		  Gain			  "-angleConstraintB"
@@ -12998,7 +12995,7 @@ Model {
 		Block {
 		  BlockType		  Sum
 		  Name			  "Sum"
-		  SID			  "12367"
+		  SID			  "12840"
 		  Ports			  [2, 1]
 		  Position		  [540, 110, 560, 130]
 		  ZOrder		  -18
@@ -13012,7 +13009,7 @@ Model {
 		Block {
 		  BlockType		  Outport
 		  Name			  "Out1"
-		  SID			  "12368"
+		  SID			  "12841"
 		  Position		  [580, 113, 610, 127]
 		  ZOrder		  -2
 		  IconDisplay		  "Port number"
@@ -13071,7 +13068,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out1"
-	      SID		      "12369"
+	      SID		      "12842"
 	      Position		      [490, 118, 520, 132]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
@@ -13079,7 +13076,7 @@ Model {
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Out2"
-	      SID		      "12370"
+	      SID		      "12843"
 	      Position		      [490, 198, 520, 212]
 	      ZOrder		      -2
 	      Port		      "2"
@@ -13114,7 +13111,7 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "Angles odd5"
-	  SID			  "12371"
+	  SID			  "12844"
 	  Ports			  [2]
 	  Position		  [820, 511, 850, 544]
 	  ZOrder		  -16
@@ -13149,7 +13146,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "12372"
+	  SID			  "12845"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -13228,7 +13225,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "12373"
+	  SID			  "12846"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -13255,7 +13252,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "12374"
+	  SID			  "12847"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -13274,7 +13271,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13287,7 +13284,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Force Propulsion"
-	  SID			  "12375"
+	  SID			  "12848"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 575, 215, 615]
 	  LibraryVersion	  "1.1"
@@ -13305,7 +13302,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13318,7 +13315,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "12376"
+	  SID			  "12849"
 	  Position		  [20, 586, 115, 604]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -13328,7 +13325,7 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "12377"
+	  SID			  "12850"
 	  Position		  [20, 516, 115, 534]
 	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
@@ -13338,7 +13335,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator1"
-	  SID			  "12378"
+	  SID			  "12851"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [385, 635, 425, 675]
 	  BlockMirror		  on
@@ -13358,7 +13355,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13368,7 +13365,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Actuator2"
-	  SID			  "12379"
+	  SID			  "12852"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [380, 710, 420, 750]
 	  BlockMirror		  on
@@ -13388,7 +13385,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13398,7 +13395,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Initial Condition"
-	  SID			  "12380"
+	  SID			  "12853"
 	  Ports			  [0, 0, 0, 0, 0, 0, 1]
 	  Position		  [290, 540, 330, 580]
 	  BlockRotation		  270
@@ -13433,7 +13430,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "12381"
+	  SID			  "12854"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -13451,7 +13448,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "12382"
+	  SID			  "12855"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -13468,7 +13465,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar1"
-	  SID			  "12383"
+	  SID			  "12856"
 	  Ports			  [0, 0, 0, 0, 0, 1, 2]
 	  Position		  [605, 489, 610, 551]
 	  BackgroundColor	  "black"
@@ -13485,7 +13482,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "12384"
+	  SID			  "12857"
 	  Ports			  [2, 2]
 	  Position		  [565, 52, 725, 103]
 	  ZOrder		  -17
@@ -13493,7 +13490,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.14"
+	  ModelReferenceVersion	  "1.16"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -13515,7 +13512,7 @@ Model {
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "12385"
+	  SID			  "12858"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -13526,7 +13523,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "12386"
+	  SID			  "12859"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [175, 505, 215, 545]
 	  LibraryVersion	  "1.1"
@@ -13544,7 +13541,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13557,7 +13554,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Universal"
-	  SID			  "12387"
+	  SID			  "12860"
 	  Ports			  [0, 0, 0, 0, 0, 3, 3]
 	  Position		  [440, 444, 490, 496]
 	  LibraryVersion	  "1.1"
@@ -13579,7 +13576,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle 2"
-	  SID			  "12388"
+	  SID			  "12861"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 540, 700, 580]
 	  LibraryVersion	  "1.1"
@@ -13607,7 +13604,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13633,7 +13630,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angle1"
-	  SID			  "12389"
+	  SID			  "12862"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [660, 480, 700, 520]
 	  LibraryVersion	  "1.1"
@@ -13661,7 +13658,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13687,7 +13684,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "12390"
+	  SID			  "12863"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 95, 850, 135]
 	  BlockMirror		  on
@@ -13716,7 +13713,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13725,7 +13722,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "12391"
+	  SID			  "12864"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -13802,7 +13799,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "12392"
+	  SID			  "12865"
 	  Ports			  [0, 1, 0, 0, 0, 1]
 	  Position		  [810, 40, 850, 80]
 	  BlockMirror		  on
@@ -13831,7 +13828,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13840,7 +13837,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "12393"
+	  SID			  "12866"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -13848,7 +13845,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Back"
-	  SID			  "12394"
+	  SID			  "12867"
 	  Position		  [520, 446, 550, 464]
 	  BlockMirror		  on
 	  Port			  "2"
@@ -14194,24 +14191,24 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Salp Even3"
-      SrcPort		      RConn1
-      Points		      [5, 0; 0, 60; -1055, 0; 0, 35]
-      DstBlock		      "Salp Odd4"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Salp Odd5"
+      SrcBlock		      "Salp Even1"
       SrcPort		      LConn1
-      DstBlock		      "Salp Even4"
+      DstBlock		      "Salp Odd1"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Salp Odd4"
+      SrcBlock		      "Salp Odd6"
+      SrcPort		      LConn1
+      DstBlock		      "Salp Even5"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Salp Even4"
       SrcPort		      RConn1
-      DstBlock		      "Salp Even4"
+      Points		      [0, 60; -1055, 0; 0, 35]
+      DstBlock		      "Salp Odd5"
       DstPort		      LConn1
     }
     Line {
@@ -14223,6 +14220,27 @@ Model {
     }
     Line {
       LineType		      "Connection"
+      SrcBlock		      "Salp Odd6"
+      SrcPort		      RConn1
+      DstBlock		      "Salp Even6"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Salp Odd4"
+      SrcPort		      RConn1
+      DstBlock		      "Salp Even4"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Salp Odd4"
+      SrcPort		      LConn1
+      DstBlock		      "Salp Even3"
+      DstPort		      RConn1
+    }
+    Line {
+      LineType		      "Connection"
       SrcBlock		      "Salp Odd3"
       SrcPort		      RConn1
       DstBlock		      "Salp Even3"
@@ -14230,31 +14248,10 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Salp Odd3"
-      SrcPort		      LConn1
-      DstBlock		      "Salp Even2"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Salp Odd2"
-      SrcPort		      RConn1
-      DstBlock		      "Salp Even2"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
       SrcBlock		      "Salp Even1"
-      SrcPort		      LConn1
-      DstBlock		      "Salp Odd1"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Salp Odd2"
-      SrcPort		      LConn1
-      DstBlock		      "Salp Even1"
-      DstPort		      RConn1
+      SrcPort		      RConn1
+      DstBlock		      "Salp Odd3"
+      DstPort		      LConn1
     }
   }
 }

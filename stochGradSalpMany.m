@@ -7,7 +7,7 @@ endstate = zeros(1,numRuns);
 colors = ['k', 'c', 'r'];
 for n = 1:numRuns
     currentOptimN = n
-    [alphaHist, valueHist, exitFlag, finalAlpha, finalCost] = stochGradSalp;
+    [alphaHist, valueHist, exitFlag, finalAlpha, finalCost, finalIteration] = stochGradSalp;
     endstate(n) = exitFlag;
     if exitFlag == 1
         alphas(:,n) = alphaHist(:,end);
@@ -18,7 +18,10 @@ for n = 1:numRuns
     end
     figure(5);
     hold on;
-    plot(n, costs(n), [colors(exitFlag) '.']);
+    plot3(finalIteration, costs(n), n, [colors(exitFlag) '.']);
     hold off;
     title('cost reached after optimal.');
+    xlabel('number of iterations');
+    ylabel('cost');
+    zlabel('run number');
 end

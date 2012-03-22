@@ -1,4 +1,4 @@
-function [alphaHist valueHist exitFlag finalAlpha finalCost] = stochGradSalp
+function [alphaHist valueHist exitFlag finalAlpha finalCost finalIteration] = stochGradSalp
 %exit flag says why it ended. 666-unknown reasons; 1-end of iterations; 2-didn't learn in first
 %K iterations; 3-Simulation errored out
 global valueHist alphaHist Salp1_PandV Salp1_angles
@@ -11,9 +11,9 @@ exitFlag = 666;
     
     stand_dev_beta = [0.1 0.003 0.003 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = [5000 50 50 5000];
+    etta = [8000 80 80 8000];
     sizeBeta = size(alpha);
-    maxI = 4;
+    maxI = 600;
     
     alphaHist = zeros(length(alpha), maxI);
     valueHist = zeros(1, maxI);   
@@ -23,12 +23,12 @@ exitFlag = 666;
     %number of times to try a new beta before giving up on the optimization
     betaSimErrors = 0; %none so far
     
-    initialLearn = 3; %if haven't learned much by now, stop.
+    initialLearn = 10; %if haven't learned much by now, stop.
     
     for i = 1:maxI
-        i = i
+%         i = i
         alpha = boundAngles(alpha);
-        etta = etta*0.9999;
+        etta = etta*0.999;
         
        
         %check if learning at all in the first several itteration if not
@@ -38,6 +38,7 @@ exitFlag = 666;
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
+                finalIteration = i;
                 return
             end
         end
@@ -48,17 +49,18 @@ exitFlag = 666;
             sim('salpChain');
         catch simError
             disp(simError.identifier);
-            if strcmp(simError.identifier, 'Could not...')
-                rethrow(simError);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
             end
            exitFlag = 3;
            finalAlpha = alpha;
            if (i ==1)
-               finalCost = 666;
+               finalCost = 0.666;
            else
                finalCost = J_alpha; %this will be the cost from last time, 
                %but that's the best there is.
            end
+           finalIteration = i;
            return
         end
         
@@ -77,13 +79,17 @@ exitFlag = 666;
             needSim = false;
         catch simError
             disp(simError.identifier);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
+            end
            if (betaSimErrors > maxSimErrors)
                exitFlag = 3;
                finalAlpha = alpha+beta;
                finalCost = J_alpha;
+               finalIteration = i;
                return;
            end
-           betaSimErrors = betSimErrors+1;
+           betaSimErrors = betaSimErrors+1;
            %find new beta and try again.
            beta = stand_dev_beta.*randn(sizeBeta);
            needSim = true;
@@ -110,6 +116,7 @@ exitFlag = 666;
     finalAlpha = alphaHist(:,end);
     finalCost = valueHist(end);
     exitFlag = 1;
+    finalIteration = i;
 end
 
 function updateParams(alpha)  
