@@ -49,8 +49,8 @@ exitFlag = 666;
             sim('salpChain');
         catch simError
             disp(simError.identifier);
-            if strcmp(simError.identifier, 'Could not...')
-                rethrow(simError);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
             end
            exitFlag = 3;
            finalAlpha = alpha;
@@ -79,6 +79,9 @@ exitFlag = 666;
             needSim = false;
         catch simError
             disp(simError.identifier);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
+            end
            if (betaSimErrors > maxSimErrors)
                exitFlag = 3;
                finalAlpha = alpha+beta;
