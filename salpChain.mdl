@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.657"
+    ComputedModelVersion    "1.658"
     NumModelReferences	    10
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -61,9 +61,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 22 11:09:27 2012"
+  LastModifiedDate	  "Thu Mar 22 11:45:10 2012"
   RTWModifiedTimeStamp	  254314387
-  ModelVersionFormat	  "1.%<AutoIncrement:657>"
+  ModelVersionFormat	  "1.%<AutoIncrement:658>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -7174,8 +7174,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[428, 96, 1445, 869]
-	Open			off
+	Location		[428, 118, 1445, 891]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -8337,10 +8337,10 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-7.5~-4"
-	  YMax			  "0~0.5"
+	  YMin			  "-40~0"
+	  YMax			  "5~60"
 	  SaveToWorkspace	  on
-	  SaveName		  "Salp1_Angles"
+	  SaveName		  "Salp1_angles"
 	  DataFormat		  "StructureWithTime"
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
