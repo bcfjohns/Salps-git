@@ -1,4 +1,4 @@
-function [alphaHist valueHist exitFlag finalAlpha finalCost] = stochGradSalp
+function [alphaHist valueHist exitFlag finalAlpha finalCost finalIteration] = stochGradSalp
 %exit flag says why it ended. 666-unknown reasons; 1-end of iterations; 2-didn't learn in first
 %K iterations; 3-Simulation errored out
 global valueHist alphaHist Salp1_PandV Salp1_angles
@@ -38,6 +38,7 @@ exitFlag = 666;
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
+                finalIteration = i;
                 return
             end
         end
@@ -54,11 +55,12 @@ exitFlag = 666;
            exitFlag = 3;
            finalAlpha = alpha;
            if (i ==1)
-               finalCost = 666;
+               finalCost = 0.666;
            else
                finalCost = J_alpha; %this will be the cost from last time, 
                %but that's the best there is.
            end
+           finalIteration = i;
            return
         end
         
@@ -81,6 +83,7 @@ exitFlag = 666;
                exitFlag = 3;
                finalAlpha = alpha+beta;
                finalCost = J_alpha;
+               finalIteration = i;
                return;
            end
            betaSimErrors = betaSimErrors+1;
@@ -110,6 +113,7 @@ exitFlag = 666;
     finalAlpha = alphaHist(:,end);
     finalCost = valueHist(end);
     exitFlag = 1;
+    finalIteration = i;
 end
 
 function updateParams(alpha)  
