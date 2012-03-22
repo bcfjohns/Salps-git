@@ -83,7 +83,7 @@ exitFlag = 666;
                finalCost = J_alpha;
                return;
            end
-           betaSimErrors = betSimErrors+1;
+           betaSimErrors = betaSimErrors+1;
            %find new beta and try again.
            beta = stand_dev_beta.*randn(sizeBeta);
            needSim = true;
