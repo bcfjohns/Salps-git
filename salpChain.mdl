@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.673"
+    ComputedModelVersion    "1.674"
     NumModelReferences	    6
     ModelReference {
       ModelRefBlockPath	      "salpChain/Salp Even1/Model|v2Drag"
@@ -49,9 +49,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar 15 23:10:49 2012"
-  RTWModifiedTimeStamp	  253741895
-  ModelVersionFormat	  "1.%<AutoIncrement:673>"
+  LastModifiedDate	  "Fri Mar 23 16:48:21 2012"
+  RTWModifiedTimeStamp	  254422095
+  ModelVersionFormat	  "1.%<AutoIncrement:674>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -89,7 +89,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain"
-    signals_		    []
     overrideMode_	    [2U]
     Array {
       Type		      "Cell"
@@ -141,9 +140,6 @@ Model {
   ExtModeSkipDownloadWhenConnect off
   ExtModeLogAll		  on
   ExtModeAutoUpdateStatusClock on
-  TunableVars		  "backConnect,connectR,evenTorque,frontConnect,oddTorque,uAmplitudeEven"
-  TunableVarsStorageClass "Auto,Auto,Auto,Auto,Auto,Auto"
-  TunableVarsTypeQualifier ",,,,,"
   BufferReuse		  on
   ShowModelReferenceBlockVersion off
   ShowModelReferenceBlockIO off
@@ -689,7 +685,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
+      CurrentDlgPage	      "Optimization/Signals and Parameters"
       ConfigPrmDlgPosition     [ 232, 52, 1131, 674 ] 
     }
     PropName		    "ConfigurationSets"
@@ -930,7 +926,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [139, 50, 1111, 530]
+    Location		    [139, 72, 1444, 560]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1086,8 +1082,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even1"
-	Location		[150, 72, 1440, 890]
-	Open			on
+	Location		[151, 95, 1441, 913]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2379,7 +2375,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [732, 480, 1420, 850]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -4365,8 +4361,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even3"
-	Location		[152, 72, 1442, 890]
-	Open			off
+	Location		[152, 94, 1442, 912]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5979,8 +5975,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[129, 71, 1222, 851]
-	Open			on
+	Location		[129, 93, 1222, 873]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -6855,7 +6851,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [690, 74, 1378, 444]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -7389,7 +7385,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [32, 485, 720, 855]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -9408,8 +9404,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd3"
-	Location		[393, 50, 1565, 867]
-	Open			on
+	Location		[393, 72, 1565, 889]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -10586,7 +10582,7 @@ Model {
 	  ZOrder		  -3
 	  Floating		  off
 	  Location		  [188, 390, 512, 629]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
