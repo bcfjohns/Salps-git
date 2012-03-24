@@ -1,4 +1,4 @@
-%Benjamin Johnson editing to play with parameters to get a tighter spiral
+%Benjamin Johnson editing to play with parameters
 
 %All the parameters for the salp simulation
 %all units are assumed to be degrees and mks
