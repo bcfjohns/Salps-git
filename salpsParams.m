@@ -6,7 +6,6 @@ clear all;
 close all;
 global uAmplitudeEven xFinal valueHist alphaHist
 
-
 %=============================================================
 %general parameters
 sLength = 0.16; %the length of a salp
@@ -42,16 +41,19 @@ backConnect = [0 sRadius*1.1 -sLength];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 0 -sLength*0.5];
+propulsionPosition = [0 sRadius*0.5 -sLength*0.5];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 150]; 
-%The pi is necessary to "flip" each salp so the connections flip sides from
-%salp to salp.
+connectR = [14.8581-.028-5.46e-05-1e-4 -59.8797-3.4805-0.1162-0.0037 0]; 
+%can use this to set the initial orientation fo the salp, when there's only
+%one.
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
+
+%Center of pressure position
+COPPosition = [0 0 -sLength];
 
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.
@@ -82,8 +84,8 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uFrequency = 1; %frequency for the base drive signal
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-0.2 0.2 2];
-uBias = 1; %bias is added before the amplitude scaling.
+uAmplitudeEven = [-.1 0 1];
+%uBias = 1; %bias is added before the amplitude scaling.
 
 
 %allows the simulation to see the initial state variable

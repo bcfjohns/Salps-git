@@ -1,10 +1,10 @@
 function [alphaHist valueHist] = stochGradSalp
 global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
-    %set initial parameters for the gradient search
+%set initial parameters for the gradient search
     alpha = [0.0744 0.1201]; %the angles of the output force assume normalized to 4
     
-    stand_dev_beta = 0.01;
-    etta = 460;
+    stand_dev_beta = 0.1;
+    etta = 4600;
     sizeBeta = size(alpha);
     maxI = 200;
     
@@ -15,7 +15,7 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
 %         tic
         i = i
         alpha = alpha
-        etta = etta*0.99
+        etta = etta*0.95
         %================================================================
         %sim with alpha then compute J_alpha
         setUAmplitudeEven(alpha)
@@ -34,6 +34,8 @@ global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
         tic
         sim('salpChain');
         toc
+        %sound(y, Fs)
+        %input('hows it going?');
         
         J_alpha_beta = valueFunction();
         
