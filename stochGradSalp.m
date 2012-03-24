@@ -7,7 +7,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     stand_dev_beta = [0.01 0.01];
     etta = [4000 4000];
     sizeBeta = size(alpha);
-    maxI = 900;
+    maxI = 500;
     
     alphaHist = zeros(length(alpha), maxI);
     valueHist = zeros(1, maxI);    
@@ -23,7 +23,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
    
   for i = 1:maxI
 %         i = i
-        etta = etta*0.999;
+        etta = etta*0.99;
         
        
         %check if learning at all in the first several itteration if not
