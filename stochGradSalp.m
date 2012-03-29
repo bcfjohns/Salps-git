@@ -114,12 +114,13 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
 
 end
 
-function updatePulseParams(alpha)
+function alpha = updatePulseParams(alpha)
 global uDelay uPulseWidth uPeriod
 uDelay = alpha(1);
 uPeriod = alpha(2);
 if uPeriod<=0.5
     uPeriod = 0.5;
+    alpha(2) = uPeriod;
 end
 uPulseWidth = 0.5/uPeriod;
 
