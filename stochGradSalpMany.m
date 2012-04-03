@@ -1,7 +1,7 @@
 %function stochGradSalpMany
 
 numRuns = 50;
-alphas=zeros(4,numRuns);
+alphas=zeros(2,numRuns);
 costs=zeros(1,numRuns);
 endstate = zeros(1,numRuns);
 colors = ['k', 'c', 'r'];

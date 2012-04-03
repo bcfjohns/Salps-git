@@ -4,14 +4,12 @@ function [alphaHist valueHist exitFlag finalAlpha finalCost finalIteration] = st
 global valueHist alphaHist Salp1_PandV Salp1_angles
 exitFlag = 666;
 %set initial parameters for the gradient search
-    alpha = [rand(1)*pi/2.5 10*(randn(1,2)-0.5) rand(1)*2*pi];
-    %alpha = [pi/4 0 0.04 .9*pi];%[1 0.02 0.02 0.02 1].*randn(1,5);
-    %angle of propulsion, x and z components of linkage (assuming
-    %front and back are symmetric and of a set length. 1 angle for the relative rotation between two salps.
+    alpha = [rand(1)*1.5  rand(1)*1.5];
+    %alpha = angles of propulsion
     
-    stand_dev_beta = [0.1 0.003 0.003 0.1]; %make angles about 10 times
+    stand_dev_beta = [0.1 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = [8000 80 80 8000];
+    etta = [8000 8000];
     sizeBeta = size(alpha);
     maxI = 600;
     
@@ -21,7 +19,7 @@ exitFlag = 666;
     %params for error checking and restarting etc.
     maxSimErrors = 5; 
     %number of times to try a new beta before giving up on the optimization
-    betaSimErrors = 0; %none so far
+    betaSimErrors = 3; %none so far
     
     initialLearn = 10; %if haven't learned much by now, stop.
     
@@ -44,7 +42,7 @@ exitFlag = 666;
         end
         %================================================================
         %sim with alpha then compute J_alpha
-        updateParams(alpha);
+        setUAmplitudeEven([alpha(1) alpha(2)])
         try
             sim('salpChain');
         catch simError
@@ -69,8 +67,8 @@ exitFlag = 666;
         %================================================================
         %sim with alpha+beta then compute J_alpha
         beta = stand_dev_beta.*randn(sizeBeta);
-        
-        updateParams(alpha+beta);
+        setUAmplitudeEven([alpha(1) alpha(2)])
+%         updateParams(alpha+beta);
         needSim = true;
         while needSim
         try
@@ -167,15 +165,21 @@ global connectR frontConnect backConnect u1axis u2axis
 end
 
 function alpha = boundAngles(alpha)
-    angle1bound = pi/2.5;
-    if (alpha(1)>angle1bound)
-        alpha(1)=angle1bound;
+    anglebound = 1.5;
+    if (alpha(1)>anglebound)
+        alpha(1)=anglebound;
     else if (alpha(1)<0)
             alpha(1) = 0;
         end
     end
     
-    alpha(4) = mod(alpha(4), 2*pi);
+        if (alpha(2)>anglebound)
+        alpha(2)=anglebound;
+    else if (alpha(1)<0)
+            alpha(1) = 0;
+        end
+    end
+    
 end
 
     
