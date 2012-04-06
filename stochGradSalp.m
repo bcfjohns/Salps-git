@@ -1,7 +1,7 @@
 function [alphaHist valueHist exitFlag finalAlpha finalCost finalIteration] = stochGradSalp
 %exit flag says why it ended. 666-unknown reasons; 1-end of iterations; 2-didn't learn in first
 %K iterations; 3-Simulation errored out
-global valueHist alphaHist Salp1_PandV Salp1_angles
+global valueHist alphaHist Salp1_PandV Salp1_angles uAmplitudeEven
 exitFlag = 666;
 %set initial parameters for the gradient search
     alpha = [rand(1)*1.5  rand(1)*1.5];
@@ -11,7 +11,7 @@ exitFlag = 666;
     %the size of length, since that's in meters vs radians.
     etta = [8000 8000];
     sizeBeta = size(alpha);
-    maxI = 600;
+    maxI = 60;
     
     alphaHist = zeros(length(alpha), maxI);
     valueHist = zeros(1, maxI);   
@@ -32,12 +32,16 @@ exitFlag = 666;
         %check if learning at all in the first several itteration if not
         %stop.
         if (i==initialLearn)
+            disp('checking if learned range of ValueHist is');
+            disp(range(valueHist(1:i)));
             if range(valueHist(1:i))<0.01
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
                 finalIteration = i;
                 return
+            else
+                disp('I think I learned');
             end
         end
         %================================================================
