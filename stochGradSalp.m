@@ -9,9 +9,9 @@ exitFlag = 666;
     
     stand_dev_beta = [0.1 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = [8000 8000];
+    etta = [4600 4600];
     sizeBeta = size(alpha);
-    maxI = 60;
+    maxI = 200;
     
     alphaHist = zeros(length(alpha), maxI);
     valueHist = zeros(1, maxI);   
@@ -19,14 +19,14 @@ exitFlag = 666;
     %params for error checking and restarting etc.
     maxSimErrors = 5; 
     %number of times to try a new beta before giving up on the optimization
-    betaSimErrors = 3; %none so far
+    betaSimErrors = 3; %
     
     initialLearn = 10; %if haven't learned much by now, stop.
     
     for i = 1:maxI
 %         i = i
         alpha = boundAngles(alpha);
-        etta = etta*0.999;
+        etta = etta*0.95;
         
        
         %check if learning at all in the first several itteration if not
