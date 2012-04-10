@@ -1,6 +1,6 @@
-function [radius, omega, speed] = getHelixParams(time, positions, angles)
+function [radius, omega, speed, flag] = getHelixParams(time, positions, angles)
 %assumes data is column wise that is x is in the first column, y 2nd ...
-
+flag = 1; %a flag of 0 indicates low Rsquared values.
 %trim off transient behavior
 
 angle2 = angles(:,2);
@@ -32,6 +32,12 @@ positionSS = positions(smallestIndex:end, :);
 [xfit, xRsq] = linSinFit(timeSS, positionSS(:,1));
 [yfit, yRsq] = linSinFit(timeSS, positionSS(:,2));
 [zfit, zRsq] = linSinFit(timeSS, positionSS(:,3));
+
+if (xRsq<0.96 | yRsq<0.96 | zRsq<0.96)
+    disp('r-sqaured values too small');
+    disp([xRsq yRsq zRsq]);
+    flag = 0;
+end
 
 speed = norm([xfit(2) yfit(2) zfit(2)]);
 radius = mean([xfit(3) yfit(3) zfit(3)]);
