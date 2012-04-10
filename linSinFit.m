@@ -1,4 +1,5 @@
 function [coeffs, bestRsq] = linSinFit(x,y)
+    %coeffs = 'a+b*x+c*sin(d*x+e)'
     maxIter = 50;
     
     %do the linear fit
