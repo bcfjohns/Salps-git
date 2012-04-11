@@ -65,3 +65,20 @@ for mdl = modelNames
    
    jj=jj+1;
 end
+
+
+%alternative plot
+subplot(4,1,1);
+plot(2:20, radiuses, 'b')
+title('helix parameters');
+ylabel('radius');
+subplot(4,1,2);
+plot(2:20, omegas, 'g');
+ylabel('omega')
+subplot(4,1,3);
+plot(2:20, speeds, 'r');
+ylabel('speed');
+subplot(4,1,4)
+plot(2:20, flags);
+ylabel('Rsq>0.95');
+xlabel('number of nodes');
