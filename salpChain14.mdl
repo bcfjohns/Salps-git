@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    14
     ModelReference {
       ModelRefBlockPath	      "salpChain14/End Salp Even/Model|v2Drag"
@@ -73,9 +73,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 09 17:47:38 2012"
-  RTWModifiedTimeStamp	  255894458
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Wed Apr 11 20:32:47 2012"
+  RTWModifiedTimeStamp	  256077158
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -113,6 +113,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain14"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -929,8 +930,8 @@ Model {
   }
   System {
     Name		    "salpChain14"
-    Location		    [0, 72, 1440, 896]
-    Open		    off
+    Location		    [0, 94, 1440, 918]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -959,8 +960,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Even"
-	Location		[544, 73, 1641, 869]
-	Open			off
+	Location		[227, 50, 1324, 846]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1118,7 +1119,7 @@ Model {
 	  Position		  [840, 256, 870, 289]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [747, 447, 1435, 894]
+	  Location		  [650, 260, 1338, 707]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -1140,7 +1141,7 @@ Model {
 	  YMin			  "0~-0.1"
 	  YMax			  "55~0.225"
 	  SaveToWorkspace	  on
-	  SaveName		  "endSalp_PandV1"
+	  SaveName		  "endSalp_PandV"
 	  DataFormat		  "StructureWithTime"
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
@@ -1260,7 +1261,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -1276,18 +1277,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -2487,7 +2478,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -2503,18 +2494,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -4062,7 +4043,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -4078,18 +4059,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -5557,7 +5528,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -5573,18 +5544,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -6914,7 +6875,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -6930,18 +6891,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -8271,7 +8222,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -8287,18 +8238,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -9628,7 +9569,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -9644,18 +9585,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -10985,7 +10916,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -11001,18 +10932,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12373,7 +12294,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -12389,18 +12310,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -13727,7 +13638,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -13743,18 +13654,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -15081,7 +14982,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -15097,18 +14998,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -16435,7 +16326,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -16451,18 +16342,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -17789,7 +17670,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -17805,18 +17686,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -19167,7 +19038,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -19183,18 +19054,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux

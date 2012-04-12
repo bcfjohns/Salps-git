@@ -46,8 +46,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 09 17:47:36 2012"
-  RTWModifiedTimeStamp	  255894456
+  LastModifiedDate	  "Wed Apr 11 16:37:18 2012"
+  RTWModifiedTimeStamp	  256063037
   ModelVersionFormat	  "1.%<AutoIncrement:3>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -1264,7 +1264,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -2457,7 +2457,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -4062,7 +4062,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -5521,7 +5521,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -6903,7 +6903,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    2
     ModelReference {
       ModelRefBlockPath	      "salpChain2/End Salp Even/Model|v2Drag"
@@ -37,9 +37,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 09 17:47:35 2012"
-  RTWModifiedTimeStamp	  255894455
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Wed Apr 11 16:45:22 2012"
+  RTWModifiedTimeStamp	  256063516
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -77,6 +77,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain2"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -893,8 +894,8 @@ Model {
   }
   System {
     Name		    "salpChain2"
-    Location		    [26, 76, 981, 468]
-    Open		    off
+    Location		    [26, 98, 981, 490]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -923,8 +924,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Even"
-	Location		[544, 73, 1641, 869]
-	Open			off
+	Location		[544, 95, 1641, 891]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1064,7 +1065,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1083,7 +1084,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [747, 447, 1435, 894]
-	  Open			  off
+	  Open			  on
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1104,7 +1105,7 @@ Model {
 	  YMin			  "0~-0.1"
 	  YMax			  "55~0.225"
 	  SaveToWorkspace	  on
-	  SaveName		  "endSalp_PandV1"
+	  SaveName		  "endSalp_PandV"
 	  DataFormat		  "StructureWithTime"
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
@@ -1160,7 +1161,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1224,7 +1225,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -1240,18 +1241,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -1285,7 +1276,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1316,7 +1307,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1358,7 +1349,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1473,7 +1464,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2184,7 +2175,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2215,7 +2206,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2276,7 +2267,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2317,7 +2308,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2347,7 +2338,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointActuator"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2451,7 +2442,7 @@ Model {
 	  NamePlacement		  "alternate"
 	  ModelNameDialog	  "v2Drag"
 	  SimulationMode	  "Normal"
-	  ModelReferenceVersion	  "1.16"
+	  ModelReferenceVersion	  "1.19"
 	  List {
 	    ListType		    InputPortNames
 	    port0		    "translational Velocities"
@@ -2467,18 +2458,8 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
-	  List {
-	    ListType		    InputPortLatchByCopyingInsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
-	  List {
-	    ListType		    InputPortLatchByDelayingOutsideSignal
-	    port0		    "off"
-	    port1		    "off"
-	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -2512,7 +2493,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2575,7 +2556,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2629,7 +2610,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2684,7 +2665,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2869,7 +2850,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -3205,8 +3186,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "8"
+      MachineId		      "[9 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -3388,7 +3369,7 @@ MatData {
   NumRecords		  1
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    0     8    (    !          %    \"     $    0     0         0    $    '5N=&ET;&5D,B]'<F"
-    "]U;F0"
+    Data		    "  %)30     .    2     8    (    !          %    \"     $    1     0         0    $0   '-A;'!#:&%I;C(O1W"
+    ")O=6YD          "
   }
 }

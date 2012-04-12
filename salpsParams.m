@@ -25,12 +25,12 @@ sRadius = 0.02; %the radius of the salp.
 %z points in the direction of forward travel. x is the "left-right"
 %direction where salps are to the left and right of each other.
 %%=================================================================
-% CURRENTLY ARBITRARY!
+% 
 sMass = 0.04; %about 40 grams %Mass of the salp
- 
+% giantMass = sMass*90;
 % CURRENTLY ARBITRARY!
 sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the salp.
-
+% giantInertia = sInertia*30;
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
@@ -84,6 +84,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
      2*sLength*sRadius^2*2*pi*sRadius/360];
  %shrink angular drag by some factor
  cDrag(4:6) = cDrag(4:6)/380;
+ giantDrag = cDrag*90;
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.

@@ -6,7 +6,7 @@
     % preEndSalp_angles
     force_close_system('all');
     salpsParams;
-    modelSet = [1:20 36];
+    modelSet = [3:20 36];
     modelNames = cell(1,length(modelSet));
 
     radiuses=zeros(length(modelSet),3); %three rows for first, middle and final node.
@@ -65,6 +65,27 @@
            omega2=omega3;
            speed2=speed3;
            Rsq2=Rsq3;
+           
+        case 3
+           %doesn't have preEnd salp
+           %all three nodes exist
+           %first salp
+           time = firstSalp_PandV.time;
+           positions = firstSalp_PandV.signals(1).values;
+           angles=[firstSalp_angles.signals(1).values firstSalp_angles.signals(2).values];
+           [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
+
+           %middle salp. Time should be the same for all three
+           angles=[middleSalp_angles.signals(1).values middleSalp_angles.signals(2).values];
+           positions = middleSalp_PandV.signals(1).values;
+           [radius2 omega2 speed2 Rsq2] = getHelixParams(time, positions, angles);
+
+           %end salp. It doesn't have angles so use angles from
+           %postultimate salp
+           angles=[middleSalp_angles.signals(1).values middleSalp_angles.signals(2).values];
+           positions = endSalp_PandV.signals(1).values;
+           [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, angles);
+
 
        otherwise
            %all three nodes exist
@@ -102,8 +123,8 @@
     subplot(4,1,1);
     plot(modelSet, radiuses(:,1), 'k')
     hold on;
-    plot(modelSet, radiuses(:,2), 'c')
-    plot(modelSet, radiuses(:,3), 'g')
+    plot(modelSet, radiuses(:,2), 'c--')
+    plot(modelSet, radiuses(:,3), 'g-.')
     hold off;
     legend('first', 'middle', 'end'); 
     title('radius');
@@ -111,39 +132,39 @@
     subplot(4,1,2);
     plot(modelSet, omegas(:,1), 'k');
     hold on;
-    plot(modelSet, omegas(:,2), 'c');
-    plot(modelSet, omegas(:,3), 'g');
+    plot(modelSet, omegas(:,2), 'c--');
+    plot(modelSet, omegas(:,3), 'g-.');
     hold off;
     title('omega')
     
     subplot(4,1,3);
     plot(modelSet, speeds(:,1), 'k');
-    plot(modelSet, speeds(:,2), 'c');
-    plot(modelSet, speeds(:,3), 'g');
+    plot(modelSet, speeds(:,2), 'c--');
+    plot(modelSet, speeds(:,3), 'g-.');
     title('speed');
     
     subplot(4,1,4)
     title('flags');
     plot(modelSet, Rsqs(:,1), 'k');
     hold on;
-    plot(modelSet, Rsqs(:,2), 'c');
-    plot(modelSet, Rsqs(:,3), 'g');
+    plot(modelSet, Rsqs(:,2), 'c--');
+    plot(modelSet, Rsqs(:,3), 'g-.');
     hold off;
 
     
     %    figure(1);
     %    subplot(6,3,jj);
-    %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,1), 'g');
+    %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,1), 'g-.');
     %    hold on;
-    %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,2), 'c');
+    %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,2), 'c--');
     %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,3), 'k');
     %    hold off;
     %    
     %    figure(2)
     %    subplot(6,3,jj);
-    %    plot(firstSalp_PandV.time, firstSalp_angles.signals(1).values(:,1), 'g');
+    %    plot(firstSalp_PandV.time, firstSalp_angles.signals(1).values(:,1), 'g-.');
     %    hold on;
-    %    plot(firstSalp_PandV.time, firstSalp_angles.signals(2).values(:,1), 'c');
+    %    plot(firstSalp_PandV.time, firstSalp_angles.signals(2).values(:,1), 'c--');
     %    hold off;
 
     end
@@ -155,7 +176,7 @@ plot(2:20, radiuses, 'b')
 title('helix parameters');
 ylabel('radius');
 subplot(4,1,2);
-plot(2:20, omegas, 'g');
+plot(2:20, omegas, 'g-.');
 ylabel('omega')
 subplot(4,1,3);
 plot(2:20, speeds, 'r');
