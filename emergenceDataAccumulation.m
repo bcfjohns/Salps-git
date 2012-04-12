@@ -111,7 +111,7 @@
 
     %pull out middle and end nodes as well
     %duplicate info as needed or blanks when not applicable.
-
+%%
     radiuses(jj,:) = [radius1, radius2, radius3];
     omegas(jj,:) = [omega1, omega2, omega3];
     speeds(jj,:) = [speed1, speed2, speed3];
@@ -139,8 +139,10 @@
     
     subplot(4,1,3);
     plot(modelSet, speeds(:,1), 'k');
+    hold on;
     plot(modelSet, speeds(:,2), 'c--');
     plot(modelSet, speeds(:,3), 'g-.');
+    hold off;
     title('speed');
     
     subplot(4,1,4)
@@ -151,7 +153,7 @@
     plot(modelSet, Rsqs(:,3), 'g-.');
     hold off;
 
-    
+    %%
     %    figure(1);
     %    subplot(6,3,jj);
     %    plot(firstSalp_PandV.time, firstSalp_PandV.signals(1).values(:,1), 'g-.');
