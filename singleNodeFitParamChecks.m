@@ -32,7 +32,11 @@ for t = times
     thzd = 0.9943;
     thzdd = 0;
     
-    state = [x;y;z;xd;yd;zd;thx;thy;thz;thxd;thyd;thzd];
+    omega = [-sin(thy); cos(thy)*sin(thx); cos(thy)*cos(thx)]*thzd;
+    oemgad = 0;
+    
+    %wrong need omega's not just euler angle dots!
+    state = [x;y;z;xd;yd;zd;thx;thy;thz;omega];
     
     stateD = salpDE(t, state);
     
@@ -42,8 +46,8 @@ for t = times
     
     angled(:,i) = [thxd;thyd;thzd];
     angledResid(:,i) = [thxd;thyd;thzd] - stateD(7:9);
-    angleddResid(:,i) = [thxdd;thydd;thzdd] - stateD(10:12);
-    angledd(:,i) = [thxdd;thydd;thzdd];
+    angleddResid(:,i) = omegad - stateD(10:12);
+    angledd(:,i) = omegad;
     
 end    
 figure(1)
@@ -78,7 +82,7 @@ plot(times,angleddResid(1,:), 'b');
 hold on;
 plot(times,angleddResid(2,:), 'g');
 plot(times,angleddResid(3,:), 'm');
-plot(times,angledd(3,:), 'k');
+% plot(times,angledd(3,:), 'k');
 
 hold off;
 legend('thxdd', 'thydd', 'thzdd', 'thzdd value');
@@ -92,10 +96,10 @@ plot(times,angledResid(1,:), 'b');
 hold on;
 plot(times,angledResid(2,:), 'g');
 plot(times,angledResid(3,:), 'm');
-plot(times,angled(3,:), 'k');
+% plot(times,angled(3,:), 'k');
 
 hold off;
 legend('thxdd', 'thydd', 'thzdd', 'thzdd value');
-title('OMEGA residuals');
+title('euler angle dot residuals');
 xlabel('time');
 ylabel('angular velocity rad/s');

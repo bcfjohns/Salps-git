@@ -75,16 +75,16 @@ EA1 = [];
 EA2 = [];
 for i = 1:length(RotM1)
     rmat = reshape(RotM1(i, :), 3,3); %this takes a vector from body and converts to world
-    EA1p = rmToEAzyx(rmat);
+    EA1p = rmToEAxyz(rmat);
 %      EA1p = SpinCalc('DCMtoEA123', reshape(RotM1(i, :), 3,3), 0.1, 0);
     %convert things as needed, so life is happy
     %so at this point EA1p = [theta_x theta_y theta_z] with Euler convetion
     %xyz, cause rmat that I get is wrong.
-    EA1b = SpinCalc('EA123toEA321', EA1p, 0.1, 0);
-    %rearrange so still in theta_x, theta_y, theta_z order
-    EA1p(1) = EA1b(3);
-    EA1p(2) = EA1b(2);
-    EA1p(3) = EA1b(1);
+% % % % % %     EA1b = SpinCalc('EA123toEA321', EA1p, 0.1, 0);
+% % % % % %     %rearrange so still in theta_x, theta_y, theta_z order
+% % % % % %     EA1p(1) = EA1b(3);
+% % % % % %     EA1p(2) = EA1b(2);
+% % % % % %     EA1p(3) = EA1b(1);
     EA1 = [EA1; EA1p];%[angleN(EA1p); EA1];
 %     
 %     EA2p = SpinCalc('DCMtoEA132', reshape(RotM2(i, :), 3,3), 0.1, 0);

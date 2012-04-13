@@ -1,4 +1,4 @@
-function [radius, omega, speed, RsqMean] = getHelixParams(time, positions, angles)
+function [radius, omega, speed, RsqMean, phase] = getHelixParams(time, positions, angles)
 %assumes data is column wise that is x is in the first column, y 2nd ...
 RsqMean = 1; %mean of the Rsquared values from the three fits.
 angle2 = angles(:,2);
@@ -39,8 +39,23 @@ end
 
 RsqMean = mean([xRsq yRsq zRsq]);
 speed = norm([xfit(2) yfit(2) zfit(2)]);
-radius = mean([xfit(3) yfit(3) zfit(3)]);
-omega = mean([xfit(4) yfit(4) zfit(4)]);
+radius = mean([abs(xfit(3)) abs(yfit(3)) abs(zfit(3))]);
+omega = mean(abs([xfit(4) yfit(4) zfit(4)]));
+
+%alter phase as needed depending on sign of magnitude and frequency
+if yfit(3)<0 %negative amplitude
+    if yfit(4)<0 %negative 
+        phase = -yfit(5);
+    else
+        phase = yfit(5)+pi;
+    end
+else
+    if yfit(4)<0 %negative 
+        phase = -yfit(5)+pi;
+    else
+        phase = yfit(5);
+    end
+end
 end
 
 
