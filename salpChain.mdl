@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.551"
+    ComputedModelVersion    "1.552"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 24 12:23:51 2012"
-  RTWModifiedTimeStamp	  251985262
-  ModelVersionFormat	  "1.%<AutoIncrement:551>"
+  LastModifiedDate	  "Fri Apr 13 23:50:59 2012"
+  RTWModifiedTimeStamp	  256232150
+  ModelVersionFormat	  "1.%<AutoIncrement:552>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -599,7 +599,7 @@ Model {
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     off
+	      VisDuringSimulation     on
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -640,7 +640,7 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Data Import//Export"
+      CurrentDlgPage	      "Simscape/SimMechanics"
       ConfigPrmDlgPosition     [ 404, 22, 1303, 644 ] 
     }
     PropName		    "ConfigurationSets"
@@ -848,7 +848,7 @@ Model {
   }
   System {
     Name		    "salpChain"
-    Location		    [69, 92, 1364, 850]
+    Location		    [69, 114, 1364, 872]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -915,8 +915,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "0"
+      MachineId		      "[1 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -997,7 +997,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[295, 135, 1479, 963]
+	Location		[25, 117, 1209, 945]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1305,8 +1305,8 @@ Model {
 	  Ports			  [2]
 	  Position		  [1080, 287, 1120, 323]
 	  Floating		  off
-	  Location		  [205, 71, 1319, 745]
-	  Open			  on
+	  Location		  [83, 122, 1197, 796]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1339,7 +1339,7 @@ Model {
 	  Ports			  [3]
 	  Position		  [970, 202, 1005, 278]
 	  Floating		  off
-	  Location		  [7, 196, 1447, 824]
+	  Location		  [1, 196, 1441, 824]
 	  Open			  off
 	  NumInputPorts		  "3"
 	  ZoomMode		  "xonly"
