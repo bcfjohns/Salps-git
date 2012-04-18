@@ -97,6 +97,8 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
 % uDelay = 0.1; %delay for force signal between salps
 %uAmplitudeOdd = [0.2 0.2 2];
 uAmplitudeEven = [-0.2 0 2];
+linPwrLimit = 0.1; %the maximal 1/velocity value
+rotPwrLimit = 0.1; %the maximal 1/angular velocity value.
 %uBias = 1; %bias is added before the amplitude scaling.
 
 oddTorque = [0 0 0];%0.1];
