@@ -34,12 +34,12 @@ sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the s
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*0 -sLength]; 
+frontConnect = [0 -sRadius*1 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*0 -sLength];
+backConnect = [0 sRadius*1 -sLength];
 
 %axis of revolution of the universal joint
 u1axis = [1 0 0];
@@ -47,12 +47,12 @@ u2axis = [0 1 0];
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
-propulsionPosition = [0 0 -sLength*0.5];
+propulsionPosition = [0 0 -sLength];
 
 %CS2_prev->CS1_current
 %orientation vector of Euler angles (x y z) of one salp with respect to the
 %previous salp. Orientation of CS1 to adjoining.
-connectR = [0 0 170]; 
+connectR = [0 0 30]; 
 %The pi is necessary to "flip" each salp so the connections flip sides from
 %salp to salp.
 
@@ -83,7 +83,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
      2*sRadius*sLength^2*(pi*sLength/360) 2*sRadius*sLength^2*(pi*sLength/360) ...
      2*sLength*sRadius^2*2*pi*sRadius/360];
  %shrink angular drag by some factor
- cDrag(4:6) = cDrag(4:6)/380;
+ cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.
