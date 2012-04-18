@@ -1,14 +1,14 @@
 
 force_close_system('all');
 salpsParams;
-modelSet = [3:20 36];
+modelSet = [1:36];
 modelNames = cell(1,length(modelSet));
 
 radiuses=zeros(length(modelSet),3); %three rows for first, middle and final node.
 omegas=zeros(length(modelSet),3);
 speeds=zeros(length(modelSet),3);
 Rsqs=zeros(length(modelSet),3);
-haveData=zeros(length(modelSet),3;) %records if have data for this number of nodes yet. 1 if yes 0 if false.
+haveData=zeros(length(modelSet),3); %records if have data for this number of nodes yet. 1 if yes 0 if false.
 
 %set up model names, and set solvers and save.
 for ii = 1:length(modelSet)
@@ -174,6 +174,7 @@ for jj = 1:length(modelSet);
         %    hold on;
         %    plot(firstSalp_PandV.time, firstSalp_angles.signals(2).values(:,1), 'c--');
         %    hold off;
+        haveData(jj) = 1;
     end
 end
 

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    19
     ModelReference {
       ModelRefBlockPath	      "salpChain19/End Salp Odd/Model|v2Drag"
@@ -88,9 +88,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Apr 11 16:37:22 2012"
-  RTWModifiedTimeStamp	  256063042
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  LastModifiedDate	  "Wed Apr 18 15:54:58 2012"
+  RTWModifiedTimeStamp	  256665289
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -128,6 +128,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain19"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -944,8 +945,8 @@ Model {
   }
   System {
     Name		    "salpChain19"
-    Location		    [0, 50, 1440, 874]
-    Open		    off
+    Location		    [0, 72, 1440, 896]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -11628,7 +11629,7 @@ Model {
       Name		      "Salp Even5"
       SID		      "668"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1180, 229, 1275, 281]
+      Position		      [1180, 224, 1275, 276]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -22466,7 +22467,7 @@ Model {
       Name		      "Salp Odd6"
       SID		      "713"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [1310, 232, 1400, 278]
+      Position		      [1310, 227, 1400, 273]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -26787,7 +26788,6 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Odd4"
       SrcPort		      RConn1
-      Points		      [10, 0; 0, 5]
       DstBlock		      "Salp Even5"
       DstPort		      LConn1
     }
@@ -26795,7 +26795,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Salp Odd6"
       SrcPort		      RConn1
-      Points		      [5, 0; 0, 105; -1140, 0; 0, 35]
+      Points		      [5, 0; 0, 110; -1140, 0; 0, 35]
       DstBlock		      "Middle Salp Even"
       DstPort		      LConn1
     }
@@ -26813,7 +26813,7 @@ MatData {
   NumRecords		  1
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    0     8    (    !          %    \"     $    0     0         0    $    '5N=&ET;&5D,B]'<F"
-    "]U;F0"
+    Data		    "  %)30     .    2     8    (    !          %    \"     $    2     0         0    $@   '-A;'!#:&%I;C$Y+T"
+    "=R;W5N9         "
   }
 }

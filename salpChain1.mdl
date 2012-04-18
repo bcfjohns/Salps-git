@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.20"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "salpChain1/End Salp Odd/Model|v2Drag"
@@ -34,9 +34,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 17 00:09:44 2012"
-  RTWModifiedTimeStamp	  256490205
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  LastModifiedDate	  "Wed Apr 18 15:41:47 2012"
+  RTWModifiedTimeStamp	  256664503
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -74,6 +74,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain1"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -715,17 +716,6 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Abs
-      ZeroCross		      on
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-    }
-    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -748,24 +738,6 @@ Model {
       IconDisplay	      "Tag"
     }
     Block {
-      BlockType		      Inport
-      Port		      "1"
-      OutputFunctionCall      off
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
       BlockType		      ModelReference
       Variant		      off
       GeneratePreprocessorConditionals off
@@ -778,23 +750,6 @@ Model {
       UseBusObject	      off
       BusObject		      "BusObject"
       NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
     }
     Block {
       BlockType		      PMIOPort
@@ -813,21 +768,6 @@ Model {
       RndMeth		      "Zero"
       SaturateOnIntegerOverflow	on
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Saturate
-      UpperLimitSource	      "Dialog"
-      UpperLimit	      "0.5"
-      LowerLimitSource	      "Dialog"
-      LowerLimit	      "-0.5"
-      LinearizeAsGain	      on
-      ZeroCross		      on
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
     }
     Block {
       BlockType		      Scope
@@ -872,7 +812,7 @@ Model {
   }
   System {
     Name		    "salpChain1"
-    Location		    [361, 50, 1098, 662]
+    Location		    [361, 72, 1098, 684]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -886,11 +826,11 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "54"
+    SIDHighWatermark	    "72"
     Block {
       BlockType		      SubSystem
       Name		      "End Salp Odd"
-      SID		      "13"
+      SID		      "55"
       Ports		      [0, 0, 0, 0, 0, 1]
       Position		      [290, 225, 390, 275]
       MinAlgLoopOccurrences   off
@@ -902,8 +842,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Odd"
-	Location		[27, 50, 1044, 823]
-	Open			on
+	Location		[169, 98, 1186, 871]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -918,7 +858,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Body"
-	  SID			  "14"
+	  SID			  "56"
 	  Ports			  [0, 0, 0, 0, 0, 1, 6]
 	  Position		  [125, 355, 215, 475]
 	  LibraryVersion	  "1.1"
@@ -997,7 +937,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Bushing"
-	  SID			  "15"
+	  SID			  "57"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
 	  Position		  [190, 82, 240, 133]
 	  LibraryVersion	  "1.1"
@@ -1022,244 +962,9 @@ Model {
 	  R3Axis		  "[0 0 1]"
 	}
 	Block {
-	  BlockType		  SubSystem
-	  Name			  "Constant power with saturation"
-	  SID			  "38"
-	  Ports			  [4, 2]
-	  Position		  [385, 389, 525, 526]
-	  ZOrder		  -19
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  System {
-	    Name		    "Constant power with saturation"
-	    Location		    [389, 358, 1259, 1038]
-	    Open		    on
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "translational Vel"
-	      SID		      "39"
-	      Position		      [505, 163, 535, 177]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Linear Power"
-	      SID		      "51"
-	      Position		      [420, 198, 450, 212]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "rot Vel"
-	      SID		      "53"
-	      Position		      [505, 238, 535, 252]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Rot Pwr"
-	      SID		      "54"
-	      Position		      [420, 268, 450, 282]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Abs
-	      Name		      "Abs"
-	      SID		      "41"
-	      Position		      [420, 155, 450, 185]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Abs
-	      Name		      "Abs1"
-	      SID		      "46"
-	      Position		      [420, 230, 450, 260]
-	      ZOrder		      -1
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Product
-	      Name		      "Divide1"
-	      SID		      "42"
-	      Ports		      [2, 1]
-	      Position		      [240, 182, 270, 213]
-	      ZOrder		      -8
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Inputs		      "/*"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      RndMeth		      "Floor"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Product
-	      Name		      "Divide3"
-	      SID		      "47"
-	      Ports		      [2, 1]
-	      Position		      [240, 252, 270, 283]
-	      ZOrder		      -8
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Inputs		      "/*"
-	      InputSameDT	      off
-	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-	      RndMeth		      "Floor"
-	      SaturateOnIntegerOverflow	off
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation"
-	      SID		      "45"
-	      Ports		      [1, 1]
-	      Position		      [345, 155, 370, 185]
-	      ZOrder		      -15
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1000000*linPwrLimit"
-	      LowerLimit	      "linPwrLimit"
-	    }
-	    Block {
-	      BlockType		      Saturate
-	      Name		      "Saturation1"
-	      SID		      "49"
-	      Ports		      [1, 1]
-	      Position		      [345, 230, 370, 260]
-	      ZOrder		      -15
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      InputPortMap	      "u0"
-	      UpperLimit	      "1000000*rotPwrLimit"
-	      LowerLimit	      "rotPwrLimit"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "force out"
-	      SID		      "40"
-	      Position		      [95, 193, 125, 207]
-	      ZOrder		      -2
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Torque out"
-	      SID		      "52"
-	      Position		      [95, 263, 125, 277]
-	      ZOrder		      -2
-	      BlockMirror	      on
-	      NamePlacement	      "alternate"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      SrcBlock		      "Abs"
-	      SrcPort		      1
-	      DstBlock		      "Saturation"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Abs1"
-	      SrcPort		      1
-	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "translational Vel"
-	      SrcPort		      1
-	      DstBlock		      "Abs"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Divide1"
-	      SrcPort		      1
-	      DstBlock		      "force out"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Divide3"
-	      SrcPort		      1
-	      DstBlock		      "Torque out"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Linear Power"
-	      SrcPort		      1
-	      DstBlock		      "Divide1"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "Rot Pwr"
-	      SrcPort		      1
-	      DstBlock		      "Divide3"
-	      DstPort		      2
-	    }
-	    Line {
-	      SrcBlock		      "rot Vel"
-	      SrcPort		      1
-	      DstBlock		      "Abs1"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation1"
-	      SrcPort		      1
-	      Points		      [-55, 0]
-	      DstBlock		      "Divide3"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Saturation"
-	      SrcPort		      1
-	      Points		      [-55, 0]
-	      DstBlock		      "Divide1"
-	      DstPort		      1
-	    }
-	  }
-	}
-	Block {
 	  BlockType		  Reference
 	  Name			  "Drag"
-	  SID			  "16"
+	  SID			  "58"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
 	  Position		  [440, 60, 480, 90]
 	  BlockMirror		  on
@@ -1278,7 +983,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1291,13 +996,13 @@ Model {
 	Block {
 	  BlockType		  Scope
 	  Name			  "End Scope"
-	  SID			  "17"
+	  SID			  "59"
 	  Ports			  [2]
-	  Position		  [645, 261, 675, 294]
+	  Position		  [770, 246, 800, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [737, 71, 1425, 518]
-	  Open			  on
+	  Location		  [747, 447, 1435, 894]
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1315,8 +1020,8 @@ Model {
 	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
 	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
-	  YMin			  "-3.25~-0.08"
-	  YMax			  "1.5~0.08"
+	  YMin			  "0~-0.1"
+	  YMax			  "55~0.225"
 	  SaveToWorkspace	  on
 	  SaveName		  "endSalp_PandV"
 	  DataFormat		  "StructureWithTime"
@@ -1326,11 +1031,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Force Propulsion"
-	  SID			  "18"
+	  SID			  "60"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [315, 405, 355, 445]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
+	  Position		  [175, 575, 215, 615]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
@@ -1346,7 +1049,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1359,9 +1062,9 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From"
-	  SID			  "19"
-	  Position		  [580, 431, 675, 449]
-	  BlockMirror		  on
+	  SID			  "61"
+	  Position		  [20, 586, 115, 604]
+	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "OddAmplitude"
 	  TagVisibility		  "global"
@@ -1369,9 +1072,9 @@ Model {
 	Block {
 	  BlockType		  From
 	  Name			  "From2"
-	  SID			  "20"
-	  Position		  [595, 506, 690, 524]
-	  BlockMirror		  on
+	  SID			  "62"
+	  Position		  [20, 516, 115, 534]
+	  NamePlacement		  "alternate"
 	  CloseFcn		  "tagdialog Close"
 	  GotoTag		  "OddTorque"
 	  TagVisibility		  "global"
@@ -1379,9 +1082,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Inertial Sensor"
-	  SID			  "21"
+	  SID			  "63"
 	  Ports			  [0, 2, 0, 0, 0, 1]
-	  Position		  [530, 254, 570, 316]
+	  Position		  [650, 239, 690, 301]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
@@ -1407,7 +1110,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "6"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1428,7 +1131,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Joint Spring & Damper"
-	  SID			  "22"
+	  SID			  "64"
 	  Ports			  [0, 0, 0, 0, 0, 1]
 	  Position		  [75, 70, 135, 120]
 	  NamePlacement		  "alternate"
@@ -1446,7 +1149,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
-	  SID			  "23"
+	  SID			  "65"
 	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 193, 480, 257]
 	  BackgroundColor	  "black"
@@ -1463,7 +1166,7 @@ Model {
 	Block {
 	  BlockType		  ModelReference
 	  Name			  "Model"
-	  SID			  "24"
+	  SID			  "66"
 	  Ports			  [2, 2]
 	  Position		  [570, 52, 730, 103]
 	  ZOrder		  -17
@@ -1487,13 +1190,23 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
 	  Name			  "Mux"
-	  SID			  "25"
+	  SID			  "67"
 	  Ports			  [2, 1]
 	  Position		  [505, 56, 510, 94]
 	  BlockMirror		  on
@@ -1504,11 +1217,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "Torque Propulsion"
-	  SID			  "26"
+	  SID			  "68"
 	  Ports			  [1, 0, 0, 0, 0, 0, 1]
-	  Position		  [315, 470, 355, 510]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
+	  Position		  [175, 505, 215, 545]
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
@@ -1524,7 +1235,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -1537,9 +1248,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "angular velocity body frame"
-	  SID			  "27"
+	  SID			  "69"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [850, 98, 895, 152]
+	  Position		  [795, 104, 855, 186]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -1566,7 +1277,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1575,7 +1286,7 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "dummy body for drag"
-	  SID			  "28"
+	  SID			  "70"
 	  Ports			  [0, 0, 0, 0, 0, 1, 1]
 	  Position		  [340, 55, 400, 95]
 	  LibraryVersion	  "1.1"
@@ -1652,9 +1363,9 @@ Model {
 	Block {
 	  BlockType		  Reference
 	  Name			  "translation body frame"
-	  SID			  "29"
+	  SID			  "71"
 	  Ports			  [0, 1, 0, 0, 0, 1]
-	  Position		  [885, 30, 925, 70]
+	  Position		  [770, 35, 810, 75]
 	  BlockMirror		  on
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
@@ -1681,7 +1392,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "on"
+	  ActiveIO		  "off"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1690,7 +1401,7 @@ Model {
 	Block {
 	  BlockType		  PMIOPort
 	  Name			  "Front"
-	  SID			  "30"
+	  SID			  "72"
 	  Position		  [45, 421, 75, 439]
 	  Port			  "1"
 	  Side			  "Left"
@@ -1699,24 +1410,16 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Body"
 	  SrcPort		  RConn3
-	  Points		  [10, 0; 0, -180]
+	  Points		  [10, 0; 0, -175]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  LConn1
 	}
 	Line {
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  1
-	  Points		  [-100, 0]
-	  Branch {
-	    Points		    [-20, 0; 0, 15]
-	    DstBlock		    "Model"
-	    DstPort		    1
-	  }
-	  Branch {
-	    Points		    [0, 100; -45, 0; 0, 255]
-	    DstBlock		    "Constant power with saturation"
-	    DstPort		    1
-	  }
+	  Points		  [-5, 0; 0, 10]
+	  DstBlock		  "Model"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Mux"
@@ -1727,16 +1430,9 @@ Model {
 	Line {
 	  SrcBlock		  "angular velocity body frame"
 	  SrcPort		  1
-	  Points		  [0, -35; -45, 0]
-	  Branch {
-	    DstBlock		    "Model"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 100; -15, 0; 0, 285]
-	    DstBlock		    "Constant power with saturation"
-	    DstPort		    3
-	  }
+	  Points		  [0, -55]
+	  DstBlock		  "Model"
+	  DstPort		  2
 	}
 	Line {
 	  LineType		  "Connection"
@@ -1749,7 +1445,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [0, -5; 440, 0; 0, -75]
+	  Points		  [395, 0; 0, -60]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -1757,7 +1453,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [15, 0; 0, 175]
+	  Points		  [130, 0; 0, 170]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -1797,7 +1493,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Force Propulsion"
 	  SrcPort		  RConn1
-	  Points		  [-45, 0; 0, 20]
+	  Points		  [25, 0; 0, -150]
 	  DstBlock		  "Body"
 	  DstPort		  RConn5
 	}
@@ -1815,10 +1511,22 @@ Model {
 	  DstPort		  2
 	}
 	Line {
+	  SrcBlock		  "From"
+	  SrcPort		  1
+	  DstBlock		  "Force Propulsion"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From2"
+	  SrcPort		  1
+	  DstBlock		  "Torque Propulsion"
+	  DstPort		  1
+	}
+	Line {
 	  LineType		  "Connection"
 	  SrcBlock		  "Torque Propulsion"
 	  SrcPort		  RConn1
-	  Points		  [-65, 0; 0, -25]
+	  Points		  [5, 0; 0, -60]
 	  DstBlock		  "Body"
 	  DstPort		  RConn6
 	}
@@ -1826,7 +1534,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn3
-	  Points		  [15, 0; 0, 40]
+	  Points		  [115, 0; 0, 25]
 	  DstBlock		  "Inertial Sensor"
 	  DstPort		  LConn1
 	}
@@ -1843,35 +1551,9 @@ Model {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Inertial Sensor"
 	  SrcPort		  2
-	  Points		  [55, 0]
+	  Points		  [60, 0]
 	  DstBlock		  "End Scope"
 	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Constant power with saturation"
-	  SrcPort		  1
-	  DstBlock		  "Force Propulsion"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant power with saturation"
-	  SrcPort		  2
-	  Points		  [-5, 0; 0, -5]
-	  DstBlock		  "Torque Propulsion"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "From"
-	  SrcPort		  1
-	  DstBlock		  "Constant power with saturation"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "From2"
-	  SrcPort		  1
-	  Points		  [-25, 0; 0, -5]
-	  DstBlock		  "Constant power with saturation"
-	  DstPort		  4
 	}
       }
     }
@@ -1927,8 +1609,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "0"
-      MachineId		      "[1 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {

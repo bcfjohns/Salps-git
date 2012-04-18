@@ -39,8 +39,8 @@ end
 
 RsqMean = mean([xRsq yRsq zRsq]);
 speed = norm([xfit(2) yfit(2) zfit(2)]);
-radius = mean([xfit(3) yfit(3) zfit(3)]);
-omega = mean([xfit(4) yfit(4) zfit(4)]);
+radius = mean(abs([xfit(3) yfit(3) zfit(3)]));
+omega = mean(abs([xfit(4) yfit(4) zfit(4)]));
 end
 
 
