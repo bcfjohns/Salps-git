@@ -21,18 +21,18 @@ modelNames(ii) = {strn};
 %         save_system(strn);
 %     end
 end
-
+clear ii;
 %go through sim all the models and plot stuff
 
 for jj = 1:length(modelSet);
-    strn = ['salpChain' num2str(modelSet(ii))];
-    modelNames(ii) = {strn};
+    strn = ['salpChain' num2str(modelSet(jj))];
+    modelNames(jj) = {strn};
        
     if ~haveData(jj)
         %set solver and sim time and save the model
-        load_system(modelNames(ii));
+        load_system(modelNames(jj));
         set_param(strn, 'solver', 'ode15s');
-        set_param(strn, 'stop time', '400');
+        set_param(strn, 'stop time', '160');
         save_system(strn);
 
         mdl = modelNames(jj)
