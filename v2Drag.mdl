@@ -24,7 +24,7 @@ Model {
       Name		      "Translational drag"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.19"
+    ComputedModelVersion    "1.20"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -45,9 +45,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Apr 10 22:39:12 2012"
-  RTWModifiedTimeStamp	  255998350
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  LastModifiedDate	  "Sun Apr 29 00:05:56 2012"
+  RTWModifiedTimeStamp	  257558753
+  ModelVersionFormat	  "1.%<AutoIncrement:20>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -794,7 +794,7 @@ Model {
   }
   System {
     Name		    "v2Drag"
-    Location		    [194, 253, 1230, 741]
+    Location		    [194, 275, 1230, 763]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -849,7 +849,7 @@ Model {
       Name		      "Drag Coefficients"
       SID		      "5"
       Position		      [460, 87, 510, 133]
-      Gain		      "-giantDrag"
+      Gain		      "-cDrag"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
