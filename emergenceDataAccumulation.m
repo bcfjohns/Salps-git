@@ -36,7 +36,9 @@ for jj = 1:length(modelSet);
         save_system(strn);
 
         mdl = modelNames(jj)
+        tic
         sim(char(mdl));
+        toc
 
         %%assign data to first middle or end, depending on if all of those exist
         switch modelSet(jj)
