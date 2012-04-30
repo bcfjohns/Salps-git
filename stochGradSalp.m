@@ -33,8 +33,8 @@ exitFlag = 666;
         %stop.
         if (i==initialLearn)
             disp('checking if learned range of ValueHist is');
-            disp(range(valueHist(1:i)));
-            if range(valueHist(1:i))<0.01
+            disp(range(valueHist(1:i-1)));
+            if range(valueHist(1:i-1))<0.01
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
