@@ -7,8 +7,7 @@ exitFlag = 666;
     alpha = [rand(1)*1.5  rand(1)*1.5];
     %alpha = angles of propulsion
     
-    stand_dev_beta = [0.1 0.1]; %make angles about 10 times
-    %the size of length, since that's in meters vs radians.
+    lengthBeta = 0.1; %means length of Beta will be 0.14
     etta = [300 300];
     sizeBeta = size(alpha);
     maxI = 200;
@@ -70,7 +69,9 @@ exitFlag = 666;
         
         %================================================================
         %sim with alpha+beta then compute J_alpha
-        beta = stand_dev_beta.*randn(sizeBeta);
+        randDirection = 2*pi*rand(1); %random direction in radians.
+        beta = [cos(randDirection) sin(randDirection)];
+        beta = beta*lengthBeta;%set the length of Beta.
         setUAmplitudeEven([alpha(1) alpha(2)])
 %         updateParams(alpha+beta);
         needSim = true;
