@@ -34,7 +34,7 @@ exitFlag = 666;
         %check if learning at all in the first several itteration if not
         %stop.
         if (i==initialLearn)
-            if range(valueHist(1:i))<0.01
+            if range(valueHist(1:i-1))<0.01
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
