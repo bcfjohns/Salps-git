@@ -9,7 +9,7 @@ exitFlag = 666;
     
     stand_dev_beta = [0.1 0.1]; %make angles about 10 times
     %the size of length, since that's in meters vs radians.
-    etta = [4600 4600];
+    etta = [300 300];
     sizeBeta = size(alpha);
     maxI = 200;
     
@@ -26,7 +26,7 @@ exitFlag = 666;
     for i = 1:maxI
 %         i = i
         alpha = boundAngles(alpha);
-        etta = etta*0.95;
+        etta = etta;
         
        
         %check if learning at all in the first several itteration if not
