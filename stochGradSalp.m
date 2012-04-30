@@ -113,7 +113,7 @@ exitFlag = 666;
         plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
         title('valueHist, so far');
         subplot(2,1,2);
-        plot3(valueHist(1:i));
+        plot(valueHist(1:i));
         title('valueHist over itererations');
         xlabel('iteration number');
 
