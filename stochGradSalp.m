@@ -108,12 +108,14 @@ exitFlag = 666;
         alpha = boundAngles(alpha+dalpha); 
         
 
-%         figure(3);
-%         plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
-%         title('valueHist, so far');
-        figure(4);
-        plot(valueHist(1:i));
+        figure(1)
+        subplot(2,1,1)
+        plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
+        title('valueHist, so far');
+        subplot(2,1,2);
+        plot3(valueHist(1:i));
         title('valueHist over itererations');
+        xlabel('iteration number');
 
     end
     finalAlpha = alphaHist(:,end);
