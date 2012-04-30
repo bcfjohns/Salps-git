@@ -36,7 +36,7 @@ for n = 1:numRuns
     zlabel('run number');
     
     figure(3);
-    plot3(historyAll(1,:,ii), historyAll(2,:,ii),historyAll(3,:,ii),[colorsAll(mod(ii,8)+1) '.']);
+    plot3(historyAll(1,:,n), historyAll(2,:,n),historyAll(3,:,n),[colorsAll(mod(n,7)+1) '.']);
     title('points visited by 15 runs of the optimization');
     xlabel('alpha 1');
     ylabel('alpha 2');
