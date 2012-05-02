@@ -1,7 +1,7 @@
 
 force_close_system('all');
 salpsParams;
-modelSet = [1:36];
+modelSet = [1:35];
 modelNames = cell(1,length(modelSet));
 
 radiuses=zeros(length(modelSet),3); %three rows for first, middle and final node.
@@ -9,8 +9,8 @@ omegas=zeros(length(modelSet),3);
 speeds=zeros(length(modelSet),3);
 Rsqs=zeros(length(modelSet),3);
 haveData=zeros(length(modelSet),3); %records if have data for this number of nodes yet. 1 if yes 0 if false.
-
-%set up model names, and set solvers and save.
+simTimes=zeros(length(modelSet),1);
+set up model names, and set solvers and save.
 for ii = 1:length(modelSet)
 strn = ['salpChain' num2str(modelSet(ii))];
 modelNames(ii) = {strn};
@@ -38,7 +38,7 @@ for jj = 1:length(modelSet);
         mdl = modelNames(jj)
         tic
         sim(char(mdl));
-        toc
+        simTimes(jj) = toc;
 
         %%assign data to first middle or end, depending on if all of those exist
         switch modelSet(jj)

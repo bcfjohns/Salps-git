@@ -31,7 +31,7 @@ function [coeffs, bestRsq] = linSinFit(x,y)
     while(Rsq <0.9999999 && iter < maxIter)
         iter = iter + 1;
         opts = fitoptions('Method', 'NonlinearLeastSquares');
-        opts.StartPoint = [guesses amplitudeGuess omegaGuess 3*pi/2*rand(1)];%rand(1)
+        opts.StartPoint = [guesses amplitudeGuess omegaGuess 2*pi*rand(1)];%rand(1)
 
         [fit1, Gqual] = fit(x,y,g, opts);
         % isa = coeffvalues(fit1)
