@@ -34,12 +34,12 @@ sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the s
 %CS1->CG
 %vector pointing from the forward connection point (CS1) to the center of
 %gravity (CG) in components of the body coordinate frame.
-frontConnect = [0 -sRadius*1.1 -sLength]; 
+frontConnect = [0 -sRadius*0 -sLength]; 
 
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*1.1 -sLength];
+backConnect = [0 sRadius*0 -sLength];
 
 %axis of revolution of the universal joint
 u1axis = [1 0 0];
@@ -84,7 +84,7 @@ cDrag = 30*rho_water*pi*[sRadius*sLength sRadius*sLength sRadius^2 ...
      2*sLength*sRadius^2*2*pi*sRadius/360];
  %shrink angular drag by some factor
  cDrag(4:6) = cDrag(4:6)/380;
- %giantDrag = cDrag*90;
+ giantDrag = cDrag*90;
 %6 drag coefficients for translational and angular 
 %components. should be greater than 0 for drag.
 %extra 1/10th in z rotation term, since just skin drag.
@@ -102,7 +102,7 @@ rotPwrLimit = 0.1; %the maximal 1/angular velocity value.
 %uBias = 1; %bias is added before the amplitude scaling.
 PropSignSw = [-1 -1 1];
 
-oddTorque = [0 0 0.2];%0.1];
+oddTorque = [0 0 0];%0.1];
 evenTorque = oddTorque; %[0 0 .1];
 
 

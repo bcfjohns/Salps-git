@@ -124,8 +124,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 29 15:55:27 2012"
-  RTWModifiedTimeStamp	  257615727
+  LastModifiedDate	  "Thu May 03 17:23:14 2012"
+  RTWModifiedTimeStamp	  257966594
   ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -164,7 +164,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain31"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
