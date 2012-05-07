@@ -43,8 +43,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 02 15:56:46 2012"
-  RTWModifiedTimeStamp	  257875006
+  LastModifiedDate	  "Sun May 06 19:32:37 2012"
+  RTWModifiedTimeStamp	  258233556
   ModelVersionFormat	  "1.%<AutoIncrement:6>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -83,6 +83,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain4"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -1246,8 +1247,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -2463,8 +2474,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -4028,8 +4049,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -5568,8 +5599,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux

@@ -118,12 +118,13 @@ for jj = 1:length(modelSet);
 
         %pull out middle and end nodes as well
         %duplicate info as needed or blanks when not applicable.
-    %%
+    
         radiuses(jj,:) = [radius1, radius2, radius3];
         omegas(jj,:) = [omega1, omega2, omega3];
         speeds(jj,:) = [speed1, speed2, speed3];
         Rsqs(jj,:) = [Rsq1, Rsq2, Rsq3];
         figure(1);
+
 
         title('helix as a function of number of nodes');
 
@@ -134,7 +135,7 @@ for jj = 1:length(modelSet);
         plot(modelSet, radiuses(:,3), 'g-.')
         hold off;
         legend('first', 'middle', 'end'); 
-        title('radius');
+        ylabel('radius (m)');
 
         subplot(4,1,2);
         plot(modelSet, omegas(:,1), 'k');
@@ -142,7 +143,7 @@ for jj = 1:length(modelSet);
         plot(modelSet, omegas(:,2), 'c--');
         plot(modelSet, omegas(:,3), 'g-.');
         hold off;
-        title('omega')
+        ylabel('omega (rad/s)')
 
         subplot(4,1,3);
         plot(modelSet, speeds(:,1), 'k');
@@ -150,15 +151,16 @@ for jj = 1:length(modelSet);
         plot(modelSet, speeds(:,2), 'c--');
         plot(modelSet, speeds(:,3), 'g-.');
         hold off;
-        title('speed');
+        ylabel('speed');
 
         subplot(4,1,4)
-        title('flags');
         plot(modelSet, Rsqs(:,1), 'k');
         hold on;
         plot(modelSet, Rsqs(:,2), 'c--');
         plot(modelSet, Rsqs(:,3), 'g-.');
         hold off;
+        
+        ylabel('flags');
 
         %%
         %    figure(1);
