@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.6"
     NumModelReferences	    11
     ModelReference {
       ModelRefBlockPath	      "salpChain11/End Salp Odd/Model|v2Drag"
@@ -64,9 +64,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 02 16:06:46 2012"
-  RTWModifiedTimeStamp	  257875606
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Mon May 07 17:33:05 2012"
+  RTWModifiedTimeStamp	  258312776
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -104,6 +104,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain11"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -920,8 +921,8 @@ Model {
   }
   System {
     Name		    "salpChain11"
-    Location		    [42, 72, 1449, 700]
-    Open		    off
+    Location		    [42, 94, 1449, 722]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -950,7 +951,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Odd"
-	Location		[169, 76, 1186, 849]
+	Location		[169, 98, 1186, 871]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1133,6 +1134,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "endSalp_PandV"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -1298,8 +1300,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -1670,7 +1682,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"First Salp Odd"
-	Location		[147, 94, 1164, 867]
+	Location		[147, 116, 1164, 889]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2481,8 +2493,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -2803,6 +2825,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "firstSalp_angles"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -2838,6 +2861,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "firstSalp_PandV"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -3209,8 +3233,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "11"
-      MachineId		      "[12 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -3265,7 +3289,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Middle Salp Even"
-	Location		[155, 94, 1348, 825]
+	Location		[155, 116, 1348, 847]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4046,8 +4070,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -4399,6 +4433,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "middleSalp_angles"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -4434,6 +4469,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "middleSalp_PandV"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -5531,8 +5567,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -6878,8 +6924,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -8225,8 +8281,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -9603,8 +9669,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -10947,8 +11023,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -12291,8 +12377,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -13635,8 +13731,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -14241,7 +14347,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"preEnd Salp Even"
-	Location		[155, 94, 1348, 825]
+	Location		[155, 116, 1348, 847]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -14973,8 +15079,18 @@ Model {
 	    port0		    "off"
 	    port1		    "off"
 	  }
+	  List {
+	    ListType		    InputPortLatchByCopyingInsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	  CopyOfModelName	  "v2Drag"
 	  DefaultDataLogging	  on
+	  List {
+	    ListType		    InputPortLatchByDelayingOutsideSignal
+	    port0		    "off"
+	    port1		    "off"
+	  }
 	}
 	Block {
 	  BlockType		  Mux
@@ -15326,6 +15442,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "preEndSalp_angles"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}

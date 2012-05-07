@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.23"
+    ComputedModelVersion    "1.24"
     NumModelReferences	    1
     ModelReference {
       ModelRefBlockPath	      "salpChain1/End Salp Odd/Model|v2Drag"
@@ -34,9 +34,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed May 02 15:53:51 2012"
-  RTWModifiedTimeStamp	  257874830
-  ModelVersionFormat	  "1.%<AutoIncrement:23>"
+  LastModifiedDate	  "Mon May 07 16:53:34 2012"
+  RTWModifiedTimeStamp	  258310404
+  ModelVersionFormat	  "1.%<AutoIncrement:24>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -74,6 +74,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain1"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -811,8 +812,8 @@ Model {
   }
   System {
     Name		    "salpChain1"
-    Location		    [567, 50, 1304, 662]
-    Open		    off
+    Location		    [568, 73, 1305, 685]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -841,8 +842,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Odd"
-	Location		[169, 98, 1186, 871]
-	Open			off
+	Location		[169, 120, 1186, 893]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1000,7 +1001,7 @@ Model {
 	  Position		  [770, 246, 800, 279]
 	  ZOrder		  -16
 	  Floating		  off
-	  Location		  [747, 447, 1435, 894]
+	  Location		  [397, 257, 1085, 704]
 	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
@@ -1024,6 +1025,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "endSalp_PandV"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
@@ -1608,8 +1610,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "1"
-      MachineId		      "[2 0]"
+      StateVectorMgrId	      "-1"
+      MachineId		      "[0 0]"
       ShowEnvPort	      on
     }
     Block {
