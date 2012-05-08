@@ -120,7 +120,7 @@ for jj = 1:lmSet;
                [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
                 
                %save data for first salp
-               time{jj} = time;
+               timePoints{jj} = time;
                firstNodePositions{jj} = positions;
                firstNodeVelocities{jj} = firstSalp_PandV.signals(2).values;
                firstNodeAngles{jj} = angles;
@@ -156,7 +156,7 @@ for jj = 1:lmSet;
                [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
 
                %save data
-               time{jj} = time;
+               timePoints{jj} = time;
                firstNodePositions{jj} = positions;
                firstNodeVelocities{jj} = firstSalp_PandV.signals(2).values;
                firstNodeAngles{jj} = angles;
