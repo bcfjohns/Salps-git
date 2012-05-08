@@ -229,7 +229,7 @@ for jj = 1:lmSet;
         plot(modelSet, Rsqs(:,3), 'g-.');
         hold off;
         
-        ylabel('flags');
+        ylabel('Rsq values');
         
         figure(2)
         plot(time, positions(:,1));
