@@ -1,16 +1,38 @@
 force_close_system('all');
 salpsParams;
 modelSet = [1:35];
-modelNames = cell(1,length(modelSet));
+lmSet = length(modelSet);
 
-radiuses=zeros(length(modelSet),3); %three rows for first, middle and final node.
-omegas=zeros(length(modelSet),3);
-speeds=zeros(length(modelSet),3);
-Rsqs=zeros(length(modelSet),3);
-haveData=zeros(length(modelSet),3); %records if have data for this number of nodes yet. 1 if yes 0 if false.
-simTimes=zeros(length(modelSet),1);
+modelNames = cell(1,lmSet);
+
+radiuses=zeros(lmSet,3); %three rows for first, middle and final node.
+omegas=zeros(lmSet,3);
+speeds=zeros(lmSet,3);
+Rsqs=zeros(lmSet,3);
+haveData=zeros(lmSet,3); %records if have data for this number of nodes yet. 1 if yes 0 if false.
+simTimes=zeros(lmSet,1);
+
+%cell arrays for storing the position and angle data for all the
+%simulations run, this way I don't have to rerun simulations to look back
+%at the data.
+
+timePoints = cell(1,lmSet);
+firstNodePositions = cell(1,lmSet);
+firstNodeVelocities = cell(1,lmSet);
+firstNodeAngles = cell(1,lmSet);
+
+middleNodePositions = cell(1,lmSet);
+middleNodeVelocities = cell(1,lmSet);
+middleNodeAngles = cell(1,lmSet);
+
+endNodeAngles = cell(1,lmSet); %actual angles from 2nd to last node's connection to last node, but easier naming conventions
+endNodePositions = cell(1,lmSet);
+endNodeVelocities = cell(1,lmSet);
+
+
+
 % set up model names, and set solvers and save.
-for ii = 1:length(modelSet)
+for ii = 1:lmSet
 strn = ['salpChain' num2str(modelSet(ii))];
 modelNames(ii) = {strn};
 %     if modelSet(ii) >21
@@ -23,7 +45,7 @@ end
 clear ii;
 %go through sim all the models and plot stuff
 
-for jj = 1:length(modelSet);
+for jj = 1:lmSet;
     strn = ['salpChain' num2str(modelSet(jj))];
     modelNames(jj) = {strn};
        
@@ -44,9 +66,9 @@ for jj = 1:length(modelSet);
            case 1
                %end node is all three
                time = endSalp_PandV.time;
-               angles = endSalp_PandV.signals(2).values(:,1:2);
+               velocities = endSalp_PandV.signals(2).values(:,1:2);
                positions = endSalp_PandV.signals(1).values;
-               [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, angles);
+               [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, velocities);
                radius2=radius3;
                radius1=radius3;
                omega2=omega3;
@@ -56,15 +78,24 @@ for jj = 1:length(modelSet);
                Rsq2=Rsq3;
                Rsq1=Rsq3;
 
+               timePoints{jj} = time;
+               firstNodePositions{jj} = positions;
+               firstNodeVelocities{jj} = endSalp_PandV.signals(2).values;
+               
 
            case 2
-               %first node is start and middle end is end
+            %FIRST NODE. first is start and middle. end is end
                time = firstSalp_PandV.time;
                positions = firstSalp_PandV.signals(1).values;
                angles=[firstSalp_angles.signals(1).values firstSalp_angles.signals(2).values];
                [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
 
-               %end salp.
+               timePoints{jj} = time;
+               firstNodePositions{jj} = positions;
+               firstNodeVelocities{jj} = firstSalp_PandV.signals(2).values;
+               firstNodeAngles{jj} = angles;
+               
+            %END SALP.
                angles=[firstSalp_angles.signals(1).values firstSalp_angles.signals(2).values];
                positions = endSalp_PandV.signals(1).values;
                [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, angles);
@@ -72,46 +103,84 @@ for jj = 1:length(modelSet);
                omega2=omega3;
                speed2=speed3;
                Rsq2=Rsq3;
+               
+               endNodeAngles = angles;
+               endNodePositions = positions;
+               endNodeVelocities = endSalp_PandV.signals(2).values;
+
+
 
             case 3
                %doesn't have preEnd salp
                %all three nodes exist
-               %first salp
+            %FIRST SALP
                time = firstSalp_PandV.time;
                positions = firstSalp_PandV.signals(1).values;
                angles=[firstSalp_angles.signals(1).values firstSalp_angles.signals(2).values];
                [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
-
-               %middle salp. Time should be the same for all three
+                
+               %save data for first salp
+               time{jj} = time;
+               firstNodePositions{jj} = positions;
+               firstNodeVelocities{jj} = firstSalp_PandV.signals(2).values;
+               firstNodeAngles{jj} = angles;
+               
+            %middle salp. Time should be the same for all three
                angles=[middleSalp_angles.signals(1).values middleSalp_angles.signals(2).values];
                positions = middleSalp_PandV.signals(1).values;
                [radius2 omega2 speed2 Rsq2] = getHelixParams(time, positions, angles);
 
-               %end salp. It doesn't have angles so use angles from
-               %postultimate salp
+               %save data
+               middleNodePositions{jj} = positions;
+               middleNodeVelocities{jj} = middleSalp_PandV.signals(2).values;
+               middleNodeAngles{jj} = angles;
+  
+            %end salp. It doesn't have angles so use angles from
+               %postultimate salp, in this case the middle salp, since
+               %there are only 3.
                angles=[middleSalp_angles.signals(1).values middleSalp_angles.signals(2).values];
                positions = endSalp_PandV.signals(1).values;
                [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, angles);
 
+               %save data
+               endNodePositions = positions;
+               endNodeVelocities = endSalp_PandV.signals(2).values;
+               endNodeAngles = angles;
 
            otherwise
                %all three nodes exist
-               %first salp
+            %FIRST SALP
                time = firstSalp_PandV.time;
                positions = firstSalp_PandV.signals(1).values;
                angles=[firstSalp_angles.signals(1).values firstSalp_angles.signals(2).values];
                [radius1 omega1 speed1 Rsq1] = getHelixParams(time, positions, angles);
 
-               %middle salp. Time should be the same for all three
+               %save data
+               time{jj} = time;
+               firstNodePositions{jj} = positions;
+               firstNodeVelocities{jj} = firstSalp_PandV.signals(2).values;
+               firstNodeAngles{jj} = angles;
+               
+            %MIDDLE SALP Time should be the same for all three
                angles=[middleSalp_angles.signals(1).values middleSalp_angles.signals(2).values];
                positions = middleSalp_PandV.signals(1).values;
                [radius2 omega2 speed2 Rsq2] = getHelixParams(time, positions, angles);
-
-               %end salp. It doesn't have angles so use angles from
+               
+               %save data
+               middleNodePositions{jj} = positions;
+               middleNodeVelocities{jj} = middleSalp_PandV.signals(2).values;
+               middleNodeAngles{jj} = angles;
+  
+            %END SALP. It doesn't have angles so use angles from
                %postultimate salp
                angles=[preEndSalp_angles.signals(1).values preEndSalp_angles.signals(2).values];
                positions = endSalp_PandV.signals(1).values;
                [radius3 omega3 speed3 Rsq3] = getHelixParams(time, positions, angles);
+               
+               %save data
+               endNodePositions = positions;
+               endNodeVelocities = endSalp_PandV.signals(2).values;
+               endNodeAngles = angles;
 
 
         end
@@ -161,6 +230,14 @@ for jj = 1:length(modelSet);
         hold off;
         
         ylabel('flags');
+        
+        figure(2)
+        plot(time, positions(:,1));
+        hold on;
+        plot(time, positions(:,2), 'm');
+        plot(time, positions(:,3), 'c');
+        hold off;
+        title ('positions');
 
         %%
         %    figure(1);

@@ -34,8 +34,8 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 07 16:53:34 2012"
-  RTWModifiedTimeStamp	  258310404
+  LastModifiedDate	  "Tue May 08 11:33:00 2012"
+  RTWModifiedTimeStamp	  258377580
   ModelVersionFormat	  "1.%<AutoIncrement:24>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
@@ -813,7 +813,7 @@ Model {
   System {
     Name		    "salpChain1"
     Location		    [568, 73, 1305, 685]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -843,7 +843,7 @@ Model {
       System {
 	Name			"End Salp Odd"
 	Location		[169, 120, 1186, 893]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
