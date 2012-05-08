@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.6"
     NumModelReferences	    34
     ModelReference {
       ModelRefBlockPath	      "salpChain34/End Salp Even/Model|v2Drag"
@@ -133,9 +133,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon May 07 17:11:22 2012"
-  RTWModifiedTimeStamp	  258311456
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Mon May 07 20:24:22 2012"
+  RTWModifiedTimeStamp	  258323037
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -173,6 +173,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "salpChain34"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -989,7 +990,7 @@ Model {
   }
   System {
     Name		    "salpChain34"
-    Location		    [0, 94, 1440, 918]
+    Location		    [0, 116, 1440, 940]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1019,7 +1020,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"End Salp Even"
-	Location		[544, 139, 1641, 935]
+	Location		[544, 161, 1641, 957]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1179,7 +1180,7 @@ Model {
 	  ZOrder		  -16
 	  Floating		  off
 	  Location		  [747, 447, 1435, 894]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "2"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1753,7 +1754,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"First Salp Odd"
-	Location		[147, 116, 1164, 889]
+	Location		[147, 138, 1164, 911]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3360,7 +3361,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Middle Salp Even"
-	Location		[155, 116, 1348, 847]
+	Location		[155, 138, 1348, 869]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -45586,7 +45587,7 @@ Model {
       Name		      "preEnd Salp Odd"
       SID		      "1295"
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [255, 665, 355, 715]
+      Position		      [260, 665, 360, 715]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -45596,7 +45597,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"preEnd Salp Odd"
-	Location		[147, 138, 1164, 911]
+	Location		[147, 160, 1164, 933]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -46690,6 +46691,7 @@ Model {
 	  SaveToWorkspace	  on
 	  SaveName		  "preEndSalp_angles"
 	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "9000"
 	  SampleTime		  "0"
 	}
