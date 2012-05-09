@@ -29,7 +29,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
         %check if learning at all in the first several itteration if not
         %stop.
         if (i==initialLearn)
-            if range(valueHist(1:i))<0.01
+            if range(valueHist(1:i-1))<0.01
                 exitFlag = 2;
                 finalAlpha = alphaHist(:,i-1);
                 finalCost =  valueHist(i-1);
@@ -120,6 +120,7 @@ uDelay = alpha(1);
 uPeriod = alpha(2);
 if uPeriod<=0.5
     uPeriod = 0.5;
+    alpha(2) = uPeriod;
 end
 alpha(2)=uPeriod;
 uPulseWidth = 0.5/uPeriod;
