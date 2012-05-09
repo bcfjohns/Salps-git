@@ -5,7 +5,7 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
     %alpha = delay time, period time.
     
     stand_dev_beta = [0.01 0.01];
-    etta = [4000 4000];
+    etta = [900 900];
     sizeBeta = size(alpha);
     maxI = 500;
     
@@ -114,13 +114,14 @@ global valueHist alphaHist Salp1_PandV Salp1_angles
 
 end
 
-function updatePulseParams(alpha)
+function alpha = updatePulseParams(alpha)
 global uDelay uPulseWidth uPeriod
 uDelay = alpha(1);
 uPeriod = alpha(2);
 if uPeriod<=0.5
     uPeriod = 0.5;
 end
+alpha(2)=uPeriod;
 uPulseWidth = 0.5/uPeriod;
 
 end
