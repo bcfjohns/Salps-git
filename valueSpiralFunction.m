@@ -1,6 +1,6 @@
 
-function cost = valueFunction()
-global Salp1_PandV Salp1_angles
+function cost = valueSpiralFunction()
+global Salp1_PandV Salp1_angles backConnect
 
 %find steady state indices based on angles
 T = 50*5; %at least one period to define the range we'll use.
@@ -33,32 +33,6 @@ angle2Part = angle2(smallestIndex-jump:smallestIndex);
     end
 end
 
-figure(1)
-plot(time(1:smallestIndex), angle1(1:smallestIndex), 'r');
-hold on;
-plot(time(smallestIndex: L), angle1(smallestIndex:L), 'b');
-plot(time, min1*ones(L,1), '--k');
-plot(time, max1*ones(L,1), '--k');
-hold off;
-title('angle1');
-axis([0 time(L) min1-0.1 max1+0.1]);
-
-figure(2);
-plot(time(1:smallestIndex), angle2(1:smallestIndex), 'r');
-hold on;
-plot(time(smallestIndex: L), angle2(smallestIndex:L), 'b');
-plot(time, min2*ones(L,1), '--k');
-plot(time, max2*ones(L,1), '--k');
-hold off;
-title('angle2');
-axis([0 time(L) min2-0.1 max2+0.1]);
-
-
-% velocities = Salp1_PandV.signals(2).values(smallestIndex:L, :);
-% velocity = sqrt(sum(velocities.^2,2));
-% avgVeloc = mean(velocity);
-% cost = -avgVeloc;
-
 %fit x,y and z positions to linear plus sine to determine velocity
 positions = Salp1_PandV.signals(1).values(smallestIndex:L,:);
 [xfit, xRsq] = linSinFit(time(smallestIndex:L), positions(:,1));
@@ -66,6 +40,11 @@ positions = Salp1_PandV.signals(1).values(smallestIndex:L,:);
 [zfit, zRsq] = linSinFit(time(smallestIndex:L), positions(:,3));
 cost = -norm([xfit(2) yfit(2) zfit(2)]); %the cost is the negative of the
 %velocity, that is the the slope of the linear term from the fits.
+
+%add in a component of the cost that value a larger radius salp.
+cost = cost - norm([xfit(3) yfit(3) zfit(3)]);
+%add in with the lengths, so don't get longer and longer things.
+cost = cost + norm(10*backConnect)^2;
 end
 
 function [mini, maxi] = minAndMaxMarg(nums)

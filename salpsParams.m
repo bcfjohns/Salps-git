@@ -1,10 +1,11 @@
 %Benjamin Johnson editing to play with parameters to get a tighter spiral
-
+%salps params old
 %All the parameters for the salp simulation
 %all units are assumed to be degrees and mks
 clear all;
 close all;
 global uAmplitudeEven xFinal valueHist alphaHist oddTorque evenTorque
+
 
 %=============================================================
 %general parameters
@@ -27,6 +28,7 @@ sMass = 0.04; %about 40 grams %Mass of the salp
  
 % CURRENTLY ARBITRARY!
 sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the salp.
+
  
  
 %CS1->CG
@@ -34,10 +36,17 @@ sInertia = [.0008 0 0; 0 .0008 0; 0 0 .0004]; %moment of inertia tensor of the s
 %gravity (CG) in components of the body coordinate frame.
 frontConnect = [0 -sRadius*1 -sLength]; 
 
+
 %CG->CS2
 %vector pointing from the center fo gravity (CG) to the back connection
 %point (CS2) in components of the body coordinate frames.
-backConnect = [0 sRadius*1 -sLength];
+
+backConnect = [0 sRadius*0 -sLength];
+
+%axis of revolution of the universal joint
+u1axis = [1 0 0];
+u2axis = [0 1 0];
+
 
 %CG->CS3
 %the vector from the center of gravity to where the propulsion acts (CS3)
@@ -52,13 +61,14 @@ connectR = [0 0 30];
 
 relRotInit = [0 0]; %the initial angles of the universal joint between salps
 
+
+%Center of pressure position
+COPPosition = [0 0 -sLength];
+
 %Params for limiting the motion of the universal joint
 angleLimit = 90; %needs to be in same units as angle sensor (degrees)
 angleConstraintK = 400; %spring constant,
 angleConstraintB = 25; %damping constant. a little over damped
-
-%Center of pressure position
-COPPosition = [0 0 -sLength];
 
 %spring constant for springs joining a small mass that has the drag force
 %applied to it to the main salp body.
@@ -86,13 +96,13 @@ cDrag(4:6) = cDrag(4:6)*2*sRadius*pi/360;
 
 %===========
 %uAmplitudeOdd = [0.2 0.2 2];
-uAmplitudeEven = [-.1 0 .1];
-oddTorque = [0 0 .001];
+uAmplitudeEven = [-0.2 0 2];
+%uBias = 1; %bias is added before the amplitude scaling.
+
+oddTorque = [0 0 0];%0.1];
 evenTorque = oddTorque; %[0 0 .1];
+
+
 %allows the simulation to see the initial state variable
 
-
 % stochGradSalp
-
-
-

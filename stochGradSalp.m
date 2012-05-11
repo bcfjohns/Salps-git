@@ -1,169 +1,189 @@
-function [alphaHist valueHist] = stochGradSalp
-global uAmplitudeEven xFinal valueHist alphaHist Salp1_PandV Salp1_angles
+function [alphaHist valueHist exitFlag finalAlpha finalCost finalIteration] = stochGradSalp
+%exit flag says why it ended. 666-unknown reasons; 1-end of iterations; 2-didn't learn in first
+%K iterations; 3-Simulation errored out
+global valueHist alphaHist Salp1_PandV Salp1_angles uAmplitudeEven
+exitFlag = 666;
 %set initial parameters for the gradient search
-    alpha = [0.0744 0.1201]; %the angles of the output force assume normalized to 4
+    alpha = [rand(1)*1.5  rand(1)*1.5];
+    %alpha = angles of propulsion
     
-    stand_dev_beta = 0.1;
-    etta = 4600;
+    stand_dev_beta = [0.1 0.1]; %make angles about 10 times
+    %the size of length, since that's in meters vs radians.
+    etta = [4600 4600];
     sizeBeta = size(alpha);
     maxI = 200;
     
     alphaHist = zeros(length(alpha), maxI);
-    valueHist = zeros(1, maxI);    
+    valueHist = zeros(1, maxI);   
+    
+    %params for error checking and restarting etc.
+    maxSimErrors = 5; 
+    %number of times to try a new beta before giving up on the optimization
+    betaSimErrors = 3; %
+    
+    initialLearn = 10; %if haven't learned much by now, stop.
     
     for i = 1:maxI
-%         tic
-        i = i
-        alpha = alpha
-        etta = etta*0.95
+%         i = i
+        alpha = boundAngles(alpha);
+        etta = etta*0.95;
+        
+       
+        %check if learning at all in the first several itteration if not
+        %stop.
+        if (i==initialLearn)
+            disp('checking if learned range of ValueHist is');
+            disp(range(valueHist(1:i-1)));
+            if range(valueHist(1:i-1))<0.01
+                exitFlag = 2;
+                finalAlpha = alphaHist(:,i-1);
+                finalCost =  valueHist(i-1);
+                finalIteration = i;
+                return
+            else
+                disp('I think I learned');
+            end
+        end
         %================================================================
         %sim with alpha then compute J_alpha
-        setUAmplitudeEven(alpha)
-      
-        tic
-        sim('salpChain');
-        toc
+        setUAmplitudeEven([alpha(1) alpha(2)])
+        try
+            sim('salpChain');
+        catch simError
+            disp(simError.identifier);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
+            end
+           exitFlag = 3;
+           finalAlpha = alpha;
+           if (i ==1)
+               finalCost = 0.666;
+           else
+               finalCost = J_alpha; %this will be the cost from last time, 
+               %but that's the best there is.
+           end
+           finalIteration = i;
+           return
+        end
         
         J_alpha = valueFunction();
         
         %================================================================
         %sim with alpha+beta then compute J_alpha
-        beta = stand_dev_beta*randn(sizeBeta);
-        
-        setUAmplitudeEven(alpha+beta)
-        tic
-        sim('salpChain');
-        toc
-        %sound(y, Fs)
-        %input('hows it going?');
-        
+        beta = stand_dev_beta.*randn(sizeBeta);
+        setUAmplitudeEven([alpha(1) alpha(2)])
+%         updateParams(alpha+beta);
+        needSim = true;
+        while needSim
+        try
+            sim('salpChain');
+            betaSimErrors = 0;
+            needSim = false;
+        catch simError
+            disp(simError.identifier);
+            if strcmp(simError.identifier, 'SL_SERVICES:utils:CNTRL_C_INTERRUPTION')
+                rethrow(simError); %rethrow cntrl-c breaks;
+            end
+           if (betaSimErrors > maxSimErrors)
+               exitFlag = 3;
+               finalAlpha = alpha+beta;
+               finalCost = J_alpha;
+               finalIteration = i;
+               return;
+           end
+           betaSimErrors = betaSimErrors+1;
+           %find new beta and try again.
+           beta = stand_dev_beta.*randn(sizeBeta);
+           needSim = true;
+        end
+        end
+         
         J_alpha_beta = valueFunction();
         
-        dalpha = -etta*(J_alpha_beta-J_alpha)*beta;
+        dalpha = -etta.*(J_alpha_beta-J_alpha).*beta;
        
         alphaHist(:,i) = alpha;
         valueHist(i) = J_alpha;
-        alpha = alpha+dalpha; 
+        alpha = boundAngles(alpha+dalpha); 
         
-        %restrict the search for the propulsion, so it's in one corner
-        if (alpha(1)<0)
-            alpha(1) = 0;
-        else if (alpha(1)>pi/2)
-            alpha(1) = pi/2;
-            end
-        end
-        if (alpha(2)<0)
-            alpha(2) = 0;
-        else if (alpha(2)>pi/2)
-            alpha(2) = pi/2;
-            end
-        end
-            figure(3);
-            plot(valueHist(1:i));
-            title('valueHist, so far');
-%             legend(num2str(alpha));
-%             ylabel(num2str(etta));
-%         toc
+
+%         figure(3);
+%         plot3(alphaHist(1,1:i), alphaHist(2,1:i), valueHist(1:i));
+%         title('valueHist, so far');
+        figure(4);
+        plot(valueHist(1:i));
+        title('valueHist over itererations');
 
     end
+    finalAlpha = alphaHist(:,end);
+    finalCost = valueHist(end);
+    exitFlag = 1;
+    finalIteration = i;
 end
 
-
-% % Moved to it's own file, for modularities sake.
-% % function cost = valueFunction()
-% % global Salp1_PandV Salp1_angles
-% % 
-% % %find steady state indices based on angles
-% % T = 50*5; %at least one period to define the range we'll use.
-% % margin = 0.1; %what margin to use, so don't cut data off if just a little different
-% % time = Salp1_angles.time;
-% % angle2 = Salp1_angles.signals(2).values;
-% % angle1 = Salp1_angles.signals(1).values;
-% % L = length(angle1);
-% % 
-% % 
-% % min1 = min(angle1(L-T:L));
-% % min1 = min1-margin*range(min1);
-% % 
-% % max1 = max(angle1(L-T:L));
-% % max1 = max1+margin*range(max1);
-% % 
-% % min2 = min(angle2(L-T:L));
-% % min2 = min2-margin*range(min2);
-% % 
-% % max2 = max(angle2(L-T:L));
-% % max2 = max2+margin*range(max2);
-% % 
-% % smallestIndex = L-T;
-% % 
-% % jump = T;
-% % while(smallestIndex > T)
-% % angle1Part = angle1(smallestIndex-jump:smallestIndex);
-% % angle2Part = angle2(smallestIndex-jump:smallestIndex);
-% %     if(min(angle1Part) > min1 && min(angle2Part) > min2 && ...
-% %             max(angle1Part) < max1 && max(angle2Part) < max2)
-% %         smallestIndex = smallestIndex-jump;
-% %     else
-% %         break;
-% %     end
-% % end
-% % 
-% % figure(1)
-% % plot(time(1:smallestIndex), angle1(1:smallestIndex), 'r');
-% % hold on;
-% % plot(time(smallestIndex: L), angle1(smallestIndex:L), 'b');
-% % plot(time, min1*ones(L,1), '--k');
-% % plot(time, max1*ones(L,1), '--k');
-% % hold off;
-% % title('angle1');
-% % axis([0 time(L) min1-0.1 max1+0.1]);
-% % 
-% % figure(2);
-% % plot(time(1:smallestIndex), angle2(1:smallestIndex), 'r');
-% % hold on;
-% % plot(time(smallestIndex: L), angle2(smallestIndex:L), 'b');
-% % plot(time, min2*ones(L,1), '--k');
-% % plot(time, max2*ones(L,1), '--k');
-% % hold off;
-% % title('angle2');
-% % axis([0 time(L) min2-0.1 max2+0.1]);
-% % 
-% % 
-% % % velocities = Salp1_PandV.signals(2).values(smallestIndex:L, :);
-% % % velocity = sqrt(sum(velocities.^2,2));
-% % % avgVeloc = mean(velocity);
-% % % cost = -avgVeloc;
-% % positions = Salp1_PandV.signals(2).values([smallestIndex L],:);
-% % dpos = diff(positions)/(L-smallestIndex+1);
-% % cost = -norm(dpos);
-% % end
+function updateParams(alpha)  
+global connectR frontConnect backConnect u1axis u2axis
+    lengthConnect = 0.2;
+    alpha = boundAngles(alpha);
+    %update propulsion based on angle.
+    setUAmplitudeEven([alpha(1) 0])
+    %using this angle puts gives the propulsion x and z hat components,
+    %which corresponds with a necessary change in sign in the model file
+    %for the x hat component.
 
 
-function cost = valueFunctionOld(finalState, currentAlpha)
-    %just distance moved since beginning.
-%     [xName yName zName] = finalState.signals(15:17).values;
-%     %make sure getting the right states
-%     if (~(strcmp(xName,'SixDoF.P1.Position') && strcmp(yName, 'SixDoF.P2.Position') && ...
-%             strcmp(zName, 'SixDoF.P3.Position')))
-        pos = finalState(15:17);
-        value = norm(pos);
-        cost = -value;
-%     else
-%         warning('Got wrong state variables for value function');
-%     end
+    %update vectors for where uJoint is connected.
+    frontConnect = [alpha(2) alpha(3) 1]; %direction of the connection
+    %normalize and make frontConnect lengthConnect long, so the connection
+    %vectors are always that long.
+    frontConnect = lengthConnect*frontConnect/norm(frontConnect);
+    
+    backConnect = [-frontConnect(1) -frontConnect(2) 1];
+
+    %update u joint and things, so constrained orientation axis is
+    %always along the axis of connection.
+
+    v = backConnect';
+    t = atan2(v(1),v(3));  
+    Ry = [cos(t) 0 -sin(t);
+         0       1 0;
+         sin(t) 0  cos(t)];
+
+    v2 = Ry*v;
+
+    t = atan2(v2(2),v2(3));
+    Rx = [1 0   0;
+          0 cos(t) -sin(t);
+          0 sin(t)  cos(t)];
+    %vFinal = Rx*v2; %This should always be in the z hat directions
+    
+    %Rotation matix from backConnects direction to z hat direction
+    Rspec_z = Rx*Ry;
+    %rotation matrix for z direction to backConnect's direction
+    R = Rspec_z';
+    %rotate axis on u joint
+    u1axis = [1 0 0]*R;
+    u2axis = [0 1 0]*R;
+    %rotate angle for fixed orientation
+    connectR = 180/pi*[0 0 alpha(4)]*R;
 end
-% % Moved to it's own file for modularities sake.
-% % function setUAmplitudeEven(alpha)
-% % global uAmplitudeEven
-% % mag = 2;
-% % %trying to assign angles, so a change in either will change z, when it's at
-% % %the singularity point.
-% % uAmplitudeEven(3) = mag*cos(alpha(2))*cos(alpha(1));
-% % uAmplitudeEven(1) = -mag*cos(alpha(2))*sin(alpha(1));
-% % uAmplitudeEven(2) = mag*sin(alpha(2));
-% % 
-% % uAmplitudeEven = uAmplitudeEven
-% % 
-% % end
-% %     
+
+function alpha = boundAngles(alpha)
+    anglebound = 1.5;
+    if (alpha(1)>anglebound)
+        alpha(1)=anglebound;
+    else if (alpha(1)<0)
+            alpha(1) = 0;
+        end
+    end
+    
+        if (alpha(2)>anglebound)
+        alpha(2)=anglebound;
+    else if (alpha(1)<0)
+            alpha(1) = 0;
+        end
+    end
+    
+end
+
     
