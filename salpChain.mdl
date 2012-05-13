@@ -1,12 +1,12 @@
 Model {
   Name			  "salpChain"
-  Version		  7.7
+  Version		  7.8
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.452"
+    ComputedModelVersion    "1.457"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -19,20 +19,21 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
   UserBdParams		  "PhysicalModelingChecksum;PhysicalModelingParameterChecksum;PhysicalModelingProducts"
-  PhysicalModelingChecksum "2119260435"
-  PhysicalModelingParameterChecksum "3046410961"
+  PhysicalModelingChecksum "3565955456"
+  PhysicalModelingParameterChecksum "375276303"
   PhysicalModelingProducts "SimMechanics"
   Created		  "Mon Apr  4 13:55:19 2011"
   Creator		  "ben"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "ben"
+  LastModifiedBy	  "benjJohnson"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Dec  2 12:50:23 2011"
-  RTWModifiedTimeStamp	  244730963
-  ModelVersionFormat	  "1.%<AutoIncrement:452>"
+  LastModifiedDate	  "Sat May 12 22:05:16 2012"
+  RTWModifiedTimeStamp	  258761110
+  ModelVersionFormat	  "1.%<AutoIncrement:457>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -40,6 +41,7 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -107,13 +109,13 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      1
-      Version		      "1.11.0"
+      Version		      "1.11.1"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  2
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  StartTime		  "0.0"
 	  StopTime		  "simTime"
 	  AbsTol		  "auto"
@@ -147,7 +149,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Decimation		  "1"
 	  ExternalInput		  "['[' num2str(alpha) ']']"
 	  FinalStateName	  "xFinal"
@@ -179,7 +181,7 @@ Model {
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  4
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    4
@@ -194,6 +196,7 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -230,7 +233,7 @@ Model {
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  5
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -285,6 +288,7 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -313,10 +317,11 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  6
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -353,7 +358,7 @@ Model {
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  7
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -368,7 +373,7 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  8
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -383,7 +388,7 @@ Model {
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  9
-	  Version		  "1.11.0"
+	  Version		  "1.11.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    6
@@ -434,7 +439,7 @@ Model {
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      10
-	      Version		      "1.11.0"
+	      Version		      "1.11.1"
 	      Array {
 		Type			"Cell"
 		Dimension		17
@@ -495,7 +500,7 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      11
-	      Version		      "1.11.0"
+	      Version		      "1.11.1"
 	      Array {
 		Type			"Cell"
 		Dimension		15
@@ -522,9 +527,7 @@ Model {
 	      TargetFunctionLibrary   "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      FunctionExecutionProfile off
 	      CodeExecutionProfiling  off
-	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -534,6 +537,7 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -589,13 +593,13 @@ Model {
 	    Dimension		    1
 	    MECH.SimMechanicsCC {
 	      $ObjectID		      13
-	      Version		      "1.11.0"
+	      Version		      "1.11.1"
 	      Name		      "SimMechanics"
 	      WarnOnRedundantConstraints on
 	      WarnOnSingularInitialAssembly off
 	      ShowCutJoints	      off
 	      VisOnUpdateDiagram      off
-	      VisDuringSimulation     on
+	      VisDuringSimulation     off
 	      EnableVisSimulationTime on
 	      VisSampleTime	      "0"
 	      DisableBodyVisControl   off
@@ -828,13 +832,14 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
+      SFBlockType	      "NONE"
       Variant		      off
       GeneratePreprocessorConditionals off
     }
   }
   System {
     Name		    "salpChain"
-    Location		    [91, 406, 1533, 1051]
+    Location		    [22, 65, 1462, 710]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -848,7 +853,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2129"
+    SIDHighWatermark	    "2133"
     Block {
       BlockType		      Goto
       Name		      "Goto1"
@@ -877,15 +882,6 @@ Model {
       UserData		      "DataTag0"
       SourceBlock	      "mblibv1/Bodies/Ground"
       SourceType	      "Ground"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       UpdateFromCAD	      "off"
       LeftPortType	      "env"
       RightPortType	      "workingframe"
@@ -894,8 +890,8 @@ Model {
       ClassName		      "Ground"
       CoordPosition	      "[0 0 0]"
       CoordPositionUnits      "m"
-      StateVectorMgrId	      "-1"
-      MachineId		      "[0 0]"
+      StateVectorMgrId	      "1"
+      MachineId		      "[2 0]"
       ShowEnvPort	      on
     }
     Block {
@@ -908,15 +904,6 @@ Model {
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Bodies/Machine\nEnvironment"
       SourceType	      "Machine Environment"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
       PortType		      "env"
       PhysicalDomain	      "Mechanical"
       ClassName		      "Environment"
@@ -1007,10 +994,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -1091,10 +1074,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -1123,15 +1102,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -1196,15 +1166,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -1239,15 +1200,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -1266,10 +1218,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -1287,10 +1235,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -1318,15 +1262,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -1529,10 +1464,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -1555,15 +1486,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -1586,7 +1508,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1612,15 +1534,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -1643,7 +1556,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "1"
 	  ClassName		  "JointSensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -1671,15 +1584,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -1717,10 +1621,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -1799,15 +1699,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -2038,8 +1929,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even10"
-	Location		[163, 370, 1075, 1038]
-	Open			off
+	Location		[17, 113, 929, 781]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2060,10 +1951,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -2136,6 +2023,55 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Body Sensor"
+	  SID			  "2130"
+	  Ports			  [0, 2, 0, 0, 0, 1]
+	  Position		  [535, 235, 575, 275]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
+	  SourceType		  "Body Sensor"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[1]"
+	  ActiveIO		  "on"
+	  Width			  "6"
+	  ClassName		  "BodySensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Postition"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Velocity"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Bushing"
 	  SID			  "2054"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
@@ -2144,10 +2080,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -2176,15 +2108,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -2197,7 +2120,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2206,6 +2129,39 @@ Model {
 	  CoordPosition		  "on"
 	  Force			  "on"
 	  Torque		  "on"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Even position and velocity End"
+	  SID			  "2131"
+	  Ports			  [2]
+	  Position		  [710, 251, 740, 284]
+	  Floating		  off
+	  Location		  [1, 214, 1441, 814]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-20~-0.11"
+	  YMax			  "10~0.11"
+	  SaveToWorkspace	  on
+	  SaveName		  "SalpEnd_PandV"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  From
@@ -2228,15 +2184,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -2271,15 +2218,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -2292,22 +2230,18 @@ Model {
 	  BlockType		  Reference
 	  Name			  "Mechanical\nBranching\nBar"
 	  SID			  "2059"
-	  Ports			  [0, 0, 0, 0, 0, 1, 2]
+	  Ports			  [0, 0, 0, 0, 0, 1, 3]
 	  Position		  [475, 189, 480, 251]
 	  BackgroundColor	  "black"
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
-	  RConnTagsString	  "__newr0|SA2"
+	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
 	  ClassName		  "BranchingBar"
 	  DialogClass		  "MechanicalBranchingBarBlock"
-	  NumSAPorts		  "2"
+	  NumSAPorts		  "3"
 	}
 	Block {
 	  BlockType		  Mux
@@ -2329,15 +2263,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -2350,7 +2275,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -2540,10 +2465,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -2568,15 +2489,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -2599,7 +2511,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2614,10 +2526,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -2696,15 +2604,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -2727,7 +2626,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -2788,7 +2687,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "Mechanical\nBranching\nBar"
 	  SrcPort		  RConn1
-	  Points		  [0, -10; 340, 0]
+	  Points		  [0, -5; 340, 0]
 	  DstBlock		  "angular velocity body frame"
 	  DstPort		  LConn1
 	}
@@ -2796,7 +2695,7 @@ Model {
 	  LineType		  "Connection"
 	  SrcBlock		  "translation body frame"
 	  SrcPort		  LConn1
-	  Points		  [5, 0; 0, 185]
+	  Points		  [5, 0; 0, 170]
 	  DstBlock		  "Mechanical\nBranching\nBar"
 	  DstPort		  RConn2
 	}
@@ -2880,6 +2779,32 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn3
+	  Points		  [10, 0; 0, 15]
+	  DstBlock		  "Body Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  Name			  "Postition"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Body Sensor"
+	  SrcPort		  1
+	  Points		  [115, 0]
+	  DstBlock		  "Even position and velocity End"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Body Sensor"
+	  SrcPort		  2
+	  Points		  [35, 0; 0, 10]
+	  DstBlock		  "Even position and velocity End"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -2897,8 +2822,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Even2"
-	Location		[163, 370, 1075, 1038]
-	Open			on
+	Location		[163, 349, 1075, 1017]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2919,10 +2844,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -3003,10 +2924,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -3035,15 +2952,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -3087,15 +2995,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -3130,15 +3029,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -3157,10 +3047,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -3188,15 +3074,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -3399,10 +3276,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -3427,15 +3300,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -3473,10 +3337,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -3555,15 +3415,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -3778,10 +3629,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -3862,10 +3709,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -3894,15 +3737,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -3915,7 +3749,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -3946,15 +3780,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -3989,15 +3814,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -4016,10 +3832,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -4047,15 +3859,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -4068,7 +3871,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4258,10 +4061,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -4286,15 +4085,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -4317,7 +4107,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4332,10 +4122,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -4414,15 +4200,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -4445,7 +4222,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -4637,10 +4414,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -4721,10 +4494,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -4753,15 +4522,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -4774,7 +4534,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -4805,15 +4565,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -4848,15 +4599,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -4875,10 +4617,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -4906,15 +4644,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -4927,7 +4656,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5117,10 +4846,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -5145,15 +4870,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -5176,7 +4892,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -5191,10 +4907,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -5273,15 +4985,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -5304,7 +5007,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -5496,10 +5199,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -5580,10 +5279,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -5612,15 +5307,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -5633,7 +5319,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5664,15 +5350,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -5707,15 +5384,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -5734,10 +5402,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -5765,15 +5429,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -5786,7 +5441,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -5976,10 +5631,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -6004,15 +5655,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -6035,7 +5677,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6050,10 +5692,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -6132,15 +5770,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -6163,7 +5792,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6355,10 +5984,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -6439,10 +6064,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -6471,15 +6092,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -6492,7 +6104,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -6523,15 +6135,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -6566,15 +6169,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -6593,10 +6187,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -6624,15 +6214,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -6645,7 +6226,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -6835,10 +6416,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -6863,15 +6440,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -6894,7 +6462,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -6909,10 +6477,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -6991,15 +6555,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -7022,7 +6577,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -7214,10 +6769,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -7298,10 +6849,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -7330,15 +6877,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -7351,7 +6889,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7382,15 +6920,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -7425,15 +6954,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -7452,10 +6972,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -7483,15 +6999,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -7504,7 +7011,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -7694,10 +7201,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -7722,15 +7225,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -7753,7 +7247,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -7768,10 +7262,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -7850,15 +7340,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -7881,7 +7362,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8073,10 +7554,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -8157,10 +7634,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -8189,15 +7662,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -8210,7 +7674,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -8241,15 +7705,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -8284,15 +7739,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -8311,10 +7757,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -8342,15 +7784,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -8363,7 +7796,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -8553,10 +7986,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -8581,15 +8010,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -8612,7 +8032,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8627,10 +8047,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -8709,15 +8125,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -8740,7 +8147,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -8932,10 +8339,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -9016,10 +8419,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -9048,15 +8447,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -9069,7 +8459,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9100,15 +8490,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -9143,15 +8524,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -9170,10 +8542,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -9201,15 +8569,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -9222,7 +8581,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -9412,10 +8771,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -9440,15 +8795,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -9471,7 +8817,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9486,10 +8832,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -9568,15 +8910,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -9599,7 +8932,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -9769,7 +9102,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Salp Odd1"
-	Location		[179, 267, 1105, 1015]
+	Location		[179, 289, 1105, 1037]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -9791,10 +9124,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -9874,15 +9203,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -9932,10 +9252,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -9964,15 +9280,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10015,15 +9322,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -10058,15 +9356,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -10085,10 +9374,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -10106,10 +9391,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2"
 	  UpdateFromCAD		  "off"
@@ -10158,13 +9439,23 @@ Model {
 	  Ports			  [2]
 	  Position		  [710, 256, 740, 289]
 	  Floating		  off
-	  Location		  [11, 214, 1699, 814]
-	  Open			  off
+	  Location		  [2, 173, 1442, 773]
+	  Open			  on
 	  NumInputPorts		  "2"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
 	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
 	  }
 	  YMin			  "-20~-0.11"
 	  YMax			  "10~0.11"
@@ -10183,15 +9474,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10394,10 +9676,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -10420,15 +9698,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10483,15 +9752,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Sensor"
 	  SourceType		  "Joint Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10547,15 +9807,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10593,10 +9844,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -10675,15 +9922,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -10908,7 +10146,7 @@ Model {
 	}
 	Line {
 	  Name			  "Postition"
-	  Labels		  [0, 0; 0, 0]
+	  Labels		  [0, 0]
 	  SrcBlock		  "Body Sensor"
 	  SrcPort		  1
 	  Points		  [115, 0]
@@ -10969,10 +10207,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -11052,10 +10286,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -11084,15 +10314,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -11105,7 +10326,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11135,15 +10356,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -11178,15 +10390,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -11205,10 +10408,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -11236,15 +10435,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -11257,7 +10447,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11447,10 +10637,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -11474,15 +10660,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -11505,7 +10682,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -11520,10 +10697,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -11602,15 +10775,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -11633,7 +10797,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -11828,10 +10992,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -11911,10 +11071,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -11943,15 +11099,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -11964,7 +11111,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -11994,15 +11141,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -12037,15 +11175,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -12064,10 +11193,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -12095,15 +11220,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -12116,7 +11232,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -12306,10 +11422,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -12333,15 +11445,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -12364,7 +11467,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12379,10 +11482,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -12461,15 +11560,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -12492,7 +11582,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -12687,10 +11777,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -12770,10 +11856,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -12802,15 +11884,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -12823,7 +11896,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -12853,15 +11926,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -12896,15 +11960,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -12923,10 +11978,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -12954,15 +12005,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -12975,7 +12017,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13165,10 +12207,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -13192,15 +12230,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -13223,7 +12252,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13238,10 +12267,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -13320,15 +12345,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -13351,7 +12367,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -13546,10 +12562,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -13629,10 +12641,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -13661,15 +12669,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -13682,7 +12681,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -13712,15 +12711,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -13755,15 +12745,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -13782,10 +12763,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -13813,15 +12790,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -13834,7 +12802,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -14024,10 +12992,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -14051,15 +13015,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -14082,7 +13037,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -14097,10 +13052,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -14179,15 +13130,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -14210,7 +13152,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -14384,7 +13326,7 @@ Model {
       System {
 	Name			"Salp Odd5"
 	Location		[179, 267, 1105, 1015]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -14405,10 +13347,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -14481,6 +13419,55 @@ Model {
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Body Sensor"
+	  SID			  "2132"
+	  Ports			  [0, 2, 0, 0, 0, 1]
+	  Position		  [590, 250, 630, 290]
+	  LibraryVersion	  "1.1"
+	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
+	  SourceType		  "Body Sensor"
+	  UpdateFromCAD		  "off"
+	  PhysicalDomain	  "Mechanical"
+	  PortType		  "blob"
+	  Muxed			  "off"
+	  Pose			  "off"
+	  Angle			  "on"
+	  AngleUnits		  "deg"
+	  ArcVelocity		  "off"
+	  ArcVelocityUnits	  "deg/s"
+	  ArcAcceleration	  "off"
+	  ArcAccelerationUnits	  "deg/s^2"
+	  CoordPosition		  "on"
+	  CoordPositionUnits	  "m"
+	  Velocity		  "on"
+	  VelocityUnits		  "m/s"
+	  Acceleration		  "off"
+	  AccelerationUnits	  "m/s^2"
+	  Quaternion		  "on"
+	  QuaternionDT		  "off"
+	  QuaternionDDT		  "off"
+	  QuaternionUnits	  "off"
+	  OutputVector		  "[1]"
+	  ActiveIO		  "on"
+	  Width			  "6"
+	  ClassName		  "BodySensor"
+	  DialogClass		  "MechanicalSensorBlock"
+	  ReferenceFrame	  "Absolute (World)"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Postition"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Velocity"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Bushing"
 	  SID			  "1872"
 	  Ports			  [0, 0, 0, 0, 0, 2, 2]
@@ -14488,10 +13475,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -14520,15 +13503,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -14541,7 +13515,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -14571,15 +13545,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -14614,15 +13579,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -14641,10 +13597,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -14664,6 +13616,39 @@ Model {
 	  DisplayOption		  "bar"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "Odd position and velocityMiddle"
+	  SID			  "2133"
+	  Ports			  [2]
+	  Position		  [765, 256, 795, 289]
+	  Floating		  off
+	  Location		  [1, 214, 1441, 814]
+	  Open			  on
+	  NumInputPorts		  "2"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	    axes2		    "%<SignalLabel>"
+	  }
+	  List {
+	    ListType		    ScopeGraphics
+	    FigureColor		    "[0.5 0.5 0.5]"
+	    AxesColor		    "[0 0 0]"
+	    AxesTickColor	    "[1 1 1]"
+	    LineColors		    "[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	    LineStyles		    "-|-|-|-|-|-"
+	    LineWidths		    "[0.5 0.5 0.5 0.5 0.5 0.5]"
+	    MarkerStyles	    "none|none|none|none|none|none"
+	  }
+	  YMin			  "-20~-0.11"
+	  YMax			  "10~0.11"
+	  SaveToWorkspace	  on
+	  SaveName		  "SalpMiddle_PandV"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Propulsion"
 	  SID			  "1879"
@@ -14672,15 +13657,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -14693,7 +13669,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -14883,10 +13859,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -14910,15 +13882,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -14941,7 +13904,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -14956,10 +13919,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -15038,15 +13997,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -15069,7 +14019,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -15225,6 +14175,31 @@ Model {
 	  DstBlock		  "Propulsion"
 	  DstPort		  1
 	}
+	Line {
+	  LineType		  "Connection"
+	  SrcBlock		  "Mechanical\nBranching\nBar"
+	  SrcPort		  RConn3
+	  Points		  [65, 0; 0, 30]
+	  DstBlock		  "Body Sensor"
+	  DstPort		  LConn1
+	}
+	Line {
+	  Name			  "Postition"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Body Sensor"
+	  SrcPort		  1
+	  Points		  [115, 0]
+	  DstBlock		  "Odd position and velocityMiddle"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Velocity"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Body Sensor"
+	  SrcPort		  2
+	  DstBlock		  "Odd position and velocityMiddle"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -15264,10 +14239,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -15347,10 +14318,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -15379,15 +14346,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -15400,7 +14358,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -15430,15 +14388,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -15473,15 +14422,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -15500,10 +14440,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -15531,15 +14467,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -15552,7 +14479,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -15742,10 +14669,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -15769,15 +14692,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -15800,7 +14714,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -15815,10 +14729,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -15897,15 +14807,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -15928,7 +14829,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -16123,10 +15024,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -16206,10 +15103,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -16238,15 +15131,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -16259,7 +15143,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -16289,15 +15173,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -16332,15 +15207,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -16359,10 +15225,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -16390,15 +15252,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -16411,7 +15264,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -16601,10 +15454,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -16628,15 +15477,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -16659,7 +15499,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -16674,10 +15514,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -16756,15 +15592,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -16787,7 +15614,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -16982,10 +15809,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -17065,10 +15888,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -17097,15 +15916,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -17118,7 +15928,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -17148,15 +15958,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -17191,15 +15992,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -17218,10 +16010,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -17249,15 +16037,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -17270,7 +16049,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -17460,10 +16239,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -17487,15 +16262,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -17518,7 +16284,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -17533,10 +16299,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -17615,15 +16377,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -17646,7 +16399,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -17841,10 +16594,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CG|CS5|CS4|CS2|CS3"
 	  UpdateFromCAD		  "off"
@@ -17924,10 +16673,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Bushing"
 	  SourceType		  "Bushing"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1"
 	  RConnTagsString	  "__newr0|SA1"
 	  UpdateFromCAD		  "off"
@@ -17956,15 +16701,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -17977,7 +16713,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "6"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -18007,15 +16743,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Joint Initial Condition"
 	  SourceType		  "Joint Initial Condition"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  LeftPortType		  "blob"
 	  RightPortType		  "blob"
@@ -18050,15 +16777,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Force \nElements/Joint Spring & Damper"
 	  SourceType		  "Joint Spring & Damper"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  ClassName		  "JointSpringDamper"
 	  DialogClass		  "JointSpringDamper"
@@ -18077,10 +16795,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Utilities/Mechanical\nBranching\nBar"
 	  SourceType		  "Mechanical Branching Bar"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "_newl0"
 	  RConnTagsString	  "__newr0|SA2|SA3"
 	  UpdateFromCAD		  "off"
@@ -18108,15 +16822,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Actuator"
 	  SourceType		  "Body Actuator"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -18129,7 +16834,7 @@ Model {
 	  AccelerationUnits	  "m/s^2"
 	  ForceUnits		  "N"
 	  TorqueUnits		  "N*m"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodyActuatorForceTorque"
 	  DialogClass		  "MechanicalActuatorBlock"
@@ -18319,10 +17024,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Joints/Universal"
 	  SourceType		  "Universal"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "blob"
-	  RightPortType		  "blob"
 	  LConnTagsString	  "__newl0|SA1|SA2"
 	  RConnTagsString	  "__newr0|SA1|SA2"
 	  UpdateFromCAD		  "off"
@@ -18346,15 +17047,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -18377,7 +17069,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -18392,10 +17084,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Bodies/Body"
 	  SourceType		  "Body"
-	  PhysicalDomain	  "mechanical"
-	  SubClassName		  "Unknown"
-	  LeftPortType		  "workingframe"
-	  RightPortType		  "workingframe"
 	  LConnTagsString	  "CS1"
 	  RConnTagsString	  "CS2"
 	  UpdateFromCAD		  "off"
@@ -18474,15 +17162,6 @@ Model {
 	  LibraryVersion	  "1.1"
 	  SourceBlock		  "mblibv1/Sensors & \nActuators/Body Sensor"
 	  SourceType		  "Body Sensor"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
 	  UpdateFromCAD		  "off"
 	  PhysicalDomain	  "Mechanical"
 	  PortType		  "blob"
@@ -18505,7 +17184,7 @@ Model {
 	  QuaternionDDT		  "off"
 	  QuaternionUnits	  "off"
 	  OutputVector		  "[1]"
-	  ActiveIO		  "off"
+	  ActiveIO		  "on"
 	  Width			  "3"
 	  ClassName		  "BodySensor"
 	  DialogClass		  "MechanicalSensorBlock"
@@ -18672,10 +17351,6 @@ Model {
       LibraryVersion	      "1.1"
       SourceBlock	      "mblibv1/Joints/Six-DoF"
       SourceType	      "Six-DoF"
-      PhysicalDomain	      "mechanical"
-      SubClassName	      "Unknown"
-      LeftPortType	      "blob"
-      RightPortType	      "blob"
       LConnTagsString	      "__newl0"
       RConnTagsString	      "__newr0"
       UpdateFromCAD	      "off"
@@ -18711,7 +17386,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Six-DoF"
       SrcPort		      RConn1
-      Points		      [295, 0]
+      Points		      [215, 0; 0, -45]
       DstBlock		      "Salp Odd1"
       DstPort		      LConn1
     }
